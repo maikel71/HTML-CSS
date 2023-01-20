@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formularios</title>
+</head>
+
+<body>
+    <!--
+        * <form> -> crear formularios
+        * <input> -> campo para introducir datos
+        * <label> -> el titulo del input
+        * <textarea> -> campo para introducir mucho texto
+        * <button> -> un boton
+    -->
+
+    <!-- el atributo action hace referencia a el documento o al url al que nosotros queremos enviar este formulario, 
+        es decir el atributo action indica la página a la que se envían los datos del formulario. -->
+    <!-- cuando nosotros usamos los formularios tenemos dos tipos de metodos(method)  que podemos utilizar: 
+        * GET (esta por defecto) -> Ques es lo que pueden gestionar nuestros navegadores 
+        * POST -> Si nosotros tuvieramos un servidor que nosotros queremos que haga algo con esta informacion, lo que hace es enviar esta informacion en este caso a resultados.html, espereando a que resultados.html haga algo con esa informacion como puede ser 
+                    -> Crear una entrada en una base de datos
+                    -> Crear un nuevo usuario
+                    -> Hacer una llamada a una API externa
+                pero todo desde el punto de vista del servidor, es decir que el metodo POST tenemos que utilizarlo siempre y cuando se haya realizado una accion desde algun servidor
+    -->
+    <form action="resultados.html" method="GET">
+        <div>
+            <!-- el for hace referencia a algun input que tenga el id exactamente igual al for  -->
+            <label for="nombreusuario">Nombre de Usuario: </label>
+            <!-- 
+                Los atributos de INPUT son:
+                * TYPE determina el tipo de entrada que se va a utilizar y sus valores pueden ser uno de los siguientes:
+                    -> text, muestra una caja donde introducir texto. Es el tipo por defecto de INPUT.
+                    -> password, muestra una caja donde se tecleará texto cuyo eco será sustituido por asteríscos.
+                    -> checkbox, un botón que sólo puede tener dos estados, {on, off}.
+                    -> radio, un botón que sólo puede tener dos estados, {on, off}, pero que a diferencia de los checkbox, puede agruparse con otros botones de tipo radio con el mismo nombre y obtener así un comportamiento ``uno de muchos''.
+                    -> submit, un botón que produce que el formulario actual sea enviado al URL especificado en el atributo ACTION del formulario.
+                    -> reset, un botón que produce que todos los elementos del formulario pasen a su estado por defecto.
+                    -> hidden, es una entrada que no se muestra en el browser y que sirve para pasar información desde el formulario al servidor que no se quiere que el usuario vea.
+                    -> email, es para los correos
+                    -> number, es para solo numeros enteros
+                    -> date, es para poner una fecha
+                    -> datetime, es para moner fecha y hora
+                * NAME es el nombre simbólico al que se le va asociar el valor introducido en ese elemento por el usuario. Debe estar presente en todos los elementos excepto en submit y reset.
+                * VALUE tiene varios significados dependiendo del elemento que se trate. Para campos texto o password especificará el valor por defecto. En botones de tipo radio o checkbox especificará el valor que tendrá el botón cuando sea presionado (el defecto es on). Para los botones submit y reset el valor se puede utilizar para especificar la etiqueta del botón. En los campos ocultos especifica el valor que se pasa al servidor.
+                * SIZE es el tamaño físico del campo de entrada en elementos texto o password (por defecto es 20).
+                * MAXLENGTH es el número máximo de caracteres que se permiten en un elemento de tipo texto o password (ilimitado por defecto).
+                * CHECKED especifica si ese botón, radio o checkbox estará activado por defecto.
+            -->
+            <!-- Para que sea un campo obligatorio hay un atributo que seria required -->
+            <input type="text" name="nombreusuario" id="nombreusuario" required>
+        </div>
+
+        <br>
+        <div>
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+
+        <br>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <br>
+        <div>
+            <label for="edad">Edad:</label>
+            <input type="number" name="edad" id="edad" min="0" max="200" required>
+        </div>
+
+        <br>
+        <div>
+            <label for="nacimiento">Nacimiento:</label>
+            <input type="date" name="nacimiento" id="nacimiento">
+        </div>
+
+        <br>
+        <div>
+            <label for="comentarios">Comentarios:</label>
+            <textarea name="comentarios" id="comentarios" cols="0" rows="2"></textarea>
+        </div>
+
+        <br>
+        <button type="reset">Reset</button>
+        <button type="submit">Enviar</button>
+
+    </form>
+</body>
+
+</html>
