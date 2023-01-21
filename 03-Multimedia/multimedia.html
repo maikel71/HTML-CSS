@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Multimedia</title>
+</head>
+
+<body>
+
+    <!--
+        <img> -> Inserta una imagen
+        <video> -> Inserta un video
+        <iframe> -> Inserta contenido de otras paginas
+        <audio> -> Inserta un audio
+    -->
+
+    <!-- 
+        Atributos 
+
+        * src -> direccion de la imagen, video o audio
+        * alt -> texto alternativo que se va a mostrar en caso que la imagen por alguna razon no se pueda rendirizar o cargar
+        * width -> ancho 
+        * height -> altura
+    -->
+    <h3>Imagenes</h3>
+    <img src="/multimedia/img/HTML5.png" alt="Logo HTML5" width="300" height="300">
+    <!--tambien podemos alimentarnos de imagenes que estan ya en la web -->
+    <img src="https://i.pinimg.com/564x/70/1b/28/701b28474342f0c65258c08aebc1121d.jpg" alt="bugs bunny" width="300"
+        height="300">
+
+    <h3>Video</h3>
+    <!--
+        Hay tres formatos de vídeo compatibles con HTML: MP4, WebM y OGG.
+
+        Atributos
+
+        controls -> Especifica que deben mostrarse los controles de vídeo (como un botón de reproducción/pausa, etc.).
+        autoplay -> Cuando esté presente, el vídeo empezará a reproducirse automáticamente.
+        muted -> Añade muted después de autoplay para que tu archivo de vídeo empiece a reproducirse automáticamente (pero silenciado).
+        loop -> Especifica que el vídeo volverá a empezar cada vez que termine.
+    -->
+    <video width="200" height="200" controls autoplay muted loop>
+        <!--
+            La etiqueta <source> se utiliza para especificar varios recursos multimedia para elementos multimedia, como <video>, <audio> y <picture>.
+            La etiqueta <source> permite especificar archivos de vídeo/audio/imagen alternativos entre los que el navegador puede elegir, en función de la compatibilidad del navegador o del ancho de la ventana gráfica. El navegador elegirá el primer <source> que admita.
+        -->
+        <source src="/multimedia/video/michi.mp4" type="video/mp4" />
+    </video>
+
+    <h3>Audio</h3>
+    <!--
+        Hay tres formatos de audio compatibles con HTML: MP3, WAV y OGG.
+
+        Atributos
+
+        son lo mismo que el video
+    -->
+    <audio controls autoplay loop>
+        <source src="/multimedia/audio/dubstep.mp3" type="audio/mp3">
+    </audio>
+</body>
+
+</html>
