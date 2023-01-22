@@ -1,0 +1,37 @@
+/*
+Sintaxis CSS
+    > h1 -> selector
+    > color -> propiedad
+    > red -> valor
+
+    >color: red -> declaracion
+
+    El selector apunta al elemento HTML al que desea aplicar estilo.
+    El bloque de declaración contiene una o más declaraciones separadas por punto y coma.
+    Cada declaración incluye un nombre de propiedad CSS y un valor, separados por dos puntos.
+    Las declaraciones CSS múltiples se separan con punto y coma, y los bloques de declaración se rodean de llaves.
+
+    Ejemplo
+
+    En este ejemplo todos los elementos <p> estarán alineados al centro, con un color de texto rojo:
+
+    p {
+        color: red;
+        text-align: center;
+    }
+
+    Explicación del ejemplo
+
+    > p es un selector en CSS (apunta al elemento HTML que quieres estilizar: <p>).
+    > color es una propiedad, y red es el valor de la propiedad
+    > text-align es una propiedad, y center es el valor de la propiedad
+*/
+
+h1 {
+    color: red;
+}
+
+p {
+    color: blue;
+    font-size: 16pt;
+}
