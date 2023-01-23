@@ -35,3 +35,96 @@ p {
     color: blue;
     font-size: 16pt;
 }
+
+/*SELECTORES*/
+/*
+    Un selector CSS selecciona los elementos HTML a los que desea aplicar estilo.
+
+    Los selectores CSS se utilizan para "encontrar" (o seleccionar) los elementos HTML a los que se desea aplicar estilo.
+
+    Podemos dividir los selectores CSS en cinco categorías:
+
+        > Selectores simples (seleccionan elementos basándose en nombre, id, clase)
+        > Selectores combinatorios (seleccionan elementos basándose en una relación específica entre ellos)
+        > Pseudo-selectores de clase (seleccionar elementos basados en un cierto estado)
+        > Pseudoelementos (seleccionan y aplican estilo a una parte de un elemento)
+        > Selectores de atributos (seleccionan elementos en función de un atributo o valor de atributo)
+*/
+
+/* El selector de elementos CSS */
+/*
+    El selector de elementos selecciona elementos HTML basándose en el nombre del elemento.
+
+    Aquí, todos los elementos <p> de la página estarán alineados al centro, con un color de texto rojo:
+
+    p {
+        text-align: center;
+        color: red;
+    }
+*/
+
+/* El selector id de CSS */
+/*
+    El selector id utiliza el atributo id de un elemento HTML para seleccionar un elemento específico.
+    El id de un elemento es único dentro de una página, por lo que el selector id se utiliza para seleccionar un elemento único.
+    Para seleccionar un elemento con un id específico, escriba un carácter almohadilla (#), seguido del id del elemento.
+*/
+
+#primera-noticia {
+    color: green;
+    font-size: 12pt;
+}
+
+#segunda-noticia {
+    color: darkmagenta;
+}
+
+/*El selector de clases(class) CSS*/
+/*
+    El selector de clase selecciona elementos HTML con un atributo de class específico.
+    Para seleccionar elementos con una clase específica, escriba un punto (.) seguido del nombre de la clase.
+*/
+
+.encabezado{
+    font-size: 24pt;
+    text-transform: uppercase;
+}
+
+/*Selector universal CSS*/
+/*
+    El selector universal (*) selecciona todos los elementos HTML de la página.
+*/
+
+* {
+    color: yellow;
+}
+
+/*Selector de agrupación CSS*/
+/*
+    El selector de agrupación selecciona todos los elementos HTML con las mismas definiciones de estilo.
+    Observe el siguiente código CSS (los selectores de clase .autor, .fecha y .ubicacion tienen las mismas definiciones de estilo):
+*/
+/*
+.autor{
+    text-decoration: underline;
+}
+
+.fecha{
+    text-decoration: underline;
+}
+
+.ubicacion{
+    text-decoration: underline;
+}
+*/
+
+/*
+    Será mejor agrupar los selectores, para minimizar el código.
+    Para agrupar selectores, separe cada selector con una coma.
+
+    En este ejemplo hemos agrupado los selectores del código anterior:
+*/
+
+.autor, .fecha, .ubicacion, h1, #segunda-noticia{
+    text-decoration: underline;
+}
