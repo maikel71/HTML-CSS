@@ -1,0 +1,75 @@
+<!--Cómo añadir CSS-->
+<!--
+    Cuando un navegador lee una hoja de estilo, formateará el documento HTML de acuerdo con la información de la hoja de estilo.
+-->
+<!--Tres formas de insertar CSS-->
+<!--
+    Hay tres formas de insertar una hoja de estilo:
+    > CSS externo
+    > CSS interno
+    > CSS en línea
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilidades CSS</title>
+    <!--CSS Externo-->
+    <!--
+        Con una hoja de estilo externa, puede cambiar el aspecto de todo un sitio web modificando un solo archivo.
+        Cada página HTML debe incluir una referencia al archivo de hoja de estilo externa dentro del elemento <link>, dentro de la sección head.
+
+        Una hoja de estilo externa puede escribirse en cualquier editor de texto y debe guardarse con la extensión .css.
+        El archivo .css externo no debe contener etiquetas HTML.
+    -->
+    <link rel="stylesheet" href="estilos.css">
+    <!--dentro del css externo podemos importar estilos de una url-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+
+    <!--CSS interno-->
+    <!--
+        Se puede utilizar una hoja de estilo interna si una sola página HTML tiene un estilo único.
+        El estilo interno se define dentro del elemento <style>, dentro de la sección head.
+    -->
+    <style>
+        html {
+            padding: 15px;
+        }
+
+        p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>Hola</p>
+    <button class="pure-button">Esto es un boton</button>
+
+    <!--CSS en línea-->
+    <!--
+        Un estilo en línea puede utilizarse para aplicar un estilo único a un único elemento.
+        Para utilizar estilos en línea, añada el atributo style al elemento correspondiente. El atributo style puede contener cualquier propiedad CSS.
+    -->
+    <button style="padding: 10px; border: none; border-radius: 10px;">Boton personalizado</button>
+</body>
+
+</html>
+
+<!--OJO-->
+<!--
+    Orden en cascada
+    ¿Qué estilo se utilizará cuando haya más de un estilo especificado para un elemento HTML?
+
+    Todos los estilos de una página se "cascadearán" en una nueva hoja de estilo "virtual" según las siguientes
+    reglas,en las que el número uno tiene la máxima prioridad:
+        > Estilo en línea (dentro de un elemento HTML)
+        > Hojas de estilo externas e internas (en la sección head)
+        > Por defecto del navegador
+    Por lo tanto, un estilo en línea tiene la máxima prioridad y anulará los estilos externos e internos y 
+    los predeterminados del navegador.
+-->
