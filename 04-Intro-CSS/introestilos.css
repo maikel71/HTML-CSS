@@ -115,3 +115,260 @@ El parámetro alfa es un número comprendido entre 0,0 (totalmente transparente)
 .color-hsla{
     color: hsla(107, 100%, 29%, 0.8);
 }
+
+
+/*BACKGROUND - fondos*/
+/*
+    Las propiedades CSS de background se utilizan para añadir efectos de fondo a los elementos.
+*/
+
+/*background-attachment*/
+/*
+    La propiedad background-attachment establece si una imagen de fondo se desplaza con el resto de la página o es fija.
+
+    Sintaxis
+    background-attachment: scroll|fixed|local|initial|inherit;
+
+    Valores inmobiliarios
+    
+    * scroll   -> La imagen de fondo se desplazará con la página. Por defecto
+    * fixed    -> La imagen de fondo no se desplazará con la página
+    * local    -> La imagen de fondo se desplazará con el contenido del elemento
+    * initial  -> Establece esta propiedad a su valor por defecto.
+    * inherit  -> Hereda esta propiedad de su elemento padre.
+*/
+
+/*background-blend-mode*/
+/*
+    La propiedad background-blend-mode define el modo de fusión de cada capa de fondo (color y/o imagen).
+
+    Sintaxis
+    background-blend-mode: normal|multiply|screen|overlay|darken|lighten|color-dodge|saturation|color|luminosity;
+
+    Valores inmobiliarios
+    > normal      -> Esto es por defecto. Establece el modo de fusión en normal
+    > multiply    -> Establece el modo de fusión en multiplicar
+    > screen      -> Establece el modo de fusión en pantalla
+    > overlay     -> Establece el modo de fusión en superposición
+    > darken      -> Establece el modo de fusión en oscuro
+    > lighten     -> Establece el modo de fusión para aclarar
+    > color-dodge -> Establece el modo de fusión en difuminar color
+    > saturation  -> Establece el modo de fusión en saturación
+    > color       -> Establece el modo de fusión en color
+    > luminosity  -> Establece el modo de fusión en luminosidad
+*/
+
+/*background-clip*/
+/*
+    La propiedad background-clip define hasta dónde debe extenderse el fondo (color o imagen) dentro de un elemento.
+
+    Sintaxis CSS
+    background-clip: border-box|padding-box|content-box|initial|inherit;
+
+    Valores inmobiliarios
+    > border-box   ->  Valor por defecto. El fondo se extiende por detrás del borde
+    > padding-box  ->  El fondo se extiende hasta el borde interior del borde
+    > content-box  ->  El fondo se extiende hasta el borde de la caja de contenido
+    > initial      ->  Establece esta propiedad a su valor por defecto.
+    > inherit      ->  Hereda esta propiedad de su elemento padre.
+*/
+
+/*background-color*/
+/*
+    La propiedad background-color establece el color de fondo de un elemento.
+    El fondo de un elemento es el tamaño total del elemento, incluyendo el relleno y el borde (pero no el margen).
+
+    Consejo: Utilice un color de fondo y un color de texto que facilite la lectura del texto.
+
+    Sintaxis
+    background-color: color|transparent|initial|inherit;
+
+    Valores inmobiliarios
+    > color        ->  Especifica el color de fondo.
+    > transparent  ->  Especifica que el color de fondo debe ser transparente. Este es el valor por defecto
+    > initial      ->  Establece esta propiedad a su valor por defecto.
+    > inherit      ->  Hereda esta propiedad de su elemento padre.
+*/
+
+/*background-image*/
+/*
+    La propiedad background-image establece una o más imágenes de fondo para un elemento.
+    Por defecto, una imagen de fondo se coloca en la esquina superior izquierda de un elemento, y se repite tanto vertical como horizontalmente.
+    
+    Consejo: El fondo de un elemento es el tamaño total del elemento, incluyendo el relleno y el borde (pero no el margen).
+    Consejo: Establezca siempre un color de fondo que se utilizará si la imagen no está disponible.
+
+    Sintaxis
+    background-image: url|none|initial|inherit;
+
+    Valores inmobiliarios
+    > url('URL')                   -> La URL de la imagen. Para especificar más de una imagen, separe las URL con una coma
+    > none                         -> No se mostrará ninguna imagen de fondo. Esto es por defecto
+    > conic-gradient()             -> Establece un gradiente cónico como imagen de fondo. Define al menos dos colores
+    > linear-gradient()            -> Establece un gradiente lineal como imagen de fondo. Define al menos dos colores (de arriba a abajo)
+    > radial-gradient()            -> Establece un degradado radial como imagen de fondo. Define al menos dos colores (del centro a los bordes)
+    > repeating-conic-gradient()   -> Repite un degradado cónico 
+    > repeating-linear-gradient()  -> Repite un gradiente lineal
+    > repeating-radial-gradient()  -> Repite un degradado radial
+    > initial                      -> Establece esta propiedad a su valor por defecto.
+    > inherit                      -> Hereda esta propiedad de su elemento padre.
+*/
+
+/*background-origin*/
+/*
+    La propiedad background-origin especifica la posición de origen (el área de posicionamiento del fondo) de una imagen de fondo.
+    Nota: Esta propiedad no tiene efecto si background-attachment es "fixed".
+
+    Sintaxis
+    background-origin: padding-box|border-box|content-box|initial|inherit;
+
+    Valores inmobiliarios
+    > padding-box  -> Valor por defecto. La imagen de fondo comienza desde la esquina superior izquierda del borde padding
+    > border-box   -> La imagen de fondo comienza en la esquina superior izquierda del borde 
+    > content-box  -> La imagen de fondo comienza en la esquina superior izquierda del contenido
+    > initial      -> Establece esta propiedad a su valor por defecto.
+    > inherit      -> Hereda esta propiedad de su elemento padre.
+*/
+
+/*background-position*/
+/*
+    La propiedad background-position establece la posición inicial de una imagen de fondo.
+    Consejo: Por defecto, una imagen de fondo se coloca en la esquina superior izquierda de un elemento, y se repite tanto vertical como horizontalmente.
+
+    Sintaxis CSS
+    background-position: value;
+
+    Valores inmobiliarios
+    
+    Value              Descripcion
+    > left top         Si sólo especifica una palabra clave, el otro valor será "center".
+      left center
+      left bottom
+      right top
+      right center
+      right bottom
+      center top
+      center center
+      center bottom
+
+    > x% y%             El primer valor es la posición horizontal y el segundo la vertical. La esquina superior izquierda es 0% 0%. La esquina inferior derecha es 100% 100%. Si sólo especifica un valor, el otro valor será 50%. El valor por defecto es 0% 0%
+    > xpos ypos         El primer valor es la posición horizontal y el segundo la vertical. La esquina superior izquierda es 0 0. Las unidades pueden ser píxeles (0px 0px) o cualquier otra unidad CSS. Si sólo especifica un valor, el otro valor será 50%. Puede mezclar % y posiciones
+    > initial           Establece esta propiedad a su valor por defecto.
+    > inherit           Hereda esta propiedad de su elemento padre. ejm Establece el color del texto de los elementos <span> en azul, excepto los que están dentro de elementos con class="extra": 
+                                                                        span {
+                                                                            color: blue;
+                                                                        }
+
+                                                                        .extra span {
+                                                                            color: inherit;
+
+*/
+
+/*background-position-x*/
+/*
+    La propiedad background-position-x establece la posición de una imagen de fondo en el eje x.
+    Consejo: Por defecto, una imagen de fondo se coloca en la esquina superior izquierda de un elemento, y se repite tanto vertical como horizontalmente.
+
+    Sintaxis
+    background-position-x: value;
+
+    Valores inmobiliarios
+    > left        -> Posiciona el fondo a la izquierda en el eje x.
+    > right       -> Posiciona el fondo a la derecha en el eje x.
+    > center      -> Posiciona el centro del fondo en el eje x.
+    > x%          -> El lado izquierdo es 0% en el eje x, y el lado derecho es 100%. El valor porcentual se refiere a la anchura del área de posicionamiento del fondo menos la anchura de la imagen de fondo.
+    > xpos        -> Distancia horizontal desde el lado izquierdo. Las unidades pueden ser píxeles (0px) o cualquier otra unidad CSS.
+    > xpos offset -> Sintaxis de dos valores, sólo compatible con Firefox y Safari.
+                        - xpos se establece como "izquierda" o "derecha".
+                        - offset es la distancia horizontal desde la imagen de fondo y el lado "izquierdo" o "derecho" establecido con xpos. Las unidades pueden ser píxeles o cualquier otra unidad CSS.
+    > initial     -> Establece esta propiedad a su valor por defecto.
+    > inherit     -> Hereda esta propiedad de su elemento padre.
+*/
+
+/*background-position-y*/
+/*
+    La propiedad background-position-y establece la posición de una imagen de fondo en el eje y.
+    Consejo: Por defecto, una imagen de fondo se coloca en la esquina superior izquierda de un elemento, y se repite tanto vertical como horizontalmente.
+
+    Sintaxis
+    background-position-y: value;
+
+    Valores inmobiliarios
+    > top          -> Posiciona la parte superior del fondo en el eje y.
+    > bottom       -> Posiciona el fondo en el eje y.
+    > center       -> Posiciona el centro del fondo en el eje y.
+    > y%           -> Top side is 0% on y-axis, and bottom side is 100%. Percentage value refers to height of background positioning area minus height of background image.
+    > ypos         -> Distancia vertical desde la parte superior. Las unidades pueden ser píxeles (0px) o cualquier otra unidad CSS.
+    > ypos offset  -> Sintaxis de dos valores, sólo compatible con Firefox y Safari.
+                        - ypos se establece en "top" o "bottom".
+                        - offset es la distancia vertical desde la imagen de fondo y el lado "superior" o "inferior" establecido con ypos. Las unidades pueden ser píxeles o cualquier otra unidad CSS.
+    > initial      -> Establece esta propiedad a su valor por defecto.
+    > inherit      -> Hereda esta propiedad de su elemento padre.
+*/
+
+/*background-repeat*/
+/*
+    La propiedad background-repeat establece si/como se repetirá una imagen de fondo.
+    Por defecto, una imagen de fondo se repite tanto vertical como horizontalmente.
+    Consejo: La imagen de fondo se coloca según la propiedad background-position. Si no se especifica background-position, la imagen siempre se coloca en la esquina superior izquierda del elemento.
+
+    Sintaxis
+    background-repeat: repeat|repeat-x|repeat-y|no-repeat|initial|inherit;
+
+    Valores inmobiliarios
+    > repeat     ->  La imagen de fondo se repite tanto vertical como horizontalmente.  La última imagen se recortará si no cabe. Por defecto
+    > repeat-x   ->  La imagen de fondo se repite sólo horizontalmente
+    > repeat-y   ->  La imagen de fondo se repite sólo verticalmente
+    > no-repeat  ->  La imagen de fondo no se repite. La imagen sólo se mostrará una vez
+    > space      ->  La imagen de fondo se repite todo lo posible sin recortes. La primera y la última imagen se fijan a ambos lados del elemento, y los espacios en blanco se distribuyen uniformemente entre las imágenes.
+    > round      ->  La imagen de fondo se repite y se aplasta o estira para rellenar el espacio (sin espacios).
+    > initial    ->  Establece esta propiedad a su valor por defecto.
+    > inherit    ->  Hereda esta propiedad de su elemento padre.
+*/
+
+/*background-size*/
+/*
+    La propiedad background-size especifica el tamaño de las imágenes de fondo.
+    Hay cuatro sintaxis diferentes que puede utilizar con esta propiedad: 
+    > la sintaxis de palabra clave ("auto", "cover" y "contain"), 
+    > la sintaxis de un valor (establece la anchura de la imagen (la altura se convierte en "auto"), 
+    > la sintaxis de dos valores (primer valor: anchura de la imagen, segundo valor: altura) y 
+    > la sintaxis de múltiples fondos (separados con coma).
+
+    Sintaxis
+    background-size: auto|length|cover|contain|initial|inherit;
+
+    > auto        ->  Valor por defecto. La imagen de fondo se muestra en su tamaño original
+    > length      ->  Establece la anchura y la altura de la imagen de fondo. El primer valor fija la anchura, el segundo la altura. Si sólo se da un valor, el segundo se establece en "auto".
+    > percentage  ->  Establece la anchura y la altura de la imagen de fondo en porcentaje del elemento padre. El primer valor fija la anchura, el segundo la altura. Si sólo se da un valor, el segundo se establece en "auto".
+    > cover       ->  Cambiar el tamaño de la imagen de fondo para que cubra todo el contenedor, aunque tenga que estirar la imagen o recortar un poco uno de los bordes.
+    > contain     ->  Cambie el tamaño de la imagen de fondo para asegurarse de que la imagen sea totalmente visible.
+    > initial     ->  Establece esta propiedad en su valor por defecto
+    > inherit     ->  Establece esta propiedad en su valor por defecto
+*/
+
+
+.fondo {
+    /*background-color*/
+    /*
+    La propiedad background-color especifica el color de fondo de un elemento.
+    */
+    background-color: cornflowerblue;
+
+    /*background-image*/
+    /*
+    La propiedad background-image especifica una imagen para usar como fondo de un elemento.
+    Por defecto, la imagen se repite para cubrir todo el elemento.
+    */
+    /*url externo - osea que ya esta en el interner*/
+    background-image: url("https://www.encompasscorporation.com/wp-content/uploads/2015/09/example-background.jpg");
+
+    /*background-position*/
+    background-position: left bottom;
+}
+
+.fondo-interno{
+    /*url local - osea que esta dentro del proyecto*/
+    background-image: url("/multimedia/img/anochecer.jpg");
+    background-position: left bottom;
+}
