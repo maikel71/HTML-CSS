@@ -372,3 +372,414 @@ El parámetro alfa es un número comprendido entre 0,0 (totalmente transparente)
     background-image: url("/multimedia/img/anochecer.jpg");
     background-position: left bottom;
 }
+
+/*-----------------------------------------------------*/
+
+/* TAMAÑOS */
+/*Altura(Height), Anchura(Width) y anchura máxima(Max-width) CSS*/
+/*
+Las propiedades CSS height y width se utilizan para establecer la altura y la anchura de un elemento.
+La propiedad CSS max-width se utiliza para establecer la anchura máxima de un elemento.
+*/
+
+/* CSS Ajuste de altura(height) y anchura(width) */
+/*
+Las propiedades de height y width se utilizan para establecer la altura y la anchura de un elemento.
+Las propiedades de height y width no incluyen el relleno, los bordes ni los márgenes. Establece la altura/anchura del área dentro del relleno(padding), borde(border) y margen(margin) del elemento.
+*/
+
+/*Valores CSS de altura(height) y anchura(width)*/
+/*
+Las propiedades height y width pueden tener los siguientes valores:
+    > auto     -> Esto es por defecto. El navegador calcula la altura y la anchura
+    > length   -> Define la altura/anchura en px, cm, etc.
+    > %        -> Define la altura/anchura en porcentaje del bloque contenedor
+    > initial  -> Establece la altura/anchura a su valor por defecto
+    > inherit  -> La altura/anchura se heredará de su valor padre
+*/
+
+.ancho {
+    background-color: #BCE784;
+    width: 100px;
+}
+
+.alto {
+    background-color: aquamarine;
+    height: 200px;
+}
+
+/*-----------------------------------------------------*/
+
+/*BORDER*/
+/*
+    Las propiedades de borde(border) CSS permiten especificar el estilo, la anchura y el color del borde de un elemento.
+*/
+
+/* Estilo de borde CSS */
+/*
+    La propiedad border-style especifica qué tipo de borde mostrar.
+
+    Se permiten los siguientes valores:
+    > dotted  ->  Define un borde punteado
+    > dashed  ->  Define un borde discontinuo
+    > solid   ->  Define un borde sólido
+    > double  ->  Define un borde doble
+    > groove  ->  Define un borde acanalado en 3D. El efecto depende del valor del color del borde
+    > ridge   ->  Define un borde 3D estriado. El efecto depende del valor del color del borde
+    > inset   ->  Define un borde recuadrado en 3D. El efecto depende del valor del color del borde
+    > outset  ->  Define un borde exterior 3D. El efecto depende del valor del color del borde
+    > none    ->  No define ningún borde
+    > hidden  ->  Define un borde oculto
+
+    La propiedad border-style puede tener de uno a cuatro valores
+    > top border     -> borde superior
+    > right border   -> borde derecho
+    > bottom border  -> borde inferior
+    > left border    -> borde izquierdo
+
+*/
+
+/* Anchura(width) del borde CSS */
+/*
+    La propiedad border-width especifica la anchura de los cuatro bordes.
+    La anchura puede establecerse como un tamaño específico (en px, pt, cm, em, etc.) o utilizando uno de los tres valores predefinidos: thin(fino), medium(medio) o thick(grueso):
+
+    Anchuras laterales específicas
+
+    La propiedad border-width puede tener de uno a cuatro valores:
+    > top border     -> borde superior
+    > right border   -> borde derecho
+    > bottom border  -> borde inferior
+    > left border    -> borde izquierdo
+
+    Ejemplo
+
+    p.one {
+        border-style: solid;
+        border-width: 5px 20px; /* 5px arriba(top) y abajo(bottom), 20px a los lados 
+    }
+
+    p.two {
+        border-style: solid;
+        border-width: 20px 5px; /* 20px arriba(top) y abajo(bottom), 5px a los lados
+    }
+
+    p.three {
+        border-style: solid;
+        border-width: 25px 10px 4px 35px; /* 25px arriba(top), 10px derecha(right), 4px abajo(bottom) y 35px izquierda(left) 
+    }
+*/
+
+/* Color del borde CSS */
+/*
+    La propiedad border-color se utiliza para establecer el color de los cuatro bordes.
+
+    El color se puede establecer por:
+
+    > name - especifica un nombre de color, como "red"
+    > HEX - especifica un valor HEX, como "#ff0000"
+    > RGB - especifique un valor RGB, como "rgb(255,0,0)"
+    > HSL - especifique un valor HSL, como "hsl(0, 100%, 50%)"
+    > transparente
+
+    Nota: Si no se establece border-color, hereda el color del elemento.
+
+    Colores laterales específicos
+
+    La propiedad border-color puede tener de uno a cuatro valores:
+    > top border     -> borde superior
+    > right border   -> borde derecho
+    > bottom border  -> borde inferior
+    > left border    -> borde izquierdo
+
+    Ejemplo
+
+    p.one {
+        border-style: solid;
+        border-color: red green blue yellow; /* rojo arriba, verde a la derecha, azul abajo y amarillo a la izquierda
+    }
+*/
+
+/* Borde CSS - Propiedad abreviada */
+/*
+    Para acortar el código, también es posible especificar todas las propiedades individuales de los bordes en una sola propiedad.
+    La propiedad borde es una propiedad abreviada para las siguientes propiedades de borde individuales:
+
+    > border-width
+    > border-style (required)
+    > border-color
+
+    Ejemplo
+
+    p {
+        border: 5px solid red;
+    }
+*/
+
+/* Bordes redondeados CSS */
+/*
+    La propiedad border-radius se utiliza para añadir bordes redondeados a un elemento:
+    
+    Ejemplo
+
+    p {
+        border: 2px solid red;
+        border-radius: 5px;
+    }
+*/
+
+/*-----------------------------------------------------*/
+
+/*PADDING*/
+/*
+    El padding se utiliza para crear espacio alrededor del contenido de un elemento, dentro de los bordes definidos.
+    Con CSS, tienes control total sobre el padding. Hay propiedades para establecer el padding para cada lado de un elemento (top(superior), right(derecho), bottom(inferior), y left(izquierdo)
+*/
+
+/* Padding - Lados individuales */
+/*
+    CSS tiene propiedades para especificar el padding de cada lado de un elemento:
+    > padding-top
+    > padding-right
+    > padding-bottom
+    > padding-left
+
+    Todas las propiedades de padding pueden tener los siguientes valores:
+    > length   ->  especifica un padding en px, pt, cm, etc.
+    > %        ->  especifica un padding en % de la anchura del elemento contenedor
+    > inherit  ->  especifica que el padding debe heredarse del elemento padre
+
+    Nota: No se admiten valores negativos.
+
+    Ejemplo
+    Establece un relleno diferente para los cuatro lados de un elemento <div>:
+
+    div {
+        padding-top: 50px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+        padding-left: 80px;
+    }
+*/
+
+/* Padding - Propiedad taquigráfica */
+/*
+    Para acortar el código, es posible especificar todas las propiedades de relleno en una sola propiedad.
+    La propiedad padding es una propiedad abreviada para las siguientes propiedades individuales de relleno:
+
+    > padding-right
+    > padding-top
+    > padding-bottom
+    > padding-left
+
+    Así es como funciona:
+
+    Si la propiedad padding tiene cuatro valores:
+    > padding: 25px 50px 75px 100px;
+        - top padding es de 25px
+        - right padding es de 50px
+        - bottom padding es de 75px
+        - left padding es de 100px
+
+    Ejemplo
+    Utilice la propiedad abreviada padding con cuatro valores:
+    div {
+        padding: 25px 50px 75px 100px;
+    }
+
+    Si la propiedad padding tiene tres valores:
+
+    >padding: 25px 50px 75px;
+        - top padding es de 25px
+        - right y left paddings son de 50px
+        - bottom padding es de 75px
+    
+    Ejemplo
+    Utilice la propiedad abreviada padding con tres valores:
+    div {
+        padding: 25px 50px 75px;
+    }
+
+    Si la propiedad padding tiene dos valores:
+    > padding: 25px 50px;
+        - top y bottom paddings son de 25px
+        - right y left paddings son de 50px
+    
+    Ejemplo
+    Utilice la propiedad abreviada padding con dos valores:
+    div {
+        padding: 25px 50px;
+    }
+
+    Si la propiedad padding tiene un valor:
+    >padding: 25px;
+        - los cuatro paddings son de 25px
+
+    Ejemplo
+    Utilice la propiedad abreviada padding con un valor:
+    div {
+        padding: 25px;
+    }
+*/
+
+/* Relleno(padding) y anchura(width) de los elementos */
+/*
+    La propiedad CSS width especifica la anchura del área de contenido del elemento. El área de contenido es la porción dentro del padding, border y margin de un elemento (el modelo de caja).
+    Por lo tanto, si un elemento tiene una anchura(width) especificada, el relleno(padding) añadido a ese elemento se sumará a la anchura total del elemento. Esto es a menudo un resultado indeseable.
+
+    Ejemplo
+    Aquí, el elemento <div> tiene una anchura de 300px. Sin embargo, la anchura real del elemento <div> será de 350px (300px + 25px de relleno izquierdo + 25px de relleno derecho):
+
+    div {
+        width: 300px;
+        padding: 25px;
+    }
+
+    Para mantener la anchura en 300px, sin importar la cantidad de relleno(padding), puede utilizar la propiedad box-sizing. Esto hace que el elemento mantenga su anchura real; si aumenta el relleno(padding), el espacio de contenido disponible disminuirá.
+
+    Ejemplo
+    Utilice la propiedad box-sizing para mantener la anchura en 300px, sin importar la cantidad de relleno(padding):
+    div {
+        width: 300px;
+        padding: 25px;
+        box-sizing: border-box;
+    }
+*/
+
+/*-----------------------------------------------------*/
+
+/* MARGIN */
+/*
+    Las propiedades de marrgin CSS se utilizan para crear espacio alrededor de los elementos, fuera de los bordes definidos.
+    Con CSS, tienes control total sobre los márgenes. Hay propiedades para establecer el margen para cada lado de un elemento (top(superior), right(derecho), bottom(inferior) y left(izquierdo)).
+*/
+
+/* Margin - Lados individuales */
+/* 
+    CSS tiene propiedades para especificar el margen de cada lado de un elemento:
+    > margin-top
+    > margin-right
+    > margin-bottom
+    > margin-left
+
+    Todas las propiedades de margen pueden tener los siguientes valores:
+    > auto     ->  el navegador calcula el margen
+    > length   ->  especifica un margen en px, pt, cm, etc.
+    > %        ->  especifica un margen en % de la anchura del elemento contenedor
+    > inherit  ->  especifica que el margen debe heredarse del elemento padre
+
+    Consejo: Se admiten valores negativos.
+
+    Ejemplo
+    Establecer márgenes diferentes para los cuatro lados de un elemento <p>:
+
+    p {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 150px;
+        margin-left: 80px;
+    }
+*/
+
+/* Margin - Propiedad taquigráfica */
+/*
+    Para acortar el código, es posible especificar todas las propiedades de margen en una sola propiedad.
+    La propiedad margin es una propiedad abreviada para las siguientes propiedades de margen individuales:
+
+    > margin-top
+    > margin-right
+    > margin-bottom
+    > margin-left
+
+    Así es como funciona:
+
+    Si la propiedad margin tiene cuatro valores:
+    > margin: 25px 50px 75px 100px;
+        - top margin is 25px
+        - right margin is 50px
+        - bottom margin is 75px
+        - left margin is 100px
+    
+    Ejemplo
+    Utilice la propiedad abreviada margin con cuatro valores:
+
+    p {
+        margin: 25px 50px 75px 100px;
+    }
+
+    Si la propiedad margin tiene tres valores:
+    > margin: 25px 50px 75px;
+        - top margin es 25px
+        - right y left margins son de 50px
+        - bottom margin es 75px
+    
+    Ejemplo
+    Utilice la propiedad abreviada margin con tres valores:
+
+    p {
+        margin: 25px 50px 75px;
+    }
+
+    Si la propiedad margin tiene dos valores:
+    > margin: 25px 50px;
+        - top y bottom margins son de 25px
+        - right y left margins son de 50px
+
+    Ejemplo
+    Utilice la propiedad abreviada margin con dos valores:
+
+    p {
+        margin: 25px 50px;
+    }
+
+    Si la propiedad margin tiene un valor:
+    > margin: 25px;
+        los cuatro márgenes son 25px
+
+    Ejemplo
+    Utilice la propiedad abreviada margin con un valor:
+
+    p {
+        margin: 25px;
+    }
+*/
+
+/* El autovalor(auto Value) */
+/*
+    Puede establecer la propiedad margin en auto para centrar horizontalmente el elemento dentro de su contenedor.
+    El elemento ocupará entonces la anchura especificada, y el espacio restante se dividirá a partes iguales entre los márgenes izquierdo y derecho.
+
+    Ejemplo
+    Utilizar margin: auto:
+
+    div {
+        width: 300px;
+        margin: auto;
+        border: 1px solid red;
+    }
+*/
+
+/* El valor heredado */
+/*
+    Este ejemplo permite que el margen izquierdo del elemento <p class="ex1"> se herede del elemento padre (<div>):
+
+    div {
+        border: 1px solid red;
+        margin-left: 100px;
+    }
+
+    p.ex1 {
+        margin-left: inherit;
+    }
+*/
+
+.tarjeta{
+    border-style: solid;
+    border-color: rgb(150, 150, 150);
+    border-width: 1px;
+    /*border-top: none;*/
+    padding: 10px 20px;
+    /*padding: 10px 20px 30px 40px;*/
+    margin: 10px 20px;
+    /*margin: 10px 20px 30px 40px;*/
+}
