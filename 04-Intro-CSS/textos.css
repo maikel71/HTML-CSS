@@ -1,0 +1,405 @@
+/*FUENTES - FONTS*/
+
+/*-----------------------------------------*/
+/* Font Selection is Important - La selección de fuentes es importante */
+/*
+    Elegir el tipo de letra adecuado influye enormemente en la experiencia de los lectores de un sitio web.
+    El tipo de letra adecuado puede crear una fuerte identidad para su marca.
+    Es importante utilizar un tipo de letra fácil de leer. El tipo de letra añade valor a su texto. También es importante elegir el color y el tamaño de texto correctos para la fuente.
+*/
+
+/* Generic Font Families - Familias tipográficas genéricas*/
+/*
+    En CSS existen cinco familias de fuentes genéricas:
+
+    1. Las fuentes con gracias(Serif) tienen un pequeño trazo en los bordes de cada letra. Dan sensación de formalidad y elegancia.
+    2. Las fuentes sin gracias(Sans-serif) tienen líneas limpias (sin pequeños trazos). Crean un aspecto moderno y minimalista.
+    3. Fuentes monoespaciadas(Monospace): todas las letras tienen la misma anchura fija. Crean un aspecto mecánico.
+    4. Las fuentes cursivas(Cursive) imitan la escritura humana.
+    5. Las fuentes de fantasía(Fantasy) son decorativas y divertidas.
+
+    Todos los nombres de fuentes pertenecen a una de las familias de fuentes genéricas.
+*/
+
+/* The CSS font-family Property - La propiedad font-family de CSS */
+/*
+    En CSS, utilizamos la propiedad font-family para especificar el tipo de letra de un texto.
+
+    Nota: Si el nombre de la fuente es más de una palabra, debe ir entre comillas, como: "Times New Roman".
+
+    Sugerencia: La propiedad font-family debería contener varios nombres de fuentes como sistema "alternativo", para asegurar la máxima compatibilidad entre navegadores/sistemas operativos. Empiece con la fuente que desee, y termine con una familia genérica (para permitir al navegador elegir una fuente similar en la familia genérica, si no hay otras fuentes disponibles). Los nombres de las fuentes deben ir separados por comas.
+
+    Ejemplo
+    Especifique algunos tipos de letra diferentes para tres párrafos:
+
+    .p1 {
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    .p2 {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .p3 {
+        font-family: "Lucida Console", "Courier New", monospace;
+    }
+*/
+
+/*-----------------------------------------*/
+/* CSS Web Safe Fonts - Fuentes CSS seguras para la Web */
+/* What are Web Safe Fonts? - ¿Qué son las fuentes seguras para la web? */
+/*
+    Las fuentes web seguras son fuentes que se instalan universalmente en todos los navegadores y dispositivos.
+*/
+
+/*Fallback Fonts - Fuentes de reserva*/
+/*
+    Sin embargo, no existen fuentes 100% seguras para la web. Siempre existe la posibilidad de que una fuente no se encuentre o no se instale correctamente.
+    Por lo tanto, es muy importante utilizar siempre fuentes de reserva.
+    Esto significa que debe añadir una lista de "fuentes de reserva" similares en la propiedad font-family. Si la primera fuente no funciona, el navegador probará con la siguiente, y la siguiente, y así sucesivamente. Termine siempre la lista con un nombre genérico de familia de fuentes.
+
+    Ejemplo
+    Aquí hay tres tipos de fuente: Tahoma, Verdana y sans-serif. La segunda y la tercera son fuentes de reserva, por si no se encuentra la primera.
+
+    p {
+        font-family: Tahoma, Verdana, sans-serif;
+    }
+*/
+
+/*Best Web Safe Fonts for HTML and CSS - Las mejores fuentes seguras para HTML y CSS*/
+/*
+    La siguiente lista son las mejores fuentes web seguras para HTML y CSS:
+
+    > Arial (sans-serif)
+    > Verdana (sans-serif)
+    > Tahoma (sans-serif)
+    > Trebuchet MS (sans-serif)
+    > Times New Roman (serif)
+    > Georgia (serif)
+    > Garamond (serif)
+    > Courier New (monospace)
+    > Brush Script MT (cursive)
+
+    Nota: Antes de publicar su sitio web, compruebe siempre cómo se ven sus fuentes en los distintos navegadores y dispositivos, y utilice siempre fuentes de reserva(Font Fallbacks).
+*/
+
+/*-----------------------------------------*/
+/*CSS Font Fallbacks*/
+/* Commonly Used Font Fallbacks - Fuentes utilizadas habitualmente */
+/* 
+    A continuación se muestran algunas de las fuentes de reserva más utilizadas, organizadas por las 5 familias de fuentes genéricas: 
+
+    > Serif
+    > Sans-serif
+    > Monospace
+    > Cursive
+    > Fantasy
+*/
+
+/*-----------------------------------------*/
+/* CSS Font Style - Estilo de fuente CSS */
+
+/* Font Style - Estilo de fuente */
+/*
+    La propiedad font-style se utiliza sobre todo para especificar texto en cursiva.
+    Esta propiedad tiene tres valores:
+    normal  ->  El texto se muestra normalmente
+    italic  ->  El texto aparece en cursiva
+    oblique ->  El texto está "inclinado" (la oblicua es muy parecida a la cursiva, pero con menos apoyo)
+
+    Ejemplo
+
+    p.normal {
+        font-style: normal;
+    }
+
+    p.italic {
+        font-style: italic;
+    }
+
+    p.oblique {
+        font-style: oblique;
+    }
+*/
+
+/* Font Weight - Peso de la fuente */
+/*
+    La propiedad font-weight especifica el peso de una fuente:
+
+    Ejemplo
+    p.normal {
+        font-weight: normal;
+    }
+
+    p.thick {
+        font-weight: bold;
+    }
+*/
+
+/* Font Variant - Variante de fuente */
+/*
+    La propiedad font-variant especifica si un texto debe mostrarse o no en minúsculas.
+    En una fuente versalita, todas las letras minúsculas se convierten en mayúsculas. Sin embargo, las letras mayúsculas convertidas aparecen en un tamaño de fuente más pequeño que las letras mayúsculas originales del texto.
+
+    Ejemplo
+    p.normal {
+        font-variant: normal;
+    }
+
+    p.small {
+        font-variant: small-caps;
+    }
+*/
+
+/*-----------------------------------------*/
+/* CSS Font Size - Tamaño de fuente CSS */
+
+/* Font Size - Tamaño de letra */
+/*
+    La propiedad font-size establece el tamaño del texto.
+    Poder manejar el tamaño del texto es importante en el diseño web. Sin embargo, no debe utilizar los ajustes de tamaño de fuente para hacer que los párrafos parezcan títulos, o que los títulos parezcan párrafos.
+    Utilice siempre las etiquetas HTML adecuadas, como <h1> - <h6> para los encabezados y <p> para los párrafos.
+    El valor del tamaño de la fuente puede ser absoluto o relativo.
+
+    Tamaño absoluto:
+        > Establece el texto a un tamaño especificado
+        > No permite al usuario cambiar el tamaño del texto en todos los navegadores (perjudicial para la accesibilidad).
+        > El tamaño absoluto es útil cuando se conoce el tamaño físico de la salida
+    
+    Tamaño relativo:
+        > Establece el tamaño en relación con los elementos circundantes
+        > Permite al usuario cambiar el tamaño del texto en los navegadores.
+
+    Nota: Si no especifica un tamaño de fuente, el tamaño por defecto para el texto normal, como los párrafos, es 16px (16px=1em).
+*/
+
+/* Set Font Size With Pixels - Definir tamaño de fuente con píxeles */
+/*
+    La configuración del tamaño del texto con píxeles le ofrece un control total sobre el tamaño del texto:
+
+    Ejempo
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    Consejo: Si utiliza píxeles, puede seguir utilizando la herramienta de zoom para cambiar el tamaño de toda la página.
+*/
+
+/* Set Font Size With Em - Establecer tamaño de fuente con Em */
+/*
+    Para que los usuarios puedan cambiar el tamaño del texto (en el menú del navegador), muchos desarrolladores utilizan em en lugar de píxeles.
+    1em es igual al tamaño actual de la fuente. El tamaño de texto por defecto en los navegadores es 16px. Por lo tanto, el tamaño por defecto de 1em es 16px.
+    El tamaño se puede calcular de píxeles a em utilizando esta fórmula: pixels/16=em
+
+    Ejemplo
+    h1 {
+        font-size: 2.5em; /* 40px/16=2.5em 
+    }
+
+    h2 {
+        font-size: 1.875em; /* 30px/16=1.875em 
+    }
+
+    p {
+        font-size: 0.875em; /* 14px/16=0.875em 
+    }
+
+    En el ejemplo anterior, el tamaño del texto en em es el mismo que en el ejemplo anterior en píxeles. Sin embargo, con el tamaño em es posible ajustar el tamaño del texto en todos los navegadores.
+    Desgraciadamente, sigue habiendo un problema con las versiones más antiguas de Internet Explorer. El texto se hace más grande de lo que debería cuando se hace más grande, y más pequeño de lo que debería cuando se hace más pequeño.
+*/
+
+/* Use a Combination of Percent and Em - Utilice una combinación de porcentaje y em */
+/*
+    La solución que funciona en todos los navegadores, es establecer un tamaño de fuente por defecto en porcentaje para el elemento <body>:
+    
+    Ejemplo
+    body {
+        font-size: 100%;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.875em;
+    }
+
+    p {
+        font-size: 0.875em;
+    }
+
+    Ahora nuestro código funciona de maravilla. Muestra el mismo tamaño de texto en todos los navegadores y permite que todos los navegadores amplíen o redimensionen el texto.
+*/
+
+/* Responsive Font Size - Tamaño de fuente adaptable */
+/*
+    El tamaño del texto puede establecerse con una unidad vw, que significa el "viewport width(ancho de la ventana gráfica)".
+    De este modo, el tamaño del texto se ajustará al tamaño de la ventana del navegador
+
+    Ejemplo
+    <h1 style="font-size:10vw">Hello World</h1>
+
+    Viewport es el tamaño de la ventana del navegador. 1vw = 1% de la anchura de la ventana gráfica. Si la ventana tiene 50 cm de ancho, 1vw equivale a 0,5 cm.
+*/
+
+/*-----------------------------------------*/
+/* CSS Google Fonts */
+/* Google Fonts - Fuentes Google*/
+/*
+    Si no desea utilizar ninguna de las fuentes estándar en HTML, puede utilizar Google Fonts.
+    El uso de Google Fonts es gratuito y dispone de más de 1000 fuentes entre las que elegir.
+*/
+
+/* How To Use Google Fonts - Cómo utilizar Google Fonts */
+/*
+    Basta con añadir un enlace especial a la hoja de estilo en la sección <head> y hacer referencia a la fuente en el CSS.
+    
+    Ejemplo
+    1. En este caso, queremos utilizar una fuente llamada "Sofia" de Google Fonts:
+
+    <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+    body {
+    font-family: "Sofia", sans-serif;
+    }
+    </style>
+    </head>
+
+    Nota: Cuando especifique una fuente en CSS, indique siempre al menos una fuente alternativa (para evitar comportamientos inesperados). Por lo tanto, también aquí debe añadir una familia de fuentes genérica (como serif o sans-serif) al final de la lista.
+*/
+
+/* Use Multiple Google Fonts -Utilizar varias fuentes de Google Fonts */
+/*
+    Para utilizar varias fuentes de Google, basta con separar los nombres de las fuentes con un carácter de tubo (|), como se indica a continuación:
+
+    Ejemplo
+    Solicitar varios tipos de letra:
+
+    <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <style>
+    h1.a {font-family: "Audiowide", sans-serif;}
+    h1.b {font-family: "Sofia", sans-serif;}
+    h1.c {font-family: "Trirong", serif;}
+    </style>
+    </head>
+
+    Nota: ¡Solicitar múltiples fuentes puede ralentizar tus páginas web! Así que tenga cuidado.
+*/
+
+/* Styling Google Fonts - Estilo de Google Fonts */
+/*
+    Por supuesto, puedes modificar el estilo de Google Fonts a tu gusto con CSS.
+
+    Ejemplo
+    Estilizar la fuente "Sofía":
+
+    <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+    body {
+    font-family: "Sofia", sans-serif;
+    font-size: 30px;
+    text-shadow: 3px 3px 3px #ababab;
+    }
+    </style>
+    </head>
+*/
+
+/* Enabling Font Effects - Activar efectos de fuente */
+/*
+    Google también ha habilitado diferentes efectos de fuente que puedes utilizar.
+    En primer lugar, añada effect=effectname a la API de Google y, a continuación, añada un nombre de clase especial al elemento que va a utilizar el efecto especial. El nombre de la clase siempre empieza por font-effect- y termina con effectname.
+
+    Ejemplo
+    Añada el efecto de fuego a la fuente "Sofía":
+
+    <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+    <style>
+    body {
+    font-family: "Sofia", sans-serif;
+    font-size: 30px;
+    }
+    </style>
+    </head>
+    <body>
+
+    <h1 class="font-effect-fire">Sofia on Fire</h1>
+
+    </body>
+
+    ------------------------------------------------------------------------------------------------
+    Para solicitar varios efectos de fuente, basta con separar los nombres de los efectos con un carácter de tubo (|), como se indica a continuación:
+
+    Ejemplo
+    Añadir múltiples efectos a la fuente "Sofía":
+
+    <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+    <style>
+    body {
+    font-family: "Sofia", sans-serif;
+    font-size: 30px;
+    }
+    </style>
+    </head>
+    <body>
+
+    <h1 class="font-effect-neon">Neon Effect</h1>
+    <h1 class="font-effect-outline">Outline Effect</h1>
+    <h1 class="font-effect-emboss">Emboss Effect</h1>
+    <h1 class="font-effect-shadow-multiple">Multiple Shadow Effect</h1>
+
+    </body>
+
+*/
+
+/*-----------------------------------------*/
+/* CSS Font Property */
+
+/* The CSS Font Property - La propiedad CSS Font */
+/*
+    Para acortar el código, también es posible especificar todas las propiedades individuales de la fuente en una sola propiedad.
+    La propiedad font es una propiedad abreviada para:
+
+    > font-style
+    > font-variant
+    > font-weight
+    > font-size/line-height
+    > font-family
+
+    Nota: Los valores font-size y font-family son obligatorios. Si falta alguno de los otros valores, se utilizará su valor por defecto.
+
+    Ejemplo
+    Utilice font para establecer varias propiedades de fuente en una sola declaración:
+
+    p.a {
+        font: 20px Arial, sans-serif;
+    }
+
+    p.b {
+        font: italic small-caps bold 12px/30px Georgia, serif;
+    }
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+html {
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: larger;
+    font-weight: 300;
+    font-style: italic;
+}
