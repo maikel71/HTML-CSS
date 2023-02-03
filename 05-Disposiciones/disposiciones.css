@@ -1,0 +1,196 @@
+/* CSS Layout - The display Property - Diseño CSS - La propiedad display */
+/*
+    La propiedad display es la propiedad CSS más importante para controlar el diseño.
+*/
+
+/* The display Property - La Propiedad display */
+/*
+    La propiedad display especifica si/como se muestra un elemento.
+    Cada elemento HTML tiene un valor de display por defecto dependiendo del tipo de elemento que sea. El valor de display por defecto para la mayoría de los elementos es block o inline.
+*/
+
+/* Block-level Elements - Elementos a nivel de bloque */
+/*
+    Un elemento a nivel de bloque(block-level) comienza siempre en una nueva línea y ocupa todo el ancho disponible (se extiende a izquierda y derecha todo lo que puede).
+    El elemento <div> es un elemento de nivel de bloque.
+
+    Ejemplos de elementos a nivel de bloque:
+    -> <div>
+    -> <h1> - <h6>
+    -> <p>
+    -> <form>
+    -> <header>
+    -> <footer>
+    -> <section>
+
+*/
+
+/* Inline Elements - Elementos en línea */
+/*
+    Un elemento en línea no empieza en una nueva línea y sólo ocupa el ancho necesario.
+    Este es un elemento <span> en línea dentro de un párrafo.
+
+    Ejemplos de elementos en línea:
+    -> <span>
+    -> <a>
+    -> <img>
+*/
+
+/* Display: none; - Visualización: ninguna; */
+/*
+    display: none; se utiliza habitualmente con JavaScript para ocultar y mostrar elementos sin necesidad de borrarlos y volver a crearlos.
+    El elemento <script> utiliza display: none; por defecto.
+*/
+
+/* Override The Default Display Value - Anular el valor de visualización por defecto */
+/*
+    Como se ha mencionado, cada elemento tiene un valor de display por defecto. Sin embargo, puede anularlo.
+    Cambiar un elemento en línea(inline) por un elemento de bloque(block), o viceversa, puede ser útil para hacer que la página tenga un aspecto específico y siga cumpliendo los estándares web.
+
+    Un ejemplo común es hacer elementos <li> en línea para menús horizontales:
+
+    li {
+        display: inline;
+    }
+
+    Nota: Establecer la propiedad display de un elemento sólo cambia cómo se muestra el elemento, NO qué tipo de elemento es. Así, un elemento en línea con display: block; no puede tener otros elementos de bloque en su interior.
+
+    El siguiente ejemplo muestra elementos <span> como elementos de bloque:
+
+    span {
+        display: block;
+    }
+
+    El siguiente ejemplo muestra elementos <a> como elementos de bloque:
+
+    a {
+        display: block;
+    }
+*/
+
+/* Hide an Element - display:none or visibility:hidden? - Ocultar un elemento - display:none o visibility:hidden? */
+/*
+    Para ocultar un elemento, establezca la propiedad display en none. El elemento se ocultará y la página se mostrará como si no existiera:
+
+    Ejemplo
+    h1.hidden {
+        display: none
+    }
+
+    visibility:hidden; también oculta un elemento.
+    Sin embargo, el elemento seguirá ocupando el mismo espacio que antes. El elemento estará oculto, pero seguirá afectando al diseño:
+
+    Ejemplo
+    h1.hidden {
+        display: hidden
+    }
+*/
+
+/*-----------------------------------------*/
+/* CSS display Property */
+
+/* Definition and Usage - Definición y uso */
+/*
+    La propiedad display especifica el comportamiento de visualización (el tipo de cuadro de representación) de un elemento.
+    En HTML, el valor predeterminado de la propiedad display se toma de las especificaciones HTML o de la hoja de estilo predeterminada del navegador/usuario. En XML, el valor predeterminado es inline, incluidos los elementos SVG.
+*/
+
+/* CSS Syntax - Sintaxis CSS */
+/*
+    display: value;
+*/
+
+/* Property Values - Valores inmobiliarios */
+/*
+    inline              ->   Muestra un elemento como un elemento en línea (como <span>). Las propiedades de altura y anchura no tendrán ningún efecto
+    block               ->   Muestra un elemento como elemento de bloque (como <p>). Comienza en una nueva línea y ocupa todo el ancho
+    contents            ->   Hace desaparecer el contenedor, convirtiendo los elementos hijos en hijos del elemento del siguiente nivel superior en el DOM.
+    flex                ->   Muestra un elemento como contenedor flexible a nivel de bloque
+    grid                ->   Muestra un elemento como contenedor de cuadrícula a nivel de bloque
+    inline-block        ->   Muestra un elemento como contenedor de bloque en línea. El elemento en sí se formatea como un elemento en línea, pero puede aplicar valores de altura y anchura
+    inline-flex	        ->   Muestra un elemento como contenedor flexible de nivel inline
+    inline-grid         ->   Muestra un elemento como contenedor de rejilla a nivel de línea
+    inline-table        ->   El elemento se muestra como una tabla en línea
+    list-item           ->   Que el elemento se comporte como un elemento <li>.
+    run-in              ->   Muestra un elemento en bloque o en línea, según el contexto
+    table               ->   Que el elemento se comporte como un elemento <table>.
+    table-caption       ->   Que el elemento se comporte como un elemento <caption>.
+    table-column-group  ->   Que el elemento se comporte como un elemento <colgroup>.
+    table-header-group  ->   Que el elemento se comporte como un elemento <thead>.
+    table-footer-group  ->   Que el elemento se comporte como un elemento <tfoot>.
+    table-row-group     ->   Que el elemento se comporte como un elemento <tbody>.
+    table-cell          ->   Que el elemento se comporte como un elemento <td>.
+    table-column        ->   Que el elemento se comporte como un elemento <col>.
+    table-row           ->   Que el elemento se comporte como un elemento <tr>.
+    none                ->   El elemento se elimina por completo
+    initial             ->   Establece esta propiedad a su valor por defecto.
+    inherit             ->   Hereda esta propiedad de su elemento padre.
+*/
+
+/*-----------------------------------------*/
+/* CSS Layout - float and clear - Diseño CSS - float y clear */
+/*
+    La propiedad CSS float especifica cómo debe flotar un elemento.
+    La propiedad CSS clear especifica qué elementos pueden flotar junto al elemento clear y en qué lado.
+*/
+
+/* The float Property - La propiedad float */
+/*
+    La propiedad float se utiliza para posicionar y dar formato al contenido, por ejemplo, dejar que una imagen flote a la izquierda del texto en un contenedor.
+    La propiedad float puede tener uno de los siguientes valores:
+
+    left     ->  El elemento flota a la izquierda de su contenedor
+    right    ->  El elemento flota a la derecha de su contenedor
+    none     ->  El elemento no flota (se mostrará justo donde aparece en el texto). Por defecto
+    inherit  ->  El elemento hereda el valor float de su padre
+
+    En su uso más simple, la propiedad float puede utilizarse para envolver texto alrededor de imágenes.
+*/
+
+/*-----------------------------------------*/
+/* CSS float Property */
+/* Definition and Usage - Definición y uso */
+/*
+    La propiedad float especifica si un elemento debe flotar a la izquierda(left), a la derecha(right) o no flotar.
+    Nota: ¡Los elementos absolutamente posicionados ignoran la propiedad float!
+    Nota: Los elementos próximos a un elemento flotante fluirán a su alrededor. Para evitarlo, utilice la propiedad clear o el hack clearfix
+*/
+
+/* CSS Syntax - Sintaxis CSS */
+/*
+    float: none|left|right|initial|inherit;
+*/
+
+/* Property Values - Valores inmobiliarios */
+/*
+    none      ->  El elemento no flota, (se mostrará justo donde aparece en el texto). Esto es por defecto
+    left      ->  El elemento flota a la izquierda de su contenedor
+    right     ->  El elemento flota a la derecha de su contenedor
+    initial   ->  Establece esta propiedad a su valor por defecto.
+    inherit   ->  Hereda esta propiedad de su elemento padre.
+*/
+
+.div-1, .div-2 {
+    background-color: red;
+    /* display: block; POR DEFECTO - div tiene display block */
+}
+
+.span-1{
+    background-color: aquamarine;
+    /* display: inline; POR DEFECTO - span tiene display inline*/
+    /* height: 500px; */
+    float: right;
+}
+
+.span-2{
+    background-color: aquamarine;
+    /* display: inline; POR DEFECTO - span tiene display inline*/
+    /* height: 500px; */
+    float: left;
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
