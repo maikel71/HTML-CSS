@@ -1,0 +1,114 @@
+/* CSS Layout - Overflow - Diseño CSS - Desbordamiento */
+/*
+    La propiedad overflow de CSS controla lo que sucede con el contenido que es demasiado grande para caber en un área.
+*/
+
+/* CSS Overflow */
+/*
+    La propiedad overflow especifica si se recorta el contenido o se añaden barras de desplazamiento cuando el contenido de un elemento es demasiado grande para caber en el área especificada.
+    La propiedad overflow tiene los siguientes valores:
+    > visible   ->   Por defecto. El desbordamiento no se recorta. El contenido se muestra fuera de la caja del elemento.
+    > hidden    ->   El overflow se recorta, y el resto del contenido será invisible
+    > scroll    ->   El overflow se recorta y se añade una barra de desplazamiento para ver el resto del contenido.
+    > auto      ->   Similar a scroll, pero añade barras de desplazamiento sólo cuando es necesario
+
+    Nota: La propiedad overflow sólo funciona para elementos de bloque con una altura especificada.
+    Nota: En OS X Lion (en Mac), las barras de desplazamiento están ocultas por defecto y sólo se muestran cuando se están utilizando (aunque esté activada la propiedad "overflow:scroll").
+*/
+
+/* overflow: hidden */
+/*
+    Con el valor hidden, se recorta el desbordamiento y se oculta el resto del contenido
+
+    Ejemplo
+    div {
+        overflow: hidden;
+    }
+*/
+.contenedor-hidden {
+    background-color: bisque;
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    overflow: hidden;
+}
+
+/* overflow: scroll */
+/*
+    Estableciendo el valor scroll, el desbordamiento(overflow) se recorta y se añade una barra de desplazamiento para desplazarse dentro de la caja. Tenga en cuenta que esto añadirá una barra de desplazamiento tanto horizontal como verticalmente (aunque no la necesite)
+
+    Ejemplo
+    div {
+        overflow: scroll;
+    }
+*/
+.contenedor-scroll {
+    margin: 10px 8px;
+    background-color: bisque;
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    overflow: scroll;
+}
+
+/* overflow: visible */
+/*
+    Por defecto, el overflow es visible, lo que significa que no está recortado y se renderiza fuera de la caja del elemento
+
+    Ejemplo
+    div {
+        width: 200px;
+        height: 65px;
+        background-color: coral;
+        overflow: visible;
+    }
+*/
+.contenedor-visible {
+    margin: 10px 8px;
+    background-color: bisque;
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    overflow: visible;
+}
+
+/* overflow: auto */
+/*
+    El valor auto es similar a scroll, pero añade barras de desplazamiento sólo cuando es necesario
+
+    Ejemplo
+    div {
+        overflow: auto;
+    }
+*/
+.contenedor-auto {
+    margin: 10px 8px;
+    background-color: bisque;
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    overflow: auto;
+}
+
+/* overflow-x and overflow-y */
+/*
+    Las propiedades overflow-x y overflow-y especifican si se cambia el desbordamiento del contenido sólo horizontal o verticalmente (o ambos):
+
+    overflow-x especifica qué hacer con los bordes izquierdo/derecho del contenido.
+    overflow-y especifica qué hacer con los bordes superior/inferior del contenido.
+
+    Ejemplo
+    div {
+        overflow-x: hidden; /* Ocultar la barra de desplazamiento horizontal
+        overflow-y: scroll; /* Añadir barra de desplazamiento vertical
+    }
+*/
+.contenedor-scroll-x {
+    margin: 10px 8px;
+    background-color: bisque;
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
