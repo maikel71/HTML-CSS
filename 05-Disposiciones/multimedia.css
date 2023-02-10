@@ -1,0 +1,168 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+/* CSS Opacity / Transparency - CSS Opacidad / Transparencia */
+/*
+    La propiedad opacity especifica la opacidad/transparencia de un elemento.
+*/
+/* Transparent Image - Imagen transparente */
+/* 
+    La propiedad opacidad puede tomar un valor de 0,0 - 1,0. Cuanto menor sea el valor, más transparente
+
+    Ejemplo
+    img {
+        opacity: 0.5;
+    }
+*/
+.imagen-principal{
+    width: 100vw;
+    opacity: 0.8;
+}
+
+/* CSS :hover Selector - CSS: Selector hover */
+
+/* Definition and Usage - Definición y uso */
+/*
+    El selector :hover se utiliza para seleccionar elementos cuando se pasa el ratón por encima de ellos.
+
+    Consejo: El selector :hover puede utilizarse en todos los elementos, no sólo en los enlaces
+    Sugerencia: utilice el selector :link para dar estilo a los enlaces a páginas no visitadas, el selector :visited para dar estilo a los enlaces a páginas visitadas y el selector :active para dar estilo al enlace activo.
+    Nota: :hover DEBE ir después de :link y :visited (si están presentes) en la definición CSS, para ser efectivo.
+*/
+
+/* Transparent Hover Effect - Efecto Hover transparente */
+/*
+    La propiedad opacity se utiliza a menudo junto con el selector :hover para cambiar la opacidad al pasar el ratón por encima
+    
+    Ejemplo
+    img {
+        opacity: 0.5;
+    }
+
+    img:hover {
+        opacity: 1.0;
+    }
+*/
+.imagen-principal:hover{
+    opacity: 1;
+}
+
+/* CSS gap Property - Propiedad CSS gap */
+/* Definition and Usage - Definición y uso */
+/*
+    La propiedad gap define el tamaño del espacio entre las filas y entre las columnas en un diseño flexbox, grid o multi-column. Es una abreviatura de las siguientes propiedades:
+    > row-gap
+    > colum-gap
+
+    Nota: La propiedad gap se conocía anteriormente como grid-gap.
+
+    Ejemplo
+    Ajuste el espacio entre filas y entre columnas a 50px:
+
+    .grid-container {
+        gap: 50px;
+    }
+*/
+
+/* More Examples - Más ejemplos */
+/* Grid layout - Disposición de la cuadrícula */
+/*
+    Ajuste el espacio entre filas a 20px, y las columnas a 50px en un diseño de cuadrícula(grid):
+
+    #grid-container {
+        display: grid;
+        gap: 20px 50px;
+    }
+*/
+
+/* Flexbox layout - Diseño Flexbox*/
+/*
+    Ajuste el espacio entre filas a 20px, y las columnas a 70px en un diseño flexbox:
+
+    #flex-container {
+        display: flex;
+        gap: 20px 70px;
+    }
+*/
+
+/* Multi-column layout - Disposición en varias columnas */
+/*
+    Ajuste el espacio entre las columnas a 50px en un diseño de varias columnas:
+
+    #newspaper {
+        columns: 3;
+        gap: 50px;
+    }
+*/
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.imagen-galeria{
+    width: 149px;
+    height: 90px;
+}
+
+/* CSS cursor Property - Propiedad CSS cursor */
+/* Definition and Usage - Definición y uso */
+/*
+    La propiedad cursor especifica el cursor del ratón que se mostrará al apuntar sobre un elemento.
+*/
+
+/* CSS Syntax - Sintaxis CSS */
+/*
+    cursor: value;
+*/
+
+/* Property Values - Valores inmobiliarios */
+/*
+    > alias           ->   El cursor indica que se va a crear un alias de algo
+    > all-scroll      ->   El cursor indica que algo puede desplazarse en cualquier dirección
+    > auto            ->   Por defecto. El navegador establece un cursor
+    > cell            ->   El cursor indica que se puede seleccionar una celda (o un conjunto de celdas)
+    > col-resize      ->   El cursor indica que la columna se puede redimensionar horizontalmente
+    > context-menu    ->   El cursor indica que hay un menú contextual disponible
+    > copy            ->   El cursor indica que hay algo que copiar
+    > crosshair       ->   El cursor se representa como una cruz
+    > default         ->   El cursor por defecto
+    > e-resize        ->   El cursor indica que un borde de una caja debe desplazarse hacia la derecha (este)	
+    > ew-resize       ->   Indica un cursor de redimensionamiento bidireccional
+    > grab            ->   El cursor indica que se puede coger algo
+    > grabbing        ->   El cursor indica que se puede coger algo
+    > help            ->   El cursor indica que hay ayuda disponible
+    > move            ->   El cursor indica que hay que mover algo
+    > n-resize        ->   El cursor indica que un borde de una casilla debe desplazarse hacia arriba (norte)
+    > ne-resize       ->   El cursor indica que un borde de una casilla debe desplazarse hacia arriba y hacia la derecha (norte/este)
+    > nesw-resize     ->   Indica un cursor de redimensionamiento bidireccional
+    > ns-resize       ->   Indica un cursor de redimensionamiento bidireccional
+    > nw-resize       ->   El cursor indica que un borde de una casilla debe desplazarse hacia arriba y hacia la izquierda (norte/oeste)
+    > nwse-resize     ->   Indica un cursor de redimensionamiento bidireccional
+    > no-drop         ->   El cursor indica que el elemento arrastrado no puede soltarse aquí
+    > none            ->   No se muestra ningún cursor para el elemento
+    > not-allowed     ->   El cursor indica que la acción solicitada no se ejecutará
+    > pointer         ->   El cursor es un puntero e indica un enlace
+    > progress        ->   El cursor indica que el programa está ocupado (en curso)
+    > row-resize      ->   El cursor indica que la fila se puede redimensionar verticalmente
+    > s-resize        ->   El cursor indica que un borde de una caja debe desplazarse hacia abajo (sur)
+    > se-resize       ->   El cursor indica que un borde de una casilla debe desplazarse hacia abajo y hacia la derecha (sur/este)
+    > sw-resize       ->   El cursor indica que un borde de una casilla debe desplazarse hacia abajo y hacia la izquierda (sur/oeste)
+    > text            ->   El cursor indica el texto que puede seleccionarse
+    > URL             ->   Una lista separada por comas de URLs a cursores personalizados. Nota: Especifique siempre un cursor genérico al final de la lista, en caso de que no pueda utilizarse ninguno de los cursores definidos por URL.
+    > vertical-text   ->   El cursor indica el texto vertical que puede seleccionarse
+    > w-resize        ->   El cursor indica que un borde de una caja debe desplazarse hacia la izquierda (oeste)
+    > wait            ->   El cursor indica que el programa está ocupado
+    > zoom-in         ->   El cursor indica que se puede ampliar algo
+    > zoom-out        ->   El cursor indica que algo se puede alejar
+    > initial         ->   Establece esta propiedad en su valor por defecto
+    > inherit         ->   Hereda esta propiedad de su elemento padre
+*/
+.imagen-galeria:hover{
+    opacity: 0.3;
+    cursor: pointer;
+}
+
