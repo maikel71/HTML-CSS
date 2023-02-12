@@ -1,0 +1,48 @@
+*{
+    padding: 0; /* La propiedad padding es la que crea el espacio o área alrededor del contenido de un elemento. */
+    margin: 0; /* La propiedad margin es la capa más externa de un elemento web. En otras palabras, crea un espacio alrededor del elemento.*/
+}
+
+html{
+    font-family: Helvetica; /* La propiedad font-family especifica la fuente(texto) de un elemento. */
+    color: white; /* La propiedad color especifica el color del texto. */
+}
+
+.video{
+    width: 100vw; /* vw -> Relativo al 1% de la anchura de la ventana gráfica*. */
+    height: 100vh; /* vh -> Relativo al 1% de la altura de la ventana gráfica*. */
+    
+    /* CSS object-fit Property */
+    /* Definition and Usage - Definición y uso */
+    /* 
+        La propiedad object-fit se utiliza para especificar cómo debe redimensionarse un <img> o <video> para ajustarse a su contenedor.
+        Esta propiedad indica al contenido que llene el contenedor de varias formas; como "conservar esa relación de aspecto" o "estirarse y ocupar todo el espacio posible".
+    */
+
+    /* CSS Syntax - Sintaxis CSS */
+    /* object-fit: fill|contain|cover|scale-down|none|initial|inherit; */
+
+    /* Property Values - Valores inmobiliarios */
+    /*
+        > fill         ->  Esto es por defecto. El contenido reemplazado se dimensiona para llenar la caja de contenido del elemento. Si es necesario, el objeto se estirará o aplastará para que quepa.
+        > contain      ->  El contenido reemplazado se escala para mantener su relación de aspecto mientras se ajusta a la caja de contenido del elemento.
+        > cover        ->  El contenido reemplazado se dimensiona para mantener su relación de aspecto mientras llena toda la caja de contenido del elemento. El objeto se recortará para ajustarse
+        > none         ->  El contenido sustituido no cambia de tamaño
+        > scale-down   ->  El contenido se dimensiona como si no se hubiera especificado ninguno o contener (resultaría en un tamaño de objeto concreto más pequeño)
+        > initial      ->  Establece esta propiedad en su valor por defecto
+        > inherit      ->  Hereda esta propiedad de su elemento padre
+    */
+    object-fit: cover;
+    position: fixed; /* La propiedad position especifica el tipo de método de posicionamiento utilizado para un elemento (estático(static), relativo(relative), absoluto(absolute), fijo(fixed) o pegajoso(sticky)). - El elemento se posiciona respecto a la ventana del navegador */
+}
+
+.header{
+    height: 100vh; /* La propiedad height establece la altura de un elemento. */
+    position: relative; /* La propiedad position especifica el tipo de método de posicionamiento utilizado para un elemento (estático(static), relativo(relative), absoluto(absolute), fijo(fixed) o pegajoso(sticky)). - El elemento se posiciona en relación con su posición normal, por lo que "left:20px" añade 20 píxeles a la posición IZQUIERDA del elemento. */
+    text-align: center; /* La propiedad text-align especifica la alineación horizontal del texto en un elemento. - Centra el texto */
+    display: flex; /* La propiedad display especifica el comportamiento de visualización (el tipo de cuadro de representación) de un elemento. - Muestra un elemento como contenedor flexible a nivel de bloque */
+    flex-direction: column; /* La propiedad flex-direction especifica la dirección de los elementos flexibles. - Los elementos flexibles se muestran verticalmente, como una columna */
+    gap: 50px; /* La propiedad gap define el tamaño del espacio entre las filas y entre las columnas en el diseño flexbox, grid o multicolumna(multi-column). */
+    justify-content: center; /* La propiedad justify-content alinea los elementos del contenedor flexible cuando los elementos no utilizan todo el espacio disponible en el eje principal (horizontalmente). - Los artículos se colocan en el centro del contenedor */
+    align-items: center; /* La propiedad align-items especifica la alineación por defecto para los elementos dentro de un contenedor flexbox o grid. - Los artículos se colocan en el centro del contenedor */
+}
