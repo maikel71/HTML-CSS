@@ -1,0 +1,19 @@
+/*codigo 1*/
+/* una clase llamada p-contenedor pero es mas legible el siguiente codigo 2 */
+.p-contenedor{
+    color: green;
+}
+
+/* codigo 2 */
+/* dentro del contenedor que afecte a todos los p que esten dentro del contenedor */
+/* pero si queremos ganar mas precision y que esto solo afecte al contenedor que hay dentro de la seccion main podriamos solo decir section.main .contenedor p */
+/* De esta manera podemos anidar todo lo que necesitemos incluso a que esto un poco redundante podemos hacer refencia a esta manera, dentro de body vamos a buscar la seccion main, y dentro de esta seccion vamos a buscar todos los elementos de la clase contenedor y dentro de esos elementos de la clase contenedor que esta dentro de las secciones de clase main dentro del body vamos a buscar todos los p y vamos hacer referencia a esos p's para cambiarles su color  y darles un estilo nuevo */
+/* A esto se le conoce como anidacion de selectores */
+body section.main .contenedor p {
+    color: green;
+}
+
+/* dentro del contenedor quiero hacer refecencia al id boton-contenedor */
+.contenedor #boton-contenedor{
+    background-color: yellow;
+}
