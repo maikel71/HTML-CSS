@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pseudo-Clases</title>
+    <style>
+        /* What are Pseudo-classes? - ¿Qué son las pseudoclases? */
+        /* 
+            Una pseudoclase se utiliza para definir un estado especial de un elemento.
+            Por ejemplo, puede utilizarse para:
+                > Estilizar un elemento cuando el usuario pasa el ratón por encima.
+                > Dar un estilo diferente a los enlaces visitados y no visitados
+                > Estilizar un elemento cuando recibe el foco 
+        */
+
+        /* Syntax - Sintaxis */
+        /*
+            La sintaxis de las pseudoclases:
+
+            selector:pseudo-class {
+                property: value;
+            }
+        */
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .hover {
+            width: 300px;
+            height: 100px;
+            background-color: bisque;
+        }
+
+        /* Pseudo-classes and HTML Classes - Pseudoclases y clases HTML */
+        /*
+            Las pseudoclases pueden combinarse con clases HTML:
+            Cuando pase el ratón por encima del enlace del ejemplo, éste cambiará de color:
+        */
+        .hover:hover {
+            /* Se activa en cuanto el raton pasa por encima */
+            background-color: burlywood;
+        }
+
+        .listado {
+            padding: 15px;
+            background-color: aquamarine;
+        }
+
+        /* CSS - The :first-child Pseudo-class - CSS - La pseudoclase :first-child */
+        /*
+            La pseudoclase :first-child coincide con un elemento especificado que es el primer hijo de otro elemento.
+        */
+        .listado p:first-child {
+            color: white;
+        }
+
+        /* Anchor Pseudo-classes - Pseudoclases de anclaje */
+        /*
+            Los enlaces pueden mostrarse de diferentes maneras:
+        */
+
+        /*enlace no visitado*/
+        a:link {
+
+            color: deeppink;
+        }
+
+        /*enlace visitado*/
+        a:visited {
+            color: crimson;
+        }
+
+        /*pasar el ratón por encima del enlace*/
+        a:hover {
+            color: pink;
+        }
+
+        /*enlace seleccionado*/
+        a:active {
+            color: green;
+        }
+
+        /*Nota: a:hover DEBE ir después de a:link y a:visited en la definición de CSS para que sea efectivo. a:active DEBE ir después de a:hover en la definición de CSS para que sea efectivo. Los nombres de pseudoclases no distinguen entre mayúsculas y minúsculas.*/
+    </style>
+</head>
+
+<body>
+    <div class="hover">
+        <p>
+            Quis quis ipsum laboris et commodo. Ipsum aute laborum cillum mollit exercitation ad nulla sit nostrud
+            cupidatat irure.
+        </p>
+    </div>
+    <div class="listado">
+        <p>Parrafo 1</p>
+        <p>Parrafo 2</p>
+        <p>Parrafo 3</p>
+    </div>
+    <div class="enlaces">
+        <a href="http://google.com" target="_blank">Enlace a Google</a>
+        <a href="http://marca.com" target="_blank">Enlace a Marca</a>
+    </div>
+</body>
+
+</html>
