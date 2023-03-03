@@ -1,0 +1,154 @@
+.contenedor{
+    width: 300px;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+span.frase {
+    font-style: italic;
+}
+
+/* CSS Pseudo-elements - Pseudoelementos CSS */
+/* What are Pseudo-Elements? - ¿Qué son los pseudoelementos? */
+/*
+    Un pseudoelemento CSS se utiliza para aplicar estilo a partes específicas de un elemento.
+    Por ejemplo, se puede utilizar para:
+    > Estilizar la primera letra, o línea, de un elemento
+    > Insertar contenido antes o después del contenido de un elemento.
+*/
+
+/* Syntax - Sintaxis */
+/*
+    La sintaxis de los pseudoelementos:
+    selector::pseudo-element {
+        property: value;
+    }
+*/
+
+/* CSS - The ::before Pseudo-element - CSS - El pseudoelemento ::before */
+/*
+    El pseudoelemento ::before puede utilizarse para insertar algún contenido antes del contenido de un elemento.
+
+    El siguiente ejemplo inserta una imagen antes del contenido de cada elemento <h1>:
+    h1::before {
+        content: url(smiley.gif);
+    }
+*/
+span.frase::before{
+    content: '<<';
+    font-size: xx-small;
+}
+
+/* CSS - The ::after Pseudo-element - CSS - El pseudoelemento ::after */
+/*
+    El pseudoelemento ::after se puede utilizar para insertar algún contenido después del contenido de un elemento.
+
+    El siguiente ejemplo inserta una imagen después del contenido de cada elemento <h1>:
+    h1::after {
+        content: url(smiley.gif);
+    }
+*/
+span.frase::after{
+    content: '>>';
+    font-size: xx-small;
+}
+
+.libro {
+    background-color: bisque;
+    padding: 15px;
+    font-family: Arial;
+}
+
+/* The ::first-letter Pseudo-element - El pseudoelemento ::first-letter */
+/*
+    El pseudoelemento ::first-letter se utiliza para añadir un estilo especial a la primera letra de un texto.
+
+    El siguiente ejemplo da formato a la primera letra del texto en todos los elementos <p>:
+    p::first-letter {
+        color: #ff0000;
+        font-size: xx-large;
+    }
+
+    Nota: El pseudoelemento ::first-letter sólo puede aplicarse a elementos de nivel de bloque.
+
+    Las siguientes propiedades se aplican al pseudoelemento ::first-letter:
+
+    > font properties                             -> propiedades de fuente
+    > color properties                            -> propiedades de color
+    > background properties                       -> propiedades de fondo
+    > margin properties                           -> propiedades de margen
+    > padding properties                          -> propiedades de relleno
+    > border properties                           -> propiedades de borde
+    > text-decoration                             -> decoración del texto
+    > vertical-align (only if "float" is "none")  -> alineación vertical (sólo si "float" es "none")
+    > text-transform                              -> transformación del texto
+    > line-height                                 -> altura de línea
+    > float                                       -> flotante
+    > clear                                       -> borrar
+*/
+.libro p::first-letter {
+    font-size: xx-large;
+}
+
+/* The ::first-line Pseudo-element - Pseudoelemento ::first-line */
+/*
+    El pseudoelemento ::first-line se utiliza para añadir un estilo especial a la primera línea de un texto.
+
+    El siguiente ejemplo da formato a la primera línea del texto en todos los elementos <p>:
+    p::first-line {
+        color: #ff0000;
+        font-variant: small-caps;
+    }
+
+    Nota: El pseudoelemento ::first-line sólo puede aplicarse a elementos de nivel de bloque.
+    Las siguientes propiedades se aplican al pseudoelemento ::first-line:
+    > font properties        ->  propiedades de la fuente
+    > color properties       ->  propiedades del color
+    > background properties  ->  propiedades de fondo
+    > word-spacing           ->  espaciado de palabras
+    > letter-spacing         ->  interlineado
+    > text-decoration        ->  decoración del texto
+    > vertical-align         ->  alineación vertical
+    > text-transform         ->  transformación del texto
+    > line-height            ->  altura de línea
+    > clear                  ->  borrar
+*/
+/* 
+    Fíjese en la notación de dos puntos dobles - ::first-line frente a :first-line
+    Los dos puntos dobles sustituyeron a la notación de dos puntos simples para los pseudoelementos en CSS3. Se trata de un intento del W3C de distinguir entre pseudoclases y pseudoelementos.
+    En CSS2 y CSS1 se utilizaba la sintaxis de un solo punto tanto para las pseudoclases como para los pseudoelementos.
+    Por compatibilidad con versiones anteriores, la sintaxis de un solo punto es aceptable para los pseudoelementos de CSS2 y CSS1.
+*/
+.libro p::first-line {
+    color: white;
+}
+
+/* CSS - The ::selection Pseudo-element - CSS - El pseudoelemento ::selection */
+/*
+    El pseudoelemento ::selection coincide con la parte de un elemento seleccionada por un usuario.
+    Las siguientes propiedades CSS pueden aplicarse a ::selection: color, background(fondo), cursor y outline(contorno).
+
+    El siguiente ejemplo hace que el texto seleccionado sea rojo sobre un fondo amarillo:
+    ::selection {
+        color: red;
+        background: yellow;
+    }
+*/
+.libro p::selection {
+    background-color: chocolate;
+    color: lime;
+}
+
+/* CSS - The ::marker Pseudo-element - CSS - El pseudoelemento ::marker */
+/*
+    El pseudoelemento ::marker selecciona los marcadores de los elementos de la lista.
+
+    El siguiente ejemplo estiliza los marcadores de los elementos de la lista:
+    ::marker {
+        color: red;
+        font-size: 23px;
+    }
+*/
+.listado li::marker {
+    color: red;
+}
