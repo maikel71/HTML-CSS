@@ -1,0 +1,136 @@
+/* CSS Specificity - Especificidad CSS */
+
+/* ¿Qué es la especificidad? */
+/*
+    Si hay dos o más reglas CSS que apuntan al mismo elemento, el selector con el valor de especificidad más alto "ganará", y su declaración de estilo se aplicará a ese elemento HTML.
+    Piense en la especificidad como una puntuación/clasificación que determina qué declaración de estilo se aplica finalmente a un elemento.
+*/
+
+/*EJEMPLOS*/
+
+/* Ejemplo 1 */
+/* 
+    En este ejemplo, hemos utilizado el elemento "p" como selector, y hemos especificado un color rojo 
+    para este elemento. El texto será de color rojo:
+*/
+p {
+    color: red;
+}
+
+/* Ejemplo 2 */
+/* 
+    En este ejemplo, hemos añadido un selector de clase (llamado "test"), y hemos especificado un color verde 
+    para esta clase. Ahora el texto será verde (aunque hayamos especificado un color rojo para el selector de 
+    elemento "p"). Esto se debe a que el selector de clase tiene mayor prioridad:
+*/
+.test {
+    color: green;
+}
+
+/* Ejemplo 3 */
+/*
+    En este ejemplo, hemos añadido el selector id (llamado "demo"). Ahora el texto será azul, 
+    porque el selector id tiene mayor prioridad:
+*/
+#demo {
+    color: blue;
+}
+
+/*Ejemplo 4 */
+/*Ver el documento especificidad.html*/
+
+/* Specificity Hierarchy - Jerarquía de especificidad */
+/*
+    Cada selector CSS tiene su lugar en la jerarquía de especificidad.
+    Hay cuatro categorías que definen el nivel de especificidad de un selector:
+
+    > Estilos en línea(Inline styles) - Ejemplo: <h1 style="color: pink;">
+    > IDs - Ejemplo: #navbar
+    > Clases(Clases), pseudoclases(pseudo-classes), selectores de atributos(attribute selectors) - Ejemplo: .test, :hover, [href]
+    > Elementos(Elements) y pseudoelementos(pseudo-elements) - Ejemplo: h1, :before
+*/
+
+/* How to Calculate Specificity? - ¿Cómo calcular la especificidad? */
+/*
+    Memorice cómo calcular la especificidad.
+    Empiece por 0, añada 100 por cada valor de ID, añada 10 por cada valor de clase (o pseudo-clase o selector de atributo), añada 1 por cada selector de elemento o pseudo-elemento.
+
+    Nota: El estilo en línea recibe un valor de especificidad de 1000 y siempre tiene la máxima prioridad.
+    ¡Nota 2: Hay una excepción a esta regla: si utiliza la regla !important, ¡incluso anulará los estilos en línea!
+*/
+/*
+    La tabla siguiente muestra algunos ejemplos de cómo calcular los valores de especificidad:
+
+    Selector                   Especificidad Valor     Cálculo
+    p                          1                       1
+    p.test                     11                      1 + 10
+    p#demo                     101                     1 + 100
+    <p style="color: pink;">   1000                    1000
+    #demo                      100                     100
+    .test                      10                      10
+    p.test1.test2              21                      1 + 10 +10
+    #navbar p#demo             201                     100 + 1 + 100
+    *                          0                       0 (se ignora el selector universal)
+*/
+/*
+    El selector con el valor de especificidad más alto ganará y surtirá efecto.
+    Considere estos tres fragmentos de código:
+
+    Ejemplo
+    A: h1
+    B: h1#content
+    C: <h1 id="content" style="color: pink;">Heading</h1>
+
+    La especificidad de A es 1 (un elemento selector)
+    La especificidad de B es 101 (una referencia ID + un selector de elemento)
+    La especificidad de C es 1000 (estilo en línea)
+
+    Dado que la tercera regla (C) tiene el valor de especificidad más alto (1000), se aplicará esta declaración de estilo.
+*/
+
+/* More Specificity Rules Examples - Más ejemplos de normas de especificidad */
+
+/* Igual especificidad: gana la última regla - Si la misma regla se escribe dos veces en la hoja de estilo externa, gana la última regla: */
+/*
+    Ejemplo
+
+    h1 {background-color: yellow;}
+    h1 {background-color: red;}
+*/
+
+/*Los selectores de ID tienen una especificidad mayor que los selectores de atributos - Fíjese en las tres líneas de código siguientes:*/
+/*
+    Ejemplo 
+
+    div#a {background-color: green;}
+    #a {background-color: yellow;}
+    div[id=a] {background-color: blue;}
+
+    la primera norma es más específica que las otras dos y, por lo tanto, se aplicará.
+*/
+
+/* Los selectores contextuales son más específicos que un selector de un solo elemento - La hoja de estilo incrustada está más cerca del elemento al que se va a aplicar el estilo. Así, en la siguiente situación */
+/*
+    Ejemplo
+
+    Desde un archivo CSS externo:
+    #content h1 {background-color: red;}
+
+    En el archivo HTML:
+    <style>
+    #content h1 {background-color: yellow;}
+    </style>
+
+    se aplicará esta última norma.
+*/
+
+/* Un selector de clase supera a cualquier número de selectores de elementos: un selector de clase como .intro supera a h1, p, div, etc: */
+/*
+    Ejemplo
+
+    .intro {background-color: yellow;}
+    h1 {background-color: red;}
+*/
+
+
+/* El selector universal (*) y los valores heredados tienen una especificidad de 0 - ¡El selector universal (*) y los valores heredados se ignoran! */
