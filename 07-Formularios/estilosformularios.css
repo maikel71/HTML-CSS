@@ -1,0 +1,207 @@
+/*https://www.w3schools.com/css/css_form.asp*/
+
+/* CSS Forms - Formularios CSS */
+/* El aspecto de un formulario HTML puede mejorarse mucho con CSS: */
+
+/* 1. Styling Input Fields - Estilo de los campos de entrada */
+
+.input {
+    /* 1.1 Utilice la propiedad width para determinar la anchura del campo de entrada: */
+    width: 100%;
+
+    /* 2. Padded Inputs - Entradas acolchadas*/
+    /* 2.1 Utilice la propiedad padding para añadir espacio dentro del campo de texto. 
+        Consejo: Cuando tengas muchas entradas una detrás de otra, puede que también quieras añadir algo de margin, para añadir más espacio fuera de ellas:
+
+        Ejemplo
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        Observa que hemos establecido la propiedad box-sizing a border-box. Esto asegura que el relleno y eventualmente los bordes están incluidos en el ancho y alto total de los elementos.
+    */
+    padding: 5px 10px;
+
+    /* 3. Bordered Inputs - Entradas con bordes */
+    /* 3.1 Utilice la propiedad border para cambiar el tamaño y el color del borde, y utilice la propiedad border-radius para añadir esquinas redondeadas:
+        Ejemplo
+
+        input[type=text] {
+            border: 2px solid red;
+            border-radius: 4px;
+        }
+    */
+    border: 2px solid green;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* 1.2 El ejemplo anterior se aplica a todos los elementos <input>. Si sólo desea aplicar estilo a un tipo de entrada específico, puede utilizar selectores de atributo:
+    > input[type=text] - sólo seleccionará campos de texto
+    > input[type=password] - sólo seleccionará los campos de contraseña
+    > input[type=number] - sólo seleccionará campos numéricos
+    > etc..
+*/
+.input[type="password"] {
+    color: red;
+}
+
+.input-moderno {
+    /* 3.2 Si sólo desea un borde inferior, utilice la propiedad border-bottom:
+        Ejemplo
+
+        input[type=text] {
+            border: none;
+            border-bottom: 2px solid red;
+        }
+    */
+    border: none;
+    border-bottom: 1px solid #c2c2c2;
+    outline: none;
+    padding: 5px;
+    color: #5f5f5f;
+}
+
+.input-moderno::placeholder {
+    color: #c2c2c2;
+}
+
+/* 5. Focused Inputs - Entradas focalizadas */
+
+/* 5.1 Por defecto, algunos navegadores añaden un contorno azul alrededor de la entrada cuando se hace clic en ella. Puede eliminar este comportamiento añadiendo outline: none; a la entrada. */
+/* 5.2 Utilice el selector :focus para hacer algo con el campo de entrada cuando obtenga el foco(focus): 
+    Ejemplo 1
+
+    input[type=text]:focus {
+        background-color: lightblue;
+    }
+
+    Ejemplo 2
+
+    input[type=text]:focus {
+        border: 3px solid #555;
+    }
+*/
+.input-moderno:focus {
+    border-bottom: 1px solid #5f5f5f;
+}
+
+/* 4. Colored Inputs - Entradas de color */
+
+.input-background {
+    /* 4.1 Utilice la propiedad background-color para añadir un color de fondo al input, y la propiedad color para cambiar el color del texto: 
+        Ejemplo
+
+        input[type=text] {
+            background-color: #3CBC8D;
+            color: white;
+        }
+    */
+    background-color: aquamarine;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.input-background::placeholder {
+    color: #ccc;
+}
+
+/* 6. Input with icon/image - Entrada con icono/imagen */
+.input-search {
+    padding: 10px;
+    /*border: none;*/
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 10px;
+    /*imagen de la lupita*/
+    /* 6.1 Si quieres un icono dentro de la entrada, utiliza la propiedad background-image y posiciónalo con la propiedad background-position. Observa también que añadimos un gran padding izquierdo(padding-left) para reservar el espacio del icono:
+        Ejemplo
+
+        input[type=text] {
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding-left: 40px;
+        }
+    */
+    background-image: url('/multimedia/img/searchicon.png');
+    background-repeat: no-repeat;
+    background-position: 5px;
+    padding-left: 35px;
+}
+
+/* 8. Styling Textareas - Textos de estilo */
+textarea {
+    /* 8.1 Sugerencia: utilice la propiedad de redimensionamiento (resize) para evitar que las áreas de texto cambien de tamaño (desactive el "agarrador" de la esquina inferior derecha): 
+        Ejemplo
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+        }
+    */
+    resize: none;
+}
+
+/* 9. Styling Select Menus - Estilizar menús selectos */
+/* 9.1 
+    Ejemplo
+
+    select {
+        width: 100%;
+        padding: 16px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #f1f1f1;
+    }
+*/
+select {
+    width: 100%;
+    padding: 15px;
+    background-color: #ccc;
+}
+
+
+/* 7. Animated Search Input - Entrada de búsqueda animada */
+/* 7.1 En este ejemplo utilizamos la propiedad CSS de transition  para animar el ancho de la entrada de búsqueda cuando se enfoca. 
+    Ejemplo
+
+    input[type=text] {
+        transition: width 0.4s ease-in-out;
+    }
+
+    input[type=text]:focus {
+        width: 100%;
+    }
+*/
+
+/* 10. Styling Input Buttons - Estilo de los botones de entrada */
+/* 10.1 
+    Ejemplo
+
+    input[type=button], input[type=submit], input[type=reset] {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    /* Consejo: utilice width: 100% para los botones de ancho completo.
+*/
