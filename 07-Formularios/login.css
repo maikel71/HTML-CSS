@@ -27,7 +27,11 @@
     /* 
     Vamos a decirle que tambien que tiene que haber un espacio(gap) entre las diferentes lineas que sea de 20px
     */
-    gap: 20px
+    gap: 30px;
+
+    /*hacer mas contenido*/
+    width: 450px;
+    margin: auto;
 }
 
 /*Boton de Registrarse con Google*/
@@ -86,4 +90,125 @@
 
 .twitter-btn:hover {
     background-color: #ddd;
+}
+
+/* Separador */
+.separator {
+    display: flex;/*para que me ponga todo en una misma linea*/
+    width: 100%; /*La propiedad width establece la anchura de un elemento.*/
+    gap: 15px; /*La propiedad gap define el tamaño del espacio entre las filas y entre las columnas en un diseño flexbox, grid o multicolumna*/
+}
+
+/*Dentro de la clase separator quiero que los hr's ocupen todo lo maximo que puedan ocupar. 
+Entonces para ello tenemos la posibilidad de utilizar el flex-grow y de esa manera le ponemos 1 indice
+*/
+.separator hr {
+    flex-grow: 1; /*La propiedad flex-grow especifica cuánto crecerá el elemento en relación con el resto de elementos flexibles dentro del mismo contenedor. 
+                    Nota: Si el elemento no es un elemento flexible, la propiedad flex-grow no tiene efecto.*/
+    border: none;/*quita los bordes*/
+    border-top: 1px solid #ccc; /*solo aparece el borde superior*/
+}
+
+/*cambiar el color de la "O..."*/
+.separator span {
+    color: #8b8b8b;
+}
+
+/*Seccion de inputs*/
+form{
+    display: flex; /* La propiedad display especifica el comportamiento de visualización (el tipo de cuadro de representación) de un elemento.
+                    Muestra un elemento como contenedor flexible a nivel de bloque
+                    */
+    flex-direction: column; /* La propiedad flex-direction especifica la dirección de los elementos flexibles. 
+                                Los elementos flexibles se muestran verticalmente, como una columna
+                                */
+    align-items: stretch; /* La propiedad align-items especifica la alineación por defecto para los elementos dentro de un contenedor flexbox o grid.
+                            En un contenedor flexbox, los elementos flexbox se alinean en el eje transversal, que es vertical por defecto (opuesto a flex-direction).
+                            Los artículos se estiran(stretched) para que quepan en el contenedor
+                            */
+    gap: 30px; /* La propiedad gap define el tamaño del espacio entre las filas y entre las columnas en el diseño flexbox, grid o multicolumna. */
+
+}
+
+
+.section-inputs {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+label span {
+    font-weight: 700; /* La propiedad font-weight establece cómo de gruesos o finos deben mostrarse los caracteres del texto. */
+}
+
+.section-inputs label input {
+    width: 80%;
+    background-color: #f3f3f4;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;/* Un outline(contorno) es una línea que se dibuja alrededor de los elementos, fuera de los bordes, para hacer que el elemento "destaque". Pero en si nosotros le quitamos el outline*/
+    font-size: 14pt; /* La propiedad font-size establece el tamaño de una fuente. */
+}
+
+label input {
+    width: 90%;
+    background-color: #f3f3f4;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14pt;
+    transition: background-color 0.2s, border 0.2s, box-shadow 0.2s; /*Para dar animacion*/
+}
+
+
+label input:hover{
+    background-color: white;
+    border: solid 1px #f3f3f4;
+    box-shadow: 0 0 4px #eb58ff4f;/* La propiedad box-shadow adjunta una o más sombras a un elemento. */
+}
+
+label input:focus{
+    background-color: white;
+    border: solid 1px #f3f3f4;
+    box-shadow: 0 0 4px #eb58ff4f; 
+}
+
+/* Checkbox */
+.checkbox-label {
+    display: flex;
+    flex-direction: row;/*Valor por defecto. Los elementos flexibles se muestran horizontalmente, como una fila*/
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+}
+
+.checkbox-label span {
+    font-weight: 400;
+}
+
+/* Boton de Crear Cuenta */
+.submit-btn {
+    background-color: #EA4C89;
+    color: white;
+    font-weight: 500;
+    font-size: 14pt;
+    text-align: center;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    opacity: 0.75;
 }
