@@ -46,10 +46,485 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+
+    <style>
+        /*Grid*/
+        .relleno {
+            background-color: red;
+            border: 1px solid white;
+            padding: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Hola Mundo</h1>
+    <!--LAYOUT - DISPOSICIÓN -->
+
+    <!-- Breakpoints - Puntos de interrupción -->
+    <!-- 
+        Los puntos de interrupción son anchuras personalizables que determinan cómo se comporta 
+        el diseño adaptable en función del tamaño del dispositivo o de la ventana gráfica en Bootstrap. 
+    -->
+
+    <!-- Available breakpoints - Puntos de interrupción disponibles -->
+    <!--
+        Bootstrap incluye seis puntos de rotura predeterminados, a veces denominados niveles de rejilla, 
+        para la construcción responsiva. Estos puntos de interrupción se pueden personalizar si utilizas 
+        nuestros archivos Sass de origen.
+
+        Breakpoint          +   Class infix   +     Dimensions
+        --------------------+-----------------+------------------
+        Extra small         +   None          +      <576px
+        Small               +   sm            +      ≥576px
+        Medium              +   md            +      ≥768px
+        Large               +   lg            +      ≥992px
+        Extra large         +   xl            +      ≥1200px
+        Extra extra large   +   xxl           +      ≥1400px
+
+        Cada punto de interrupción se ha elegido para que pueda albergar cómodamente contenedores cuya anchura 
+        sea múltiplo de 12. Los puntos de rotura también son representativos de un subconjunto de tamaños de 
+        dispositivo y dimensiones de ventana gráfica comunes: no se dirigen específicamente a todos los casos 
+        de uso o dispositivos. En cambio, los intervalos proporcionan una base sólida y coherente para casi 
+        cualquier dispositivo.
+    -->
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <!-- Containers - Contenedores -->
+    <!-- 
+        Los contenedores son un componente fundamental de Bootstrap que contiene, rellena y alinea el contenido 
+        dentro de un dispositivo o ventana gráfica determinados.
+    -->
+
+    <!-- How they work - Cómo funcionan -->
+    <!--
+        Los contenedores son el elemento de diseño más básico en Bootstrap y son necesarios cuando se utiliza 
+        nuestro sistema de cuadrícula por defecto. Los contenedores se utilizan para contener, rellenar 
+        y (a veces) centrar el contenido que contienen. Aunque los contenedores se pueden anidar, la mayoría 
+        de los diseños no requieren un contenedor anidado.
+
+        Bootstrap viene con tres contenedores diferentes:
+        > .container, que establece una max-width(anchura máxima) en cada breakpoint(punto de ruptura) de respuesta
+        > .container-{breakpoint}, que es width(ancho): 100% hasta el breakpoint(punto de interrupción) especificado
+        > .container-fluid, que es width: 100% en todos los breakpoints(puntos de rotura)
+
+        La siguiente tabla ilustra cómo se compara el ancho máximo de cada contenedor con el original .container 
+        y .container-fluid en cada punto de rotura.
+
+                          + Extra small +  Small   + Medium  + Large  + X-Large + XX-Large
+                          + <576px      +  ≥576px  + ≥768px  + ≥992px + ≥1200px + ≥1400px
+        ------------------+-------------+----------+---------+--------+---------+-----------
+        .container        + 100%        +  540px   + 720px   + 960px  + 1140px  + 1320px
+        .container-sm     + 100%        +  540px   + 720px   + 960px  + 1140px  + 1320px
+        .container-md     + 100%        +  100%    + 720px   + 960px  + 1140px  + 1320px
+        .container-lg     + 100%        +  100%    + 100%    + 960px  + 1140px  + 1320px
+        .container-xl     + 100%        +  100%    + 100%    + 100%   + 1140px  + 1320px
+        .container-xxl    + 100%        +  100%    + 100%    + 100%   + 100%    + 1320px
+        .container-fluid  + 100%        +  100%    + 100%    + 100%   + 100%    + 100%
+    -->
+
+    <!-- Default container - Contenedor por defecto -->
+    <!--
+        Nuestra clase .container por defecto es un contenedor responsivo de fixed-width(ancho fijo), lo que 
+        significa que su max-width(ancho máximo) cambia en cada breakpoint(punto de interrupción).
+
+        Ejemplo
+        <div class="container">
+            -- Contenido --
+        </div>
+    -->
+
+    <!-- Fluid containers - Recipientes para fluidos -->
+    <!--
+        Utilice .container-fluid para un contenedor de ancho completo, que abarque todo el ancho de 
+        la ventana gráfica.
+        
+        Ejemplo
+        <div class="container-fluid">
+            ...
+        </div>
+    -->
+    <div class="container-md" style="background-color: aqua;">
+        <h1>Hola Mundo</h1>
+    </div>
+
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!-- Grid system - Sistema de cuadrícula -->
+    <!--
+        Utiliza nuestra potente grid(cuadrícula) flexbox mobile-first para crear diseños de todas las formas 
+        y tamaños gracias a un sistema de doce columnas, seis niveles responsivos predeterminados, variables 
+        y mixins de Sass y docenas de clases predefinidas.
+    -->
+
+    <!-- Ejemplo -->
+    <!-- 
+        El sistema de grid(rejilla) de Bootstrap utiliza una serie de containers(contenedores), rows(filas) 
+        y columns(columnas) para maquetar y alinear el contenido. Está construido con flexbox y es totalmente 
+        responsivo. A continuación se muestra un ejemplo y una explicación detallada de cómo funciona el sistema 
+        de cuadrícula. 
+    -->
+    <div class="container">
+        <div class="row">
+            <div class="col relleno">Columna 1</div>
+            <div class="col relleno">Columna 2</div>
+            <div class="col relleno">Columna 3</div>
+        </div>
+    </div>
+    <!-- El ejemplo anterior crea tres columnas de igual anchura en todos los dispositivos y viewports utilizando 
+        nuestras clases de rejilla predefinidas. Esas columnas se centran en la página con el padre 
+    -->
+
+    <!-- How it works - Cómo funciona -->
+    <!--
+        Desglosándolo, así es como se compone el sistema de rejilla:
+            > Nuestra grid(cuadrícula) admite seis breakpoints(puntos de interrupción) adaptables. 
+                Los breakpoints(puntos de rotura) se basan en consultas de medios de min-width(anchura mínima), 
+                lo que significa que afectan a ese breakpoint(punto de rotura) y a todos los que están por encima 
+                de él (por ejemplo, .col-sm-4 se aplica a sm, md, lg, xl y xxl). Esto significa que puede controlar 
+                el tamaño y el comportamiento del container(contenedor) y de la column(columna) por cada 
+                breakpoint(punto de rotura).
+            > Los contenedores centran y rellenan horizontalmente el contenido. Utilice .container para un width(ancho) 
+                de píxel adaptable, .container-fluid para un width(ancho): 100% en todas las ventanas gráficas y dispositivos, 
+                o un contenedor adaptable (por ejemplo, .container-md) para una combinación de anchos de píxel y fluido.
+            > Las rows(filas) envuelven a las columns(columnas). Cada columna tiene un padding(relleno) horizontal (llamado gutter) 
+                para controlar el espacio entre ellas. Este padding(relleno) se contrarresta en las rows(filas) con margins(márgenes) negativos 
+                para asegurar que el contenido en sus columnas está visualmente alineado a la izquierda. Las filas 
+                también soportan clases modificadoras para aplicar uniformemente el tamaño de las columnas y clases 
+                de gutter(medianil) para cambiar el espaciado de tu contenido.
+            > Las columnas son increíblemente flexibles. Hay 12 columnas de plantilla disponibles por fila, 
+                lo que te permite crear diferentes combinaciones de elementos que abarcan cualquier número de columnas. 
+                Las clases de columna indican el número de columnas de plantilla que deben abarcarse 
+                (por ejemplo, col-4 abarca cuatro). Las anchuras se establecen en porcentajes para que siempre tengas 
+                el mismo tamaño relativo.
+            > Los gutters(medianiles) también son adaptables y personalizables. Las clases de medianil están disponibles 
+                en todos los puntos de rotura, con los mismos tamaños que nuestro espaciado de márgenes y relleno. 
+                Cambia los medianiles horizontales con las clases .gx-*, los medianiles verticales con .gy-*, o todos 
+                los medianiles con las clases .g-*. .g-0 también está disponible para eliminar los medianiles.
+            > Las variables, mapas y mixins de Sass potencian la grid(rejilla). Si no desea utilizar las clases de 
+                cuadrícula predefinidas en Bootstrap, puede utilizar la fuente Sass de nuestra cuadrícula para crear 
+                la suya propia con un marcado más semántico. También incluimos algunas propiedades personalizadas CSS 
+                para consumir estas variables Sass para una flexibilidad aún mayor para usted.
+        Ten en cuenta las limitaciones y errores de flexbox, como la imposibilidad de utilizar algunos elementos HTML como contenedores flex.
+    -->
+
+    <!-- Grid options - Opciones de cuadrícula -->
+    <!--
+        El sistema de grid(cuadrícula) de Bootstrap puede adaptarse a los seis default breakpoints(puntos de interrupción predeterminados) 
+        y a cualquier breakpoints(punto de interrupción) que personalice. Los seis niveles de cuadrícula predeterminados son los siguientes:
+
+        > Extra small (xs)         -> Extra pequeño
+        > Small (sm)               -> Pequeño
+        > Medium (md)              -> Mediana
+        > Large (lg)               -> Grande
+        > Extra large (xl)         -> Extra grande
+        > Extra extra large (xxl)  -> Extra extra grande
+
+        Como se ha indicado anteriormente, cada uno de estos puntos de interrupción tiene su propio contenedor, prefijo de clase único 
+        y modificadores. A continuación se muestra cómo cambia la cuadrícula a través de estos puntos de interrupción:
+
+                                xs          sm          md          lg       xl         xxl
+                                <576px      ≥576px      ≥768px      ≥992px   ≥1200px    ≥1400px
+        Container max-width     None        540px       720px       960px    1140px     1320px
+                                (auto)
+        Class prefix            .col-       .col-sm-    .col-md-    .col-lg- .col-xl-   .col-xxl-
+        # of columns	        12
+        Gutter width	        1.5rem (.75rem on left and right)
+        Custom gutters          Yes
+        Nestable                Yes
+        Column ordering         Yes
+    -->
+
+    <!-- Auto-layout columns - Columnas de disposición automática -->
+    <!--
+        Utilice clases de columna específicas de los puntos de rotura para facilitar el dimensionamiento de las columnas 
+        sin una clase numerada explícita como .col-sm-6.
+
+        Utilize breakpoint-specific column classes for easy column sizing without an explicit numbered class like .col-sm-6.
+    -->
+
+    <!-- Equal-width  - De igual anchura  -->
+    <!--
+        Por ejemplo, aquí hay dos diseños de cuadrícula que se aplican a cada dispositivo y viewport, de xs a xxl. 
+        Añade cualquier número de clases sin unidades para cada punto de rotura que necesites y cada columna tendrá el mismo ancho.
+    -->
+    <hr>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col relleno">
+                1 de 2
+            </div>
+            <div class="col relleno">
+                2 de 2
+            </div>
+        </div>
+        <div class="row">
+            <div class="col relleno">
+                1 de 3
+            </div>
+            <div class="col relleno">
+                1 de 2
+            </div>
+            <div class="col relleno">
+                3 de 3
+            </div>
+        </div>
+    </div>
+
+    <!-- Setting one column width - Ajustar el ancho de una columna -->
+    <!--
+        El auto-layout(diseño automático) de las columnas de la grid(rejilla) flexbox también significa que puede establecer 
+        el width(ancho) de una columna y hacer que las columnas hermanas cambien de tamaño automáticamente a su alrededor. 
+        Puede utilizar clases de grid(cuadrícula) predefinidas (como se muestra a continuación), grid mixins(mixins de cuadrícula) 
+        o grid mixins(anchos en línea). Tenga en cuenta que las otras columnas cambiarán de tamaño sin importar el ancho de 
+        la columna central.
+    -->
+    <hr>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col relleno">
+                1 de 3
+            </div>
+            <div class="col-6 relleno">
+                2 de 3 (wider - más amplio)
+            </div>
+            <div class="col relleno">
+                3 de 3
+            </div>
+        </div>
+        <div class="row">
+            <div class="col relleno">
+                1 de 3
+            </div>
+            <div class="col-5 relleno">
+                2 de 3 (wider - más amplio)
+            </div>
+            <div class="col relleno">
+                3 de 3
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive classes - Clases con capacidad de respuesta -->
+    <!--
+        La grid(rejilla) de Bootstrap incluye seis niveles de clases predefinidas para crear diseños adaptables complejos. 
+        Personaliza el tamaño de las columnas en dispositivos extra small(extrapequeños), small(pequeños), medium(medianos), large(grandes) o extra large(extragrandes).
+    -->
+
+    <!-- All breakpoints - Todos los puntos de interrupción -->
+    <!-- 
+        Para grid(rejillas) que sean iguales desde el más pequeño de los dispositivos hasta el más grande, 
+        utilice las clases .col y .col-*. Especifica una clase numerada cuando necesites una columna de un tamaño concreto; 
+        de lo contrario, no dudes en ceñirte a .col.
+    -->
+    <hr>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col relleno">col</div>
+            <div class="col relleno">col</div>
+            <div class="col relleno">col</div>
+            <div class="col relleno">col</div>
+        </div>
+        <div class="row">
+            <div class="col-8 relleno">col-8</div>
+            <div class="col-4 relleno">col-4</div>
+        </div>
+    </div>
+
+    <!-- Stacked to horizontal - Apilado en horizontal -->
+    <!--
+        Utilizando un único conjunto de clases .col-sm-*, puede crear un sistema de grid(rejilla) básico que comience apilado 
+        y se convierta en horizontal en el small breakpoint(punto de corte pequeño) (sm).
+    -->
+    <hr>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-8 relleno">col-sm-8</div>
+            <div class="col-sm-4 relleno">col-sm-4</div>
+        </div>
+        <div class="row">
+            <div class="col-sm relleno">col-sm</div>
+            <div class="col-sm relleno">col-sm</div>
+            <div class="col-sm relleno">col-sm</div>
+        </div>
+    </div>
+
+    <!-- Mix and match - Mezclar y combinar -->
+    <!--
+        ¿No quieres que tus columnas simplemente se apilen en algunos niveles de la grid(cuadrícula)? 
+        Utilice una combinación de diferentes clases para cada nivel según sea necesario. 
+        Vea el ejemplo a continuación para una mejor idea de cómo funciona todo.
+    -->
+    <hr>
+    <div class="container text-center">
+        <!-- Apila las columnas en el móvil haciendo una de full-width(ancho completo) y la otra de half-width(medio ancho). -->
+        <div class="row">
+            <div class="col-md-8 relleno">.col-md-8</div>
+            <div class="col-6 col-md-4 relleno">.col-6 .col-md-4</div>
+        </div>
+
+        <!-- Las columnas tienen una anchura inicial del 50% en móviles y del 33,3% en ordenadores de sobremesa. -->
+        <div class="row">
+            <div class="col-6 col-md-4 relleno">.col-6 .col-md-4</div>
+            <div class="col-6 col-md-4 relleno">.col-6 .col-md-4</div>
+            <div class="col-6 col-md-4 relleno">.col-6 .col-md-4</div>
+        </div>
+
+        <!-- Las columnas siempre tienen un ancho del 50%, tanto en móvil como en escritorio. -->
+        <div class="row">
+            <div class="col-6 relleno">.col-6</div>
+            <div class="col-6 relleno">.col-6</div>
+        </div>
+    </div>
+
+    <!-- Row columns - Columnas de fila -->
+    <!--
+        Utiliza las clases responsive .row-cols-* para establecer rápidamente el número de columnas que mejor 
+        se adapten a tu content(contenido) y layout(diseño). Mientras que las clases .col-* normales se aplican 
+        a las columnas individuales (por ejemplo, .col-md-4),  las clases de columnas de fila se establecen 
+        en el padre .row como un atajo. Con .row-cols-auto puedes dar a las columnas su anchura natural.
+
+        Utiliza estas clases de columnas de fila para crear rápidamente diseños de cuadrícula básicos o para 
+        controlar los diseños de tus tarjetas.
+    -->
+    <hr>
+    <div class="container text-center">
+        <div class="row row-cols-2">
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+        </div>
+    </div>
+    <hr>
+    <div class="container text-center">
+        <div class="row row-cols-3">
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+        </div>
+    </div>
+    <hr>
+    <div class="container text-center">
+        <div class="row row-cols-auto">
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+        </div>
+    </div>
+    <hr>
+    <div class="container text-center">
+        <div class="row row-cols-4">
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+        </div>
+    </div>
+    <hr>
+    <div class="container text-center">
+        <div class="row row-cols-4">
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+            <div class="col-6 relleno">Column</div>
+            <div class="col relleno">Column</div>
+        </div>
+    </div>
+    <hr>
+    <div class="container text-center">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+            <div class="col relleno">Column</div>
+        </div>
+    </div>
+    <!-- También puede utilizar el mixin Sass correspondiente, row-cols():
+        .element {
+            // Tres columnas para empezar
+            @include row-cols(3);
+
+            // Cinco columnas desde el punto medio hacia arriba
+            @include media-breakpoint-up(md) {
+                @include row-cols(5);
+            }
+        }
+    -->
+
+    <!-- Nesting - Nido -->
+    <!--
+        Para anidar su contenido con la rejilla predeterminada, añada una nueva fila .row y un conjunto de columnas .col-sm-* 
+        dentro de una columna .col-sm-* existente. Las filas anidadas deben incluir un conjunto de columnas que sumen 12 o menos 
+        (no es obligatorio utilizar las 12 columnas disponibles).
+    -->
+    <hr>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-sm-3 relleno">
+                Nivel 1: .col-sm-3
+            </div>
+            <div class="col-sm-9 relleno">
+                <div class="row">
+                    <div class="col-8 col-sm-6 relleno">
+                        Nivel 2: .col-8 .col-sm-6
+                    </div>
+                    <div class="col-4 col-sm-6 relleno">
+                        Nivel 2: .col-4 .col-sm-6
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!-- Realizado por el lic de Bootstrap -->
+    <hr>
+    <h5>Realizado por el lic de Bootstrap</h5>
+    <div>
+        <div class="row">
+            <div class="col relleno">Columna 1</div>
+            <div class="col relleno">Columna 2</div>
+            <div class="col-6 relleno">Columna 3</div>
+        </div>
+
+        <div class="row">
+            <div class="col relleno">Columna 1</div>
+            <div class="col relleno">Columna 2</div>
+        </div>
+
+        <div class="row">
+            <div class="col-3 relleno">Columna 1</div>
+            <div class="col relleno">Columna 2</div>
+        </div>
+
+        <div class="row">
+            <div class="col-3 col-md-6 relleno">Columna 1</div>
+            <div class="col relleno">Columna 2</div>
+        </div>
+    </div>
+
+
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!--COMPONENTS - COMPONENTES-->
+
+    <!-- Buttons - Botones -->
+    <hr>
+    <div class="container">
+        <div class="row justify-content-center">
+            <button type="button" class="btn btn-primary col-3">Primary</button>
+            <button type="button" class="btn btn-secondary col-3">Secondary</button>
+            <button type="button" class="btn btn-success col-3">Success</button>
+            <button type="button" class="btn btn-danger col-3">Danger</button>
+            <button type="button" class="btn btn-warning col-3">Warning</button>
+            <button type="button" class="btn btn-info col-3">Info</button>
+            <button type="button" class="btn btn-light col-3">Light</button>
+            <button type="button" class="btn btn-dark col-3">Dark</button>
+            <button type="button" class="btn btn-link col-3">Link</button>
+        </div>
+    </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
