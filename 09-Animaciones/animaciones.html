@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones</title>
+    <link rel="stylesheet" href="animaciones.css">
+</head>
+
+<body>
+    <!--Documentacion de w3schools-->
+
+    <h1>Documentacion de w3schools </h1>
+    <hr>
+
+    <h2 style="color: red;">Transition</h2>
+
+    <h3>La propiedad de transición</h3>
+    <p>Pase el cursor sobre el elemento div a continuación para ver el efecto de transición:</p>
+    <div class="div-1"></div>
+    <br>
+    <div class="div-2"></div>
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <br>
+    <h3>La propiedad transition-timing-function</h3>
+    <p>Pase el cursor sobre los elementos div a continuación para ver las diferentes curvas de velocidad:</p>
+
+    <div class="div-3" id="div1">linear</div>
+    <br>
+    <div class="div-3" id="div2">ease</div>
+    <br>
+    <div class="div-3" id="div3">ease-in</div>
+    <br>
+    <div class="div-3" id="div4">ease-out</div>
+    <br>
+    <div class="div-3" id="div5">ease-in-out</div>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <br>
+    <h3>La propiedad transition-delay</h3>
+    <p>Pase el cursor sobre el elemento div a continuación para ver el efecto de transición:</p>
+
+    <div class="div-4"></div>
+
+    <p><b>Nota:</b> El efecto de transición tiene un retraso de 1 segundo antes de comenzar.</p>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <br>
+    <h3>Transition + Transform</h3>
+    <p>Pase el cursor sobre el elemento div a continuación:</p>
+    <div class="div-5"></div>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <br>
+    <h3>Las propiedades de transición especificadas una por una</h3>
+    <p>Pase el cursor sobre el elemento div a continuación para ver el efecto de transición:</p>
+
+    <div class="div-6"></div>
+
+    <p><b>Nota:</b> El efecto de transición tiene un retraso de 1 segundo antes de comenzar.</p>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <br>
+    <h3>Uso de la propiedad abreviada transition</h3>
+    <p>Pase el cursor sobre el elemento div a continuación para ver el efecto de transición:</p>
+
+    <div class="div-7"></div>
+
+    <p><b>Nota:</b> El efecto de transición tiene un retraso de 1 segundo antes de comenzar.</p>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <h2 style="color: red;">Animation</h2>
+
+    <h2>The @keyframes Rule - La regla @keyframes </h2>
+    <h3> EJEMPLO 1 </h3>
+
+    <div class="div-8"></div>
+
+    <p><b>Nota:</b> Cuando finaliza una animación, vuelve a su estilo original.</p>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <h3> EJEMPLO 2 </h3>
+
+    <div class="div-9"></div>
+
+    <p><b>Nota:</b> Cuando finaliza una animación, vuelve a su estilo original.</p>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <h3> EJEMPLO 3 </h3>
+
+    <div class="div-10"></div>
+
+    <p><b>Nota:</b> Cuando finaliza una animación, vuelve a su estilo original.</p>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+
+    <h2>Delay an Animation - Retrasar una animación</h2>
+
+    <h3>EJEMPLO 1</h3>
+    <p>La propiedad animation-delay especifica un retraso para el inicio de una animación. El siguiente ejemplo tiene un
+        retraso de 2 segundos antes de iniciar la animación:</p>
+    <div class="div-11"></div>
+
+    <h3>EJEMPLO 2</h3>
+    <p>Usando valores negativos en la propiedad animation-delay: aquí, la animación comenzará como si ya se hubiera
+        estado reproduciendo durante 2 segundos:</p>
+    <div class="div-12"></div>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <h2>Set How Many Times an Animation Should Run - Establecer cuántas veces debe ejecutarse una animación</h2>
+
+    <h3>EJEMPLO 1</h3>
+    <p>La propiedad animation-iteration-count especifica el número de veces que se debe ejecutar una animación. El
+        siguiente ejemplo ejecutará la animación 3 veces antes de que se detenga:</p>
+    <div class="div-13"></div>
+
+    <h3>EJEMPLO 2</h3>
+    <p>La propiedad animation-iteration-count se puede establecer en infinito(infinite) para permitir que la animación
+        se ejecute para siempre:</p>
+    <div class="div-14"></div>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+    <h2>Run Animation in Reverse Direction or Alternate Cycles - Ejecutar animación en sentido inverso o alternar ciclos
+    </h2>
+
+    <h3>EJEMPLO 1</h3>
+    <p>La propiedad animation-direction especifica si una animación debe reproducirse hacia adelante, hacia atrás o en
+        ciclos alternos. El siguiente ejemplo ejecutará la animación en dirección inversa (hacia atrás):</p>
+    <div class="div-15"></div>
+
+    <h3>EJEMPLO 2</h3>
+    <p>El siguiente ejemplo usa el valor "alternate" para hacer que la animación se ejecute primero hacia adelante y
+        luego hacia atrás:</p>
+    <div class="div-16"></div>
+
+    <h3>EJEMPLO 3</h3>
+    <p>El siguiente ejemplo usa el valor "alternate-reverse" para hacer que la animación se ejecute primero hacia atrás
+        y luego hacia adelante:</p>
+    <div class="div-17"></div>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+
+    <h2>Specify the Speed Curve of the Animation - Especificar la curva de velocidad de la animación</h2>
+
+    <h3>EJEMPLO 1</h3>
+    <p>La propiedad animation-timing-function especifica la curva de velocidad de la animación. El siguiente ejemplo
+        muestra algunas de las diferentes curvas de velocidad que se pueden utilizar:</p>
+    <div class="div-18" id="div-1">linear</div>
+    <div class="div-18" id="div-2">ease</div>
+    <div class="div-18" id="div-3">ease-in</div>
+    <div class="div-18" id="div-4">ease-out</div>
+    <div class="div-18" id="div-5">ease-in-out</div>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+
+    <h2>Specify the fill-mode For an Animation - Especificar el modo de relleno Para una animación</h2>
+
+    <h3>EJEMPLO 1</h3>
+    <p>Deje que el elemento div conserve los valores de estilo establecidos por el último fotograma clave cuando
+        finalice la animación:</p>
+    <div class="div-19"></div>
+
+    <h3>EJEMPLO 2</h3>
+    <p>Deje que el elemento div obtenga los valores de estilo establecidos por el primer fotograma clave antes de que
+        comience la animación (durante el período de retraso de la animación):</p>
+    <div class="div-20"></div>
+
+    <h3>EJEMPLO 3</h3>
+    <p>Deje que el elemento div obtenga los valores de estilo establecidos por el primer fotograma clave antes de que
+        comience la animación y conserve los valores de estilo del último fotograma clave cuando finalice la animación:
+    </p>
+    <div class="div-21"></div>
+
+    <!-- --------------------------------------------------------------------------------------------------- -->
+
+    <h2>Animation Shorthand Property - Animación Abreviada Propiedad</h2>
+
+    <h3>EJEMPLO 1</h3>
+    <p>Este ejemplo utiliza seis de las propiedades de animación:</p>
+    <div class="div-22"></div>
+
+    <h3>EJEMPLO 2</h3>
+    <p>Este ejemplo usa la propiedad de animación abreviada:</p>
+    <div class="div-23"></div>
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <hr>
+    <!--Curso OpenBootCamp-->
+
+    <h1>Curso OpenBootCamp</h1>
+
+    <!--Transiciones-->
+    <h2 style="color: red;">Transition</h2>
+
+    <div class="padre">
+        <div class="hijo"></div>
+    </div>
+
+    <!--Animaciones-->
+    <h2 style="color: red;">Animation</h2>
+    <br>
+    <div class="padre-2">
+        <div class="hijo-2"></div>
+    </div>
+
+</body>
+
+</html>

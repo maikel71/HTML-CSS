@@ -1,0 +1,727 @@
+/* Documentacion de w3schools */
+
+/* Transitions - Transiciones */
+
+/* 
+    transiciones le permite cambiar los valores de las propiedades suavemente, a lo largo de una duración determinada.
+
+    En este capítulo aprenderás sobre las siguientes propiedades:
+    > transition                    ->  transición
+    > transition-delay              ->  retardo de transición
+    > transition-duration           ->  duración de la transición
+    > transition-property           ->  propiedad de transición
+    > transition-timing-function    ->  función-tiempo-de-transición
+*/
+
+/* How to Use CSS Transitions? - ¿Cómo utilizar las transiciones CSS? */
+/*
+    Para crear un efecto de transición, debes especificar dos cosas:
+    > la propiedad CSS a la que desea añadir un efecto
+    > la duración del efecto
+    Nota: Si no se especifica la parte de la duración, la transición no tendrá efecto, porque el valor por defecto es 0.
+*/
+
+/* El siguiente ejemplo muestra un elemento <div> rojo de 100px * 100px. El elemento <div> también ha especificado 
+un efecto de transición para la propiedad width, con una duración de 2 segundos: */
+
+.div-1 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+}
+
+/* El efecto de transición se iniciará cuando la propiedad CSS especificada (anchura-width) cambie de valor.
+Ahora, especifiquemos un nuevo valor para la propiedad width cuando un usuario pase el ratón sobre el elemento <div>: */
+
+.div-1:hover {
+    width: 300px;
+}
+
+/* Observa que cuando el cursor sale del elemento, éste vuelve gradualmente a su estilo original. */
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* Change Several Property Values - Cambio de varios valores inmobiliarios */
+/* El siguiente ejemplo añade un efecto de transición para las propiedades de width(anchura) y height(altura), 
+con una duración de 2 segundos para la width(anchura) y 4 segundos para la height(altura): */
+.div-2 {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    transition: width 2s, height 4s;
+}
+
+.div-2:hover {
+    width: 300px;
+    height: 300px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* Specify the Speed Curve of the Transition - Especificar la curva de velocidad de la transición */
+/*
+    La propiedad transition-timing-function especifica la curva de velocidad del efecto de transición.
+    La propiedad transition-timing-function puede tener los siguientes valores:
+
+    > ease                   -> especifica un efecto de transición con un inicio lento, luego rápido y final lento (por defecto)
+    > linear                 -> especifica un efecto de transición con la misma velocidad de principio a fin
+    > ease-in                -> especifica un efecto de transición con un inicio lento
+    > ease-out               -> especifica un efecto de transición con un final lento
+    > ease-in-out            -> especifica un efecto de transición con un inicio y un final lentos
+    > cubic-bezier(n,n,n,n)  -> le permite definir sus propios valores en una función cúbica-bezier(cubic-bezier)
+*/
+
+/* El siguiente ejemplo muestra algunas de las diferentes curvas de velocidad que se pueden utilizar: */
+.div-3 {
+    width: 100px;
+    height: 100px;
+    background: green;
+    transition: width 2s;
+}
+
+#div1{
+    transition-timing-function: linear;
+}
+
+#div2{
+    transition-timing-function: ease;
+}
+
+#div3{
+    transition-timing-function: ease-in;
+}
+
+#div4{
+    transition-timing-function: ease-out;
+}
+
+#div5{
+    transition-timing-function: ease-in-out;
+}
+
+.div-3:hover {
+    width: 300px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* Delay the Transition Effect - Retrasar el efecto de transición */
+/* La propiedad transition-delay especifica un retardo (en segundos) para el efecto de transición. */
+
+/* El siguiente ejemplo tiene un retardo de 1 segundo antes de arrancar: */
+.div-4 {
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    transition: width 3s;
+    transition-delay: 1s;
+}
+
+.div-4:hover {
+    width: 300px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* Transition + Transformation */
+
+/* El siguiente ejemplo añade un efecto de transición a la transformación: */
+.div-5 {
+    width: 100px;
+    height: 100px;
+    background: violet;
+    transition: width 2s, height 2s, transform 2s;
+}
+
+.div-5:hover {
+    width: 300px;
+    height: 300px;
+    transform: rotate(180deg);
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* More Transition Examples - Más ejemplos de transición */
+/* Las propiedades de transición CSS se pueden especificar una a una, así: */
+
+.div-6 {
+    width: 100px;
+    height: 100px;
+    background: orangered;
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+}
+
+.div-6:hover {
+    width: 300px;
+}
+
+/* o utilizando la propiedad abreviada transition: */
+
+.div-7 {
+    width: 100px;
+    height: 100px;
+    background: blueviolet;
+    transition: width 2s linear 1s;
+}
+
+.div-7:hover {
+    width: 300px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+/* Animations - Animaciones */
+/* 
+    CSS permite animar elementos HTML sin utilizar JavaScript ni Flash.
+
+    En este capítulo aprenderás sobre las siguientes propiedades:
+    > @keyframes                 ->  Fotogramas clave
+    > animation-name             ->  nombre-de-la-animación
+    > animation-duration         ->  duración de la animación
+    > animation-delay            ->  retardo de la animación
+    > animation-iteration-count  ->  recuento de iteraciones de animación
+    > animation-direction        ->  dirección de la animación
+    > animation-timing-function  ->  función-tiempo-de-animación
+    > animation-fill-mode        ->  animación-modo-relleno
+    > animation                  ->  animación
+*/
+
+/* What are CSS Animations? - ¿Qué son las animaciones CSS? */
+/*
+    Una animación permite que un elemento cambie gradualmente de un estilo a otro.
+    Puedes cambiar tantas propiedades CSS como quieras, tantas veces como quieras.
+    Para utilizar la animación CSS, primero debes especificar algunos keyframes(fotogramas clave) para la animación.
+    Los Keyframes(fotogramas clave) contienen los estilos que tendrá el elemento en determinados momentos.
+*/
+
+/* The @keyframes Rule - La regla @keyframes */
+/*
+    Cuando se especifican estilos CSS dentro de la regla @keyframes, la animación cambiará gradualmente del estilo 
+    actual al nuevo estilo en determinados momentos.
+    Para que una animación funcione, debes vincular la animación a un elemento.
+*/
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* EJEMPLO 1 */
+
+/* El siguiente ejemplo vincula la animación "ejemplo" al elemento <div>. La animación durará 4 segundos y cambiará 
+gradualmente el color de fondo del elemento <div> de "rojo" a "amarillo": */
+
+/* El código de animación */
+@keyframes example-1 {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: yellow;
+    }
+}
+
+/* El elemento al que se aplicará la animación */
+.div-8 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example-1;
+    animation-duration: 4s;
+}
+
+/*
+    Nota: La propiedad animation-duration define cuánto tiempo debe tardar en completarse una animación. Si no se especifica 
+    la propiedad animation-duration, no se producirá ninguna animación, ya que el valor por defecto es 0s (0 segundos).
+
+    En el ejemplo anterior hemos especificado cuándo cambiará el estilo utilizando las palabras clave "from" y "to" 
+    (que representan 0% (inicio) y 100% (completo)).
+
+    También es posible utilizar porcentajes. Utilizando porcentaje, puede añadir tantos cambios de estilo como desee.
+*/
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* EJEMPLO 2 */
+
+/* El siguiente ejemplo cambiará el color de fondo del elemento <div> cuando la animación se haya completado en un 25%, 
+en un 50% y de nuevo cuando la animación se haya completado en un 100%: */
+
+/* El código de animación */
+@keyframes example-2 {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: blue;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+/* El elemento al que se aplicará la animación */
+.div-9 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example-2;
+    animation-duration: 4s;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* EJEMPLO 3 */
+
+/* El siguiente ejemplo cambiará tanto el color de fondo como la posición del elemento <div> cuando la animación se haya 
+completado en un 25%, en un 50% y de nuevo cuando la animación se haya completado en un 100%: */
+
+/* El código de animación */
+@keyframes example-3 {
+    0%{
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    25%{
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+    50%{
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+    }
+    75%{
+        background-color: green;
+        left: 0px;
+        top: 200px;
+    }
+    100%{
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+/* El elemento al que se aplicará la animación */
+.div-10 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example-3;
+    animation-duration: 4s;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* Delay an Animation - Retrasar una animación */
+
+/* La propiedad animation-delay especifica un retardo para el inicio de una animación. */
+
+/* EJEMPLO 1 */
+/* El siguiente ejemplo tiene un retardo de 2 segundos antes de iniciar la animación: */
+.div-11 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example-3;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+/* También se permiten valores negativos. Si se utilizan valores negativos, la animación se iniciará como si ya hubiera 
+estado reproduciéndose durante N segundos. */
+
+/* EJEMPLO 2 */
+/* En el siguiente ejemplo, la animación se iniciará como si ya hubiera estado reproduciéndose durante 2 segundos: */
+.div-12 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example-3;
+    animation-duration: 4s;
+    animation-delay: -2s;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* Set How Many Times an Animation Should Run - Establecer cuántas veces debe ejecutarse una animación */
+
+/* La propiedad animation-iteration-count especifica el número de veces que debe ejecutarse una animación. */
+
+/* EJEMPLO 1 */
+/* El siguiente ejemplo ejecutará la animación 3 veces antes de que se detenga: */
+.div-13 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example-3;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+}
+
+/*EJEMPLO 2*/
+/* El siguiente ejemplo utiliza el valor "infinite" para hacer que la animación continúe para siempre: */
+.div-14 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example-3;
+    animation-duration: 4s;
+    /*animation-iteration-count: infinite;*/ /*le comento para que no me estorbe en la vista*/
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* Run Animation in Reverse Direction or Alternate Cycles - Ejecutar animación en sentido inverso o alternar ciclos */
+
+/*
+    La propiedad animation-direction especifica si una animación debe reproducirse hacia delante, hacia atrás o en ciclos alternos.
+    
+    La propiedad animation-direction puede tener los siguientes valores:
+    > normal            -  La animación se reproduce normalmente (hacia delante). Esto es por defecto
+    > reverse           -  La animación se reproduce en sentido inverso (hacia atrás)
+    > alternate         -  La animación se reproduce primero hacia delante y luego hacia atrás.
+    > alternate-reverse -  La animación se reproduce primero hacia atrás y luego hacia delante.
+*/
+
+/* EJEMPLO 1 */
+/* El siguiente ejemplo ejecutará la animación en sentido inverso (hacia atrás): */
+.div-15 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example-3;
+    animation-duration: 4s;
+    animation-direction: reverse;
+}
+
+/* EJEMPLO 2 */
+/* El siguiente ejemplo utiliza el valor "alternate" para que la animación se ejecute primero hacia adelante y luego hacia atrás: */
+.div-16 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example-3;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}
+
+/* EJEMPLO 3 */
+/* El siguiente ejemplo utiliza el valor "alternate-reverse" para que la animación se ejecute primero hacia atrás y luego hacia adelante: */
+.div-17 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example-3;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate-reverse;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* Specify the Speed Curve of the Animation - Especificar la curva de velocidad de la animación */
+/*
+    La propiedad animation-timing-function especifica la curva de velocidad de la animación.
+
+    La propiedad animation-timing-function puede tener los siguientes valores:
+    > ease                   - Especifica una animación con un inicio lento, luego rápido y final lento (por defecto)
+    > linear                 - Especifica una animación con la misma velocidad de principio a fin
+    > ease-in                - Especifica una animación con un inicio lento
+    > ease-out               - Especifica una animación con un final lento
+    > ease-in-out            - Especifica una animación con un inicio y un final lentos
+    > cubic-bezier(n,n,n,n)  - Le permite definir sus propios valores en una función cubic-bezier
+*/
+
+/* EJEMPLO 1 */
+/* El siguiente ejemplo muestra algunas de las diferentes curvas de velocidad que se pueden utilizar: */
+@keyframes mymove {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 300px;
+    }
+}
+
+.div-18 {
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    font-weight: bold;
+    position: relative;
+    animation: mymove 5s infinite;
+}
+
+
+#div-1 {
+    animation-timing-function: linear;
+}
+#div-2 {
+    animation-timing-function: ease;
+}
+#div-3 {
+    animation-timing-function: ease-in;
+}
+#div-4 {
+    animation-timing-function: ease-out;
+}
+#div-5 {
+    animation-timing-function: ease-in-out;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* Specify the fill-mode For an Animation - Especificar el modo de relleno Para una animación */
+/*
+    Las animaciones CSS no afectan a un elemento antes de que se reproduzca el primer keyframe(fotograma clave) o después de que 
+    se reproduzca el último. La propiedad animation-fill-mode puede anular este comportamiento.
+    La propiedad animation-fill-mode especifica un estilo para el elemento de destino cuando la animación no se está reproduciendo 
+    (antes de que comience, después de que termine, o ambos).
+
+    La propiedad animation-fill-mode puede tener los siguientes valores:
+    > none       -> Valor por defecto. La animación no aplicará ningún estilo al elemento antes o después de ejecutarse.
+    > forwards   -> El elemento conservará los valores de estilo establecidos en el último fotograma clave 
+                    (depende de la dirección de animación y del recuento de iteraciones de animación).
+    > backwards  -> El elemento obtendrá los valores de estilo establecidos en el primer fotograma clave 
+                    (depende de la dirección de la animación) y los conservará durante el periodo de retardo de la animación.
+    > both       -> La animación seguirá las reglas tanto para adelante como para atrás, extendiendo las propiedades de 
+                    la animación en ambas direcciones
+*/
+
+/* EJEMPLO 1 */
+/* El siguiente ejemplo permite que el elemento <div> conserve los valores de estilo del último keyframe(fotograma clave) cuando 
+finaliza la animación: */
+@keyframes example-4 {
+    from {
+        top: 0px;
+    }
+    to {
+        top: 10px;/*200px*/
+        background-color: blue;
+    }
+}
+
+.div-19 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    animation-name: example-4;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+/* EJEMPLO 2 */
+/* El siguiente ejemplo permite que el elemento <div> obtenga los valores de estilo establecidos por el primer fotograma clave 
+antes de que comience la animación (durante el periodo de retardo de la animación): */
+@keyframes example-5 {
+    from {
+        top: 0px;
+        background-color: yellow;
+    }
+    to {
+        top: 200px;
+    }
+}
+
+.div-20 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    animation-name: example-5;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+}
+
+/* EJEMPLO 3 */
+/* El siguiente ejemplo permite que el elemento <div> obtenga los valores de estilo establecidos por el primer fotograma clave 
+antes de que comience la animación, y conserve los valores de estilo del último fotograma clave cuando finalice la animación: */
+@keyframes example-6 {
+    from {
+        top: 0px;
+        background-color: yellow;
+    }
+    to {
+        top: 10px;/*200px*/
+        background-color: blue;
+    }
+}
+
+.div-21 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    animation-name: example-6;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+/* Animation Shorthand Property - Animación Abreviada Propiedad */
+
+/* EJEMPLO 1 */
+/* El ejemplo siguiente utiliza seis de las propiedades de animación: */
+@keyframes example-7 {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+    50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+    }
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+    }
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.div-22 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: example-7;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* EJEMPLO 2 */
+/* El mismo efecto de animación anterior puede conseguirse utilizando la propiedad abreviada animation: */
+.div-23 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation: example-7 5s linear 2s infinite alternate;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/* Curso OpenBootCamp */
+
+/* Transitions - Transiciones */
+
+.padre {
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+}
+
+.hijo {
+    width: 50%;
+    height: 50%;
+    background-color: beige;
+    transition: transform 1s ease-in-out 2s;
+}
+
+.padre:hover .hijo {
+    transform: translateX(100%);
+    background-color: blueviolet;
+}
+
+/*Animaciones*/
+.padre-2 {
+    width: 400px;
+    height: 400px;
+    background-color: red;
+}
+
+.hijo-2 {
+    width: 50%;
+    height: 50%;
+    background-color: yellow;
+    animation: traslacion 4s ease-in-out infinite forwards alternate;
+}
+
+.padre-2:hover .hijo-2 {
+    /*animation: traslacion 4s ease-in-out infinite forwards alternate;*/
+    animation-play-state: paused;
+}
+
+/*Hecho Por Mi*/
+/*
+@keyframes traslacion {
+    0% {
+        background-color: yellow;
+        transform: translateX(0%);
+    }
+    25% {
+        background-color: darkorange;
+        transform: translateX(100%);
+    }
+    50% {
+        background-color: mediumaquamarine;
+        transform:  translateX(100%) translateY(100%);
+    }
+    75% {
+        background-color: green;
+        transform:  translateY(0%) translateY(100%);
+    }
+    100% {
+        background-color: yellow;
+        transform: translateX(0%);
+    }
+}
+*/
+
+/*Hecho Por el Lic*/
+@keyframes traslacion {
+    0% {
+        background-color: yellow;
+        transform: translateX(0%) translateY(0%);
+    }
+    25% {
+        background-color: mediumaquamarine;
+        transform: translateX(100%) translateY(0%);
+    }
+    50% {
+        background-color: darkorange;
+        transform: translateX(100%) translateY(100%);
+    }
+    75% {
+        background-color: green;
+        transform: translateX(0%) translateY(100%);
+    }
+    100% {
+        background-color: yellow;
+        transform: translateX(0%) translateY(0%);
+    }
+}
