@@ -1,0 +1,491 @@
+/* Documentacion de w3schools */
+
+/*Centrar todo el contenido*/
+.body-1{
+    text-align: center
+}
+
+
+/* CSS Tooltip */
+/* Mensaje que aparece cuando el cursor se sitúa sobre un icono, imagen, hipervínculo u otro elemento de una interfaz gráfica de usuario. */
+/* Un tooltip se utiliza a menudo para especificar información extra sobre algo cuando el usuario mueve el puntero del ratón sobre un elemento */
+
+/* Basic Tooltip - Tooltip básico */
+
+/* EJEMPLO 1 */
+/* Crear un tooltip que aparezca cuando el usuario pase el ratón por encima de un elemento: */
+
+/* Tooltip container - Contenedor Tooltip */
+.tooltip-1 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;/*Si desea puntos debajo del texto que se puede pasar por encima*/
+}
+
+/* Tooltip text - Texto Tooltip */
+.tooltip-1 .tooltiptext-1 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Posicione el texto de tooltip - ¡vea los ejemplos a continuación! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Mostrar el texto de tooltip al pasar el ratón por encima del contenedor de tooltip */
+.tooltip-1:hover .tooltiptext-1 {
+    visibility: visible;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* Example Explained - Explicación del ejemplo 1 */
+/*
+    HTML: Utilice un elemento contenedor (como <div>) y añádale la clase "tooltip-1". Cuando el usuario pase el ratón por encima 
+    de este <div>, se mostrará el texto "tooltip".
+    El texto de tooltip se coloca dentro de un elemento en línea (como <span>) con class="tooltiptext-1".
+
+    CSS: La clase tooltip-1 usa position:relative, que es necesario para posicionar el texto tooltip (position:absolute). 
+    Nota: Vea los ejemplos a continuación sobre cómo posicionar el tooltip.
+
+    La clase tooltiptext-1 contiene el texto real del tooltip. Está oculto por defecto, y será visible al pasar el ratón 
+    por encima (ver más abajo). También le hemos añadido algunos estilos básicos: 120px de ancho, color de fondo negro, 
+    color de texto blanco, texto centrado, y 5px de relleno superior e inferior.
+
+    La propiedad CSS border-radius se utiliza para añadir esquinas redondeadas al texto de tooltip.
+
+    El selector :hover se utiliza para mostrar el texto de información sobre herramientas cuando el usuario pasa el ratón 
+    por encima del <div> con class="tooltip-1".
+*/
+
+/* ------------------------------------------------------------------------------------- */
+/* Positioning Tooltips - Herramientas de posicionamiento */
+
+/* EJEMPLO 1 */
+/*
+    En este ejemplo, la tooltip se coloca a la derecha (left:105%) del texto "hoverable" (<div>). 
+    Observe también que top:-5px se utiliza para colocarla en el centro de su elemento contenedor. 
+    Usamos el número 5 porque el texto "tooltip" tiene un padding superior e inferior de 5px. 
+    Si aumenta su relleno(padding), aumente también el valor de la propiedad top para asegurarse de 
+    que permanece en el centro (si esto es algo que desea). Lo mismo se aplica si desea que la tooltip 
+    se sitúe a la left(izquierda).
+*/
+
+/* Right Tooltip - Derecha Tooltip */
+.tooltip-2 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip-2 .tooltiptext-2 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Posición del tooltip*/
+    position: absolute;
+    z-index: 1;
+    /*Se agrego esto nuevo*/
+    top: -5px;
+    left: 105%;
+}
+
+.tooltip-2:hover .tooltiptext-2 {
+    visibility: visible;
+}
+
+/* Left Tooltip - Izquierda Tooltip */
+.tooltip-3 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip-3 .tooltiptext-3 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Posición del tooltip*/
+    position: absolute;
+    z-index: 1;
+    /*Se agrego esto nuevo*/
+    top: -5px;
+    right: 105%;
+}
+
+.tooltip-3:hover .tooltiptext-3 {
+    visibility: visible;
+}
+
+/* EJEMPLO 2 */
+/*
+    Si desea que la tooltip aparezca en la parte top(superior) o bootom(inferior), consulte los ejemplos siguientes. 
+    Observe que utilizamos la propiedad margin-left con un valor de menos 60 píxeles. 
+    Esto es para centrar la tooltip por encima/debajo del texto sobre el que se puede pasar el ratón. 
+    Se establece en la mitad de la width(anchura) del tooltip's (120/2 = 60).
+*/
+
+/* Top Tooltip - Arriba Tooltip */
+.tooltip-4 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip-4 .tooltiptext-4 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Posición del tooltip*/
+    position: absolute;
+    z-index: 1;
+    /*Se agrego esto nuevo*/
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px; /*Utilice la mitad de la anchura (120/2 = 60) para centrar la información sobre herramientas.*/
+}
+
+.tooltip-4:hover .tooltiptext-4 {
+    visibility: visible;
+}
+
+/* Bottom Tooltip - Abajo Tooltip */
+.tooltip-5 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip-5 .tooltiptext-5 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Posición del tooltip*/
+    position: absolute;
+    z-index: 1;
+    /*Se agrego esto nuevo*/
+    top: 100%;
+    left: 50%;
+    margin-left: -60px; /*Utilice la mitad de la anchura (120/2 = 60) para centrar la información sobre herramientas.*/
+}
+
+.tooltip-5:hover .tooltiptext-5 {
+    visibility: visible;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Tooltip Arrows - Flechas de información sobre herramientas */
+/*
+    Para crear una flecha que debe aparecer desde un lado específico del tooltip, añada contenido "vacío(empty)" después del tooltip, 
+    con la clase de pseudo-elemento ::after junto con la propiedad content. La propia flecha se crea utilizando bordes. Esto hará que 
+    el tooltip parezca una burbuja de diálogo.
+*/
+
+/* EJEMPLO 1 */
+/* Bottom Arrow - Flecha inferior */
+/* Este ejemplo muestra cómo añadir una flecha en la parte inferior de la información sobre herramientas: */
+.tooltip-6 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip-6 .tooltiptext-6 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Posición del tooltip*/
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+/* Agregar un trigulo en el tooltip */
+.tooltip-6 .tooltiptext-6::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* En la parte inferior del tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip-6:hover .tooltiptext-6 {
+    visibility: visible;
+}
+
+/* Example Explained - Explicación del ejemplo */
+/*
+    Coloque la flecha dentro del tooltip: top: 100% colocará la flecha en la parte bottom(inferior) del tooltip. left: 50% centrará la flecha.
+    Nota: La propiedad border-width especifica el tamaño de la flecha. Si la cambia, cambie también el valor del margen izquierdo(margin-left). Esto mantendrá la flecha centrada.
+    El border-color(color del borde) se utiliza para transformar el contenido en una flecha. Establecemos el borde superior en negro, y el resto en transparente. Si todos los lados fueran negros, tendrías una caja cuadrada negra.
+*/
+
+/* EJEMPLO 2 */
+/* Top Arrow - Flecha superior */
+/* Este ejemplo muestra cómo añadir una flecha a la parte superior del tooltip. Observe que esta vez hemos establecido 
+el color del borde inferior: */
+.tooltip-7 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip-7 .tooltiptext-7 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Posición del tooltip*/
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+/* Agregar un trigulo en el tooltip */
+.tooltip-7 .tooltiptext-7::after {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* En la parte superior del tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.tooltip-7:hover .tooltiptext-7 {
+    visibility: visible;
+}
+
+
+/* EJEMPLO 3 */
+/* Left Arrow - Flecha Izquierda */
+/* Este ejemplo muestra cómo añadir una flecha a la izquierda del tooltip: */
+.tooltip-8 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip-8 .tooltiptext-8 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Posición del tooltip*/
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+}
+
+/* Agregar un trigulo en el tooltip */
+.tooltip-8 .tooltiptext-8::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* A la izquierda del tooltip*/
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+
+.tooltip-8:hover .tooltiptext-8 {
+    visibility: visible;
+}
+
+/* EJEMPLO 4 */
+/* Right Arrow - Flecha Derecha */
+/* Este ejemplo muestra cómo añadir una flecha a la derecha del tooltip: */
+.tooltip-9 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip-9 .tooltiptext-9 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Posición del tooltip*/
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 110%;
+}
+
+/* Agregar un trigulo en el tooltip */
+.tooltip-9 .tooltiptext-9::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%; /* A la derecha del tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+
+.tooltip-9:hover .tooltiptext-9 {
+    visibility: visible;
+}
+
+/* ------------------------------------------------------------------------------------- */
+/* Fade In Tooltips (Animation) - Desvanecimiento de Tooltips (animación)  */
+
+/* EJEMPLO 1 */
+/*
+    Si desea desvanecer el texto del tooltip cuando está a punto de ser visible, puede utilizar la propiedad de transition CSS 
+    junto con la propiedad de opacity, y pasar de ser completamente invisible a 100% visible, en un número de segundos 
+    especificado (1 segundo en nuestro ejemplo):
+*/
+.tooltip-10 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip-10 .tooltiptext-10 {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Posición del tooltip*/
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Desvanecer de tooltip - tarda 1 segundo en pasar de 0% a 100% de opacidad: */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip-10:hover .tooltiptext-10 {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/* Curso de OpenBootCamp */
+
+.body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.btn-tooltip {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: green;
+    color: white;
+    border-bottom: 2px solid darkgreen;
+    cursor: pointer;
+    transition: background-color 150ms;
+}
+
+.btn-tooltip:hover {
+    background-color: rgb(0, 100, 0);
+}
+
+/* .btn-tooltip:hover::before {
+    content: "Esto es un tooltip";
+} */
+
+.tooltip {
+    position: absolute;
+    /* visibility: hidden; */
+    opacity: 0;
+    top: -50px;
+    left: -100%;
+    transform: translateX(25%);
+    color: #ddd;
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: opacity 150ms;
+}
+
+.btn-tooltip:hover .tooltip {
+    /* visibility: visible; */
+    opacity: 1;
+}
+
+.tooltip::before {
+    content: '';
+    border: solid 10px transparent;
+    border-top-color: #333;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* .triangulo {
+    border: solid 10px transparent;
+    border-top-color: #333;
+} */
