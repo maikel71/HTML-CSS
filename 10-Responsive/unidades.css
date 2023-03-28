@@ -1,0 +1,90 @@
+body {
+    padding: 20px;
+    margin: 0;
+}
+
+.escenario {
+    margin: 10px 0px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.escenario-1 {
+    width: 100%;
+}
+
+.escenario-2 {
+    width: 50%;
+}
+
+/* CSS Units - Unidades CSS */ 
+/* 
+    CSS tiene varias unidades diferentes para expresar una longitud(length).
+    Muchas propiedades CSS toman valores de "length", como width, margin, padding, font-size, etc. 
+
+    La longitud(length) es un número seguido de una unidad de longitud, como 10px, 2em, etc.
+*/
+
+/* Absolute Lengths - Longitudes absolutas */
+/*
+    Las unidades de longitud absolutas son fijas y una longitud expresada en cualquiera de 
+    ellas aparecerá exactamente de ese tamaño.
+
+    Las unidades de longitud absolutas no se recomiendan para su uso en pantalla, ya que 
+    los tamaños de pantalla varían mucho. Sin embargo, pueden utilizarse si se conoce el 
+    medio de salida, como en el caso de la maquetación para impresión.
+*/
+
+/*
+    Unidad  +   Descripción
+    --------+----------------------------------
+    cm      +   centímetros
+    mm      +   milímetros
+    in      +   pulgadas(1in = 96px = 2.54cm)
+    px *    +   pixeles (1pt = 1/72 of 1in)
+    pt      +   puntos (1pt = 1/72 of 1in)
+    pc      +   picas (1pc = 12 pt)
+*/
+
+/* Los píxeles (px) son relativos al dispositivo de visualización. Para dispositivos de baja densidad de píxeles, 
+1px es un píxel de dispositivo (punto) de la pantalla. Para impresoras y pantallas de alta resolución, 
+1px implica varios píxeles del dispositivo. 
+*/
+.px {
+    background-color: green;
+    width: 200px;
+}
+
+
+/* Relative Lengths - Longitudes relativas */
+/* 
+    Las unidades de longitud relativas especifican una longitud relativa a otra propiedad de longitud. 
+    Las unidades de longitud relativas se adaptan mejor a distintos medios de representación. 
+*/
+
+/*
+    Unidad  +    Descripcion
+    --------+---------------------------------------------------------------------------------------------------------
+    em      +    Relativo al tamaño de la fuente del elemento (2em significa 2 veces el tamaño de la fuente actual)
+    ex      +    Relativo a la altura x de la fuente actual (raramente utilizado)
+    ch      +    Relativo a la anchura(width) del "0" (cero)
+    rem     +    Relativo al tamaño de fuente del elemento raíz
+    vw      +    Relativo al 1% de la anchura de la ventana gráfica*.
+    vh      +    Relativo al 1% de la altura de la ventana gráfica*.
+    vmin    +    Relativo al 1% de la dimensión más pequeña de la ventana gráfica
+    vmax    +    Relativo al 1% de la dimensión más grande de la ventana gráfica
+    %       +    Relativo al elemento padre
+*/
+
+/* Consejo: ¡Las unidades em y rem son prácticas para crear un diseño perfectamente escalable! 
+    * Viewport = el tamaño de la ventana del navegador. Si la ventana tiene 50 cm de ancho, 1vw = 0,5 cm.
+*/
+.porcentaje {
+    background-color: red;
+    width: 50%;
+}
+
+.view {
+    background-color: yellow;
+    width: 50vw;
+}
