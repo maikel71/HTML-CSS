@@ -1,0 +1,112 @@
+<!-- CSS Responsive -->
+
+<!-- What is Responsive Web Design? - ¿Qué es el diseño web responsivo? -->
+<!--
+    El diseño web responsivo hace que su página web se vea bien en todos los dispositivos.
+    El diseño web responsivo solo utiliza HTML y CSS.
+    El diseño web responsive no es un programa ni JavaScript.
+-->
+
+<!-- The Viewport - La ventana gráfica -->
+
+<!-- What is The Viewport? - ¿Qué es la ventana gráfica? -->
+<!--
+    La ventana gráfica es el área visible del usuario en una página web.
+
+    La ventana gráfica varía según el dispositivo, y será más pequeña en un teléfono móvil que en 
+    la pantalla de un ordenador.
+
+    Antes de las tabletas y los teléfonos móviles, las páginas web se diseñaban solo para pantallas 
+    de ordenador, y era habitual que tuvieran un diseño estático y un tamaño fijo.
+
+    Luego, cuando empezamos a navegar por Internet con tabletas y teléfonos móviles, las páginas 
+    web de tamaño fijo eran demasiado grandes para caber en la ventana gráfica. Para solucionarlo, 
+    los navegadores de esos dispositivos redujeron el tamaño de toda la página para ajustarla a la pantalla.
+
+    No era perfecto. Pero era una solución rápida.
+-->
+
+<!-- Setting The Viewport - Configuración de la ventana gráfica -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Setting The Viewport - Configuración de la ventana gráfica -->
+    <!--
+        HTML5 introdujo un método que permite a los diseñadores web controlar la ventana gráfica mediante 
+        la etiqueta <meta>.
+        Debes incluir el siguiente elemento <meta> viewport en todas tus páginas web:
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        Esto da al navegador instrucciones sobre cómo controlar las dimensiones y el escalado de la página.
+        La parte width=device-width ajusta el ancho de la página al ancho de pantalla del dispositivo (que variará en función del dispositivo).
+        La parte initial-scale=1.0 establece el nivel de zoom inicial cuando el navegador carga la página por primera vez.
+    -->
+
+    <!-- Size Content to The Viewport - Tamaño del contenido en la ventana gráfica -->
+    <!--
+        Los usuarios están acostumbrados a desplazarse verticalmente por los sitios web, tanto en 
+        ordenadores de sobremesa como en dispositivos móviles, pero no horizontalmente.
+
+        Por eso, si el usuario se ve obligado a desplazarse horizontalmente, o a alejar la imagen, 
+        para ver toda la página web, la experiencia del usuario es deficiente.
+
+        Algunas reglas adicionales a seguir:
+
+        1. Por ejemplo, si una imagen se muestra con una anchura superior a la de la ventana gráfica, 
+            puede hacer que ésta se desplace horizontalmente. Recuerde ajustar este contenido para que 
+            se ajuste a la anchura de la ventana gráfica.
+        2. Dado que las dimensiones de la pantalla y la anchura en píxeles CSS varían mucho de un 
+            dispositivo a otro, el contenido no debe depender de una anchura determinada de la ventana 
+            gráfica para mostrarse correctamente.
+        3. Utilizar consultas de medios CSS para aplicar estilos diferentes a pantallas pequeñas y grandes 
+            - Si se establecen anchos CSS absolutos grandes para los elementos de la página, el elemento será 
+            demasiado ancho para la ventana gráfica de un dispositivo más pequeño. En su lugar, considere el 
+            uso de valores de anchura relativa, como width: 100%. Además, tenga cuidado al utilizar valores 
+            de posicionamiento absolutos grandes. Puede hacer que el elemento quede fuera de la ventana gráfica 
+            en dispositivos pequeños.
+    -->
+
+
+
+    <title>Unidades EM y REM</title>
+    <link rel="stylesheet" href="unidades-em.css">
+</head>
+
+<body>
+    <!--
+        Las unidades que mas se saben usar no son ni el porcentaje, ni las unidades por viewport, ni los pixeles.
+        Se suele utilizar unidades un poco diferentes que son "em" y "rem".
+        Son unidades que estan relacionadas con el tamaño de fuente.
+        Son muy similares pero tienen una pequeña diferencia.
+
+        Hacen referencia al tamaño de fuente de donde esten contenidos, tenemos dos opciones
+    -->
+
+    <h1>Cuál es la diferencia entre estas dos, "em" y "rem"? </h1>
+    <div class="escenario-1 escenario">
+        <p>Este ha cambiado porque el "em" hace referencia al tamaño de fuente de su contenedor</p>
+        <div class="em">2em</div>
+
+        <p>Mientras que el rem hace referencia al tamaño de fuente no del contenedor si no de la raíz, es decir, si
+            nosotros tenemos una configuración de accesibilidad donde tenemos una fuente muy grande, cuando nosotros
+            empecemos a trabajar con rem's todo empezara a escalarse en relación a esa fuente que nosotros tengamos
+            definida dentro de nuestro dispositivo. Esto sí que es real mente hacer una aplicación responsive y eso lo
+            hacemos a través de "rem".</p>
+        <div class="rem">2rem</div>
+        <p>Sin embargo, nosotros utilizamos el "em" cuando queremos hacer referencia al tamaño de fuente relativo al
+            padre donde está contenido este elemento "2em" con el tamaño "em"</p>
+    </div>
+    <div class="escenario-2 escenario">
+        <div class="em">2em</div>
+        <div class="rem">2rem</div>
+    </div>
+
+</body>
+
+</html>
