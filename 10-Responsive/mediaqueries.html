@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+
+<body>
+
+    <!-- Documentacion de w3schools -->
+
+    <!-- What is a Media Query? - ¿Qué es una consulta de medios? -->
+    <!--
+    <h3>EJEMPLO 1</h3>
+    <div class="body-1">
+        <p>Cambie el tamaño de la ventana del navegador. Cuando la anchura de este documento es de 600 píxeles o menos,
+            el color de fondo es "azul claro", de lo contrario es "verde claro".</p>
+    </div>
+    -->
+
+    <!-- Add a Breakpoint - Añadir un punto de interrupción -->
+    <!--
+    <h3>EJEMPLO 2</h3>
+    <div class="todo">
+        <div class="html-1">
+            <div>
+                <div class="header">
+                    <h1>Chania</h1>
+                </div>
+                <div class="row">
+                    <div class="col-3 menu">
+                        <ul>
+                            <li>El vuelo</li>
+                            <li>La ciudad</li>
+                            <li>La isla</li>
+                            <li>La alimentación</li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h1>La ciudad</h1>
+                        <p>Chania es la capital de la región de Chania, en la isla de Creta. La ciudad puede dividirse
+                            en
+                            dos
+                            partes, el casco antiguo y la ciudad moderna.</p>
+                    </div>
+                    <div class="col-3 right">
+                        <div class="aside">
+                            <h2>¿Qué?</h2>
+                            <p>Chania es una ciudad de la isla de Create.</p>
+                            <h2>¿Dónde?</h2>
+                            <p>Creta es una isla griega del Mediterráneo.</p>
+                            <h2>¿Cómo?</h2>
+                            <p>Se puede llegar al aeropuerto de Chania desde toda Europa.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <p>Cambie el tamaño de la ventana del navegador para ver cómo responde el contenido al cambio de
+                        tamaño.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    -->
+
+    <!-- Always Design for Mobile First - Diseñar siempre primero para móviles -->
+    <!--
+    <h3>EJEMPLO 3</h3>
+    <div class="todo-2">
+        <div class="html-2">
+            <div>
+                <div class="header-2">
+                    <h1>Chania</h1>
+                </div>
+                <div class="row-2">
+                    <div class="col--15 menu-2">
+                        <ul>
+                            <li>El vuelo</li>
+                            <li>La ciudad</li>
+                            <li>La isla</li>
+                            <li>La alimentación</li>
+                        </ul>
+                    </div>
+                    <div class="col--18">
+                        <h1>La ciudad</h1>
+                        <p>Chania es la capital de la región de Chania, en la isla de Creta. La ciudad puede dividirse
+                            en
+                            dos
+                            partes, el casco antiguo y la ciudad moderna.</p>
+                    </div>
+                    <div class="col--15 right">
+                        <div class="aside-2">
+                            <h2>¿Qué?</h2>
+                            <p>Chania es una ciudad de la isla de Create.</p>
+                            <h2>¿Dónde?</h2>
+                            <p>Creta es una isla griega del Mediterráneo.</p>
+                            <h2>¿Cómo?</h2>
+                            <p>Se puede llegar al aeropuerto de Chania desde toda Europa.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-2">
+                    <p>Cambie el tamaño de la ventana del navegador para ver cómo responde el contenido al cambio de
+                        tamaño.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    -->
+
+    <!-- Another Breakpoint - Otro punto de ruptura -->
+    <!--
+    <h3>EJEMPLO 4</h3>
+    <div class="header">
+        <h1>Chania</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-3 col-s-3 menu">
+            <ul>
+                <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li>
+            </ul>
+        </div>
+
+        <div class="col-6 col-s-9">
+            <h1>The City</h1>
+            <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts,
+                the old town and the modern city.</p>
+        </div>
+
+        <div class="col-3 col-s-12">
+            <div class="aside">
+                <h2>What?</h2>
+                <p>Chania is a city on the island of Crete.</p>
+                <h2>Where?</h2>
+                <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                <h2>How?</h2>
+                <p>You can reach Chania airport from all over Europe.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Resize the browser window to see how the content respond to the resizing.</p>
+    </div>
+    -->
+
+    <!--<h3>HTML Example - Ejemplo HTML</h3>-->
+    <!--
+    <div class="header">
+        <h1>Chania</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-3 col-s-3 menu">
+            <ul>
+                <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li>
+            </ul>
+        </div>
+
+        <div class="col-6 col-s-9">
+            <h1>The City</h1>
+            <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts,
+                the old town and the modern city.</p>
+        </div>
+
+        <div class="col-3 col-s-12">
+            <div class="aside">
+                <h2>What?</h2>
+                <p>Chania is a city on the island of Crete.</p>
+                <h2>Where?</h2>
+                <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                <h2>How?</h2>
+                <p>You can reach Chania airport from all over Europe.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Resize the browser window to see how the content respond to the resizing.</p>
+    </div>
+    -->
+
+    <!-- Typical Device Breakpoints - Puntos de interrupción típicos del dispositivo -->
+    <!--
+    <h3>EJEMPLO 5</h3>
+
+    <h2>Typical Device Breakpoints - Puntos de interrupción típicos del dispositivo</h2>
+    <p class="example">Cambie el tamaño de la ventana del navegador para ver cómo cambia el color de fondo de este
+        párrafo en diferentes tamaños de pantalla.</p>
+    -->
+
+    <!-- Orientation: Portrait / Landscape - Orientación: Vertical / Horizontal -->
+    <!--
+    <h3>EJEMPLO 6</h3>
+    <p>Cambiar el tamaño de la ventana del navegador. Cuando la anchura de este documento es mayor que la altura, el
+        color de fondo es "azul claro", de lo contrario es "verde claro".</p>
+    -->
+
+    <!-- Hide Elements With Media Queries - Ocultar elementos con Media Queries -->
+    <!--
+    <h3>EJEMPLO 7</h3>
+
+    <h2>Hide elements on different screen sizes - Ocultar elementos en diferentes tamaños de pantalla</h2>
+
+    <div class="example">Example DIV</div>
+
+    <p>Cuando la anchura del navegador sea de 600px o menos, oculte el elemento div. Cambia el tamaño de la ventana del
+        navegador para ver el efecto.</p>
+    -->
+
+    <!-- Change Font Size With Media Queries - Cambiar el tamaño de fuente con Media Queries -->
+    <!--
+    <h3>EJEMPLO 8</h3>
+
+    <h2>Change the font size of an element on different screen sizes - Cambiar el tamaño de letra de un elemento en
+        diferentes tamaños de pantalla</h2>
+
+    <div class="example">Example DIV</div>
+
+    <p>Cuando la anchura del navegador sea de 600px o menos, ajuste el tamaño de la fuente del DIV a 30px. Cuando la
+        anchura sea de 601px o más, ajuste el tamaño de la fuente a 80px. Cambia el tamaño de la ventana del navegador
+        para ver el efecto.</p>
+    -->
+
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- CSS @media Rule - Regla @media CSS -->
+    <!--<h3>EJEMPLO 1</h3>
+    <h1>The @media Rule - La regla @media</h1>
+    <p>Cambie el tamaño de la ventana del navegador. Cuando la anchura de este documento es de 600 píxeles o menos, el
+        color de fondo es "azul claro", de lo contrario es "amarillo".</p>
+    -->
+
+    <!-- ----------------------------------------------------------------------------------------- -->
+    <!-- More Examples - Más ejemplos -->
+
+    <!--<h3>EJEMPLO 2</h3>
+    <h2>Hide elements on different screen sizes - Ocultar elementos en diferentes tamaños de pantalla</h2>
+    <div class="example">Example DIV.</div>
+    <p>Cuando la anchura del navegador sea de 600px o menos, oculte el elemento div. Cambia el tamaño de la ventana del
+        navegador para ver el efecto.</p>
+    -->
+
+    <!--<h3>EJEMPLO 3</h3>
+    <h1>Resize the browser window to see the effect - Cambia el tamaño de la ventana del navegador para ver el efecto
+    </h1>
+    <p>Utilice mediaqueries para establecer el color de fondo en lavanda si la ventana gráfica tiene 800 píxeles de
+        ancho o más, en verde claro si la ventana gráfica tiene entre 400 y 799 píxeles de ancho. Si la ventana es
+        inferior a 400 píxeles, el color de fondo será azul claro.</p>
+    -->
+
+    <!--<h3>EJEMPLO 4</h3>
+    <h2>Responsive navigation menu - Menú de navegación adaptable</h2>
+    <p>Cambie el tamaño de la ventana del navegador para ver el efecto: Cuando la pantalla sea inferior a 600px, el menú
+        de navegación se mostrará verticalmente en lugar de horizontalmente.</p>
+
+    <div class="topnav">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div>
+    -->
+
+    <!--<h3>EJEMPLO 5</h3>
+    <h2>Responsive Four Column Layout</h2>
+    <p><strong>Cambie el tamaño de la ventana del navegador para ver el efecto de respuesta.</strong>En pantallas de
+        992px de ancho o menos, las columnas pasarán de cuatro a dos columnas. En pantallas de 600px de ancho o menos,
+        las columnas se apilarán una encima de otra en lugar de una al lado de la otra.</p>
+
+    <div class="row">
+        <div class="column" style="background-color: #aaa;">
+            <h2>Column 1</h2>
+            <p>Some text...</p>
+        </div>
+        <div class="column" style="background-color: #bbb;">
+            <h2>Column 2</h2>
+            <p>Some text...</p>
+        </div>
+        <div class="column" style="background-color: #ccc;">
+            <h2>Column 3</h2>
+            <p>Some text...</p>
+        </div>
+        <div class="column" style="background-color: #ddd;">
+            <h2>Column 4</h2>
+            <p>Some text...</p>
+        </div>
+    </div>
+    -->
+
+    <!--<h3>EJEMPLO 6</h3>
+        Note - Nota
+    <div style="background: yellow; padding: 5px;">
+        <h4 style="text-align: center;">Cambie el tamaño de la ventana del navegador para ver el efecto de respuesta.
+        </h4>
+    </div>
+
+        Header - Cabecera 
+    <div class="header">
+        <h1>Mi sitio web</h1>
+        <p>Con un diseño <b>flexible</b>.</p>
+    </div>
+
+    Navigation Bar - Barra de navegación
+    <div class="navbar">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div>
+
+    The flexible grid (content) - La rejilla flexible (contenido)
+    <div class="row">
+        <div class="side">
+            <h2>Sobre mí</h2>
+            <h5>Una foto de mí:</h5>
+            <div class="fakeimg" style="height: 200px;">
+                Imagen
+            </div>
+            <p>Algún texto sobre mí en culpa qui oficia deserunt mollit anim..</p>
+            <h3>Más información</h3>
+            <p>Lorem ipsum dolor sit ame.</p>
+            <div class="fakeimg" style="height: 60px;">Imagen</div><br>
+            <div class="fakeimg" style="height: 60px;">Imagen</div><br>
+            <div class="fakeimg" style="height: 60px;">Imagen</div><br>
+        </div>
+
+        <div class="main">
+            <h2>TÍTULO ENCABEZAMIENTO</h2>
+            <h5>Descripción del título, 7 de diciembre de 2017</h5>
+            <div class="fakeimg" style="height: 200px;">Imagen</div>
+            <p>Algún texto..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco.</p>
+        </div>
+    </div>
+
+        Footer - Pie de página
+    <div class="footer">
+        <h2>Footer</h2>
+    </div>
+    -->
+
+    <!--<h3>EJEMPLO 7</h3>
+    <p>Cambie el tamaño de la ventana del navegador. Cuando la anchura de este documento es mayor que la altura, el
+        color de fondo es "azul claro", de lo contrario es "verde claro".</p>
+    -->
+
+    <!--<h3>EJEMPLO 8</h3>
+    <h1>La regla @media</h1>
+    <p>Utilice mediaqueries para establecer el color del texto en verde cuando el documento se muestre en la pantalla, y
+        en negro cuando se imprima.</p>
+    -->
+
+    <h3>EJEMPLO 9</h3>
+    <h2>Cambiar la apariencia de DIV en diferentes tamaños de pantalla</h2>
+
+    <div class="example">Ejemplo DIV.</div>
+
+    <p>Cuando el ancho del navegador está entre 600 y 900px O por encima de 1100px, cambia la apariencia del DIV.
+        <strong>Cambia el tamaño de la ventana del navegador para ver el efecto</strong>.
+    </p>
+
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- Clase de Open Boot Camp -->
+    <!--
+    <h1>Titulo</h1>
+    <p>Este es un parrafo</p>
+    -->
+</body>
+
+</html>
