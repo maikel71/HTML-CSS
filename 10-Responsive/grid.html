@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" href="grid.css">
+</head>
+
+<body>
+    <!--Documentacion de w3schools-->
+
+
+    <!--Grid Elements - Elementos de cuadrícula-->
+    <h3>EJEMPLO 1</h3>
+    <h1>Grid Elements - Elementos de cuadrícula</h1>
+    <p>Un Grid Layout debe tener un elemento padre con la propiedad <em>display</em> establecida a <em>grid</em> o
+        <em>inline-grid</em>.
+    </p>
+    <p>Los elementos hijos directos del grid container(contenedor de rejilla) se convierten automáticamente en grid
+        items(elementos de rejilla).</p>
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <h3>EJEMPLO 2</h3>
+    <h1>display: grid</h1>
+    <p>Utilice display: grid; para hacer un contenedor de cuadrícula a nivel de bloque:</p>
+
+    <div class="grid-container-2">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <h3>EJEMPLO 3</h3>
+    <h1>display: inline-grid</h1>
+    <p>Utilice display: inline-grid; para hacer un contenedor de rejilla en línea:</p>
+    <div class="grid-container-3">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <h3>EJEMPLO 4</h3>
+    <h1>The column-gap Property - La propiedad column-gap</h1>
+    <p>Use la propiedad <em>column-gap</em> para ajustar el espacio entre las columnas:</p>
+
+    <div class="grid-container-4">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <h3>EJEMPLO 5</h3>
+    <h1>The row-gap Property - La propiedad row-gap</h1>
+    <p>Use la propiedad <em>row-gap</em> para ajustar el espacio entre las filas:</p>
+
+    <div class="grid-container-5">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <h3>EJEMPLO 6</h3>
+    <h1>The gap Property - La propiedad gap </h1>
+    <p>Utilice la propiedad abreviada <em>gap</em> para ajustar el espacio entre las columns(columnas) y las
+        rows(filas).</p>
+
+    <div class="grid-container-6">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+    <br>
+    <div class="grid-container-7">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <h3>EJEMPLO 8</h3>
+    <h1>Grid Lines - Líneas de cuadrícula</h1>
+    <div class="grid-container-8">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+        <div class="item7">7</div>
+        <div class="item8">8</div>
+    </div>
+
+    <p>Puede hacer referencia a los números de línea al colocar los elementos de la cuadrícula.</p>
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <h3>EJEMPLO 9</h3>
+    <h1>The grid-template-columns Property - Propiedad grid-template-columns</h1>
+    <p>Puede utilizar la propiedad <em>grid-template-columns</em> para especificar el número de columnas de su diseño de
+        rejilla.</p>
+    <div class="grid-container-9">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <p>Utilice la propiedad <em>grid-template-columns</em> para especificar el tamaño de cada columna.</p>
+    <div class="grid-container-10">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <h3>EJEMPLO 11</h3>
+    <h1>The grid-template-rows Property - La propiedad grid-template-rows</h1>
+    <div class="grid-container-11">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+    <p>Utilice la propiedad <em>grid-template-rows</em> para especificar el tamaño (altura) de cada fila.</p>
+
+    <h3>EJEMPLO 12</h3>
+    <h1>The justify-content Property - La propiedad justify-content</h1>
+    <p>Utilice la propiedad <em>justify-content</em> para alinear la rejilla dentro del contenedor.</p>
+    <p>El valor "space-evenly" dará a las columnas la misma cantidad de espacio entre, y alrededor de ellas:</p>
+    <div class="grid-container-12">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 13</h3>
+    <p>El valor "space-around" dará a las columnas la misma cantidad de espacio a su alrededor:</p>
+    <div class="grid-container-13">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 14</h3>
+    <p>El valor "space-between" dará a las columnas la misma cantidad de espacio entre ellas:</p>
+    <div class="grid-container-14">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 15</h3>
+    <p>El valor "center" alineará la rejilla en el centro del contenedor:</p>
+    <div class="grid-container-15">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 16</h3>
+    <p>El valor "start" alineará la rejilla al principio del contenedor:</p>
+    <div class="grid-container-16">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 17</h3>
+    <p>El valor "end" alineará la rejilla al final del contenedor:</p>
+    <div class="grid-container-17">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 18</h3>
+    <h1>The align-content Property - La propiedad align-content</h1>
+    <p>Utilice la propiedad <em>align-content</em> para alinear verticalmente la rejilla dentro del contenedor.</p>
+
+    <p>El valor "center" alineará las filas en el centro del contenedor:</p>
+    <div class="grid-container-18">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 19</h3>
+    <p>El valor "space-evenly" dará a las filas la misma cantidad de espacio entre ellas, y alrededor de ellas:</p>
+    <div class="grid-container-19">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 20</h3>
+    <p>El valor "space-around" dará a las filas la misma cantidad de espacio a su alrededor:</p>
+    <div class="grid-container-20">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 21</h3>
+    <p>El valor "space-between" dará a las filas la misma cantidad de espacio entre ellas:</p>
+    <div class="grid-container-21">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 22</h3>
+    <p>El valor "start" alineará las filas al principio del contenedor:</p>
+    <div class="grid-container-22">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 23</h3>
+    <p>El valor "end" alineará las filas al final del contenedor:</p>
+    <div class="grid-container-23">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!--GRID ITEM-->
+    <h3>EJEMPLO 24</h3>
+    <h1>The grid-column Property: - La propiedad grid-column:</h1>
+    <p>Utilice la propiedad <em>grid-column</em> para especificar dónde colocar un elemento.</p>
+    <p>Item3 osea el 1 empezará en la columna 1 y terminará antes de la columna 5:</p>
+    <div class="grid-container-24">
+        <div class="item3">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+    </div>
+
+    <h3>EJEMPLO 25</h3>
+    <p>Item4 osea el 1 comenzará en la línea de columna 1 y abarcará 3 columnas:</p>
+    <div class="grid-container-24">
+        <div class="item4">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+    </div>
+
+    <h3>EJEMPLO 26</h3>
+    <p>Item5 comenzará en la línea de columna 2 y abarcará 3 columnas:</p>
+    <div class="grid-container-24">
+        <div>1</div>
+        <div class="item5">2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+    </div>
+
+
+    <h3>EJEMPLO 27</h3>
+    <h1>The grid-row Property - La propiedad grid-row</h1>
+    <p>Utilice la propiedad <em>grid-row</em> para especificar dónde colocar un elemento.</p>
+    <p>Item6 osea el 1 comenzará en la línea de fila 1 y terminará en la línea de fila 4:</p>
+    <div class="grid-container-27">
+        <div class="item6">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+    </div>
+
+    <h3>EJEMPLO 28</h3>
+    <p>Haz que "item7" empiece en la fila 1 y abarque 2 filas:</p>
+    <div class="grid-container-27">
+        <div class="item7">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+    </div>
+
+    <h3>EJEMPLO 29</h3>
+    <h1>The grid-area Property - La propiedad grid-area</h1>
+    <p>Puede utilizar la propiedad grid-area para especificar dónde colocar un elemento.</p>
+    <p>La sintaxis es:</p>
+    <p>grid-row-start / grid-column-start / grid-row-end / grid-column-end.</p>
+
+    <p>Item8 comenzará en la línea de fila 1 y la línea de columna 2, y terminará en la línea de fila 5 y la línea de
+        columna 6:</p>
+    <div class="grid-container-27">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div class="item8">8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+    </div>
+
+    <h3>EJEMPLO 30</h3>
+    <p>El Item9 comenzará en la línea de fila 2 y la línea de columna 1, y abarcará 2 filas y 3 columnas:</p>
+    <div class="grid-container-27">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div class="item10">8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+    </div>
+
+
+    <h3>EJEMPLO 31</h3>
+    <p>Puede hacer referencia al nombre cuando configure el grid layout (diseño de la rejilla), utilizando la propiedad
+        grid-template-areas en el grid container (contenedor de la rejilla).</p>
+    <p> Item11, se llama "myArea" y ocupará el lugar de las cinco columnas: </p>
+    <div class="grid-container-31">
+        <div class="item11">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <h3>EJEMPLO 32</h3>
+    <p>Item12, se llama "myArea" y ocupará el lugar de dos columnas (de cinco):</p>
+    <div class="grid-container-32">
+        <div class="item12">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+
+    <h3>EJEMPLO 33</h3>
+    <p>Item12, se llama "myArea" y ocupará el lugar de dos columnas (de cinco), y abarcará dos filas:</p>
+    <div class="grid-container-33">
+        <div class="item12">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+    </div>
+
+    <h3>EJEMPLO 34</h3>
+    <p>Esta cuadrícula contiene seis columnas y tres filas:</p>
+    <div class="grid-container-34">
+        <div class="item13">Header</div>
+        <div class="item14">Menu</div>
+        <div class="item15">Main</div>
+        <div class="item16">Right</div>
+        <div class="item17">Footer</div>
+    </div>
+
+    <h3>EJEMPLO 35</h3>
+    <h1>Sort the Items - Ordenar los elementos</h1>
+    <p>No es necesario que los elementos de la cuadrícula se muestren en el mismo orden en que están escritos en el
+        código HTML.</p>
+    <div class="grid-container-35">
+        <div class="item18">1</div>
+        <div class="item19">2</div>
+        <div class="item20">3</div>
+        <div class="item21">4</div>
+        <div class="item22">5</div>
+        <div class="item23">6</div>
+    </div>
+
+    <h3>EJEMPLO 36</h3>
+    <h1>Re-arange the Order on Small Devices - Reorganizar el orden en dispositivos pequeños</h1>
+    <p>Cambia el tamaño de la ventana a 500 píxeles para ver el efecto.</p>
+
+    <div class="grid-container-35">
+        <div class="item24">1</div>
+        <div class="item25">2</div>
+        <div class="item26">3</div>
+        <div class="item27">4</div>
+        <div class="item28">5</div>
+        <div class="item29">6</div>
+    </div>
+
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!--Clase de Open Boot Camp-->
+    <hr>
+    <div class="contenedor">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+    </div>
+</body>
+
+</html>
