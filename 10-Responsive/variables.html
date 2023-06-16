@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+    <link rel="stylesheet" href="variables.css">
+
+    <!--EJEMPLO 6-->
+    <script>
+        //Obtener el elemento root(raíz)
+        var r = document.querySelector(':root');
+
+        //Crear una función para obtener el valor de una variable
+        function myFunction_get() {
+            //Obtener los estilos (propiedades y valores) de la root(raíz)
+            var rs = getComputedStyle(r);
+
+            //Alerta del valor de la variable --blue
+            alert("El valor de --blue4 es: " + rs.getPropertyValue('--blue4'));
+        }
+
+        // Crear una función para establecer el valor de una variable
+        function myFunction_set() {
+            //Establece el valor de la variable --blue4 a otro valor (en este caso "lightblue")
+            r.style.setProperty('--blue4', 'lightblue')
+        }
+    </script>
+    <!--*************************************-->
+</head>
+
+<body>
+    <!--Documentacion de w3schools-->
+    <h3>EJEMPLO 1</h3>
+    <div class="body-1">
+        <h1>The Traditional Way - La manera tradicional</h1>
+        <div class="container-1">
+            <h2 class="h2-1">Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+
+            <button class="button-1">Si</button>
+            <button class="button-1">No</button>
+        </div>
+
+    </div>
+
+    <h3>EJEMPLO 2</h3>
+    <div class="body-2">
+        <h1>Using the var() Function - Uso de la función var()</h1>
+        <div class="container-2">
+            <h2 class="h2-2">Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+
+            <button class="button-2">Si</button>
+            <button class="button-2">No</button>
+        </div>
+
+    </div>
+
+    <h3>EJEMPLO 3</h3>
+    <div class="body-3">
+        <h5>Para cambiar el color azul y blanco a un azul y blanco más suave, basta con cambiar los dos valores
+            variables:</h5>
+        <div class="container-3">
+            <h2 class="h2-3">Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+
+            <button class="button-3">Si</button>
+            <button class="button-3">No</button>
+        </div>
+
+    </div>
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <h3>EJEMPLO 4</h3>
+    <div class="body-4">
+        <h1>Override Global Variable With Local Variable - Anular variable global con variable local</h1>
+        <div class="container-4">
+            <h2 class="h2-4">Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+
+            <button class="button-4">Si</button>
+            <button class="button-4">No</button>
+        </div>
+
+    </div>
+
+    <h3>EJEMPLO 5</h3>
+    <div class="body-4">
+        <h1>New Local Variable - Nueva variable local</h1>
+        <div class="container-4">
+            <h2 class="h2-4">Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+
+            <button class="button-5">Si</button>
+            <button class="button-5">No</button>
+        </div>
+
+    </div>
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <h3>EJEMPLO 6</h3>
+    <div class="body-6">
+        <h1>Get and Change CSS Variable With JavaScript - Obtener y cambiar una variable CSS con JavaScript </h1>
+        <div class="container-6">
+            <h2 class="h2-6">Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+
+            <button class="button-6">Si</button>
+            <button class="button-6">No</button>
+        </div>
+
+        <button type="button" onclick="myFunction_get()">Obtener variable CSS con JavaScript</button>
+        <button type="button" onclick="myFunction_set()">Cambiar variable CSS con JavaScript</button>
+    </div>
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <h3>EJEMPLO 7</h3>
+    <div class="body-7">
+        <h1>Using Variables in Media Queries - Uso de variables en las consultas multimedia</h1>
+        <div class="container-7">
+            <h2 class="h2-7">Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+        </div>
+    </div>
+
+    <h3>EJEMPLO 8</h3>
+    <div class="body-8">
+        <h1>Using Variables in Media Queries - Uso de variables en las consultas multimedia</h1>
+        <div class="container-8">
+            <h2 class="h2-8">Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar
+                felis blandit.</p>
+        </div>
+    </div>
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!--Clase de Open Boot Camp-->
+    <hr>
+    <div class="contenedor">
+        <h1 class="titulo">Titulo</h1>
+        <p class="parrafo">Este es un parrafo</p>
+        <p class="footer">Este es el pie de pagina</p>
+    </div>
+</body>
+
+</html>

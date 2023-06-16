@@ -1,0 +1,348 @@
+/*Documentacion de w3schools*/
+/* CSS Variables */
+/*---------------------------------------------------------------*/
+/* The var() Function - La función var() */
+
+/* CSS Variables */
+/* 
+    La función var() se utiliza para insertar el valor de una variable CSS.
+
+    Las variables CSS tienen acceso al DOM, lo que significa que se pueden crear 
+    variables con ámbito local o global, modificar las variables con JavaScript y 
+    cambiar las variables basándose en consultas de medios.
+
+    Una buena forma de utilizar las variables CSS es cuando se trata de los colores 
+    de tu diseño. En lugar de copiar y pegar los mismos colores una y otra vez, 
+    puedes colocarlos en variables.
+*/
+
+/* The Traditional Way - La manera tradicional */
+
+/* EJEMPLO 1 */
+/* El siguiente ejemplo muestra la forma tradicional de definir algunos colores 
+en una hoja de estilo (definiendo los colores a utilizar, para cada elemento específico): */
+.body-1 {
+    background-color: #1e90ff;
+}
+
+.h2-1 {
+    border-bottom: 2px solid #1e90ff;
+}
+
+.container-1 {
+    color: #1e90ff;
+    background-color: #ffffff;
+    padding: 15px;
+}
+
+.button-1 {
+    background-color: #ffffff;
+    color: #1e90ff;
+    border: 1px solid #1e90ff;
+    padding: 15px;
+}
+
+/* Syntax of the var() Function - Sintaxis de la función var() */
+/* 
+    La función var() se utiliza para insertar el valor de una variable CSS.
+    La sintaxis de la función var() es la siguiente: 
+
+    var(--name, value)
+
+    Valor   +   Descripcion
+    name    +   Obligatorio. El nombre de la variable (debe empezar con dos guiones).
+    value   +   	Opcional. El valor alternativo (utilizado si no se encuentra la variable).
+
+    Nota: El nombre de la variable debe comenzar con dos guiones (--) y distingue 
+    entre mayúsculas y minúsculas.
+*/
+
+/* How var() Works - Cómo funciona var() */
+/*
+    En primer lugar: Las variables CSS pueden tener un ámbito global o local.
+
+    Las variables globales se pueden acceder/utilizar en todo el documento, 
+    mientras que las variables locales sólo se pueden utilizar dentro del 
+    selector en el que se declaran.
+
+    Para crear una variable con alcance global, declárela dentro del selector :root. 
+    El selector :root coincide con el elemento raíz del documento.
+
+    Para crear una variable de ámbito local, declárela dentro del selector que va a utilizarla.
+*/
+
+/* EJEMPLO 2 */
+/*El siguiente ejemplo es igual al anterior, pero aquí utilizamos la función var().
+Primero, declaramos dos variables globales (--blue y --white). Luego, usamos la 
+función var() para insertar el valor de las variables más adelante en la hoja de estilo:*/
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+}
+
+.body-2 {
+    background-color: var(--blue);
+}
+
+.h2-2 {
+    border-bottom: 2px solid var(--blue);
+}
+
+.container-2 {
+    color: var(--blue);
+    background-color: var(--white);
+    padding: 15px;
+}
+
+.button-2 {
+    background-color: var(--white);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    padding: 5px;
+}
+
+/*
+    Las ventajas de utilizar var() son:
+    > hace que el código sea más fácil de leer (más comprensible)
+    > hace mucho más fácil cambiar los valores de color
+*/
+
+/* Para cambiar el color azul y blanco a un azul y blanco más suave, 
+basta con cambiar los dos valores variables: */
+
+/* EJEMPLO 3 */
+:root {
+    --blue2: #6495ed;
+    --white2: #faf0e6;
+}
+
+.body-3 {
+    background-color: var(--blue2);
+}
+
+.h2-3 {
+    border-bottom: 2px solid var(--blue2);
+}
+
+.container-3 {
+    color: var(--blue2);
+    background-color: var(--white2);
+    padding: 15px;
+}
+
+.button-3 {
+    background-color: var(--white2);
+    color: var(--blue2);
+    border: 1px solid var(--blue2);
+    padding: 5px;
+}
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Overriding Variables - Anulación de variables */
+
+/* Override Global Variable With Local Variable - Anular variable global con variable local */
+/*
+    anteriormente hemos aprendido que las variables globales pueden ser accedidas/usadas 
+    a través de todo el documento, mientras que las variables locales pueden ser usadas 
+    sólo dentro del selector donde es declarada.
+*/
+
+/* EJEMPLO 4 */
+/* 
+A veces queremos que las variables cambien sólo en una sección específica de la página.
+
+Supongamos que queremos un color azul diferente para los elementos de botón. 
+Entonces, podemos volver a declarar la variable --blue dentro del selector de botón. 
+Cuando usemos var(--blue) dentro de este selector, se usará el valor de la variable local --blue declarada aquí.
+
+Vemos que la variable local --blue anulará la variable global --blue para los elementos botón:
+*/
+:root {
+    --blue3: #1e90ff;
+    --white3: #ffffff;
+}
+
+.body-4 {
+    background-color: var(--blue3);
+}
+
+.h2-4 {
+    border-bottom: 2px solid var(--blue3);
+}
+
+.container-4 {
+    color: var(--blue3);
+    background-color: var(--white3);
+    padding: 15px;
+}
+
+.button-4 {
+    --blue3: #0000ff; /* la variable local anulará la global */
+    background-color: var(--white3);
+    color: var(--blue3);
+    border: 1px solid var(--blue3);
+    padding: 5px;
+}
+
+/* Add a New Local Variable - Añadir una nueva variable local */
+/*
+    Si una variable sólo se va a utilizar en un único lugar, también podríamos 
+    haber declarado una nueva variable local, de esta forma:
+*/
+
+/* EJEMPLO 5 */
+
+.button-5 {
+    --blue3-blue: #0000ff; /* nueva variable local */
+    background-color: var(--white3);
+    color: var(--blue3);
+    border: 1px solid var(--blue3-blue);
+    padding: 5px;
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Variables and JavaScript - Variables y JavaScript */
+
+/* Change Variables With JavaScript - Modificación de variables con JavaScript */
+/*
+    Las variables CSS tienen acceso al DOM, lo que significa que puedes modificarlas con JavaScript.
+*/
+
+/*EJEMPLO 6*/
+/* Aquí tienes un ejemplo de cómo puedes crear un script para mostrar y cambiar la variable --blue del ejemplo utilizado en las páginas anteriores. Por ahora, no te preocupes si no estás familiarizado con JavaScript. */
+/*MIRA EN EL ARCHIVO HTML EN EL EJEMPLO 6*/
+:root {
+    --blue4: #1e90ff;
+    --white4: #ffffff;
+}
+
+.body-6 {
+    background-color: var(--blue4);
+}
+
+.h2-6 {
+    border-bottom: 2px solid var(--blue4);
+}
+
+.container-6 {
+    color: var(--blue4);
+    background-color: var(--white4);
+    padding: 15px;
+}
+
+.button-6 {
+    background-color: var(--white4);
+    color: var(--blue4);
+    border: 1px solid var(--blue4);
+    padding: 5px;
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Variables in Media Queries - Variables en las consultas multimedia */
+
+/* Using Variables in Media Queries - Uso de variables en las consultas multimedia */
+/*
+    Ahora queremos cambiar el valor de una variable dentro de una media query.
+
+    Consejo: Las Media Queries consisten en definir diferentes reglas de estilo para diferentes dispositivos (pantallas, tabletas, teléfonos móviles, etc.). Puede obtener más información sobre las consultas de medios en nuestro capítulo sobre Media Queries.
+*/
+
+/* EJEMPLO 7 */
+/*
+    Aquí, primero declaramos una nueva variable local llamada --fontsize para 
+    la clase .container-7. Fijamos su valor en 25 píxeles. Luego la usamos en 
+    la clase .container más abajo. Luego, creamos una regla @media que dice 
+    "Cuando el ancho del navegador sea 450px o mayor, cambia el valor de 
+    la variable --fontsize de la clase .container a 50px".
+*/
+
+/* Variable declarations - Declaraciones de variables */
+:root {
+    --blue5: #1e90ff;
+    --white5: #ffffff;
+}
+
+.container-7 {
+    --fontsize: 25px;
+}
+
+/* Styles - Estilos */
+.body-7 {
+    background-color: var(--blue5);
+}
+
+.h2-7 {
+    border-bottom: 2px solid var(--blue5);
+}
+
+.container-7 {
+    color: var(--blue5);
+    background-color: var(--white5);
+    padding: 15px;
+    font-size: var(--fontsize);
+}
+
+@media screen and (min-width: 450px) {
+    .container-7 {
+        --fontsize: 50px;
+    }
+}
+
+/* EJEMPLO 8 */
+/*
+    He aquí otro ejemplo en el que también cambiamos el valor de la variable --blue6 en la regla @media:
+*/
+/* Variable declarations - Declaraciones de variables */
+:root {
+    --blue6: #1e90ff;
+    --white6: #ffffff;
+}
+
+.container-8 {
+    --fontsize-2: 25px;
+}
+
+/* Styles - Estilos */
+.body-8 {
+    background-color: var(--blue6);
+}
+
+.h2-8 {
+    border-bottom: 2px solid var(--blue6);
+}
+
+.container-8 {
+    color: var(--blue6);
+    background-color: var(--white6);
+    padding: 15px;
+    font-size: var(--fontsize-2);
+}
+
+@media screen and (min-width: 450px) {
+    .container-8 {
+        --fontsize-2: 50px;
+    }
+    :root {
+        --blue6: lightblue;
+    }
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*Clase de Open Boot Camp*/
+:root {
+    --color-principal: rgb(195, 0, 255);
+    --ancho-principal: 350px;
+}
+
+.titulo {
+    color: var(--color-principal);
+}
+
+.footer {
+    color: var(--color-principal);
+}
+
+.contenedor {
+    background-color: antiquewhite;
+    padding: 1rem;
+    max-width: var(--ancho-principal);
+}
