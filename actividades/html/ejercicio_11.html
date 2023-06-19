@@ -1,0 +1,52 @@
+<!--
+    Crea un nuevo documento HTML con el título "Diseño Responsive con CSS"
+        > Crea un nuevo fichero CSS e impórtalo en el documento HTML principal
+        > Crea las siguientes dos secciones:
+            - Una barra lateral izquierda con tres elementos en vertical
+            - Una sección principal a la derecha
+            - (Tip: Utiliza la disposición flex donde la sección principal utilizará flex-grow)
+        > Utiliza las media queries para que cuando el ancho del viewport sea menor de 640px ocurra lo siguiente:
+            - La barra lateral izquierda se muestre como una navegación en la parte inferior
+            - La disposición de los elementos de la barra lateral se vuelva horizontal
+            - (Tip: Trabaja con la propiedad flex-direction)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Responsive con CSS</title>
+    <link rel="stylesheet" href="/actividades/css/ejercicio_11.css">
+</head>
+
+<body>
+    <!-- 1. En el documento HTML, creamos un elemento <div> con 
+        la clase "contenedor" que va a contener las dos 
+        secciones: la barra lateral y la sección principal.-->
+    <div class="contenedor">
+        <!-- 2. Dentro del container, creamos otro <div> con 
+            la clase "barraLateral" que va a ser la barra lateral izquierda. 
+            Dentro de este <div>, creamos tres elementos <div> con 
+            la clase "elemento" que van a ser los elementos de la barra lateral.  -->
+        <div class="barraLateral">
+            <div class="elemento">1</div>
+            <div class="elemento">2</div>
+            <div class="elemento">3</div>
+        </div>
+
+        <!-- 3. Después del "barraLateral", creamos otro <div> con 
+            la clase "seccionPrincipal" que va a ser la sección principal. 
+            Dentro de este <div>, ponemos un título <h2> y un párrafo <p> 
+            con el contenido de la sección principal. -->
+        <div class="seccionPrincipal">
+            <h2>Seccion Principal</h2>
+            <p>Este es el contenido de la seccion principal</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
