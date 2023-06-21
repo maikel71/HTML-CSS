@@ -1,0 +1,68 @@
+<!--
+    Crea un nuevo documento HTML con el título "Sistema grid de Bootstrap"
+        > Utilizando la página oficial getboostrap.com, añade la última versión de Bootstrap a este documento HTML
+        > Crea 6 div con un texto en su interior
+        > Utilizando únicamente el atributo class de cada uno de los div haz lo siguiente:
+            - Por defecto, cada elemento ocupará el ancho máximo
+            - Para viewports SM - cada fila contendrá 2 elementos
+            - Para viewports MD - cada fila contendrá 3 elementos
+            - Para viewports LG - cada fila contendrá 4 elementos
+            - Para viewports XL - cada fila contendrá 6 elementos
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 1. Primero, creas un documento HTML con el título “Sistema grid de Bootstrap” usando las etiquetas <html>, <head> y <title>. -->
+    <title>Sistema grid de Bootstrap</title>
+
+    <!-- 2. Luego, añades la última versión de Bootstrap al documento usando la etiqueta <link> con el 
+        atributo href que apunta a la URL del archivo CSS de Bootstrap. Bootstrap es un framework de CSS 
+        que te permite crear páginas web responsivas y con un diseño atractivo. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<!-- 3. Después, creas el cuerpo del documento usando la etiqueta <body> -->
+
+<body>
+    <!-- 4. y dentro de ella creas un contenedor usando la clase container de Bootstrap. 
+        Este contenedor te permite centrar el contenido y ajustar el ancho según el tamaño de la pantalla. -->
+    <div class="container">
+        <!-- 5. Dentro del contenedor, creas una fila usando la clase row de Bootstrap. 
+            Esta fila te permite dividir el espacio horizontalmente(⬅️➡️) en columnas. -->
+        <div class="row">
+            <!-- 6. Dentro de la fila, creas 6 div usando la etiqueta <div> y les pones un texto en su interior. 
+                Cada div tiene varias clases de Bootstrap que definen su comportamiento en diferentes 
+                tamaños de pantalla. -->
+
+            <!-- 7. La clase col hace que el div ocupe el ancho máximo por defecto.  -->
+
+            <!-- 8. La clase col-sm-6 hace que el div ocupe la mitad del ancho para pantallas pequeñas (SM). -->
+
+            <!-- 9. La clase col-md-4 hace que el div ocupe un tercio del ancho para pantallas medianas (MD). -->
+
+            <!-- 10. La clase col-lg-3 hace que el div ocupe un cuarto del ancho para pantallas grandes (LG). -->
+
+            <!-- 11. Y la clase col-xl-2 hace que el div ocupe un sexto del ancho para pantallas extra grandes (XL). -->
+            <div class="col col-sm-6 col-md-4 col-lg-3 col-xl-2">elemento 1</div>
+            <div class="col col-sm-6 col-md-4 col-lg-3 col-xl-2">elemento 2</div>
+            <div class="col col-sm-6 col-md-4 col-lg-3 col-xl-2">elemento 3</div>
+            <div class="col col-sm-6 col-md-4 col-lg-3 col-xl-2">elemento 4</div>
+            <div class="col col-sm-6 col-md-4 col-lg-3 col-xl-2">elemento 5</div>
+            <div class="col col-sm-6 col-md-4 col-lg-3 col-xl-2">elemento 6</div>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</html>
