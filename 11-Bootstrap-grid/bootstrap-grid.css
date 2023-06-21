@@ -1,0 +1,36 @@
+.row div {
+    margin: 0.25rem;
+}
+
+/* Grid Classes */
+/* El sistema de cuadrícula de Bootstrap 5 tiene seis clases: */
+
+/* .col- (dispositivos extra pequeños - ancho de pantalla inferior a 576px) */
+.col {
+    background-color: cyan;
+}
+
+/* .col-sm- (dispositivos pequeños - ancho de pantalla igual o superior a 576px) */
+.col-sm {
+    background-color: red;
+}
+
+/* .col-md- (dispositivos medianos - ancho de pantalla igual o superior a 768px) */
+.col-md {
+    background-color: yellow;
+}
+
+/* .col-lg- (dispositivos grandes - ancho de pantalla igual o superior a 992px) */
+.col-lg {
+    background-color: green;
+}
+
+/* .col-xl- (dispositivos xlarge - ancho de pantalla igual o superior a 1200px) */
+.col-xl {
+    background-color: blue;
+}
+
+/* .col-xxl- (dispositivos xxlarge - ancho de pantalla igual o superior a 1400px) */
+.col-xxl {
+    background-color: pink;
+}
