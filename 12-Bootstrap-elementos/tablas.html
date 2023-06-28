@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Documentacion de Bootstrap</h1>
+
+        <h2>Tables - Tablas</h2>
+
+        <h3>Overview - Visión general</h3>
+        <!--
+            Debido al uso generalizado de elementos <table> en widgets de terceros como 
+            calendarios y selectores de fechas, las tablas de Bootstrap son opcionales. 
+            Añada la clase base .table a cualquier <table> y, a continuación, extiéndala 
+            con nuestras clases modificadoras opcionales o estilos personalizados. 
+            Todos los estilos de tabla no se heredan en Bootstrap, lo que significa 
+            que cualquier tabla anidada puede tener un estilo independiente del padre.
+        -->
+        <p>Usando el marcado de tablas más básico, así es como se ven las tablas basadas en .table en Bootstrap.</p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Variants - Variantes </h3>
+        <p>Utilice clases contextuales para colorear tablas, filas de tablas o celdas individuales.</p>
+        <div style="border: 1px solid blue; background-color: aqua;">
+            <p>¡Atención! Debido al CSS más complicado utilizado para generar nuestras variantes de tabla, lo más
+                probable es que no vean el estilo adaptable al modo de color hasta la v6.</p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Clase</th>
+                    <th>Título</th>
+                    <th>Título</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Default</td>
+                    <td>Celda</td>
+                    <td>Celda</td>
+                </tr>
+                <tr class="table-primary">
+                    <td>Primary</td>
+                    <td>Celda</td>
+                    <td>Celda</td>
+                </tr>
+                <tr class="table-secondary">
+                    <td>Secondary</td>
+                    <td>Celda</td>
+                    <td>Celda</td>
+                </tr>
+                <tr class="table-success">
+                    <td>Success</td>
+                    <td>Celda</td>
+                    <td>Celda</td>
+                </tr>
+                <tr class="table-danger">
+                    <td>Danger</td>
+                    <td>Celda</td>
+                    <td>Celda</td>
+                </tr>
+                <tr class="table-warning">
+                    <td>Warning</td>
+                    <td>Celda</td>
+                    <td>Celda</td>
+                </tr>
+                <tr class="table-info">
+                    <td>Info</td>
+                    <td>Celda</td>
+                    <td>Celda</td>
+                </tr>
+                <tr class="table-light">
+                    <td>Light</td>
+                    <td>Celda</td>
+                    <td>Celda</td>
+                </tr>
+                <tr class="table-dark">
+                    <td>Dark</td>
+                    <td>Celda</td>
+                    <td>Celda</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- En tablas -->
+        <!--
+            <table class="table-primary">...</table>
+            <table class="table-secondary">...</table>
+            <table class="table-success">...</table>
+            <table class="table-danger">...</table>
+            <table class="table-warning">...</table>
+            <table class="table-info">...</table>
+            <table class="table-light">...</table>
+            <table class="table-dark">...</table>
+
+        -->
+
+        <!-- En filas -->
+        <!-- 
+            <tr class="table-primary">...</tr>
+            <tr class="table-secondary">...</tr>
+            <tr class="table-success">...</tr>
+            <tr class="table-danger">...</tr>
+            <tr class="table-warning">...</tr>
+            <tr class="table-info">...</tr>
+            <tr class="table-light">...</tr>
+            <tr class="table-dark">...</tr> 
+        -->
+
+        <!-- En celdas (`td` o `th`) -->
+        <!-- 
+            <tr>
+                <td class="table-primary">...</td>
+                <td class="table-secondary">...</td>
+                <td class="table-success">...</td>
+                <td class="table-danger">...</td>
+                <td class="table-warning">...</td>
+                <td class="table-info">...</td>
+                <td class="table-light">...</td>
+                <td class="table-dark">...</td>
+            </tr> 
+        -->
+
+        <div style="border: 1px solid blue; background-color: aqua;">
+            <p>Consejo de accesibilidad: el uso del color para añadir significado sólo proporciona una indicación
+                visual, que no será transmitida a los usuarios de tecnologías de asistencia como los lectores de
+                pantalla. Asegúrese de que el significado es obvio a partir del propio contenido (por ejemplo, el texto
+                visible) o se incluye a través de medios alternativos, como texto adicional oculto con la clase
+                .visually-hidden.</p>
+        </div><br>
+
+        <h3>Accented tables - Tablas acentuadas</h3>
+        <h4>Striped rows - Filas de rayas</h4>
+        <p>Utilice .table-striped para añadir rayas de cebra a cualquier fila de tabla dentro del tbody.</p>
+        <!-- 
+            <table class="table table-striped">
+                ...
+            </table> 
+        -->
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry the Bird</td>
+                    <td></td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Striped columns - Columnas a rayas</h4>
+        <p>Utilice .table-striped-columns para añadir rayas de cebra a cualquier columna de la tabla.</p>
+        <!--
+            <table class="table table-striped-columns">
+                ...
+            </table>
+        -->
+
+        <table class="table table-striped-columns">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry the Bird</td>
+                    <td></td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Estas clases también pueden añadirse a las variantes de la tabla:</p>
+
+        <!--
+            <table class="table table-dark table-striped">
+                ...
+            </table>
+        -->
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry the Bird</td>
+                    <td></td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--
+            <table class="table table-dark table-striped-columns">
+                ...
+            </table>
+        -->
+        <table class="table table-dark table-striped-columns">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry the Bird</td>
+                    <td></td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--
+            <table class="table table-success table-striped">
+                ...
+            </table>
+        -->
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry the Bird</td>
+                    <td></td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--
+            <table class="table table-success table-striped-columns">
+                ...
+            </table>
+        -->
+        <table class="table table-success table-striped-columns">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry the Bird</td>
+                    <td></td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Hoverable rows - Filas desplazables</h4>
+        <p>Añadir .table-hover para activar un estado hover en las filas de la tabla dentro de un tbody.</p>
+        <!--
+            <table class="table table-hover">
+                ...
+            </table>
+        -->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry the Bird</td>
+                    <td></td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--
+            <table class="table table-dark table-hover">
+                ...
+            </table>
+        -->
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry the Bird</td>
+                    <td></td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Estas filas desplazables también pueden combinarse con la variante de filas rayadas:</p>
+
+        <!--
+            <table class="table table-striped table-hover">
+                ...
+            </table>
+        -->
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry the Bird</td>
+                    <td></td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Activate tables - Tablas activas</h4>
+        <p>Resalte una fila o celda de la tabla añadiendo una clase .table-active.</p>
+        <!-- 
+            <table class="table">
+                <thead>
+                    ...
+                </thead>
+                <tbody>
+                    <tr class="table-active">
+                        ...
+                    </tr>
+                    <tr>
+                        ...
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2" class="table-active">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table> 
+        -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-active">
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2" class="table-active">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-active">
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2" class="table-active">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>How do the variants and accented tables work? - ¿Cómo funcionan las variantes y las tablas acentuadas?</h3>
+        <p>Para las tablas acentuadas (filas rayadas, columnas rayadas, filas hoverables y tablas activas), hemos
+            utilizado algunas técnicas para que estos efectos funcionen en todas nuestras variantes de tabla:</p>
+        <ul>
+            <li>Comenzamos estableciendo el fondo de una celda de la tabla con la propiedad personalizada
+                <b>--bs-table-bg</b>. A continuación, todas las variantes de la tabla establecen esa propiedad
+                personalizada para colorear las celdas de la tabla. De esta forma, no tendremos problemas si se utilizan
+                colores semitransparentes como fondo de la tabla.
+            </li>
+            <li>A continuación, añadimos una sombra de caja en las celdas de la tabla con <b>box-shadow: inset 0 0 0
+                    9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg));</b> para
+                superponerla a cualquier color de fondo especificado. Utiliza cascada personalizada para anular el
+                <b>box-shadow</b>, independientemente de la especificidad CSS. Debido a que usamos una gran extensión y
+                ningún desenfoque, el color será monótono. Dado que <b>--bs-table-accent-bg</b> está configurado como
+                <b>transparent(transparente)</b> por defecto, no tenemos una sombra de caja por defecto.
+            </li>
+            <li>Cuando se añaden las clases <b>.table-striped</b>, <b>.table-striped-columns</b>, <b>.table-hover</b> o
+                <b>.table-active</b>, o bien <b>--bs-table-bg-type</b> o <b>--bs-table-bg-state</b> (por defecto
+                <b>initial(inicial)</b>) se establecen en un color semitransparente (<b>--bs-table-striped-bg</b>,
+                <b>--bs-table-active-bg</b> o <b>--bs-table-hover-bg</b>) para colorear el fondo y anular el valor por
+                defecto <b>--bs-table-accent-bg</b>.
+            </li>
+            <li>Para cada variante de tabla, generamos un color <b>--bs-table-accent-bg</b> con el mayor contraste en
+                función de ese color. Por ejemplo, el color de acento para <b>.table-primary</b> es más oscuro mientras
+                que <b>.table-dark</b> tiene un color de acento más claro.</li>
+            <li>Los colores del texto y de los bordes se generan de la misma manera, y sus colores se heredan por
+                defecto.</li>
+        </ul>
+
+        <!-- Entre bastidores tiene este aspecto: -->
+        <!-- 
+        @mixin table-variant($state, $background) {
+            .table-#{$state} {
+                $color: color-contrast(opaque($body-bg, $background));
+                $hover-bg: mix($color, $background, percentage($table-hover-bg-factor));
+                $striped-bg: mix($color, $background, percentage($table-striped-bg-factor));
+                $active-bg: mix($color, $background, percentage($table-active-bg-factor));
+                $table-border-color: mix($color, $background, percentage($table-border-factor));
+
+                --#{$prefix}table-color: #{$color};
+                --#{$prefix}table-bg: #{$background};
+                --#{$prefix}table-border-color: #{$table-border-color};
+                --#{$prefix}table-striped-bg: #{$striped-bg};
+                --#{$prefix}table-striped-color: #{color-contrast($striped-bg)};
+                --#{$prefix}table-active-bg: #{$active-bg};
+                --#{$prefix}table-active-color: #{color-contrast($active-bg)};
+                --#{$prefix}table-hover-bg: #{$hover-bg};
+                --#{$prefix}table-hover-color: #{color-contrast($hover-bg)};
+
+                color: var(--#{$prefix}table-color);
+                border-color: var(--#{$prefix}table-border-color);
+                }
+            } 
+        -->
+
+        <h3>Table borders - Bordes de la tabla</h3>
+        <h4>Bordered tables - Tablas bordeadas</h4>
+        <p>Añade <b>.table-bordered</b> para los bordes en todos los lados de la tabla y las celdas.</p>
+
+        <!-- 
+            <table class="table table-bordered">
+                ...
+            </table> 
+        -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Se pueden añadir utilidades de color de borde para cambiar los colores:</p>
+
+        <!-- 
+            <table class="table table-bordered border-primary">
+                ...
+            </table>
+        -->
+        <table class="table table-bordered border-primary">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Tables without borders - Tablas sin bordes </h4>
+        <p>Añade <b>.table-borderless</b> para una tabla sin bordes.</p>
+
+        <!-- 
+            <table class="table table-borderless">
+                ...
+            </table> 
+        -->
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 
+            <table class="table table-dark table-borderless">
+                ...
+            </table> 
+        -->
+        <table class="table table-dark table-borderless">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Small tables - Tablas pequeñas</h3>
+        <p>Añade <b>.table-sm</b> para hacer cualquier <b>.table</b> más compacta reduciendo el <b>padding</b> de todas
+            las celdas a la mitad.</p>
+
+        <!-- 
+            <table class="table table-sm">
+                ...
+            </table> 
+        -->
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 
+            <table class="table table-dark table-sm">
+                ...
+            </table> 
+        -->
+        <table class="table table-dark table-sm">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Table group dividers - Separadores de grupos de tablas</h3>
+        <p>Añade un borde más grueso y oscuro entre los grupos de tablas (<b>thead</b>, <b>tbody</b> y <b>tfoot</b>) con
+            <b>.table-group-divider</b>. Personaliza el color cambiando el <b>.table-group-divider</b> (para el que
+            actualmente no proporcionamos una clase de utilidad).
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Vertical alignment - Alineación vertical</h3>
+        <p>Las celdas de tabla de <b>thead</b> siempre se alinean verticalmente hacia abajo. Las celdas de tabla de
+            <b>tbody</b> heredan su alineación de <b>table</b> y se alinean arriba por defecto. Utilice las clases de
+            alineación vertical para volver a alinear cuando sea necesario.
+        </p>
+        <!--
+            <div class="table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            ...
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            ...
+                        </tr>
+                        <tr class="align-bottom">
+                            ...
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                            <td class="align-top">This cell is aligned to the top.</td>
+                            <td>...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        -->
+
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>Heading 1</th>
+                        <th>Heading 2</th>
+                        <th>Heading 3</th>
+                        <th>Heading 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Esta celda hereda vertical-align: middle; de la tabla</td>
+                        <td>Esta celda hereda vertical-align: middle; de la tabla</td>
+                        <td>Esta celda hereda vertical-align: middle; de la tabla</td>
+                        <td>Aquí hay un texto de marcador de posición, que ocupa bastante espacio vertical, para
+                            demostrar cómo funciona la alineación vertical en las celdas anteriores.</td>
+                    </tr>
+                    <tr class="align-bottom">
+                        <td>Esta celda hereda vertical-align: bottom; de la fila de la tabla</td>
+                        <td>Esta celda hereda vertical-align: bottom; de la fila de la tabla</td>
+                        <td>Esta celda hereda vertical-align: bottom; de la fila de la tabla</td>
+                        <td>Aquí hay un texto de marcador de posición, que ocupa bastante espacio vertical, para
+                            demostrar cómo funciona la alineación vertical en las celdas anteriores.</td>
+                    </tr>
+                    <tr>
+                        <td>Esta celda hereda vertical-align: middle; de la tabla</td>
+                        <td>Esta celda hereda vertical-align: middle; de la tabla</td>
+                        <td class="align-top">Esta celda está alineada en la parte superior.</td>
+                        <td>Aquí hay un texto de marcador de posición, que ocupa bastante espacio vertical, para
+                            demostrar cómo funciona la alineación vertical en las celdas anteriores.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Nesting - Nido</h3>
+        <p>Los estilos de borde, estilos activos y variantes de tabla no son heredados por las tablas anidadas.</p>
+        <!-- 
+            <table class="table table-striped table-bordered">
+                <thead>
+                    ...
+                </thead>
+                <tbody>
+                    ...
+                    <tr>
+                        <td colspan="4">
+                            <table class="table mb-0">
+                                ...
+                            </table>
+                        </td>
+                    </tr>
+                    ...
+                </tbody>
+            </table> 
+        -->
+
+        <table class="table table-striped table-bordered">
+            <thead>
+                <th>#</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>Handle</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+
+                <tr>
+                    <td colspan="4">
+                        <table class="table mb-0">
+                            <thead>
+                                <th>Header</th>
+                                <th>Header</th>
+                                <th>Header</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>First</td>
+                                    <td>Last</td>
+                                </tr>
+                                <tr>
+                                    <td>B</td>
+                                    <td>First</td>
+                                    <td>Last</td>
+                                </tr>
+                                <tr>
+                                    <td>C</td>
+                                    <td>First</td>
+                                    <td>Last</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>How nesting works - Cómo funciona la anidación</h3>
+        <p>Para evitar que los estilos se filtren a las tablas anidadas, utilizamos el selector combinador hijo
+            (<b>></b>) en nuestro CSS. Dado que necesitamos apuntar a todos los <b>td</b>s y <b>th</b>s en <b>thead</b>,
+            <b>tbody</b>, y <b>tfoot</b>, nuestro selector se vería bastante largo sin él. Por lo tanto, utilizamos el
+            selector <b>.table > :not(caption) > * > *</b> de aspecto bastante extraño para apuntar a todas las
+            <b>td</b>s y <b>th</b>s de <b>.table</b>, pero a ninguna de las posibles tablas anidadas.
+        </p>
+        <p>Ten en cuenta que si añades <b>tr</b>s como hijos directos de una tabla, esos <b>tr</b> se envolverán en un
+            <b>tbody</b> por defecto, haciendo así que nuestros selectores funcionen como es debido.
+        </p>
+
+        <h3>Anatomy - Anatomía</h3>
+        <h4>Table head - Cabeza de tabla</h4>
+        <p>De forma similar a las tablas y tablas oscuras, utilice las clases modificadoras <b>.table-light</b> o
+            <b>.table-dark</b> para que los <b>thead</b> aparezcan en gris claro u oscuro.
+        </p>
+        <!--
+            <table class="table">
+                <thead class="table-light">
+                    ...
+                </thead>
+                <tbody>
+                    ...
+                </tbody>
+            </table>
+        -->
+        <table class="table">
+            <thead class="table-light">
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--
+            <table class="table">
+                <thead class="table-dark">
+                    ...
+                </thead>
+                <tbody>
+                    ...
+                </tbody>
+            </table>
+        -->
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Table foot - Pie de tabla</h4>
+        <!--
+            <table class="table">
+                <thead>
+                    ...
+                </thead>
+                <tbody>
+                    ...
+                </tbody>
+                <tfoot>
+                    ...
+                </tfoot>
+            </table>
+        -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Footer</td>
+                    <td>Footer</td>
+                    <td>Footer</td>
+                    <td>Footer</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h4>Captions - Subtítulos</h4>
+        <p>Un <b>caption</b> funciona como un encabezado para una tabla. Ayuda a los usuarios con lectores de pantalla a
+            encontrar una tabla, entender de qué trata y decidir si quieren leerla.</p>
+        <!--
+            <table class="table table-sm">
+                <caption>List of users</caption>
+                <thead>
+                    ...
+                </thead>
+                <tbody>
+                    ...
+                </tbody>
+            </table>
+        -->
+        <table class="table table-sm">
+            <caption>List of users</caption>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry the Bird</td>
+                    <td></td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>También puedes poner el <b>caption</b> en la parte superior de la tabla con <b>.caption-top</b>.</p>
+
+        <table class="table caption-top">
+            <caption>List of users</caption>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry </td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Responsive tables - Tablas receptivas</h3>
+        <p>Las tablas responsivas permiten desplazarse horizontalmente con facilidad. Haga que cualquier tabla sea
+            responsive en todos los viewports envolviendo un <b>.table</b> con <b>.table-responsive</b>. O bien, elija
+            un punto de rotura máximo con el que tener una tabla responsive hasta mediante el uso de
+            <b>.table-responsive{-sm|-md|-lg|-xl|-xxl}</b>.
+        </p>
+
+        <div style="border: 1px solid yellow; background-color: rgb(252, 252, 97);">
+            <h5>Vertical clipping/truncation - Recorte/truncamiento vertical</h5>
+            <p>Las tablas adaptables utilizan <b>overflow-y: hidden</b>, que elimina cualquier contenido que sobrepase
+                los bordes inferior o superior de la tabla. En particular, esto puede recortar los menús desplegables y
+                otros widgets de terceros.</p>
+        </div>
+
+        <h4>Always responsive - Siempre receptivo</h4>
+        <p>En todos los puntos de interrupción, utilice <b>.table-responsive</b> para las tablas de desplazamiento
+            horizontal.</p>
+
+        <!--
+            <div class="table-responsive">
+                <table class="table">
+                    ...
+                </table>
+            </div>
+        -->
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Breakpoint specific - Punto de interrupción específico</h4>
+        <p>Utilice <b>.table-responsive{-sm|-md|-lg|-xl|-xxl}</b> según sea necesario para crear tablas adaptables hasta
+            un punto de rotura determinado. A partir de ese punto, la tabla se comportará normalmente y no se desplazará
+            horizontalmente.</p>
+        <p><b>Estas tablas pueden aparecer rotas hasta que sus estilos responsivos se apliquen a anchos de ventana
+                específicos.</b></p>
+
+        <!--
+            <div class="table-responsive">
+                <table class="table">
+                    ...
+                </table>
+            </div>
+
+            <div class="table-responsive-sm">
+                <table class="table">
+                    ...
+                </table>
+            </div>
+
+            <div class="table-responsive-md">
+                <table class="table">
+                    ...
+                </table>
+            </div>
+
+            <div class="table-responsive-lg">
+                <table class="table">
+                    ...
+                </table>
+            </div>
+
+            <div class="table-responsive-xl">
+                <table class="table">
+                    ...
+                </table>
+            </div>
+
+            <div class="table-responsive-xxl">
+                <table class="table">
+                    ...
+                </table>
+            </div>
+        -->
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive-sm">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive-md">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive-lg">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive-xl">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-responsive-xxl">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                        <th>Heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- <h3>CSS</h3> -->
+        <!-- <h4>Sass variables - Variables Sass</h4> -->
+        <!--
+            $table-cell-padding-y:        .5rem;
+            $table-cell-padding-x:        .5rem;
+            $table-cell-padding-y-sm:     .25rem;
+            $table-cell-padding-x-sm:     .25rem;
+
+            $table-cell-vertical-align:   top;
+
+            $table-color:                 var(--#{$prefix}body-color);
+            $table-bg:                    var(--#{$prefix}body-bg);
+            $table-accent-bg:             transparent;
+
+            $table-th-font-weight:        null;
+
+            $table-striped-color:         $table-color;
+            $table-striped-bg-factor:     .05;
+            $table-striped-bg:            rgba($black, $table-striped-bg-factor);
+
+            $table-active-color:          $table-color;
+            $table-active-bg-factor:      .1;
+            $table-active-bg:             rgba($black, $table-active-bg-factor);
+
+            $table-hover-color:           $table-color;
+            $table-hover-bg-factor:       .075;
+            $table-hover-bg:              rgba($black, $table-hover-bg-factor);
+
+            $table-border-factor:         .1;
+            $table-border-width:          var(--#{$prefix}border-width);
+            $table-border-color:          var(--#{$prefix}border-color);
+
+            $table-striped-order:         odd;
+            $table-striped-columns-order: even;
+
+            $table-group-separator-color: currentcolor;
+
+            $table-caption-color:         var(--#{$prefix}secondary-color);
+
+            $table-bg-scale:              -80%;
+        -->
+
+        <!-- <h4>Sass loops</h4> -->
+        <!--
+            $table-variants: (
+                "primary":    shift-color($primary, $table-bg-scale),
+                "secondary":  shift-color($secondary, $table-bg-scale),
+                "success":    shift-color($success, $table-bg-scale),
+                "info":       shift-color($info, $table-bg-scale),
+                "warning":    shift-color($warning, $table-bg-scale),
+                "danger":     shift-color($danger, $table-bg-scale),
+                "light":      $light,
+                "dark":       $dark,
+            );
+        -->
+
+        <!-- <h4>Customizing - Personalización</h4> -->
+        <!-- 
+            <ul>
+                <li>Las variables factoriales (<b>$table-striped-bg-factor</b>, <b>$table-active-bg-factor</b> &
+                    <b>$table-hover-bg-factor</b>) se utilizan para determinar el contraste en las variantes de las tablas.
+                </li>
+                <li>Aparte de las variantes de tabla clara y oscura, los colores del tema se aclaran mediante la variable
+                    <b>$table-bg-scale</b>.</li>
+            </ul> 
+        -->
+    </div>
+
+
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!-- Clase de OpenBootcamp -->
+    <hr>
+    <h1>Curso OpenBootCamp</h1>
+    <div class=" container">
+        <div class="row">
+            <table class="table caption-top table-sm table-bordered table-striped table-hover">
+                <caption>
+                    List of users
+                </caption>
+                <thead class="table-dark">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-primary">
+                        <td>Gorka</td>
+                        <td>Villar</td>
+                        <td>gorkavi</td>
+                    </tr>
+                    <tr class="table-success">
+                        <td>Jorge</td>
+                        <td>Etxeberria</td>
+                        <td>jetxe77</td>
+                    </tr>
+                    <tr>
+                        <td>Maria</td>
+                        <td class="table-danger">Suescun</td>
+                        <td>masus88</td>
+                    </tr>
+                    <tr>
+                        <td>Julen</td>
+                        <td>Garcia</td>
+                        <td>julgarcia98</td>
+                    </tr>
+                    <tr>
+                        <td>Julen</td>
+                        <td>Garcia</td>
+                        <td>julgarcia98</td>
+                    </tr>
+                    <tr>
+                        <td>Julen</td>
+                        <td>Garcia</td>
+                        <td>julgarcia98</td>
+                    </tr>
+                    <tr>
+                        <td>Julen</td>
+                        <td>Garcia</td>
+                        <td>julgarcia98</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Footer</td>
+                        <td>Footer</td>
+                        <td>Footer</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+</body>
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
