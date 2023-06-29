@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumbotron</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        class="img-fluid">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Curso OpenBootCamp</h1>
+        <!--Jumbotron-->
+        <!--
+            Un jumbotron es un componente de Bootstrap que indica una gran caja gris para llamar la atención 
+            sobre algún contenido o información especial. Un jumbotron se muestra como una caja gris 
+            con esquinas redondeadas. También agranda el tamaño de la fuente del texto dentro de él
+        -->
+
+        <!-- ¿Cómo puedo usar el jumbotron en mi sitio web? -->
+
+        <!-- Para usar el jumbotron en Bootstrap 5.3, puedes seguir los siguientes pasos: -->
+
+        <!-- 1. Incluye los archivos CSS y JS de Bootstrap en tu documento HTML -->
+
+        <!-- 2. Crea un elemento <div> con la clase bg-light para darle un fondo claro al jumbotron. 
+            También puedes usar otras clases de color como bg-primary, bg-secondary, etc. -->
+
+        <!-- 3. Añade otras clases de utilidad al elemento <div> para personalizar el jumbotron, 
+            como p-5 para darle un relleno de 5 unidades, rounded-3 para darle unas esquinas redondeadas, 
+            text-white para cambiar el color del texto a blanco, etc. -->
+        <div class="bg-light p-5 rounded-3">
+
+            <!-- 4. Dentro del elemento <div>, crea otro elemento <div> con la clase container-fluid 
+                para crear un contenedor fluido para el contenido del jumbotron. También puedes usar 
+                la clase container para crear un contenedor fijo. -->
+
+            <!-- 5. Añade otras clases de utilidad al elemento <div> para personalizar el contenedor, 
+                como py-5 para darle un relleno vertical de 5 unidades, text-center para centrar el texto, etc. -->
+            <div class="container-fluid py-5">
+                <!-- 6. Dentro del elemento <div>, añade el contenido que quieras mostrar en el jumbotron, 
+                    como elementos <h1>, <p> o <button>. También puedes usar otras clases de utilidad para 
+                    darles formato, como display-4 para aumentar el tamaño del título, lead para 
+                    resaltar el párrafo, btn btn-primary btn-lg para crear un botón grande y de color primario, etc. -->
+
+                <!-- 6.1 Un elemento <h1> con las clases display-5 fw-bold que muestra el título del jumbotron 
+                    con un tamaño grande y una fuente en negrita. -->
+                <h1 class="display-5 fw-bold">Jumbotron Personalizado</h1>
+
+                <!-- 6.2 Un elemento <p> con las clases col-md-8 fs-4 que muestra un párrafo con un tamaño 
+                    de fuente mediano y una anchura de 8 columnas en dispositivos medianos o mayores. -->
+                <p class="col-md-8 fs-4">Utilizando una serie de utilidades, puedes crear este jumbotrón, igual que el
+                    de versiones anteriores de Bootstrap. Echa un vistazo a los ejemplos a continuación para ver cómo
+                    puedes remezclarlo y reestilizarlo a tu gusto.</p>
+
+                <!-- 6.3 Un elemento <button> con las clases btn btn-primary btn-lg que muestra un botón 
+                    de ejemplo con un color primario y un tamaño grande. -->
+                <button class="btn btn-primary btn-lg">Botón de ejemplo</button>
+            </div>
+        </div>
+
+
+        <!-- EJEMPLOS -->
+        <!-- Jumbotron básico: usa las clases .bg-light, .p-5, .rounded-lg y .m-3 para crear un jumbotron simple, 
+            como el que había en versiones anteriores de bootstrap -->
+        <div class="bg-light p-5 rounded-lg m-3">
+            <h1>Hola, mundo!</h1>
+            <p class="lead">Este es un jumbotron simple, un componente estilo jumbotron para llamar la atención sobre un
+                contenido o información destacada.</p>
+            <hr class="my-4">
+            <p>Usa clases de utilidad para tipografía y espaciado para distribuir el contenido dentro del contenedor más
+                grande.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Aprende más</a>
+        </div>
+
+        <!-- Jumbotron personalizado: puedes cambiar el color de fondo, añadir bordes, alinear el contenido 
+            y modificar el tamaño de las columnas usando otras clases de utilidad -->
+        <div class="bg-primary p-5 rounded-lg m-3">
+            <h1 class="display-4 text-white">Hola, mundo!</h1>
+            <p class="lead text-white">Este es un jumbotron personalizado, con un color de fondo diferente y texto
+                blanco.</p>
+            <hr class="my-4">
+            <p class="text-white">Usa clases de utilidad para tipografía y espaciado para distribuir el contenido dentro
+                del contenedor más grande.</p>
+            <a class="btn btn-secondary btn-lg" href="#" role="button">Aprende más</a>
+        </div>
+
+        <div class="bg-light p-5 rounded-lg m-3 border">
+            <h1 class="display-4">Hola, mundo!</h1>
+            <p class="lead">Este es un jumbotron con borde, para darle más definición a los límites de tu contenido.</p>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>Usa clases de utilidad para tipografía y espaciado para distribuir el contenido dentro del
+                        contenedor más grande.</p>
+                </div>
+                <div class="col-md-4 d-flex align-items-center justify-content-center">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Aprende más</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Son ejemplos de cómo crear un jumbotron con bootstrap 5.3 usando HTML y clases de CSS. -->
+
+        <!-- Un jumbotron es un elemento que ocupa todo el ancho de la pantalla y muestra un contenido 
+            o información importante. En bootstrap 5.3, el jumbotron se ha eliminado como componente 
+            y se ha reemplazado por clases de utilidad que puedes usar para personalizar tu jumbotron. -->
+
+        <!-- Las clases de utilidad son clases de CSS que sirven para aplicar estilos rápidamente 
+            a los elementos HTML, como el color, el relleno, el margen, el borde, la alineación, etc. -->
+
+        <!-- En los códigos, puedes ver que se usa un elemento <div> con diferentes clases de utilidad 
+            para crear el jumbotron. Por ejemplo: -->
+        <!-- + La clase .bg-light sirve para darle un color de fondo claro al jumbotron. -->
+        <!-- + La clase .p-5 sirve para darle un relleno de 5 unidades al jumbotron. -->
+        <!-- + La clase .rounded-lg sirve para darle bordes redondeados al jumbotron. -->
+        <!-- + La clase .m-3 sirve para darle un margen de 3 unidades al jumbotron. -->
+
+        <!-- Dentro del <div> del jumbotron, puedes poner el contenido que quieras, como títulos, 
+            párrafos, botones, imágenes, etc. También puedes usar otras clases de utilidad para cambiar 
+            el color del texto, el tamaño de la fuente, la separación entre elementos, etc. -->
+
+        <!-- Para crear un jumbotron personalizado, puedes cambiar las clases de utilidad por 
+            otras que te gusten más o que se adapten mejor a tu diseño. Por ejemplo: -->
+        <!-- + Puedes usar la clase .bg-primary para darle un color de fondo azul al jumbotron. -->
+        <!-- + Puedes usar la clase .text-white para darle un color blanco al texto del jumbotron. -->
+        <!-- + Puedes usar la clase .border para darle un borde al jumbotron. -->
+        <!-- + Puedes usar la clase .row y la clase .col-md-* para crear una fila con columnas dentro 
+            del jumbotron y distribuir el contenido de forma diferente. -->
+
+    </div>
+
+
+
+</body>
+<script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
