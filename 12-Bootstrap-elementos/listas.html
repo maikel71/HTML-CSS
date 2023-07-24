@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        class="img-fluid">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Documentacion de Bootstrap</h1>
+
+        <h2>List group - Lista de grupos</h2>
+        <p>Los grupos de listas son un componente flexible y potente para mostrar una serie de contenidos. Modifíquelos
+            y amplíelos para que admitan casi cualquier contenido.</p>
+
+        <h3>Basic example - Ejemplo básico</h3>
+        <p>El grupo de listas más básico es una lista desordenada con elementos de lista y las clases adecuadas.
+            Constrúyelo con las opciones que siguen, o con tu propio CSS según sea necesario.</p>
+        <ul class="list-group">
+            <li class="list-group-item">Un item</li>
+            <li class="list-group-item">Un segundo item</li>
+            <li class="list-group-item">Un tercer item</li>
+            <li class="list-group-item">Un cuarto item</li>
+            <li class="list-group-item">Y una quinta</li>
+        </ul>
+
+        <h3>Active items - Elementos activos</h3>
+        <p>Añada <b>.active</b> a un elemento <b>.list-group-item</b> para indicar la selección activa actual.</p>
+        <ul class="list-group">
+            <li class="list-group-item active" aria-current="true">Un item activo</li>
+            <li class="list-group-item">Un segundo item</li>
+            <li class="list-group-item">Un tercer item</li>
+            <li class="list-group-item">Un cuarto item</li>
+            <li class="list-group-item">Y una quinta</li>
+        </ul>
+
+        <h3>Disabled items - Elementos deshabilitados</h3>
+        <p>Añada <b>.disabled</b> a un elemento <b>.list-group-item</b> para que aparezca desactivado. Ten en cuenta que
+            algunos elementos con <b>.disabled</b> también requerirán JavaScript personalizado para desactivar
+            completamente sus eventos de clic (por ejemplo, los enlaces).</p>
+        <ul class="list-group">
+            <li class="list-group-item disabled" aria-disabled="true">Un item desactivado</li>
+            <li class="list-group-item">Un segundo item</li>
+            <li class="list-group-item">Un tercer item</li>
+            <li class="list-group-item">Un cuarto item</li>
+            <li class="list-group-item">Y una quinta</li>
+        </ul>
+
+        <h3>Links and buttons - Enlaces y botones</h3>
+        <p>Utiliza <b>a</b>s o <b>button</b>s para crear elementos de grupos de listas accionables con estados hover,
+            desactivado y activo añadiendo <b>.list-group-item-action</b>. Separamos estas pseudoclases para asegurarnos
+            de que los grupos de listas formados por elementos no interactivos (como <b>li</b>s o <b>div</b>s) no
+            ofrezcan la posibilidad de hacer clic o tocar.</p>
+        <p>Asegúrese de no utilizar las clases <b>.btn</b> estándar aquí.</p>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                El item de enlace actual
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Un segundo enlace</a>
+            <a href="#" class="list-group-item list-group-item-action">Un tercer enlace</a>
+            <a href="#" class="list-group-item list-group-item-action">Un cuarto enlace</a>
+            <a class="list-group-item list-group-item-action disabled">Un enlace desactivado</a>
+        </div>
+
+        <p>Con <b>button</b>s, también puedes hacer uso del atributo <b>disabled</b> en lugar de la clase
+            <b>.disabled</b>. Lamentablemente, los <b>a</b>s no admiten el atributo disabled.
+        </p>
+        <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action active" aria-current="true">El botón
+                actual</button>
+            <button type="button" class="list-group-item list-group-item-action">Un segundo botón</button>
+            <button type="button" class="list-group-item list-group-item-action">Un tercer botón</button>
+            <button type="button" class="list-group-item list-group-item-action">Un cuarto botón</button>
+            <button type="button" class="list-group-item list-group-item-action" disabled>Botón desactivado</button>
+        </div>
+
+        <h3>Flush - Rasante</h3>
+        <p>Añade <b>.list-group-flush</b> para eliminar algunos bordes y esquinas redondeadas para renderizar los
+            elementos de grupos de listas de borde a borde en un contenedor padre (por ejemplo, tarjetas).</p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Un item</li>
+            <li class="list-group-item">Un segundo item</li>
+            <li class="list-group-item">Un tercer item</li>
+            <li class="list-group-item">Un cuarto item</li>
+            <li class="list-group-item">Y una quinta</li>
+        </ul>
+
+        <h3>Numbered - Numerado</h3>
+        <p>Añada la clase modificadora <b>.list-group-numbered</b> (y, opcionalmente, utilice un elemento <b>ol</b>)
+            para optar por elementos de grupos de listas numerados. Los números se generan mediante CSS (a diferencia
+            del estilo predeterminado del navegador <b>ol</b> ) para una mejor ubicación dentro de los elementos de
+            grupos de listas y para permitir una mejor personalización.</p>
+        <p>Los números son generados por <b>counter-reset</b> en el <b>ol</b>, y luego estilizados y colocados con un
+            pseudo-elemento <b>::before</b> en el <b>li</b> con <b>counter-increment</b> y <b>content</b>.</p>
+
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Un item de la lista</li>
+            <li class="list-group-item">Un item de la lista</li>
+            <li class="list-group-item">Un item de la lista</li>
+        </ol>
+
+        <br>
+        <p>También funcionan muy bien con contenidos personalizados.</p>
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">Subtítulo</div>
+                    Contenido para el item de la lista
+                </div>
+                <span class="badge bg-primary rounded-pill">14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">Subtítulo</div>
+                    Contenido para el item de la lista
+                </div>
+                <span class="badge bg-primary rounded-pill">14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold">Subtítulo</div>
+                    Contenido para el item de la lista
+                </div>
+                <span class="badge bg-primary rounded-pill">14</span>
+            </li>
+        </ol>
+
+        <h3>Horizontal</h3>
+        <p>Añada <b>.list-group-horizontal</b> para cambiar el diseño de los elementos del grupo de listas de vertical a
+            horizontal en todos los puntos de rotura. Como alternativa, elija una variante adaptable
+            <b>.list-group-horizontal-{sm|md|lg|xl|xxl}</b> para que un grupo de listas sea horizontal a partir del
+            <b>min-width(ancho mínimo)</b> de ese punto de rotura. Actualmente, <b>los grupos de listas horizontales no
+                pueden combinarse con grupos de listas rasantes</b>.
+        </p>
+
+        <p><b>Consejo de experto:</b> ¿Desea que los elementos del grupo de listas tengan el mismo ancho en horizontal?
+            Añada <b>.flex-fill</b> a cada elemento del grupo de listas.</p>
+
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item">Un item</li>
+            <li class="list-group-item">Un segundo item</li>
+            <li class="list-group-item">Un tercer item</li>
+        </ul>
+        <ul class="list-group list-group-horizontal-sm">
+            <li class="list-group-item">Un item</li>
+            <li class="list-group-item">Un segundo item</li>
+            <li class="list-group-item">Un tercer item</li>
+        </ul>
+        <ul class="list-group list-group-horizontal-md">
+            <li class="list-group-item">Un item</li>
+            <li class="list-group-item">Un segundo item</li>
+            <li class="list-group-item">Un tercer item</li>
+        </ul>
+        <ul class="list-group list-group-horizontal-lg">
+            <li class="list-group-item">Un item</li>
+            <li class="list-group-item">Un segundo item</li>
+            <li class="list-group-item">Un tercer item</li>
+        </ul>
+        <ul class="list-group list-group-horizontal-xl">
+            <li class="list-group-item">Un item</li>
+            <li class="list-group-item">Un segundo item</li>
+            <li class="list-group-item">Un tercer item</li>
+        </ul>
+        <ul class="list-group list-group-horizontal-xxl">
+            <li class="list-group-item">Un item</li>
+            <li class="list-group-item">Un segundo item</li>
+            <li class="list-group-item">Un tercer item</li>
+        </ul>
+
+        <h3>Variants - Variantes</h3>
+        <div style="border: 1px solid blue; background-color: aqua;">
+            <p>¡Atención! A partir de la versión 5.3.0, el mixin Sass <b>list-group-item-variant()</b> está obsoleto.
+                Las variantes de elementos de grupos de listas ahora tienen sus variables CSS anuladas en un bucle Sass.
+            </p>
+        </div>
+
+        <p>Utilice clases contextuales para dar estilo a los elementos de la lista con un fondo y un color de estado.
+        </p>
+        <ul class="list-group">
+            <li class="list-group-item">Un simple item de grupo de listas por defecto</li>
+
+            <li class="list-group-item list-group-item-primary">Un simple item primary de grupo de listas</li>
+            <li class="list-group-item list-group-item-secondary">Un simple item secondary de grupo de listas</li>
+            <li class="list-group-item list-group-item-success">Un simple item de grupo de la lista de success</li>
+            <li class="list-group-item list-group-item-danger">Un simple item de grupo de la lista de danger</li>
+            <li class="list-group-item list-group-item-warning">Un simple item de grupo de lista de warning</li>
+            <li class="list-group-item list-group-item-info">Un simple item de grupo de la lista de info</li>
+            <li class="list-group-item list-group-item-light">Un simple item de grupo de listas light</li>
+            <li class="list-group-item list-group-item-dark">Un simple item de grupo de lista dark</li>
+        </ul>
+
+        <h4>For links and buttons - Para enlaces y botones</h4>
+        <p>Las clases contextuales también funcionan con <b>.list-group-item-action</b> para elementos <b>a</b> y
+            <b>button</b>. Observe la adición de los estilos hover aquí no presentes en el ejemplo anterior. También se
+            admite el estado <b>.active</b>; aplíquelo para indicar una selección activa en un elemento contextual de
+            grupo de listas.
+        </p>
+
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">Un simple elemento de grupo de listas por
+                defecto</a>
+
+            <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Un simple item primary de
+                grupo de listas</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Un simple item
+                secondary de grupo de listas</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-success">Un simple item de grupo
+                de la lista de success</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Un simple item de grupo de
+                la lista de danger</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-warning">Un simple item de grupo
+                de lista de warning</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-info">Un simple item de grupo de
+                la lista de info</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-light">Un simple item de grupo de
+                listas light</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Un simple item de grupo de
+                lista dark</a>
+        </div>
+
+        <br>
+        <div style="border: 1px solid blue; background-color: aqua;">
+            <p>Consejo de accesibilidad: el uso del color para añadir significado sólo proporciona una indicación
+                visual, que no será transmitida a los usuarios de tecnologías de asistencia como los lectores de
+                pantalla. Asegúrese de que el significado es obvio a partir del propio contenido (por ejemplo, el texto
+                visible) o se incluye a través de medios alternativos, como texto adicional oculto con la clase
+                <b>.visually-hidden</b>.
+            </p>
+        </div>
+
+        <h3>With badges - Con distintivos</h3>
+        <p>Añade insignias a cualquier elemento de un grupo de listas para mostrar recuentos de no leídos, actividad y
+            mucho más con la ayuda de algunas utilidades.</p>
+
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Un item de la lista
+                <span class="badge bg-primary rounded-pill">14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Un segundo item de la lista
+                <span class="badge bg-primary rounded-pill">2</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Un tercer item de la lista
+                <span class="badge bg-primary rounded-pill">1</span>
+            </li>
+        </ul>
+
+        <h3>Custom content - Contenido personalizado</h3>
+        <p>Añada casi cualquier HTML en su interior, incluso para grupos de listas enlazadas como el que se muestra a
+            continuación, con la ayuda de las utilidades flexbox.</p>
+
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Encabezado de item de grupo de lista</h5>
+                    <small>hace 3 días</small>
+                </div>
+                <p class="mb-1">Algún contenido de marcador de posición en un párrafo.</p>
+                <small>Y algo de letra pequeña.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Encabezado de item de grupo de lista</h5>
+                    <small class="text-body-secondary">hace 3 días</small>
+                </div>
+                <p class="mb-1">Algún contenido de marcador de posición en un párrafo.</p>
+                <small class="text-body-secondary">Y alguna letra pequeña apagada.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Encabezado de item de grupo de lista</h5>
+                    <small class="text-body-secondary">hace 3 días</small>
+                </div>
+                <p class="mb-1">Algún contenido de marcador de posición en un párrafo.</p>
+                <small class="text-body-secondary">Y alguna letra pequeña apagada.</small>
+            </a>
+        </div>
+
+        <h3>Checkboxes and radios - Casillas de verificación y radios</h3>
+        <p>Coloque las casillas de verificación y los radios de Bootstrap dentro de los elementos de grupos de listas y
+            personalícelos según sea necesario. Puede utilizarlos sin <b>label</b>s, pero recuerde incluir un atributo
+            <b>aria-label</b> y un valor para la accesibilidad.
+        </p>
+
+        <ul class="list-group">
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                <label class="form-check-label" for="firstCheckbox">Primera casilla</label>
+            </li>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
+                <label class="form-check-label" for="secondCheckbox">Segunda casilla</label>
+            </li>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckbox">
+                <label class="form-check-label" for="thirdCheckbox">Tercera casilla</label>
+            </li>
+        </ul>
+
+        <br>
+
+        <ul class="list-group">
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="firstRadio"
+                    checked>
+                <label class="form-check-label" for="firstRadio">Primera radio</label>
+            </li>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="secondRadio">
+                <label class="form-check-label" for="secondRadio">Segunda radio</label>
+            </li>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="thirdRadio">
+                <label class="form-check-label" for="thirdRadio">Tercera radio</label>
+            </li>
+        </ul>
+
+        <br>
+
+        <p>Puede utilizar <b>.stretched-link</b> en <b>label</b>s para que se pueda hacer clic en todo el elemento del
+            grupo de listas.</p>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckboxStretched">
+                <label class="form-check-label stretched-link" for="firstCheckboxStretched">Primera casilla</label>
+            </li>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckboxStretched">
+                <label class="form-check-label stretched-link" for="secondCheckboxStretched">Segunda casilla</label>
+            </li>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="thirdCheckboxStretched">
+                <label class="form-check-label stretched-link" for="thirdCheckboxStretched">Tercera casilla</label>
+            </li>
+        </ul>
+
+        <br>
+
+        <!-- <h3>CSS</h3> -->
+
+        <!-- <h4>Variables</h4> -->
+        <!-- Como parte del enfoque evolutivo de las variables CSS de Bootstrap, los grupos de listas utilizan ahora
+        variables CSS locales en .list-group para mejorar la personalización en tiempo real. Los valores de las
+        variables CSS se establecen mediante Sass, por lo que también se admite la personalización con Sass. -->
+        <!--
+            --#{$prefix}list-group-color: #{$list-group-color};
+            --#{$prefix}list-group-bg: #{$list-group-bg};
+            --#{$prefix}list-group-border-color: #{$list-group-border-color};
+            --#{$prefix}list-group-border-width: #{$list-group-border-width};
+            --#{$prefix}list-group-border-radius: #{$list-group-border-radius};
+            --#{$prefix}list-group-item-padding-x: #{$list-group-item-padding-x};
+            --#{$prefix}list-group-item-padding-y: #{$list-group-item-padding-y};
+            --#{$prefix}list-group-action-color: #{$list-group-action-color};
+            --#{$prefix}list-group-action-hover-color: #{$list-group-action-hover-color};
+            --#{$prefix}list-group-action-hover-bg: #{$list-group-hover-bg};
+            --#{$prefix}list-group-action-active-color: #{$list-group-action-active-color};
+            --#{$prefix}list-group-action-active-bg: #{$list-group-action-active-bg};
+            --#{$prefix}list-group-disabled-color: #{$list-group-disabled-color};
+            --#{$prefix}list-group-disabled-bg: #{$list-group-disabled-bg};
+            --#{$prefix}list-group-active-color: #{$list-group-active-color};
+            --#{$prefix}list-group-active-bg: #{$list-group-active-bg};
+            --#{$prefix}list-group-active-border-color: #{$list-group-active-border-color};
+        -->
+
+        <!-- <h4>Sass variables</h4> -->
+        <!--
+            $list-group-color:                  var(--#{$prefix}body-color);
+            $list-group-bg:                     var(--#{$prefix}body-bg);
+            $list-group-border-color:           var(--#{$prefix}border-color);
+            $list-group-border-width:           var(--#{$prefix}border-width);
+            $list-group-border-radius:          var(--#{$prefix}border-radius);
+
+            $list-group-item-padding-y:         $spacer * .5;
+            $list-group-item-padding-x:         $spacer;
+            // fusv-disable
+            $list-group-item-bg-scale:          -80%; // Deprecated in v5.3.0
+            $list-group-item-color-scale:       40%; // Deprecated in v5.3.0
+            // fusv-enable
+
+            $list-group-hover-bg:               var(--#{$prefix}tertiary-bg);
+            $list-group-active-color:           $component-active-color;
+            $list-group-active-bg:              $component-active-bg;
+            $list-group-active-border-color:    $list-group-active-bg;
+
+            $list-group-disabled-color:         var(--#{$prefix}secondary-color);
+            $list-group-disabled-bg:            $list-group-bg;
+
+            $list-group-action-color:           var(--#{$prefix}secondary-color);
+            $list-group-action-hover-color:     var(--#{$prefix}emphasis-color);
+
+            $list-group-action-active-color:    var(--#{$prefix}body-color);
+            $list-group-action-active-bg:       var(--#{$prefix}secondary-bg);
+        -->
+
+        <!-- <h4>Sass mixins</h4> -->
+        <!-- Se utiliza en combinación con $theme-colors para generar las clases variantes contextuales para
+        .list-group-items. -->
+        <!--
+            @mixin list-group-item-variant($state, $background, $color) {
+                .list-group-item-#{$state} {
+                    color: $color;
+                    background-color: $background;
+
+                    &.list-group-item-action {
+                        &:hover,
+                        &:focus {
+                            color: $color;
+                            background-color: shade-color($background, 10%);
+                        }
+
+                        &.active {
+                            color: $white;
+                            background-color: $color;
+                            border-color: $color;
+                        }
+                    }
+                }
+            }
+        -->
+
+        <!-- <h4>Sass loops</h4> -->
+        <!-- Bucle que genera las clases modificadoras con una sobreescritura de variables CSS. -->
+        <!--
+            // List group contextual variants
+            //
+            // Add modifier classes to change text and background color on individual items.
+            // Organizationally, this must come after the `:hover` states.
+
+            @each $state in map-keys($theme-colors) {
+                .list-group-item-#{$state} {
+                    --#{$prefix}list-group-color: var(--#{$prefix}#{$state}-text-emphasis);
+                    --#{$prefix}list-group-bg: var(--#{$prefix}#{$state}-bg-subtle);
+                    --#{$prefix}list-group-border-color: var(--#{$prefix}#{$state}-border-subtle);
+                    --#{$prefix}list-group-action-hover-color: var(--#{$prefix}emphasis-color);
+                    --#{$prefix}list-group-action-hover-bg: var(--#{$prefix}#{$state}-border-subtle);
+                    --#{$prefix}list-group-action-active-color: var(--#{$prefix}emphasis-color);
+                    --#{$prefix}list-group-action-active-bg: var(--#{$prefix}#{$state}-border-subtle);
+                    --#{$prefix}list-group-active-color: var(--#{$prefix}#{$state}-bg-subtle);
+                    --#{$prefix}list-group-active-bg: var(--#{$prefix}#{$state}-text-emphasis);
+                    --#{$prefix}list-group-active-border-color: var(--#{$prefix}#{$state}-text-emphasis);
+                }
+            }
+        -->
+
+        <h3>JavaScript behavior - Comportamiento de JavaScript</h3>
+        <p>Utilice el plugin JavaScript de pestañas -inclúyalo individualmente o a través del archivo
+            <b>bootstrap.js</b> compilado- para ampliar nuestro grupo de listas y crear paneles de contenido local con
+            pestañas.
+        </p>
+        <div class="row">
+            <div class="col-4">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+                        href="#list-home" role="tab" aria-controls="list-home">Inicio</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
+                        href="#list-profile" role="tab" aria-controls="list-profile">Perfil</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list"
+                        href="#list-messages" role="tab" aria-controls="list-messages">Mensajes</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                        href="#list-settings" role="tab" aria-controls="list-settings">Ajustes</a>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                        aria-labelledby="list-home-list">Algún contenido de marcador de posición en un párrafo
+                        relacionado con "Inicio". Y algo más de contenido, utilizado aquí sólo para rellenar este panel
+                        de pestañas. En producción, obviamente tendrías más contenido real aquí. Y no sólo texto. Podría
+                        ser cualquier cosa. Texto, imágenes, formularios.</div>
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                        Algún contenido de marcador de posición en un párrafo relacionado con "Perfil". Y algo más de
+                        contenido, utilizado aquí sólo para rellenar este panel de pestañas. En producción, obviamente
+                        tendrías más contenido real aquí. Y no sólo texto. Podría ser cualquier cosa. Texto, imágenes,
+                        formularios.</div>
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                        Algún contenido de marcador de posición en un párrafo relativo a "Mensajes". Y algo más de
+                        contenido, utilizado aquí sólo para rellenar este panel de pestañas. En producción, obviamente
+                        tendrías más contenido real aquí. Y no sólo texto. Podría ser cualquier cosa. Texto, imágenes,
+                        formularios.</div>
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                        Algún contenido de marcador de posición en un párrafo relativo a "Ajustes". Y algo más de
+                        contenido, utilizado aquí sólo para rellenar este panel de pestañas. En producción, obviamente
+                        tendrías más contenido real aquí. Y no sólo texto. Podría ser cualquier cosa. Texto, imágenes,
+                        formularios.</div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <h4>Using data attributes - Uso de atributos de datos</h4>
+        <p>Puede activar la navegación de un grupo de listas sin escribir JavaScript simplemente especificando
+            <b>data-bs-toggle="list"</b> o en un elemento. Utilice estos atributos de datos en <b>.list-group-item</b>.
+        </p>
+
+        <div role="tabpanel">
+            <!-- List group -->
+            <div class="list-group" id="myList" role="tablist">
+                <a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#home"
+                    role="tab">Inicio</a>
+                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#profile"
+                    role="tab">Perfil</a>
+                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#messages"
+                    role="tab">Mensajes</a>
+                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#settings"
+                    role="tab">Ajustes</a>
+            </div>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel">Algún contenido de marcador de posición en un
+                    párrafo relacionado con "Inicio". Y algo más de contenido, utilizado aquí sólo para rellenar este
+                    panel de pestañas. En producción, obviamente tendrías más contenido real aquí. Y no sólo texto.
+                    Podría ser cualquier cosa. Texto, imágenes, formularios.</div>
+                <div class="tab-pane" id="profile" role="tabpanel">Algún contenido de marcador de posición en un párrafo
+                    relacionado con "Perfil". Y algo más de contenido, utilizado aquí sólo para rellenar este panel de
+                    pestañas. En producción, obviamente tendrías más contenido real aquí. Y no sólo texto. Podría ser
+                    cualquier cosa. Texto, imágenes, formularios.</div>
+                <div class="tab-pane" id="messages" role="tabpanel">Algún contenido de marcador de posición en un
+                    párrafo relativo a "Mensajes". Y algo más de contenido, utilizado aquí sólo para rellenar este panel
+                    de pestañas. En producción, obviamente tendrías más contenido real aquí. Y no sólo texto. Podría ser
+                    cualquier cosa. Texto, imágenes, formularios.</div>
+                <div class="tab-pane" id="settings" role="tabpanel">Algún contenido de marcador de posición en un
+                    párrafo relativo a "Ajustes". Y algo más de contenido, utilizado aquí sólo para rellenar este panel
+                    de pestañas. En producción, obviamente tendrías más contenido real aquí. Y no sólo texto. Podría ser
+                    cualquier cosa. Texto, imágenes, formularios.</div>
+            </div>
+        </div>
+
+        <!-- <h4>Via JavaScript - Mediante JavaScript</h4> -->
+        <!-- Activar el elemento de lista tabulable mediante JavaScript (cada elemento de lista debe activarse
+        individualmente): -->
+        <!--
+            const triggerTabList = document.querySelectorAll('#myTab a')
+            triggerTabList.forEach(triggerEl => {
+                const tabTrigger = new bootstrap.Tab(triggerEl)
+
+                triggerEl.addEventListener('click', event => {
+                    event.preventDefault()
+                    tabTrigger.show()
+                })
+            })
+        -->
+
+        <!-- Puede activar un elemento individual de la lista de varias formas: -->
+        <!--
+            const triggerEl = document.querySelector('#myTab a[href="#profile"]')
+            bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+
+            const triggerFirstTabEl = document.querySelector('#myTab li:first-child a')
+            bootstrap.Tab.getInstance(triggerFirstTabEl).show() // Select first tab
+        -->
+
+        <!-- <h4>Fade effect - Efecto desvanecimiento</h4> -->
+        <!-- Para hacer que el panel de pestañas se desvanezca, añada .fade a cada .tab-pane. El primer panel de pestañas
+        también debe tener .show para hacer visible el contenido inicial. -->
+        <!--
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="home" role="tabpanel">...</div>
+                <div class="tab-pane fade" id="profile" role="tabpanel">...</div>
+                <div class="tab-pane fade" id="messages" role="tabpanel">...</div>
+                <div class="tab-pane fade" id="settings" role="tabpanel">...</div>
+            </div>
+        -->
+
+        <!-- <h4>Methods - Métodos</h4> -->
+
+        <!-- Todos los métodos de la API son asíncronos e inician una transición. Devuelven la llamada en cuanto se inicia la
+        transición, pero antes de que termine. Además, una llamada a un método en un componente en transición será
+        ignorada. Más información en la documentación de JavaScript. -->
+
+        <!-- Activa su contenido como elemento de pestaña. -->
+
+        <!-- Puede crear una instancia de pestaña con el constructor, por ejemplo: -->
+        <!-- const bsTab = new bootstrap.Tab('#myTab') -->
+
+        <!--
+            Método                  Descripción
+            dispose                 Destruye la ficha de un elemento.
+            getInstance             Método estático que permite obtener la instancia de la pestaña asociada a un elemento del DOM, se puede usar así: bootstrap.Tab.getInstance(element).
+            getOrCreateInstance     Método estático que devuelve una instancia de pestaña asociada a un elemento DOM o crea una nueva en caso de que no haya sido inicializada. Puedes usarlo así: bootstrap.Tab.getOrCreateInstance(element).
+            show                    Selecciona la pestaña dada y muestra su panel asociado. Cualquier otra pestaña previamente seleccionada se deselecciona y su panel asociado se oculta. Devuelve la llamada al usuario antes de que se muestre el panel de pestañas (es decir, antes de que se produzca el evento shown.bs.tab).
+        -->
+
+        <!-- <h4>Events - Eventos</h4> -->
+        <!-- Cuando se muestra una nueva pestaña, los eventos se disparan en el siguiente orden: -->
+
+        <!-- 1. hide.bs.tab (en la pestaña activa actual) -->
+        <!-- 2. show.bs.tab (en la pestaña que se va a mostrar) -->
+        <!-- 3. hidden.bs.tab (en la pestaña activa anterior, la misma que para el evento hide.bs.tab) -->
+        <!-- 4. shown.bs.tab (en la pestaña recién mostrada, la misma que la del evento show.bs.tab) -->
+
+        <!-- Si no hay ninguna pestaña activa, los eventos hide.bs.tab y hidden.bs.tab no se activarán. -->
+
+        <!--
+            Tipo de acontecimiento      Descripción
+            hide.bs.tab                 Este evento se dispara cuando se va a mostrar una nueva pestaña (y por tanto se va a ocultar la pestaña activa anterior). Utiliza event.target y event.relatedTarget para apuntar a la pestaña activa actual y a la nueva pestaña que pronto estará activa, respectivamente.
+            hidden.bs.tab               Este evento se dispara cuando se muestra una nueva pestaña (y por tanto se oculta la pestaña activa anterior). Utiliza event.target y event.relatedTarget para apuntar a la pestaña activa anterior y a la nueva pestaña activa, respectivamente.
+            show.bs.tab                 Este evento se dispara al mostrar la pestaña, pero antes de que la nueva pestaña haya sido mostrada. Utiliza event.target y event.relatedTarget para apuntar a la pestaña activa y a la pestaña activa anterior (si está disponible) respectivamente.
+            shown.bs.tab                	Este evento se dispara al mostrar una pestaña. Usa event.target y event.relatedTarget para apuntar a la pestaña activa y a la pestaña activa anterior (si está disponible) respectivamente.
+        -->
+
+        <!--
+            const tabElms = document.querySelectorAll('a[data-bs-toggle="list"]')
+            tabElms.forEach(tabElm => {
+                tabElm.addEventListener('shown.bs.tab', event => {
+                    event.target // newly activated tab
+                    event.relatedTarget // previous active tab
+                })
+            })
+        -->
+    </div>
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!-- Clase de OpenBootcamp -->
+    <hr>
+
+    <div class=" container py-4">
+        <h1>Curso OpenBootCamp</h1>
+
+        <ul class="list-group">
+            <li class="list-group-item disabled">Item 1</li>
+            <li class="list-group-item">Item 2</li>
+            <li class="list-group-item active">Item 3</li>
+            <li class="list-group-item">Item 4</li>
+            <li class="list-group-item">Item 5</li>
+        </ul>
+
+        <ul class="list-group list-group-flush mt-4 rounded">
+            <a href="#" class="list-group-item list-group-item-action active">Item 1</a>
+            <a href="#" class="list-group-item list-group-item-action">Item 2</a>
+            <a href="#" class="list-group-item list-group-item-action">Item 3</a>
+            <a href="#" class="list-group-item list-group-item-action">Item 4</a>
+            <a href="#" class="list-group-item list-group-item-action disabled">Item 5</a>
+        </ul>
+
+        <ol class="mt-4 list-group list-group-numbered">
+            <li class="list-group-item list-group-item-action">Item 1</li>
+            <li class="list-group-item list-group-item-action">Item 2</li>
+            <li class="list-group-item list-group-item-action">Item 3</li>
+            <li class="list-group-item list-group-item-action">Item 4</li>
+            <li class="list-group-item list-group-item-action">Item 5</li>
+        </ol>
+
+        <ul class="mt-4 list-group">
+            <li class="list-group-item d-flex align-items-center justify-content-between">
+                <div>
+                    <p class="mb-0 fs-4"><strong>Primer item</strong></p>
+                    <p class="mb-0">Este es el texto del primer item</p>
+                </div>
+                <div>
+                    Badge
+                </div>
+            </li>
+            <li class="list-group-item">Item 2</li>
+            <li class="list-group-item">Item 3</li>
+            <li class="list-group-item">Item 4</li>
+            <li class="list-group-item">Item 5</li>
+        </ul>
+
+        <ul class="mt-4 list-group list-group-horizontal-sm">
+            <a href="#" class="list-group-item list-group-item-warning">Item 1</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-info">Item 2</a>
+            <a href="#" class="list-group-item">Item 3</a>
+            <a href="#" class="list-group-item">Item 4</a>
+        </ul>'
+
+        <div class="row">
+            <div class="col-4">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+                        href="#list-home" role="tab" aria-controls="list-home">Home</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list"
+                        href="#list-profile" role="tab" aria-controls="list-profile">Profile</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list"
+                        href="#list-messages" role="tab" aria-controls="list-messages">Messages</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list"
+                        href="#list-settings" role="tab" aria-controls="list-settings">Settings</a>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                        aria-labelledby="list-home-list">
+                        Esta es la home
+                    </div>
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                        Esto es tu perfil
+                    </div>
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                        Estos son tus mensajes
+                    </div>
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                        Aqui tiene los ajustes
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+<script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
