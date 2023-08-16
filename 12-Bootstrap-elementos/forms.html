@@ -1,0 +1,3012 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        class="img-fluid">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Documentacion de Bootstrap</h1>
+
+        <h1>Forms - Formularios</h1>
+
+        <!--++++++++++++++++++++++++++++++-->
+        <h2>Overview - Visión general</h2>
+        <div>
+            <p>Ejemplos y directrices de uso de estilos de control de formularios, opciones de diseño y componentes
+                personalizados para crear una amplia variedad de formularios.</p>
+
+            <p>Los controles de formulario de Bootstrap amplían nuestros estilos de formulario Rebooted con clases.
+                Utilice
+                estas clases para optar por sus visualizaciones personalizadas para una representación más coherente en
+                todos los navegadores y dispositivos.</p>
+
+            <p>Asegúrese de utilizar un atributo de <b>type</b> adecuado en todas las entradas (por ejemplo,
+                <b>email</b>
+                para la dirección de correo electrónico o <b>number</b> para la información numérica) para aprovechar
+                los
+                nuevos controles de entrada como la verificación de correo electrónico, la selección de números, etc.
+            </p>
+
+            <p>He aquí un ejemplo rápido para demostrar los estilos de formulario de Bootstrap. Sigue leyendo para
+                obtener
+                documentación sobre las clases requeridas, el diseño del formulario y mucho más.</p>
+
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Dirección de correo electrónico</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Nunca compartiremos tu correo electrónico con nadie.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Me echa un vistazo</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+
+
+
+            <br>
+            <h3>Disabled forms - formularios deshabilitados</h3>
+            <div>
+                <p>Añade el atributo booleano <b>disabled</b> en una entrada para evitar interacciones del usuario y
+                    hacer
+                    que aparezca más clara.</p>
+                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..."
+                    disabled>
+
+                <br>
+                <p>Añada el atributo <b>disabled</b> a un <b>fieldset</b> para desactivar todos los controles que
+                    contenga.
+                    Los navegadores tratan todos los controles de formulario nativos (elementos <b>input</b>,
+                    <b>select</b>
+                    y <b>button</b>) dentro de un <b>fieldset disabled</b> como desactivados, lo que impide las
+                    interacciones con el teclado y el ratón sobre ellos.
+                </p>
+
+                <p>Sin embargo, si el formulario también incluye elementos tipo botón personalizados como <b>(a)
+                        class="btn
+                        btn-*"..."(/a)</b>, sólo se les asignará el estilo <b>pointer-events: none</b>, lo que significa
+                    que
+                    aún se pueden enfocar y utilizar con el teclado. En este caso, debe modificar manualmente estos
+                    controles añadiendo <b>tabindex="-1"</b> para evitar que reciban el focus y
+                    <b>aria-disabled="disabled"</b> para indicar su estado a las tecnologías de asistencia.
+                </p>
+
+                <form>
+                    <fieldset disabled>
+                        <legend>Ejemplo de fieldset deshabilitado</legend>
+                        <div class="mb-3">
+                            <label for="disabledTextInput" class="form-label">Entrada deshabilitada</label>
+                            <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+                        </div>
+                        <div class="mb-3">
+                            <label for="disabledSelect" class="form-label">Menú de selección deshabilitado</label>
+                            <select id="disabledSelect" class="form-select">
+                                <option>Selección deshabilitada</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+                                <label class="form-check-label" for="disabledFieldsetCheck">
+                                    no puedo comprobar esto
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </fieldset>
+                </form>
+            </div>
+
+            <br>
+            <h3>Accessibility - Accesibilidad</h3>
+            <div>
+                <p>Asegúrese de que todos los controles del formulario tengan un nombre accesible adecuado para que los
+                    usuarios de tecnologías de asistencia puedan conocer su finalidad. La forma más sencilla de
+                    conseguirlo
+                    es utilizar un elemento <b>label</b> o, en el caso de los botones, incluir un texto suficientemente
+                    descriptivo como parte del contenido de <b>(button)...(/button)</b>.</p>
+
+                <p>Para situaciones en las que no es posible incluir una (label) visible o un contenido de texto
+                    adecuado,
+                    existen formas alternativas de seguir proporcionando un nombre accesible, como por ejemplo:</p>
+
+                <ul>
+                    <li>Elementos <b>(label)</b> ocultos mediante la clase <b>.visually-hidden</b></li>
+                    <li>Señalar un elemento existente que puede actuar como etiqueta utilizando <b>aria-labelledby</b>
+                    </li>
+                    <li>Proporcionar un atributo de <b>title</b></li>
+                    <li>Establecer explícitamente el nombre accesible de un elemento mediante <b>aria-label</b></li>
+                </ul>
+
+                <p>Si ninguno de ellos está presente, las tecnologías de asistencia pueden recurrir al atributo de
+                    <b>placeholder</b> como alternativa al nombre accesible en los elementos <b>(input)</b> y
+                    <b>(textarea)</b>. En los ejemplos de esta sección se sugieren algunos enfoques específicos para
+                    cada
+                    caso.
+                </p>
+
+                <p>Aunque el uso de contenido visualmente oculto (<b>.visually-hidden</b>, <b>aria-label</b> e incluso
+                    contenido de <b>placeholder</b>, que desaparece una vez que el campo de formulario tiene contenido)
+                    beneficiará a los usuarios de tecnología de asistencia, la falta de texto de etiqueta visible puede
+                    seguir siendo problemática para determinados usuarios. Por lo general, lo mejor es que haya algún
+                    tipo
+                    de etiqueta visible, tanto por motivos de accesibilidad como de usabilidad.</p>
+            </div>
+
+            <br>
+            <!-- CSS -->
+            <!-- Muchas variables de formulario se establecen a nivel general para ser reutilizadas y ampliadas por componentes
+                de formulario individuales. Las verás más a menudo como variables $input-btn-* y $input-*. -->
+
+            <!-- Sass variables -->
+            <!-- Las variables $input-btn-* son variables globales compartidas entre nuestros botones y nuestros componentes de
+        formulario. Las encontrarás frecuentemente reasignadas como valores a otras variables específicas del
+        componente. -->
+            <!--
+            $input-btn-padding-y:         .375rem;
+            $input-btn-padding-x:         .75rem;
+            $input-btn-font-family:       null;
+            $input-btn-font-size:         $font-size-base;
+            $input-btn-line-height:       $line-height-base;
+
+            $input-btn-focus-width:         $focus-ring-width;
+            $input-btn-focus-color-opacity: $focus-ring-opacity;
+            $input-btn-focus-color:         $focus-ring-color;
+            $input-btn-focus-blur:          $focus-ring-blur;
+            $input-btn-focus-box-shadow:    $focus-ring-box-shadow;
+
+            $input-btn-padding-y-sm:      .25rem;
+            $input-btn-padding-x-sm:      .5rem;
+            $input-btn-font-size-sm:      $font-size-sm;
+
+            $input-btn-padding-y-lg:      .5rem;
+            $input-btn-padding-x-lg:      1rem;
+            $input-btn-font-size-lg:      $font-size-lg;
+
+            $input-btn-border-width:      var(--#{$prefix}border-width);
+        -->
+        </div>
+
+        <!--++++++++++++++++++++++++++++++-->
+        <h2>Form control</h2>
+        <div>
+            <p>Actualice los controles de formularios textuales como <b>(input)</b>s y <b>(textarea)</b>s con estilos
+                personalizados, tamaños, estados de enfoque y mucho más.</p>
+
+            <h3>Example - Ejemplo</h3>
+            <div>
+                <p>Los controles de formulario se estilizan con una mezcla de variables Sass y CSS, lo que les permite
+                    adaptarse a los modos de color y admitir cualquier método de personalización.</p>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Dirección de correo electrónico</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="nombre@ejemplo.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Ejemplo de textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </div>
+
+            <h3>Sizing - Dimensionamiento</h3>
+            <div>
+                <p>Establezca alturas utilizando clases como <b>.form-control-lg</b> y <b>.form-control-sm</b>.</p>
+                <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"
+                    aria-label=".form-control-lg example">
+                <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+                <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm"
+                    aria-label=".form-control-sm example">
+            </div>
+
+            <br>
+            <h3>Form text - Texto del formulario</h3>
+            <div>
+                <p>El texto de formulario a nivel de bloque o a nivel de línea puede crearse utilizando
+                    <b>.form-text</b>.
+                </p>
+
+                <div style="background-color: lightyellow; border: 1px solid yellow; padding: 1rem;">
+                    <p>El texto de formulario debe asociarse explícitamente con el control de formulario al que se
+                        refiere
+                        mediante el atributo <b>aria-describedby</b>. Esto garantizará que las tecnologías de asistencia
+                        -como los lectores de pantalla- anuncien este texto de formulario cuando el usuario enfoque o
+                        entre
+                        en el control.</p>
+                </div>
+
+                <br>
+                <p>El texto del formulario debajo de las entradas puede estilizarse con <b>.form-text</b>. Si se utiliza
+                    un
+                    elemento a nivel de bloque, se añade un margen superior para facilitar el espaciado con respecto a
+                    las
+                    entradas anteriores.</p>
+
+                <div>
+                    <label for="inputPassword5" class="form-label">Contraseña</label>
+                    <input type="password" id="inputPassword5" class="form-control"
+                        aria-describedby="passwordHelpBlock">
+                    <div id="passwordHelpBlock" class="form-text">
+                        Su contraseña debe tener entre 8 y 20 caracteres, contener letras y números, y no debe contener
+                        espacios, caracteres especiales ni emoji.
+                    </div>
+                </div>
+
+                <br>
+                <p>El texto en línea puede utilizar cualquier elemento HTML en línea típico (ya sea un <b>(span)</b>,
+                    <b>(small)</b> o cualquier otro) con nada más que la clase <b>.form-text</b>.
+                </p>
+                <div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="inputPassword6" class="col-form-label">Contraseña</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="password" id="inputPassword6" class="form-control"
+                                aria-describedby="passwordHelpInline">
+                        </div>
+                        <div class="col-auto">
+                            <span id="passwordHelpInline" class="form-text">
+                                Debe tener entre 8 y 20 caracteres.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <h3>Disabled - Desactivada</h3>
+            <div>
+                <p>Añade el atributo booleano <b>disabled</b> a una entrada para darle un aspecto gris, eliminar los
+                    eventos
+                    de puntero y evitar el enfoque.</p>
+                <div>
+                    <input class="form-control" type="text" placeholder="Disabled input"
+                        aria-label="Disabled input example" disabled>
+                    <input class="form-control" type="text" value="Disabled readonly input"
+                        aria-label="Disabled input example" disabled readonly>
+                </div>
+            </div>
+
+            <br>
+            <h3>Readonly - Sólo lectura</h3>
+            <div>
+                <p>Añade el atributo booleano <b>readonly</b> a una entrada para evitar que se modifique su valor. Las
+                    entradas <b>readonly</b> pueden enfocarse y seleccionarse, mientras que las <b>disabled</b> no.</p>
+                <input class="form-control" type="text" value="Entrada de solo lectura aquí..."
+                    aria-label="readonly input example" readonly>
+            </div>
+
+            <br>
+            <h3>Readonly plain text - Texto sin formato de sólo lectura</h3>
+            <div>
+                <p>Si desea que los elementos <b>(input readonly)</b> de su formulario tengan estilo de texto sin
+                    formato,
+                    sustituya <b>.form-control</b> por <b>.form-control-plaintext</b> para eliminar el estilo
+                    predeterminado
+                    de los campos de formulario y conservar el <b>margin</b> y el <b>padding</b> correctos.</p>
+
+                <div>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                                value="email@example.com">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <form class="row g-3">
+                    <div class="col-auto">
+                        <label for="staticEmail2" class="visually-hidden">Email</label>
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail2"
+                            value="email@example.com">
+                    </div>
+                    <div class="col-auto">
+                        <label for="inputPassword2" class="visually-hidden">Contraseña</label>
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="Contraseña">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary mb-3">Confirmar identidad</button>
+                    </div>
+                </form>
+            </div>
+
+            <br>
+            <h3>File input - Entrada de archivos</h3>
+            <div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Ejemplo de entrada de archivos por defecto</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">Ejemplo de introducción de varios archivos</label>
+                    <input class="form-control" type="file" id="formFileMultiple" multiple>
+                </div>
+                <div class="mb-3">
+                    <label for="formFileDisabled" class="form-label">Ejemplo de introducción de archivos
+                        desactivados</label>
+                    <input class="form-control" type="file" id="formFileDisabled" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="formFileSm" class="form-label">Ejemplo de introducción de archivos pequeños</label>
+                    <input class="form-control form-control-sm" id="formFileSm" type="file">
+                </div>
+                <div>
+                    <label for="formFileLg" class="form-label">Ejemplo de entrada de archivos grandes</label>
+                    <input class="form-control form-control-lg" id="formFileLg" type="file">
+                </div>
+            </div>
+
+            <br>
+            <h3>Color</h3>
+            <div>
+                <p>Establece el <b>type="color"</b> y añade <b>.form-control-color</b> al <b>(input)</b>. Usamos la
+                    clase
+                    modificadora para establecer <b>height</b>s(alturas) fijas y anular algunas inconsistencias entre
+                    navegadores.
+                </p>
+
+                <label for="exampleColorInput" class="form-label">Selector de color</label>
+                <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c"
+                    title="Choose your color">
+            </div>
+
+            <h3>Datalists - Listas de datos</h3>
+            <div>
+                <p>Las listas de datos permiten crear un grupo de <b>option</b>s a las que se puede acceder (y
+                    autocompletar) desde un <b>(input)</b>. Son similares a los elementos <b>(select)</b>, pero
+                    presentan
+                    más limitaciones y diferencias de estilo en el menú. Aunque la mayoría de los navegadores y sistemas
+                    operativos incluyen algún tipo de soporte para los elementos <b>(datalist)</b>, su estilo es
+                    inconsistente en el mejor de los casos.</p>
+
+                <label for="exampleDataList" class="form-label">Ejemplo de lista de datos</label>
+                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                    placeholder="Escribe para buscar...">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                </datalist>
+            </div>
+
+            <br>
+            <!-- CSS -->
+
+            <!-- Sass variables -->
+            <!-- $input-* se comparten en la mayoría de nuestros controles de formulario (y no en los botones). -->
+            <!--
+                $input-padding-y:                       $input-btn-padding-y;
+                $input-padding-x:                       $input-btn-padding-x;
+                $input-font-family:                     $input-btn-font-family;
+                $input-font-size:                       $input-btn-font-size;
+                $input-font-weight:                     $font-weight-base;
+                $input-line-height:                     $input-btn-line-height;
+    
+                $input-padding-y-sm:                    $input-btn-padding-y-sm;
+                $input-padding-x-sm:                    $input-btn-padding-x-sm;
+                $input-font-size-sm:                    $input-btn-font-size-sm;
+    
+                $input-padding-y-lg:                    $input-btn-padding-y-lg;
+                $input-padding-x-lg:                    $input-btn-padding-x-lg;
+                $input-font-size-lg:                    $input-btn-font-size-lg;
+    
+                $input-bg:                              var(--#{$prefix}body-bg);
+                $input-disabled-color:                  null;
+                $input-disabled-bg:                     var(--#{$prefix}secondary-bg);
+                $input-disabled-border-color:           null;
+    
+                $input-color:                           var(--#{$prefix}body-color);
+                $input-border-color:                    var(--#{$prefix}border-color);
+                $input-border-width:                    $input-btn-border-width;
+                $input-box-shadow:                      $box-shadow-inset;
+    
+                $input-border-radius:                   var(--#{$prefix}border-radius);
+                $input-border-radius-sm:                var(--#{$prefix}border-radius-sm);
+                $input-border-radius-lg:                var(--#{$prefix}border-radius-lg);
+    
+                $input-focus-bg:                        $input-bg;
+                $input-focus-border-color:              tint-color($component-active-bg, 50%);
+                $input-focus-color:                     $input-color;
+                $input-focus-width:                     $input-btn-focus-width;
+                $input-focus-box-shadow:                $input-btn-focus-box-shadow;
+    
+                $input-placeholder-color:               var(--#{$prefix}secondary-color);
+                $input-plaintext-color:                 var(--#{$prefix}body-color);
+    
+                $input-height-border:                   calc(#{$input-border-width} * 2); // stylelint-disable-line function-disallowed-list
+    
+                $input-height-inner:                    add($input-line-height * 1em, $input-padding-y * 2);
+                $input-height-inner-half:               add($input-line-height * .5em, $input-padding-y);
+                $input-height-inner-quarter:            add($input-line-height * .25em, $input-padding-y * .5);
+    
+                $input-height:                          add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false));
+                $input-height-sm:                       add($input-line-height * 1em, add($input-padding-y-sm * 2, $input-height-border, false));
+                $input-height-lg:                       add($input-line-height * 1em, add($input-padding-y-lg * 2, $input-height-border, false));
+    
+                $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    
+                $form-color-width:                      3rem;
+            -->
+
+            <!-- $form-label-* y $form-text-* son para nuestros componentes <label>s y .form-text. -->
+            <!--
+                $form-label-margin-bottom:              .5rem;
+                $form-label-font-size:                  null;
+                $form-label-font-style:                 null;
+                $form-label-font-weight:                null;
+                $form-label-color:                      null;
+            -->
+            <!--
+                $form-text-margin-top:                  .25rem;
+                $form-text-font-size:                   $small-font-size;
+                $form-text-font-style:                  null;
+                $form-text-font-weight:                 null;
+                $form-text-color:                       var(--#{$prefix}secondary-color);
+            -->
+
+            <!-- $form-file-* son para la entrada de archivos. -->
+            <!--
+                $form-file-button-color:          $input-color;
+                $form-file-button-bg:             var(--#{$prefix}tertiary-bg);
+                $form-file-button-hover-bg:       var(--#{$prefix}secondary-bg);
+            -->
+
+        </div>
+
+        <!--++++++++++++++++++++++++++++++-->
+        <h2>Select</h2>
+        <div>
+            <p>Personaliza los <b>(select)</b>s nativos con CSS personalizado que cambie la apariencia inicial del
+                elemento.</p>
+
+            <h3>Default - Por defecto</h3>
+            <p>Los menús <b>(select)</b> personalizados sólo necesitan una clase personalizada, <b>.form-select</b> para
+                activar los estilos personalizados. Los estilos personalizados se limitan a la apariencia inicial del
+                <b>(select)</b>'s y no pueden modificar las <b>(option)</b>s debido a las limitaciones del navegador.
+            </p>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">Uno</option>
+                <option value="2">Dos</option>
+                <option value="3">Tres</option>
+            </select>
+
+            <br>
+
+            <h3>Sizing - Dimensionamiento</h3>
+            <p>También puede elegir entre selecciones personalizadas pequeñas y grandes para que coincidan con nuestras
+                entradas de texto de tamaño similar.</p>
+
+            <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">Uno</option>
+                <option value="2">Dos</option>
+                <option value="3">Tres</option>
+            </select>
+
+            <select class="form-select form-select-sm" aria-label="Small select example">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">Uno</option>
+                <option value="2">Dos</option>
+                <option value="3">Tres</option>
+            </select>
+
+            <br>
+
+            <p>También se admite el atributo <b>multiple</b>:</p>
+            <select class="form-select" multiple aria-label="Multiple select example">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">Uno</option>
+                <option value="2">Dos</option>
+                <option value="3">Tres</option>
+            </select>
+
+            <br>
+
+            <p>Al igual que el atributo de <b>size</b>(tamaño):</p>
+            <select class="form-select" size="3" aria-label="Size 3 select example">
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">Uno</option>
+                <option value="2">Dos</option>
+                <option value="3">Tres</option>
+            </select>
+
+            <br>
+
+            <h3>Disabled - Desactivada</h3>
+            <p>Añade el atributo booleano <b>disabled</b> en una selección para darle un aspecto gris y eliminar los
+                eventos de puntero.</p>
+            <select class="form-select" aria-label="Disabled select example" disabled>
+                <option selected>Abrir este menú de selección</option>
+                <option value="1">Uno</option>
+                <option value="2">Dos</option>
+                <option value="3">Tres</option>
+            </select>
+
+            <br>
+
+            <!-- CSS  -->
+
+            <!-- Sass variables -->
+            <!--
+                $form-select-padding-y:             $input-padding-y;
+                $form-select-padding-x:             $input-padding-x;
+                $form-select-font-family:           $input-font-family;
+                $form-select-font-size:             $input-font-size;
+                $form-select-indicator-padding:     $form-select-padding-x * 3; // Extra padding for background-image
+                $form-select-font-weight:           $input-font-weight;
+                $form-select-line-height:           $input-line-height;
+                $form-select-color:                 $input-color;
+                $form-select-bg:                    $input-bg;
+                $form-select-disabled-color:        null;
+                $form-select-disabled-bg:           $input-disabled-bg;
+                $form-select-disabled-border-color: $input-disabled-border-color;
+                $form-select-bg-position:           right $form-select-padding-x center;
+                $form-select-bg-size:               16px 12px; // In pixels because image dimensions
+                $form-select-indicator-color:       $gray-800;
+                $form-select-indicator:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+
+                $form-select-feedback-icon-padding-end: $form-select-padding-x * 2.5 + $form-select-indicator-padding;
+                $form-select-feedback-icon-position:    center right $form-select-indicator-padding;
+                $form-select-feedback-icon-size:        $input-height-inner-half $input-height-inner-half;
+
+                $form-select-border-width:        $input-border-width;
+                $form-select-border-color:        $input-border-color;
+                $form-select-border-radius:       $input-border-radius;
+                $form-select-box-shadow:          $box-shadow-inset;
+
+                $form-select-focus-border-color:  $input-focus-border-color;
+                $form-select-focus-width:         $input-focus-width;
+                $form-select-focus-box-shadow:    0 0 0 $form-select-focus-width $input-btn-focus-color;
+
+                $form-select-padding-y-sm:        $input-padding-y-sm;
+                $form-select-padding-x-sm:        $input-padding-x-sm;
+                $form-select-font-size-sm:        $input-font-size-sm;
+                $form-select-border-radius-sm:    $input-border-radius-sm;
+
+                $form-select-padding-y-lg:        $input-padding-y-lg;
+                $form-select-padding-x-lg:        $input-padding-x-lg;
+                $form-select-font-size-lg:        $input-font-size-lg;
+                $form-select-border-radius-lg:    $input-border-radius-lg;
+
+                $form-select-transition:          $input-transition;
+            -->
+
+        </div>
+
+        <!--++++++++++++++++++++++++++++++-->
+        <h2>Checks & radios</h2>
+        <div>
+            <p>Cree casillas de verificación y radios coherentes entre navegadores y dispositivos con nuestro componente
+                de verificación completamente reescrito.</p>
+
+            <h3>Approach - Acercarse</h3>
+            <p>Las casillas de verificación y los radios predeterminados del navegador se sustituyen con la ayuda de
+                <b>.form-check</b>, una serie de clases para ambos tipos de entrada que mejora el diseño y el
+                comportamiento de sus elementos HTML, que proporcionan una mayor personalización y coherencia entre
+                navegadores. Las casillas de verificación sirven para seleccionar una o varias opciones de una lista,
+                mientras que los radios sirven para seleccionar una opción entre varias.
+            </p>
+
+            <p>Estructuralmente, nuestros <b>(input)</b>s y <b>(label)</b>s son elementos hermanos a diferencia de un
+                <b>(input)</b> dentro de un <b>(label)</b>. Esto es un poco más verboso, ya que debe especificar los
+                atributos <b>id</b> y <b>for</b> para relacionar los elementos <b>(input)</b> y <b>(label)</b>.
+                Utilizamos el selector de hermanos (<b>~</b>) para todos nuestros estados <b>(input)</b>, como
+                <b>:checked</b> o <b>:disabled</b>. Cuando se combina con la clase <b>.form-check-label</b>, podemos
+                estilizar fácilmente el texto de cada elemento basándonos en el estado del <b>(input)</b>.
+            </p>
+
+            <p>Nuestras comprobaciones utilizan iconos personalizados de Bootstrap para indicar los estados comprobado o
+                indeterminado.</p>
+
+            <h3>Checks - Comprobaciones</h3>
+            <div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Default checkbox
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Checked checkbox
+                    </label>
+                </div>
+
+                <h4>Indeterminate - Indeterminado</h4>
+                <div>
+                    <p>Las casillas de verificación pueden utilizar la pseudoclase <b>:indeterminado</b> cuando se
+                        configuran
+                        manualmente mediante JavaScript (no hay ningún atributo HTML disponible para especificarlo).</p>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate">
+                            Casilla de verificación Indeterminado
+                        </label>
+                    </div>
+                </div>
+
+                <h4>Disabled - Desactivada</h4>
+                <div>
+                    <p>Añade el atributo <b>disabled</b> y las <b>(label)</b>'s asociadas se estilizarán automáticamente
+                        para que coincidan con un color más claro que ayude a indicar el estado de la entrada.</p>
+
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminateDisabled"
+                                disabled>
+                            <label class="form-check-label" for="flexCheckIndeterminateDisabled">
+                                Disabled indeterminate checkbox
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+                            <label class="form-check-label" for="flexCheckDisabled">
+                                Disabled checkbox
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled"
+                                checked disabled>
+                            <label class="form-check-label" for="flexCheckCheckedDisabled">
+                                Disabled checked checkbox
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <h3>Radios</h3>
+            <div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Radio por defecto
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Radio marcada por defecto
+                    </label>
+                </div>
+
+                <h4>Disabled - Desactivada</h4>
+                <p>Añade el atributo <b>disabled</b> y las <b>(label)</b>'s asociadas se estilizarán automáticamente
+                    para que coincidan con un color más claro que ayude a indicar el estado de la entrada.</p>
+
+                <div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioDisabled"
+                            disabled>
+                        <label class="form-check-label" for="flexRadioDisabled">
+                            Radio deshabilitada
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDisabled"
+                            id="flexRadioCheckedDisabled" checked disabled>
+                        <label class="form-check-label" for="flexRadioCheckedDisabled">
+                            Radio comprobada deshabilitada
+                        </label>
+                    </div>
+                </div>
+
+                <br>
+            </div>
+
+            <h3>Switches - Interruptores</h3>
+            <div>
+                <p>Un interruptor tiene el marcado de una casilla de verificación personalizada, pero utiliza la clase
+                    <b>.form-switch</b> para representar un interruptor. Considere la posibilidad de utilizar
+                    <b>role="switch"</b> para transmitir con mayor precisión la naturaleza del control a las tecnologías
+                    de asistencia que admiten este rol. En las tecnologías de asistencia más antiguas, simplemente se
+                    anunciará como una casilla de verificación normal. Los interruptores también admiten el atributo
+                    <b>disabled</b>.
+                </p>
+
+                <div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Entrada de casilla de verificación
+                            de interruptor por defecto</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                            checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Entrada de casilla de verificación
+                            de interruptor marcada</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDisabled"
+                            disabled>
+                        <label class="form-check-label" for="flexSwitchCheckDisabled">Entrada de casilla de verificación
+                            de interruptor desactivado</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch"
+                            id="flexSwitchCheckCheckedDisabled" checked disabled>
+                        <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Entrada de casilla de
+                            verificación desactivada</label>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Default (stacked) - Por defecto (apilado)</h3>
+            <div>
+                <p>Por defecto, cualquier número de checkboxes y radios que sean hermanos inmediatos serán apilados
+                    verticalmente y espaciados apropiadamente con <b>.form-check</b>.</p>
+
+                <div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Default checkbox
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+                        <label class="form-check-label" for="defaultCheck2">
+                            Disabled checkbox
+                        </label>
+                    </div>
+                </div>
+
+                <br>
+
+                <div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                            value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            Default radio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                            value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            Second default radio
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                            value="option3" disabled>
+                        <label class="form-check-label" for="exampleRadios3">
+                            Disabled radio
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Inline - En línea</h3>
+            <div>
+                <p>Agrupe casillas de verificación o radios en la misma fila horizontal añadiendo
+                    <b>.form-check-inline</b> a cualquier <b>.form-check</b>.
+                </p>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                        <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+                    </div>
+                </div>
+
+                <br>
+
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                            value="option1">
+                        <label class="form-check-label" for="inlineRadio1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                            value="option2">
+                        <label class="form-check-label" for="inlineRadio2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                            value="option3" disabled>
+                        <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Reverse - Inversa</h3>
+            <div>
+                <p>Coloque sus casillas de verificación, radios e interruptores en el lado opuesto con la clase
+                    modificadora <b>.form-check-reverse</b>.</p>
+
+                <div>
+                    <div class="form-check form-check-reverse">
+                        <input class="form-check-input" type="checkbox" value="" id="reverseCheck1">
+                        <label class="form-check-label" for="reverseCheck1">
+                            Casilla de verificación inversa
+                        </label>
+                    </div>
+                    <div class="form-check form-check-reverse">
+                        <input class="form-check-input" type="checkbox" value="" id="reverseCheck2" disabled>
+                        <label class="form-check-label" for="reverseCheck2">
+                            Casilla de verificación inversa deshabilitada
+                        </label>
+                    </div>
+
+                    <div class="form-check form-switch form-check-reverse">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
+                        <label class="form-check-label" for="flexSwitchCheckReverse">Entrada de casilla de verificación
+                            de interruptor inverso</label>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Without labels - Sin etiquetas</h3>
+            <div>
+                <p>Omita el envoltorio <b>.form-check</b> para casillas de verificación y radios que no tienen texto de
+                    etiqueta. Recuerde proporcionar algún tipo de nombre accesible para las tecnologías de asistencia
+                    (por ejemplo, usando <b>aria-label</b>).</p>
+                <div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                    </div>
+
+                    <div>
+                        <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value=""
+                            aria-label="...">
+                    </div>
+                </div>
+            </div>
+
+            <h3>Toggle buttons - Botones de conmutación</h3>
+            <div>
+                <p>Cree casillas de verificación y botones de radio similares a botones utilizando estilos <b>.btn</b>
+                    en lugar de <b>.form-check-label</b> en los elementos <b>(label)</b>. Estos botones de selección
+                    pueden agruparse en un grupo de botones si es necesario.</p>
+
+                <h4>Checkbox toggle buttons - Botones de casilla de verificación</h4>
+                <div>
+                    <div>
+                        <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+                        <label class="btn btn-primary" for="btn-check">Single toggle</label>
+
+                        <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+                        <label class="btn btn-primary" for="btn-check-2">Checked</label>
+
+                        <input type="checkbox" class="btn-check" id="btn-check-3" autocomplete="off" disabled>
+                        <label class="btn btn-primary" for="btn-check-3">Disabled</label>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <input type="checkbox" class="btn-check" id="btn-check-4" autocomplete="off">
+                        <label class="btn" for="btn-check-4">Single toggle</label>
+
+                        <input type="checkbox" class="btn-check" id="btn-check-5" checked autocomplete="off">
+                        <label class="btn" for="btn-check-5">Checked</label>
+
+                        <input type="checkbox" class="btn-check" id="btn-check-6" autocomplete="off" disabled>
+                        <label class="btn" for="btn-check-6">Disabled</label>
+                    </div>
+
+                    <br>
+
+                    <div style="border: 1px solid blue; background-color: lightblue; padding: 1em;">
+                        <p>Visualmente, estos botones de alternancia de casilla de verificación son idénticos a los
+                            botones de alternancia del complemento de botón. Sin embargo, las tecnologías de asistencia
+                            los transmiten de manera diferente: los lectores de pantalla anunciarán las casillas de
+                            verificación como "marcadas"/"no marcadas" (ya que, a pesar de su apariencia, siguen siendo
+                            fundamentalmente casillas de verificación), mientras que los botones de alternancia del
+                            complemento de botón serán anunciado como “botón”/“botón presionado”. La elección entre
+                            estos dos enfoques dependerá del tipo de alternancia que esté creando y de si la alternancia
+                            tendrá o no sentido para los usuarios cuando se anuncie como una casilla de verificación o
+                            como un botón real.</p>
+                    </div>
+                </div>
+
+                <br>
+
+                <h4>Radio toggle buttons - Botones de radio</h4>
+                <div>
+                    <div>
+                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+                        <label class="btn btn-secondary" for="option1">Checked</label>
+
+                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2">Radio</label>
+
+                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" disabled>
+                        <label class="btn btn-secondary" for="option3">Disabled</label>
+
+                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
+                        <label class="btn btn-secondary" for="option4">Radio</label>
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off"
+                            checked>
+                        <label class="btn" for="option5">Checked</label>
+
+                        <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off">
+                        <label class="btn" for="option6">Radio</label>
+
+                        <input type="radio" class="btn-check" name="options-base" id="option7" autocomplete="off"
+                            disabled>
+                        <label class="btn" for="option7">Disabled</label>
+
+                        <input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off">
+                        <label class="btn" for="option8">Radio</label>
+                    </div>
+                </div>
+
+                <br>
+
+                <h4>Outlined styles - Estilos perfilados</h4>
+                <div>
+                    <p>Se admiten distintas variantes de <b>.btn</b>, como los distintos estilos de contorno.</p>
+
+                    <div>
+                        <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btn-check-outlined">Single toggle</label><br>
+
+                        <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
+                        <label class="btn btn-outline-secondary" for="btn-check-2-outlined">Checked</label><br>
+
+                        <input type="radio" class="btn-check" name="options-outlined" id="success-outlined"
+                            autocomplete="off" checked>
+                        <label class="btn btn-outline-success" for="success-outlined">Checked success radio</label>
+
+                        <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined"
+                            autocomplete="off">
+                        <label class="btn btn-outline-danger" for="danger-outlined">Danger radio</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CSS -->
+
+            <!-- Sass variables -->
+            <!-- Variables para cheques: -->
+            <!--
+                $form-check-input-width:                  1em;
+                $form-check-min-height:                   $font-size-base * $line-height-base;
+                $form-check-padding-start:                $form-check-input-width + .5em;
+                $form-check-margin-bottom:                .125rem;
+                $form-check-label-color:                  null;
+                $form-check-label-cursor:                 null;
+                $form-check-transition:                   null;
+
+                $form-check-input-active-filter:          brightness(90%);
+
+                $form-check-input-bg:                     $input-bg;
+                $form-check-input-border:                 var(--#{$prefix}border-width) solid var(--#{$prefix}border-color);
+                $form-check-input-border-radius:          .25em;
+                $form-check-radio-border-radius:          50%;
+                $form-check-input-focus-border:           $input-focus-border-color;
+                $form-check-input-focus-box-shadow:       $focus-ring-box-shadow;
+
+                $form-check-input-checked-color:          $component-active-color;
+                $form-check-input-checked-bg-color:       $component-active-bg;
+                $form-check-input-checked-border-color:   $form-check-input-checked-bg-color;
+                $form-check-input-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
+                $form-check-radio-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-check-input-checked-color}'/></svg>");
+
+                $form-check-input-indeterminate-color:          $component-active-color;
+                $form-check-input-indeterminate-bg-color:       $component-active-bg;
+                $form-check-input-indeterminate-border-color:   $form-check-input-indeterminate-bg-color;
+                $form-check-input-indeterminate-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-indeterminate-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
+
+                $form-check-input-disabled-opacity:        .5;
+                $form-check-label-disabled-opacity:        $form-check-input-disabled-opacity;
+                $form-check-btn-check-disabled-opacity:    $btn-disabled-opacity;
+
+                $form-check-inline-margin-end:    1rem;
+            -->
+
+            <!-- Variables para interruptores: -->
+            <!--
+                $form-switch-color:               rgba($black, .25);
+                $form-switch-width:               2em;
+                $form-switch-padding-start:       $form-switch-width + .5em;
+                $form-switch-bg-image:            url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color}'/></svg>");
+                $form-switch-border-radius:       $form-switch-width;
+                $form-switch-transition:          background-position .15s ease-in-out;
+
+                $form-switch-focus-color:         $input-focus-border-color;
+                $form-switch-focus-bg-image:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-focus-color}'/></svg>");
+
+                $form-switch-checked-color:       $component-active-color;
+                $form-switch-checked-bg-image:    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-checked-color}'/></svg>");
+                $form-switch-checked-bg-position: right center;
+            -->
+
+            <br>
+        </div>
+
+        <!--++++++++++++++++++++++++++++++-->
+        <h2>Range</h2>
+        <div>
+
+            <p>Utilice nuestras entradas de rango personalizadas para obtener un estilo coherente entre navegadores y
+                una personalización integrada.</p>
+
+            <h3>Overview - Visión general</h3>
+            <div>
+                <p>Crea controles personalizados <b>(input type="range")</b> con <b>.form-range</b>. La pista (el
+                    background) y el pulgar (el value) tienen el mismo estilo en todos los navegadores. Como sólo
+                    Firefox soporta "rellenar" su pista desde la izquierda o derecha del pulgar como medio para indicar
+                    visualmente el progreso, actualmente no lo soportamos.</p>
+                <div>
+                    <label for="customRange1" class="form-label">Ejemplo range</label>
+                    <input type="range" class="form-range" id="customRange1">
+                </div>
+
+                <br>
+            </div>
+
+            <h3>Disabled - Desactivada</h3>
+            <div>
+                <p>Añade el atributo booleano <b>disabled</b> a una entrada para darle un aspecto gris, eliminar los
+                    eventos de puntero y evitar el enfoque.</p>
+                <div>
+                    <label for="disabledRange" class="form-label">Desactivada range</label>
+                    <input type="range" class="form-range" id="disabledRange" disabled>
+                </div>
+
+                <br>
+            </div>
+
+            <h3>Min and max - Mínima y máxima</h3>
+            <div>
+                <p>Las entradas de rango tienen valores implícitos para <b>min</b> y <b>max</b>-<b>0</b> y <b>100</b>,
+                    respectivamente. Puede especificar nuevos valores mediante los atributos <b>min</b> y <b>max</b>.
+                </p>
+                <div>
+                    <label for="customRange2" class="form-label">Example range</label>
+                    <input type="range" class="form-range" min="0" max="5" id="customRange2">
+                </div>
+            </div>
+
+            <h3>Steps - Pasos</h3>
+            <div>
+                <p>Por defecto, las entradas de rango se "ajustan" a valores enteros. Para cambiar esto, puede
+                    especificar un valor de <b>step</b>. En el ejemplo siguiente, duplicamos el número de pasos
+                    utilizando <b>step="0.5"</b>.</p>
+                <div>
+                    <label for="customRange3" class="form-label">Example range</label>
+                    <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                </div>
+
+                <br>
+            </div>
+
+            <!-- CSS -->
+
+            <!-- Sass variables -->
+            <!--
+                $form-range-track-width:          100%;
+                $form-range-track-height:         .5rem;
+                $form-range-track-cursor:         pointer;
+                $form-range-track-bg:             var(--#{$prefix}tertiary-bg);
+                $form-range-track-border-radius:  1rem;
+                $form-range-track-box-shadow:     $box-shadow-inset;
+
+                $form-range-thumb-width:                   1rem;
+                $form-range-thumb-height:                  $form-range-thumb-width;
+                $form-range-thumb-bg:                      $component-active-bg;
+                $form-range-thumb-border:                  0;
+                $form-range-thumb-border-radius:           1rem;
+                $form-range-thumb-box-shadow:              0 .1rem .25rem rgba($black, .1);
+                $form-range-thumb-focus-box-shadow:        0 0 0 1px $body-bg, $input-focus-box-shadow;
+                $form-range-thumb-focus-box-shadow-width:  $input-focus-width; // For focus box shadow issue in Edge
+                $form-range-thumb-active-bg:               tint-color($component-active-bg, 70%);
+                $form-range-thumb-disabled-bg:             var(--#{$prefix}secondary-color);
+                $form-range-thumb-transition:              background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            -->
+
+        </div>
+
+        <!--++++++++++++++++++++++++++++++-->
+        <h2>Input group</h2>
+        <div>
+            <p>Amplíe fácilmente los controles de formularios añadiendo texto, botones o grupos de botones a ambos lados
+                de las entradas de texto, las selecciones personalizadas y las entradas de archivo personalizadas.</p>
+
+            <h3>Basic example - Ejemplo básico</h3>
+            <div>
+                <p>Coloque un complemento o botón a cada lado de una entrada. También puede colocar uno a ambos lados de
+                    una entrada. Recuerde colocar <b>(label)</b>s fuera del grupo de entrada.</p>
+
+                <div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Nombre de usuario del destinatario"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2">@ejemplo.com</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="basic-url" class="form-label">Su URL personalizada</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon3">https://ejemplo.com/usuarios/</span>
+                            <input type="text" class="form-control" id="basic-url"
+                                aria-describedby="basic-addon3 basic-addon4">
+                        </div>
+                        <div class="form-text" id="basic-addon4">El texto de ayuda de ejemplo va fuera del grupo de
+                            entrada.</div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <input type="text" class="form-control" aria-label="Cantidad (al dólar más cercano)">
+                        <span class="input-group-text">.00</span>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="Servidor" aria-label="Server">
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text">Con área de texto</span>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Wrapping - Envolver</h3>
+            <div>
+                <p>Los grupos de entrada se ajustan por defecto mediante <b>flex-wrap: wrap</b> para acomodar la
+                    validación de campos de formulario personalizados dentro de un grupo de entrada. Puede desactivar
+                    esta opción con <b>.flex-nowrap</b>.</p>
+
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">@</span>
+                    <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+
+            </div>
+
+            <h3>Sizing - Dimensionamiento</h3>
+            <div>
+                <p>Añada las clases de tamaño relativo de formulario al propio <b>.input-group</b> y el contenido dentro
+                    cambiará de tamaño automáticamente, sin necesidad de repetir las clases de tamaño de control de
+                    formulario en cada elemento.</p>
+
+                <p><b>No es posible ajustar el tamaño de los elementos individuales del grupo de entrada.</b></p>
+
+                <div>
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Small - Pequeño</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Default - Por defecto</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>
+
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Large - Grande</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-lg">
+                    </div>
+                </div>
+            </div>
+
+            <h3>Checkboxes and radios - Casillas de verificación y radios</h3>
+            <div>
+                <p>Coloque cualquier casilla de verificación u opción de radio dentro del complemento de un grupo de
+                    entrada en lugar de texto. Recomendamos añadir <b>.mt-0</b> al <b>.form-check-input</b> cuando no
+                    haya texto visible junto a la entrada.</p>
+
+                <div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="checkbox" value=""
+                                aria-label="Casilla de verificación para la siguiente entrada de texto">
+                        </div>
+                        <input type="text" class="form-control"
+                            aria-label="Entrada de texto con casilla de verificación">
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-text">
+                            <input class="form-check-input mt-0" type="radio" value=""
+                                aria-label="Botón de radio para introducir el texto siguiente">
+                        </div>
+                        <input type="text" class="form-control" aria-label="Entrada de texto con botón de opción">
+                    </div>
+                </div>
+            </div>
+
+            <h3>Multiple inputs - Entradas múltiples</h3>
+            <div>
+                <p>Aunque visualmente se admiten varios <b>(input)</b>s, los estilos de validación sólo están
+                    disponibles para grupos de entrada con un único <b>(input)</b>.</p>
+
+                <div class="input-group">
+                    <span class="input-group-text">Nombre y apellido</span>
+                    <input type="text" aria-label="Nombre" class="form-control">
+                    <input type="text" aria-label="Apellido" class="form-control">
+                </div>
+            </div>
+
+            <h3>Multiple addons - Múltiples complementos</h3>
+            <div>
+                <p>Se admiten múltiples complementos y se pueden mezclar con las versiones de casilla de verificación y
+                    entrada de radio.</p>
+
+                <div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <span class="input-group-text">0.00</span>
+                        <input type="text" class="form-control"
+                            aria-label="Monto en dólares (con punto y dos decimales)">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" class="form-control"
+                            aria-label="Monto en dólares (con punto y dos decimales)">
+                        <span class="input-group-text">$</span>
+                        <span class="input-group-text">0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Button addons - Complementos de botones</h3>
+            <div>
+                <div class="input-group mb-3">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Botón</button>
+                    <input type="text" class="form-control" placeholder=""
+                        aria-label="Texto de ejemplo con complemento de botón" aria-describedby="button-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Nombre de usuario del destinatario"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Botón</button>
+                </div>
+
+                <div class="input-group mb-3">
+                    <button class="btn btn-outline-secondary" type="button">Botón</button>
+                    <button class="btn btn-outline-secondary" type="button">Botón</button>
+                    <input type="text" class="form-control" placeholder=""
+                        aria-label="Texto de ejemplo con complementos de dos botones">
+                </div>
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nombre de usuario del destinatario"
+                        aria-label="Nombre de usuario del destinatario con complementos de dos botones">
+                    <button class="btn btn-outline-secondary" type="button">Botón</button>
+                    <button class="btn btn-outline-secondary" type="button">Botón</button>
+                </div>
+            </div>
+
+            <h3>Buttons with dropdowns - Botones con menús desplegables</h3>
+            <div>
+                <div class="input-group mb-3">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">Desplegable</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Acción</a></li>
+                        <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                        <li><a class="dropdown-item" href="#">Algo mas aqui</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Enlace separado</a></li>
+                    </ul>
+                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">Desplegable</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Acción</a></li>
+                        <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                        <li><a class="dropdown-item" href="#">Algo mas aqui</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Enlace separado</a></li>
+                    </ul>
+                </div>
+
+                <div class="input-group">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">Desplegable</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Acción before</a></li>
+                        <li><a class="dropdown-item" href="#">Otra acción before</a></li>
+                        <li><a class="dropdown-item" href="#">Algo mas aqui</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Enlace separado</a></li>
+                    </ul>
+                    <input type="text" class="form-control" aria-label="Text input with 2 dropdown buttons">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">Desplegable</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Acción</a></li>
+                        <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                        <li><a class="dropdown-item" href="#">Algo mas aqui</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Enlace separado</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Segmented buttons - Botones segmentados</h3>
+            <div>
+                <div class="input-group mb-3">
+                    <button type="button" class="btn btn-outline-secondary">Acción</button>
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Alternar menú desplegable</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Acción</a></li>
+                        <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                        <li><a class="dropdown-item" href="#">Algo mas aqui</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Enlace separado</a></li>
+                    </ul>
+                    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                </div>
+
+                <div class="input-group">
+                    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                    <button type="button" class="btn btn-outline-secondary">Acción</button>
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Alternar menú desplegable</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Acción</a></li>
+                        <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                        <li><a class="dropdown-item" href="#">Algo mas aqui</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Enlace separado</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Custom forms - Formularios personalizados</h3>
+            <div>
+                <p>Los grupos de entrada incluyen soporte para selecciones personalizadas y entradas de archivos
+                    personalizadas. No se admiten las versiones predeterminadas del navegador.</p>
+
+                <h4>Custom select - Selección personalizada</h4>
+                <div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">Opciones</label>
+                        <select class="form-select" id="inputGroupSelect01">
+                            <option selected>Elegir...</option>
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <select class="form-select" id="inputGroupSelect02">
+                            <option selected>Elegir...</option>
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+                        <label class="input-group-text" for="inputGroupSelect02">Opciones</label>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button">Botón</button>
+                        <select class="form-select" id="inputGroupSelect03"
+                            aria-label="Example select with button addon">
+                            <option selected>Elegir...</option>
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <select class="form-select" id="inputGroupSelect04"
+                            aria-label="Example select with button addon">
+                            <option selected>Elegir...</option>
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+                        <button class="btn btn-outline-secondary" type="button">Botón</button>
+                    </div>
+                </div>
+
+                <h4>Custom file input - Entrada de archivo personalizado</h4>
+                <div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupFile01">Subir</label>
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="inputGroupFile02">
+                        <label class="input-group-text" for="inputGroupFile02">Subir</label>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button"
+                            id="inputGroupFileAddon03">Botón</button>
+                        <input type="file" class="form-control" id="inputGroupFile03"
+                            aria-describedby="inputGroupFileAddon03" aria-label="Subir">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="file" class="form-control" id="inputGroupFile04"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Subir">
+                        <button class="btn btn-outline-secondary" type="button"
+                            id="inputGroupFileAddon04">Botón</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CSS  -->
+
+            <!-- Sass variables -->
+            <!--
+                $input-group-addon-padding-y:           $input-padding-y;
+                $input-group-addon-padding-x:           $input-padding-x;
+                $input-group-addon-font-weight:         $input-font-weight;
+                $input-group-addon-color:               $input-color;
+                $input-group-addon-bg:                  var(--#{$prefix}tertiary-bg);
+                $input-group-addon-border-color:        $input-border-color;
+            -->
+
+            <br>
+        </div>
+
+        <!--++++++++++++++++++++++++++++++-->
+        <h2>Floating labels</h2>
+        <div>
+            <p>Cree etiquetas de formulario muy sencillas que flotan sobre los input.</p>
+
+            <h3>Example - Ejemplo</h3>
+            <div>
+                <p>Envuelve un par de elementos <b>(input class="form-control")</b> y <b>(label)</b> en
+                    <b>.form-floating</b> para habilitar etiquetas flotantes con los campos de formulario textuales de
+                    Bootstrap. Se requiere un <b>placeholder</b> en cada <b>(input)</b> ya que nuestro método de
+                    etiquetas flotantes sólo CSS utiliza el pseudo-elemento <b>:placeholder-shown</b>. También tenga en
+                    cuenta que el <b>(input)</b> debe ir primero para que podamos utilizar un selector hermano (por
+                    ejemplo, <b>~</b>).
+                </p>
+                <div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Dirección de correo electrónico</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Contraseña</label>
+                    </div>
+                </div>
+
+                <p>Cuando haya un <b>value</b> ya definido, las <b>(label)</b>s se ajustarán automáticamente a su
+                    posición flotante.</p>
+                <div>
+                    <form class="form-floating">
+                        <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com"
+                            value="prueba@ejemplo.com">
+                        <label for="floatingInputValue">Input con value</label>
+                    </form>
+                </div>
+
+                <p>Los estilos de validación de formularios también funcionan como se esperaba.</p>
+                <div>
+                    <form class="form-floating">
+                        <input type="email" class="form-control is-invalid" id="floatingInputInvalid"
+                            placeholder="name@example.com" value="prueba@ejemplo.com">
+                        <label for="floatingInputInvalid">Input no válida</label>
+                    </form>
+                </div>
+
+                <br>
+            </div>
+
+            <h3>Textareas - Áreas de texto</h3>
+            <div>
+                <p>Por defecto, los <b>(textarea)</b>s con <b>.form-control</b> tendrán la misma altura que los
+                    <b>(input)</b>s.
+                </p>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Comments</label>
+                </div>
+
+                <p>Para establecer una altura personalizada en su <b>(textarea)</b>, no utilice el atributo <b>rows</b>.
+                    En su lugar, establece una <b>height</b> explícita (ya sea en línea o mediante CSS personalizado).
+                </p>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                        style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Comments</label>
+                </div>
+            </div>
+
+            <h3>Selects - Selecciona</h3>
+            <div>
+                <p>Aparte de <b>.form-control</b>, las etiquetas flotantes sólo están disponibles en
+                    <b>.form-select</b>s. Funcionan de la misma manera, pero a diferencia de los <b>(input)</b>s,
+                    siempre mostrarán la <b>(label)</b> en su estado flotante. <b>Los select con size(tamaño) y
+                        multiple(múltiple) no están soportados</b>.
+                </p>
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect"
+                        aria-label="Ejemplo de selección de etiqueta flotante">
+                        <option selected>Abrir este menú de selección</option>
+                        <option value="1">Uno</option>
+                        <option value="2">Dos</option>
+                        <option value="3">Tres</option>
+                    </select>
+                    <label for="floatingSelect">Funciona con selecciones</label>
+                </div>
+            </div>
+
+            <h3>Disabled - Desactivada</h3>
+            <div>
+                <p>Añade el atributo booleano <b>disabled</b> en una input, un textarea o un select para darle un
+                    aspecto gris, eliminar los eventos de puntero y evitar el enfoque.</p>
+                <div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInputDisabled"
+                            placeholder="name@example.com" disabled>
+                        <label for="floatingInputDisabled">Dirección de correo electrónico</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextareaDisabled"
+                            disabled></textarea>
+                        <label for="floatingTextareaDisabled">Comentarios</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled"
+                            style="height: 100px"
+                            disabled>Área de texto deshabilitada con texto en su interior</textarea>
+                        <label for="floatingTextarea2Disabled">Comentarios</label>
+                    </div>
+                    <div class="form-floating">
+                        <select class="form-select" id="floatingSelectDisabled"
+                            aria-label="Floating label disabled select example" disabled>
+                            <option selected>Abrir este menú de selección</option>
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+                        <label for="floatingSelectDisabled">Funciona con selecciones</label>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Readonly plaintext - Texto sin formato de sólo lectura</h3>
+            <div>
+                <p>Las etiquetas flotantes también admiten <b>.form-control-plaintext</b>, lo que puede ser útil para
+                    pasar de un <b>(input)</b> editable a un valor de texto plano sin afectar al diseño de la página.
+                </p>
+                <div>
+                    <div class="form-floating mb-3">
+                        <input type="email" readonly class="form-control-plaintext" id="floatingEmptyPlaintextInput"
+                            placeholder="name@example.com">
+                        <label for="floatingEmptyPlaintextInput">Input vacía</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" readonly class="form-control-plaintext" id="floatingPlaintextInput"
+                            placeholder="name@example.com" value="nombre@ejemplo.com">
+                        <label for="floatingPlaintextInput">Input con value</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3>Input groups - Grupos de entrada</h3>
+            <div>
+                <p>Las etiquetas flotantes también admiten <b>.input-group</b>.</p>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">@</span>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+                        <label for="floatingInputGroup1">Nombre de usuario</label>
+                    </div>
+                </div>
+
+                <p>Cuando se utiliza <b>.input-group</b> y <b>.form-floating</b> junto con la validación del formulario,
+                    el <b>-feedback</b> debe colocarse fuera del <b>.form-floating</b>, pero dentro del
+                    <b>.input-group</b>. Esto significa que la retroalimentación tendrá que ser mostrada usando
+                    javascript.
+                </p>
+                <div class="input-group has-validation">
+                    <span class="input-group-text">@</span>
+                    <div class="form-floating is-invalid">
+                        <input type="text" class="form-control is-invalid" id="floatingInputGroup2"
+                            placeholder="Username" required>
+                        <label for="floatingInputGroup2">Nombre de usuario</label>
+                    </div>
+                    <div class="invalid-feedback">
+                        Por favor, elija un nombre de usuario.
+                    </div>
+                </div>
+            </div>
+
+            <h3>Layout - Diseño</h3>
+            <div>
+                <p>Cuando trabaje con el sistema de grid(cuadrícula) de Bootstrap, asegúrese de colocar los elementos de
+                    formulario dentro de las clases de columna.</p>
+
+                <div>
+                    <div class="row g-2">
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInputGrid"
+                                    placeholder="name@example.com" value="mdo@ejemplo.com">
+                                <label for="floatingInputGrid">Dirección de correo electrónico</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelectGrid">
+                                    <option selected>Abrir este menú de selección</option>
+                                    <option value="1">Uno</option>
+                                    <option value="2">Dos</option>
+                                    <option value="3">Tres</option>
+                                </select>
+                                <label for="floatingSelectGrid">Funciona con selecciones</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CSS -->
+
+            <!-- Sass variables -->
+            <!--
+                $form-floating-height:                  add(3.5rem, $input-height-border);
+                $form-floating-line-height:             1.25;
+                $form-floating-padding-x:               $input-padding-x;
+                $form-floating-padding-y:               1rem;
+                $form-floating-input-padding-t:         1.625rem;
+                $form-floating-input-padding-b:         .625rem;
+                $form-floating-label-height:            1.5em;
+                $form-floating-label-opacity:           .65;
+                $form-floating-label-transform:         scale(.85) translateY(-.5rem) translateX(.15rem);
+                $form-floating-label-disabled-color:    $gray-600;
+                $form-floating-transition:              opacity .1s ease-in-out, transform .1s ease-in-out;
+            -->
+
+            <br>
+        </div>
+
+        <!--++++++++++++++++++++++++++++++-->
+        <h2>Layout</h2>
+        <div>
+            <p>Estructure sus formularios (en línea, horizontales o con cuadrículas personalizadas) con nuestras
+                opciones de diseño.</p>
+
+            <h3>Forms - Formularios</h3>
+            <div>
+                <p>Cada grupo de campos de formulario debe residir en un elemento <b>(form)</b>. Bootstrap no
+                    proporciona ningún estilo predeterminado para el elemento <b>(form)</b>, pero hay algunas potentes
+                    características del navegador que se proporcionan de forma predeterminada.</p>
+
+                <ul>
+                    <li>¿Eres nuevo en los formularios del navegador? Consulte la documentación sobre formularios de MDN
+                        para obtener una visión general y una lista completa de los atributos disponibles.</li>
+                    <li>Los <b>(button)</b>s dentro de un <b>(form)</b> tienen por defecto <b>type="submit"</b>, así que
+                        esfuérzate por ser específico e incluye siempre un <b>type</b>.</li>
+                </ul>
+
+                <p>Dado que Bootstrap aplica <b>display: block</b> y <b>width: 100%</b> a casi todos nuestros controles
+                    de formulario, los formularios se apilarán verticalmente por defecto. Se pueden utilizar clases
+                    adicionales para variar este diseño en cada formulario.</p>
+            </div>
+
+            <h3>Utilities - Servicios</h3>
+            <div>
+                <p>Las utilidades de margen son la forma más sencilla de añadir estructura a los formularios.
+                    Proporcionan una agrupación básica de etiquetas, controles, texto opcional del formulario y mensajes
+                    de validación del formulario. Recomendamos ceñirse a las utilidades de <b>margin-bottom</b> y
+                    utilizar una única dirección en todo el formulario para mantener la coherencia.</p>
+
+                <p>Siéntete libre de construir tus formularios como quieras, con <b>(fieldset)</b>s, <b>(div)</b>s, o
+                    casi cualquier otro elemento.</p>
+
+                <div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Ejemplo de etiqueta</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput"
+                            placeholder="Ejemplo de marcador de entrada">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Otra etiqueta</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2"
+                            placeholder="Otro marcador de entrada">
+                    </div>
+                </div>
+            </div>
+
+            <h3>Form grid - Rejilla de formulario</h3>
+            <div>
+                <p>Se pueden crear formularios más complejos utilizando nuestras clases de rejilla. Utilícelas para
+                    diseños de formularios que requieran múltiples columnas, anchos variados y opciones de alineación
+                    adicionales. Requiere que la variable <b>$enable-grid-classes</b> de Sass esté activada (activada
+                    por defecto).</p>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
+                    </div>
+                </div>
+
+                <br>
+            </div>
+
+            <h3>Gutters - Canalones</h3>
+            <div>
+                <p>Añadiendo clases modificadoras de medianil, puedes tener control sobre el ancho del medianil tanto en
+                    la dirección en línea como en bloque. También requiere que la variable <b>$enable-grid-classes </b>
+                    de Sass esté activada (activada por defecto).</p>
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Nombre" aria-label="First name">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Apellido" aria-label="Last name">
+                    </div>
+                </div>
+
+                <br>
+
+                <p>También se pueden crear diseños más complejos con el sistema de grid.</p>
+
+                <div>
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPassword4" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="inputPassword4">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="inputAddress"
+                                placeholder="1234 calle principal">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputAddress2" class="form-label">Dirección 2</label>
+                            <input type="text" class="form-control" id="inputAddress2"
+                                placeholder="Apartamento, estudio o piso">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputCity" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputState" class="form-label">Estado</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Elegir...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputZip" class="form-label">Código postal</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">
+                                    Me echa un vistazo
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        </div>
+                    </form>
+                </div>
+
+                <br>
+            </div>
+
+            <h3>Horizontal form - Forma horizontal</h3>
+            <div>
+                <p>Crea formularios horizontales con la rejilla añadiendo la clase <b>.row</b> a los grupos de
+                    formularios y utilizando las clases <b>.col-*-*</b> para especificar la anchura de tus etiquetas y
+                    controles. Asegúrate también de añadir <b>.col-form-label</b> a tus <b>(label)</b>s para que estén
+                    centradas verticalmente con sus controles de formulario asociados.</p>
+
+                <p>A veces, puede que necesite utilizar utilidades de margin o padding para crear esa alineación
+                    perfecta que necesita. Por ejemplo, hemos eliminado el <b>padding-top</b> en nuestra etiqueta de
+                    entradas de radio apiladas para alinear mejor la línea de base del texto.</p>
+                <div>
+                    <form>
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Contraseña</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword3">
+                            </div>
+                        </div>
+                        <fieldset class="row mb-3">
+                            <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+                                        value="option1" checked>
+                                    <label class="form-check-label" for="gridRadios1">
+                                        Primera radio
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
+                                        value="option2">
+                                    <label class="form-check-label" for="gridRadios2">
+                                        Segunda radio
+                                    </label>
+                                </div>
+                                <div class="form-check disabled">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"
+                                        value="option3" disabled>
+                                    <label class="form-check-label" for="gridRadios3">
+                                        Tercera radio desactivada
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="row mb-3">
+                            <div class="col-sm-10 offset-sm-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                    <label class="form-check-label" for="gridCheck1">
+                                        Ejemplo de checkbox
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                    </form>
+                </div>
+
+                <br>
+
+                <h4>Horizontal form label sizing - Tamaño horizontal de las etiquetas de formulario</h4>
+                <div>
+                    <p>Asegúrese de usar <b>.col-form-label-sm</b> o <b>.col-form-label-lg</b> en sus <b>(label)</b>s o
+                        <b>(legend)</b>s para seguir correctamente el tamaño de <b>.form-control-lg</b> y
+                        <b>.form-control-sm</b>.
+                    </p>
+
+                    <div>
+                        <div class="row mb-3">
+                            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control form-control-sm" id="colFormLabelSm"
+                                    placeholder="col-form-label-sm">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control form-control-lg" id="colFormLabelLg"
+                                    placeholder="col-form-label-lg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+            </div>
+
+            <h3>Column sizing - Dimensionamiento de columnas</h3>
+            <div>
+                <p>Como se muestra en los ejemplos anteriores, nuestro sistema de rejilla le permite colocar cualquier
+                    número de <b>.col</b>s dentro de una <b>.row</b>. Dividirán el ancho disponible a partes iguales
+                    entre ellas. También puedes elegir un subconjunto de tus columnas para que ocupen más o menos
+                    espacio, mientras que las <b>.col</b>s restantes se reparten el resto a partes iguales, con clases
+                    de columna específicas como <b>.col-sm-7</b>.</p>
+
+                <div class="row g-3">
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" placeholder="Ciudad" aria-label="City">
+                    </div>
+                    <div class="col-sm">
+                        <input type="text" class="form-control" placeholder="Estado" aria-label="State">
+                    </div>
+                    <div class="col-sm">
+                        <input type="text" class="form-control" placeholder="Código postal" aria-label="Zip">
+                    </div>
+                </div>
+            </div>
+
+            <h3>Auto-sizing - Tamaño automático</h3>
+            <div>
+                <p>El ejemplo siguiente utiliza una utilidad flexbox para centrar verticalmente el contenido y cambia
+                    <b>.col</b> por <b>.col-auto</b> para que tus columnas sólo ocupen el espacio necesario. Dicho de
+                    otro modo, la columna se ajusta a sí misma en función del contenido.
+                </p>
+
+                <form class="row gy-2 gx-3 align-items-center">
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="autoSizingInput">Nombre</label>
+                        <input type="text" class="form-control" id="autoSizingInput" placeholder="Jane Doe">
+                    </div>
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="autoSizingInputGroup">Nombre de usuario</label>
+                        <div class="input-group">
+                            <div class="input-group-text">@</div>
+                            <input type="text" class="form-control" id="autoSizingInputGroup"
+                                placeholder="Nombre de usuario">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="autoSizingSelect">Preferencia</label>
+                        <select class="form-select" id="autoSizingSelect">
+                            <option selected>Elige...</option>
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                            <label class="form-check-label" for="autoSizingCheck">
+                                Acuérdate de mí
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+
+                <br>
+
+                <p>A continuación, puede remezclarlo de nuevo con clases de columnas específicas para cada tamaño.</p>
+
+                <form class="row gx-3 gy-2 align-items-center">
+                    <div class="col-sm-3">
+                        <label class="visually-hidden" for="specificSizeInputName">Nombre</label>
+                        <input type="text" class="form-control" id="specificSizeInputName" placeholder="Jane Doe">
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="visually-hidden" for="specificSizeInputGroupUsername">Nombre de usuario</label>
+                        <div class="input-group">
+                            <div class="input-group-text">@</div>
+                            <input type="text" class="form-control" id="specificSizeInputGroupUsername"
+                                placeholder="Nombre de usuario">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="visually-hidden" for="specificSizeSelect">Preferencia</label>
+                        <select class="form-select" id="specificSizeSelect">
+                            <option selected>Elige...</option>
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
+                            <label class="form-check-label" for="autoSizingCheck2">
+                                Acuérdate de mí
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+
+                <br>
+            </div>
+
+            <h3>Inline forms - Formularios en línea</h3>
+            <div>
+                <p>Usa las clases <b>.row-cols-*</b> para crear diseños horizontales responsivos. Añadiendo clases
+                    modificadoras de medianil, tendremos medianiles en dirección horizontal y vertical. En viewports
+                    móviles estrechos, el <b>.col-12</b> ayuda a apilar los controles del formulario y más. El
+                    <b>.align-items-center</b> alinea los elementos del formulario al centro, haciendo que el
+                    <b>.form-check</b> se alinee correctamente.
+                </p>
+
+                <form class="row row-cols-lg-auto g-3 align-items-center">
+                    <div class="col-12">
+                        <label class="visually-hidden" for="inlineFormInputGroupUsername">Nombre de usuario</label>
+                        <div class="input-group">
+                            <div class="input-group-text">@</div>
+                            <input type="text" class="form-control" id="inlineFormInputGroupUsername"
+                                placeholder="Nombre de usuario">
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="visually-hidden" for="inlineFormSelectPref">Preferencia</label>
+                        <select class="form-select" id="inlineFormSelectPref">
+                            <option selected>Elige...</option>
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                            <label class="form-check-label" for="inlineFormCheck">
+                                Acuérdate de mí
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+
+                <br>
+            </div>
+        </div>
+
+        <!--++++++++++++++++++++++++++++++-->
+        <h2>Validation</h2>
+        <div>
+            <p>Proporcione información valiosa y procesable a sus usuarios con la validación de formularios HTML5,
+                mediante comportamientos predeterminados del navegador o estilos personalizados y JavaScript.</p>
+
+            <div style="border: 1px solid yellow; background-color: lightyellow; padding: 1em;">
+                <p>Somos conscientes de que actualmente los estilos de validación personalizados del lado del cliente y
+                    la información sobre herramientas no son accesibles, ya que no están expuestos a las tecnologías de
+                    asistencia. Mientras trabajamos en una solución, te recomendamos que utilices la opción del servidor
+                    o el método de validación por defecto del navegador.</p>
+            </div>
+
+            <br>
+
+            <h3>How it works - Cómo funciona</h3>
+            <div>
+                <p>Así es como funciona la validación de formularios con Bootstrap:</p>
+
+                <ul>
+                    <li>La validación de formularios HTML se aplica mediante dos pseudoclases de CSS, <b>:invalid</b> y
+                        <b>:valid</b>. Se aplica a los elementos <b>(input)</b>, <b>(select)</b> y <b>(textarea)</b>.
+                    </li>
+                    <li>Bootstrap asigna los estilos <b>:invalid</b> y <b>:valid</b> a la clase padre
+                        <b>.was-validated</b>, normalmente aplicada al <b>(form)</b>. De lo contrario, cualquier campo
+                        obligatorio sin valor se mostrará como inválido al cargar la página. De esta forma, puedes
+                        elegir cuándo activarlos (normalmente después de que se intente enviar el formulario).
+                    </li>
+                    <li>Para restablecer el aspecto del formulario (por ejemplo, en el caso de envíos dinámicos de
+                        formularios mediante Ajax), vuelva a eliminar la clase <b>.was-validated</b> del <b>(form)</b>
+                        después del envío.</li>
+                    <li>Como alternativa, se pueden utilizar las clases <b>.is-invalid</b> y <b>.is-valid</b> en lugar
+                        de las pseudoclases para la validación en el servidor. No requieren una clase padre
+                        <b>.was-validated</b>.
+                    </li>
+                    <li>Debido a limitaciones en el funcionamiento de CSS, no podemos (en la actualidad) aplicar estilos
+                        a una <b>(label)</b> que precede a un control de formulario en el DOM sin la ayuda de JavaScript
+                        personalizado.</li>
+                    <li>Todos los navegadores modernos soportan la API de validación de restricciones, una serie de
+                        métodos JavaScript para validar controles de formularios.</li>
+                    <li>Los mensajes de respuesta pueden utilizar los valores predeterminados del navegador (diferentes
+                        para cada navegador, y no estilizables mediante CSS) o nuestros estilos de respuesta
+                        personalizados con HTML y CSS adicionales.</li>
+                    <li>Puede proporcionar mensajes de validez personalizados con <b>setCustomValidity</b> en
+                        JavaScript.</li>
+
+                    <p>Teniendo esto en cuenta, considere las siguientes demostraciones de nuestros estilos de
+                        validación de formularios personalizados, clases opcionales del lado del servidor y valores
+                        predeterminados del navegador.</p>
+                </ul>
+            </div>
+
+            <h3>Custom styles - Estilos personalizados</h3>
+            <div>
+                <p>Para los mensajes personalizados de validación de formularios de Bootstrap, tendrás que añadir el
+                    atributo booleano <b>novalidate</b> a tu <b>(form)</b>. Esto desactiva los tooltips de
+                    retroalimentación por defecto del navegador, pero todavía proporciona acceso a las APIs de
+                    validación de formularios en JavaScript. Intente enviar el siguiente formulario; nuestro JavaScript
+                    interceptará el botón de envío y le enviará los comentarios. Al intentar enviar, verá los estilos
+                    <b>:invalid</b> y <b>:valid</b> aplicados a los controles del formulario.
+                </p>
+
+                <p>Los estilos de retroalimentación personalizados aplican colores, bordes, estilos de enfoque e iconos
+                    de fondo personalizados para comunicar mejor la retroalimentación. Los iconos de fondo para
+                    <b>(select)</b> sólo están disponibles con <b>.form-select</b>, y no con <b>.form-control</b>.
+                </p>
+
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-4">
+                        <label for="validationCustom01" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                        <div class="valid-feedback">
+                            ¡Se ve bien!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustom02" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                        <div class="valid-feedback">
+                            ¡Se ve bien!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationCustomUsername" class="form-label">Nombre de usuario</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                            <input type="text" class="form-control" id="validationCustomUsername"
+                                aria-describedby="inputGroupPrepend" required>
+                            <div class="invalid-feedback">
+                                Elija un nombre de usuario.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">Ciudad</label>
+                        <input type="text" class="form-control" id="validationCustom03" required>
+                        <div class="invalid-feedback">
+                            Indique una ciudad válida.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom04" class="form-label">Estado</label>
+                        <select class="form-select" id="validationCustom04" required>
+                            <option selected disabled value="">Elige...</option>
+                            <option>...</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Seleccione un estado válido.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom05" class="form-label">Código postal</label>
+                        <input type="text" class="form-control" id="validationCustom05" required>
+                        <div class="invalid-feedback">
+                            Indique un código postal válido.
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                Aceptar las condiciones
+                            </label>
+                            <div class="invalid-feedback">
+                                Debe aceptarlo antes de enviarlo.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Enviar formulario</button>
+                    </div>
+                </form>
+
+                <!-- 
+                    // Ejemplo de JavaScript de inicio para desactivar el envío de formularios si hay campos no válidos
+                    (() => {
+                        'use strict'
+
+                        // Obtener todos los formularios a los que queremos aplicar estilos de validación personalizados de Bootstrap
+                        const forms = document.querySelectorAll('.needs-validation')
+
+                        // Haz un bucle sobre ellos y evita que se sometan
+                        Array.from(forms).forEach(form => {
+                            form.addEventListener('submit', event => {
+                                if (!form.checkValidity()) {
+                                    event.preventDefault()
+                                    event.stopPropagation()
+                                }
+
+                                form.classList.add('was-validated')
+                            }, false)
+                        })
+                    })() 
+                -->
+            </div>
+
+            <h3>Browser defaults - Navegador por defecto</h3>
+            <div>
+                <p>¿No le interesan los mensajes de validación personalizados o escribir JavaScript para cambiar el
+                    comportamiento de los formularios? Todo bien, puede utilizar los valores predeterminados del
+                    navegador. Pruebe a enviar el siguiente formulario. Dependiendo de tu navegador y sistema operativo,
+                    verás un estilo de respuesta ligeramente diferente.</p>
+
+                <p>Aunque estos estilos de respuesta no se pueden personalizar con CSS, puede hacerlo con JavaScript.
+                </p>
+
+                <form class="row g-3">
+                    <div class="col-md-4">
+                        <label for="validationDefault01" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefault02" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="validationDefault02" value="Otto" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationDefaultUsername" class="form-label">Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                            <input type="text" class="form-control" id="validationDefaultUsername"
+                                aria-describedby="inputGroupPrepend2" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationDefault03" class="form-label">City</label>
+                        <input type="text" class="form-control" id="validationDefault03" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationDefault04" class="form-label">State</label>
+                        <select class="form-select" id="validationDefault04" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationDefault05" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="validationDefault05" required>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <label class="form-check-label" for="invalidCheck2">
+                                Agree to terms and conditions
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </div>
+                </form>
+
+                <br>
+            </div>
+
+            <h3>Server-side - Del lado del servidor</h3>
+            <div>
+                <p>Recomendamos usar validación del lado del cliente, pero en caso de que requiera validación del lado
+                    del servidor, puede indicar campos de formulario inválidos y válidos con <b>.is-invalid</b> y
+                    <b>.is-valid.</b> Tenga en cuenta que <b>.invalid-feedback</b> también es compatible con estas
+                    clases.
+                </p>
+
+                <p>En el caso de los campos no válidos, asegúrese de que el mensaje de respuesta/error no válido está
+                    asociado al campo de formulario correspondiente mediante <b>aria-describedby</b> (tenga en cuenta
+                    que este atributo permite hacer referencia a más de un <b>id</b>, en caso de que el campo ya apunte
+                    a texto de formulario adicional).</p>
+
+                <p>Para solucionar los problemas con el radio del borde, los grupos de entradas requieren una clase
+                    <b>.has-validation</b> adicional.
+                </p>
+
+                <form class="row g-3">
+                    <div class="col-md-4">
+                        <label for="validationServer01" class="form-label">First name</label>
+                        <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationServer02" class="form-label">Last name</label>
+                        <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="validationServerUsername" class="form-label">Username</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend3">@</span>
+                            <input type="text" class="form-control is-invalid" id="validationServerUsername"
+                                aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationServer03" class="form-label">City</label>
+                        <input type="text" class="form-control is-invalid" id="validationServer03"
+                            aria-describedby="validationServer03Feedback" required>
+                        <div id="validationServer03Feedback" class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationServer04" class="form-label">State</label>
+                        <select class="form-select is-invalid" id="validationServer04"
+                            aria-describedby="validationServer04Feedback" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option>...</option>
+                        </select>
+                        <div id="validationServer04Feedback" class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationServer05" class="form-label">Zip</label>
+                        <input type="text" class="form-control is-invalid" id="validationServer05"
+                            aria-describedby="validationServer05Feedback" required>
+                        <div id="validationServer05Feedback" class="invalid-feedback">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3"
+                                aria-describedby="invalidCheck3Feedback" required>
+                            <label class="form-check-label" for="invalidCheck3">
+                                Agree to terms and conditions
+                            </label>
+                            <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </div>
+                </form>
+
+                <br>
+            </div>
+
+            <h3>Supported elements - Elementos compatibles</h3>
+            <div>
+                <p>Los estilos de validación están disponibles para los siguientes controles de formulario y
+                    componentes:</p>
+
+                <ul>
+                    <li><b>(input)</b>s y <b>(textarea)</b>s con <b>.form-control</b> (incluido hasta un
+                        <b>.form-control</b> en grupos de entrada)
+                    </li>
+                    <li><b>(select)</b>s con <b>.form-select</b></li>
+                    <li><b>.form-check</b>s</li>
+                </ul>
+
+                <form class="was-validated">
+                    <div class="mb-3">
+                        <label for="validationTextarea" class="form-label">Textarea</label>
+                        <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea"
+                            required></textarea>
+                        <div class="invalid-feedback">
+                            Please enter a message in the textarea.
+                        </div>
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+                        <label class="form-check-label" for="validationFormCheck1">Check this checkbox</label>
+                        <div class="invalid-feedback">Example invalid feedback text</div>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked"
+                            required>
+                        <label class="form-check-label" for="validationFormCheck2">Toggle this radio</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked"
+                            required>
+                        <label class="form-check-label" for="validationFormCheck3">Or toggle this other radio</label>
+                        <div class="invalid-feedback">More example invalid feedback text</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <select class="form-select" required aria-label="select example">
+                            <option value="">Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <div class="invalid-feedback">Example invalid select feedback</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="file" class="form-control" aria-label="file example" required>
+                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <button class="btn btn-primary" type="submit" disabled>Submit form</button>
+                    </div>
+                </form>
+
+                <br>
+            </div>
+
+            <h3>Tooltips - Información sobre herramientas</h3>
+            <div>
+                <p>Si el diseño de tu formulario lo permite, puedes cambiar las clases <b>.{valid|invalid}-feedback</b>
+                    por las clases <b>.{valid|invalid}-tooltip</b> para mostrar la información de validación en un
+                    tooltip con estilo. Asegúrate de tener un padre con <b>position: relative</b> en él para el
+                    posicionamiento del tooltip. En el ejemplo de abajo, nuestras clases de columna ya tienen esto, pero
+                    su proyecto puede requerir una configuración alternativa.</p>
+
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-4 position-relative">
+                        <label for="validationTooltip01" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="validationTooltip01" value="Mark" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 position-relative">
+                        <label for="validationTooltip02" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="validationTooltip02" value="Otto" required>
+                        <div class="valid-tooltip">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-4 position-relative">
+                        <label for="validationTooltipUsername" class="form-label">Username</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                            <input type="text" class="form-control" id="validationTooltipUsername"
+                                aria-describedby="validationTooltipUsernamePrepend" required>
+                            <div class="invalid-tooltip">
+                                Please choose a unique and valid username.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 position-relative">
+                        <label for="validationTooltip03" class="form-label">City</label>
+                        <input type="text" class="form-control" id="validationTooltip03" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="col-md-3 position-relative">
+                        <label for="validationTooltip04" class="form-label">State</label>
+                        <select class="form-select" id="validationTooltip04" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option>...</option>
+                        </select>
+                        <div class="invalid-tooltip">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                    <div class="col-md-3 position-relative">
+                        <label for="validationTooltip05" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="validationTooltip05" required>
+                        <div class="invalid-tooltip">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- CSS -->
+
+            <!-- Variables -->
+            <!-- Como parte del enfoque evolutivo de las variables CSS de Bootstrap, los formularios utilizan ahora variables
+            CSS locales para la validación con el fin de mejorar la personalización en tiempo real. Los valores de las
+            variables CSS se establecen mediante Sass, por lo que también se admite la personalización con Sass. -->
+
+            <!--
+                --#{$prefix}form-valid-color: #{$form-valid-color};
+                --#{$prefix}form-valid-border-color: #{$form-valid-border-color};
+                --#{$prefix}form-invalid-color: #{$form-invalid-color};
+                --#{$prefix}form-invalid-border-color: #{$form-invalid-border-color};
+            -->
+
+            <!-- Estas variables también se adaptan al modo de color, lo que significa que cambian de color cuando están en
+            modo oscuro. -->
+
+            <!-- Sass variables -->
+            <!--
+                $form-feedback-margin-top:          $form-text-margin-top;
+                $form-feedback-font-size:           $form-text-font-size;
+                $form-feedback-font-style:          $form-text-font-style;
+                $form-feedback-valid-color:         $success;
+                $form-feedback-invalid-color:       $danger;
+
+                $form-feedback-icon-valid-color:    $form-feedback-valid-color;
+                $form-feedback-icon-valid:          url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path fill='#{$form-feedback-icon-valid-color}' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/></svg>");
+                $form-feedback-icon-invalid-color:  $form-feedback-invalid-color;
+                $form-feedback-icon-invalid:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='#{$form-feedback-icon-invalid-color}'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>");
+            -->
+            <!--
+                $form-valid-color:                  $form-feedback-valid-color;
+                $form-valid-border-color:           $form-feedback-valid-color;
+                $form-invalid-color:                $form-feedback-invalid-color;
+                $form-invalid-border-color:         $form-feedback-invalid-color;
+            -->
+            <!--
+                $form-valid-color-dark:             $green-300;
+                $form-valid-border-color-dark:      $green-300;
+                $form-invalid-color-dark:           $red-300;
+                $form-invalid-border-color-dark:    $red-300;
+            -->
+
+            <!-- Sass mixins -->
+            <!-- Dos mixins se combinan, a través de nuestro bucle, para generar nuestros estilos de retroalimentación de
+            validación de formularios. -->
+            <!--
+                @mixin form-validation-state-selector($state) {
+                    @if ($state == "valid" or $state == "invalid") {
+                        .was-validated #{if(&, "&", "")}:#{$state},
+                        #{if(&, "&", "")}.is-#{$state} {
+                            @content;
+                        }
+                    } @else {
+                        #{if(&, "&", "")}.is-#{$state} {
+                            @content;
+                        }
+                    }
+                }
+
+                @mixin form-validation-state(
+                    $state,
+                    $color,
+                    $icon,
+                    $tooltip-color: color-contrast($color),
+                    $tooltip-bg-color: rgba($color, $form-feedback-tooltip-opacity),
+                    $focus-box-shadow: 0 0 $input-btn-focus-blur $input-focus-width rgba($color, $input-btn-focus-color-opacity),
+                    $border-color: $color
+                ) {
+                    .#{$state}-feedback {
+                        display: none;
+                        width: 100%;
+                        margin-top: $form-feedback-margin-top;
+                        @include font-size($form-feedback-font-size);
+                        font-style: $form-feedback-font-style;
+                        color: $color;
+                    }
+
+                    .#{$state}-tooltip {
+                        position: absolute;
+                        top: 100%;
+                        z-index: 5;
+                        display: none;
+                        max-width: 100%; // Contain to parent when possible
+                        padding: $form-feedback-tooltip-padding-y $form-feedback-tooltip-padding-x;
+                        margin-top: .1rem;
+                        @include font-size($form-feedback-tooltip-font-size);
+                        line-height: $form-feedback-tooltip-line-height;
+                        color: $tooltip-color;
+                        background-color: $tooltip-bg-color;
+                        @include border-radius($form-feedback-tooltip-border-radius);
+                    }
+
+                    @include form-validation-state-selector($state) {
+                        ~ .#{$state}-feedback,
+                        ~ .#{$state}-tooltip {
+                        display: block;
+                        }
+                    }
+
+                    .form-control {
+                        @include form-validation-state-selector($state) {
+                            border-color: $border-color;
+
+                            @if $enable-validation-icons {
+                                padding-right: $input-height-inner;
+                                background-image: escape-svg($icon);
+                                background-repeat: no-repeat;
+                                background-position: right $input-height-inner-quarter center;
+                                background-size: $input-height-inner-half $input-height-inner-half;
+                            }
+
+                            &:focus {
+                                border-color: $border-color;
+                                box-shadow: $focus-box-shadow;
+                            }
+                        }
+                    }
+
+                    // stylelint-disable-next-line selector-no-qualifying-type
+                    textarea.form-control {
+                        @include form-validation-state-selector($state) {
+                            @if $enable-validation-icons {
+                                padding-right: $input-height-inner;
+                                background-position: top $input-height-inner-quarter right $input-height-inner-quarter;
+                            }
+                        }
+                    }
+
+                    .form-select {
+                        @include form-validation-state-selector($state) {
+                            border-color: $border-color;
+
+                            @if $enable-validation-icons {
+                                &:not([multiple]):not([size]),
+                                &:not([multiple])[size="1"] {
+                                    --#{$prefix}form-select-bg-icon: #{escape-svg($icon)};
+                                    padding-right: $form-select-feedback-icon-padding-end;
+                                    background-position: $form-select-bg-position, $form-select-feedback-icon-position;
+                                    background-size: $form-select-bg-size, $form-select-feedback-icon-size;
+                                }
+                            }
+
+                            &:focus {
+                                border-color: $border-color;
+                                box-shadow: $focus-box-shadow;
+                            }
+                        }
+                    }
+
+                    .form-control-color {
+                        @include form-validation-state-selector($state) {
+                            @if $enable-validation-icons {
+                                width: add($form-color-width, $input-height-inner);
+                            }
+                        }
+                    }
+
+                    .form-check-input {
+                        @include form-validation-state-selector($state) {
+                            border-color: $border-color;
+
+                            &:checked {
+                                background-color: $color;
+                            }
+
+                            &:focus {
+                                box-shadow: $focus-box-shadow;
+                            }
+
+                            ~ .form-check-label {
+                                color: $color;
+                            }
+                        }
+                    }
+                    .form-check-inline .form-check-input {
+                        ~ .#{$state}-feedback {
+                            margin-left: .5em;
+                        }
+                    }
+
+                    .input-group {
+                        > .form-control:not(:focus),
+                        > .form-select:not(:focus),
+                        > .form-floating:not(:focus-within) {
+                            @include form-validation-state-selector($state) {
+                                @if $state == "valid" {
+                                    z-index: 3;
+                                } @else if $state == "invalid" {
+                                    z-index: 4;
+                                }
+                            }
+                        }
+                    }
+                }
+            -->
+
+            <!-- Sass maps -->
+            <!-- Este es el mapa Sass de validación de _variables.scss. Reemplázalo o extiéndelo para generar estados
+            diferentes o adicionales. -->
+
+            <!--
+                $form-validation-states: (
+                    "valid": (
+                        "color": var(--#{$prefix}form-valid-color),
+                        "icon": $form-feedback-icon-valid,
+                        "tooltip-color": #fff,
+                        "tooltip-bg-color": var(--#{$prefix}success),
+                        "focus-box-shadow": 0 0 $input-btn-focus-blur $input-focus-width rgba(var(--#{$prefix}success-rgb), $input-btn-focus-color-opacity),
+                        "border-color": var(--#{$prefix}form-valid-border-color),
+                    ),
+                    "invalid": (
+                        "color": var(--#{$prefix}form-invalid-color),
+                        "icon": $form-feedback-icon-invalid,
+                        "tooltip-color": #fff,
+                        "tooltip-bg-color": var(--#{$prefix}danger),
+                        "focus-box-shadow": 0 0 $input-btn-focus-blur $input-focus-width rgba(var(--#{$prefix}danger-rgb), $input-btn-focus-color-opacity),
+                        "border-color": var(--#{$prefix}form-invalid-border-color),
+                    )
+                );
+            -->
+
+            <!-- Los mapas de $form-validation-states pueden contener tres parámetros opcionales para anular los estilos
+            tooltips y focus. -->
+
+            <!-- Sass loops  -->
+            <!-- Usado para iterar sobre los valores del mapa $form-validation-states para generar nuestros estilos de
+            validación. Cualquier modificación en el mapa Sass anterior se reflejará en el CSS compilado a través de
+            este bucle. -->
+
+            <!--
+                @each $state, $data in $form-validation-states {
+                    @include form-validation-state($state, $data...);
+                }
+            -->
+
+            <!-- Customizing - Personalización -->
+            <!-- Los estados de validación se pueden personalizar a través de Sass con el mapa $form-validation-states.
+            Situado en nuestro archivo _variables.scss, este mapa Sass es cómo generamos los estados de validación
+            válidos/inválidos por defecto. Incluye un mapa anidado para personalizar el color de cada estado, el icono,
+            el color del tooltip y la sombra de enfoque. Aunque no hay otros estados soportados por los navegadores,
+            aquellos que utilicen estilos personalizados pueden añadir fácilmente información más compleja al
+            formulario. -->
+        </div>
+
+
+
+    </div>
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!-- Clase de OpenBootcamp -->
+    <hr>
+
+    <div class=" container py-4">
+        <h1>Curso OpenBootCamp</h1>
+
+        <!--FORMULARIOS 1-->
+        <form action="">
+            <div class="mb-3">
+                <label class="form-label" for="nombre">Introduce tu nombre</label>
+                <input id="nombre" type="text" class="form-control" placeholder="Tu nombre" disabled>
+                <div class="form-text">Introduce tu nombre de pila</div>
+            </div>
+            <div class="mb-3">
+                <input type="checkbox" class="form-check-input" name="" id="check-mayor-edad" checked>
+                <label class="form-check-label" for="check-mayor-edad">¿Eres mayor de edad?</label>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="apellido">Introduce tu apellido</label>
+                <input id="apellido" type="text" class="form-control-plaintext" placeholder="Tu apellido" value="Gonza">
+                <div class="form-text">Introduce tu apellido</div>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Por defecto</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control form-control-sm" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" value="maik44@gmail.com" readonly>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleColorInput" class="form-label">Color picker</label>
+                <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c"
+                    title="Choose your color">
+            </div>
+            <div class="mb-3">
+                <label for="exampleDataList" class="form-label">Selecciona tu ciudad</label>
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                </datalist>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <br>
+        <!--FORMULARIOS 2-->
+        <form action="">
+            <div class="row">
+                <select name="" id="" class="form-select form-select-sm mb-3">
+                    <option selected>Elige un numero</option>
+                    <option value="1">Uno</option>
+                    <option value="2">Dos</option>
+                    <option value="3">Tres</option>
+                </select>
+                <select name="" id="" class="form-select mb-3">
+                    <option selected>Elige un numero</option>
+                    <option value="1">Uno</option>
+                    <option value="2">Dos</option>
+                    <option value="3">Tres</option>
+                </select>
+                <select name="" id="" class="form-select form-select-lg mb-3" disabled>
+                    <option selected>Elige un numero</option>
+                    <option value="1">Uno</option>
+                    <option value="2">Dos</option>
+                    <option value="3">Tres</option>
+                </select>
+
+                <select name="" id="" class="form-select mb-3" multiple size="1">
+                    <option selected>Elige un numero</option>
+                    <option value="1">Uno</option>
+                    <option value="2">Dos</option>
+                    <option value="3">Tres</option>
+                </select>
+            </div>
+
+            <div>
+                <input type="checkbox" name="" id="check" class="form-check-input" checked>
+                <label for="check" class="form-check-label">Estoy de acuerdo con las condiciones</label>
+            </div>
+
+            <div class="mt-4">
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="flexReadioDefault" id="radio-menor" value="Menor de edad"
+                        class="form-check-input" checked>
+                    <label for="radio-menor">Soy menor de edad</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="flexReadioDefault" id="radio-mayor" value="Mayor de edad"
+                        class="form-check-input">
+                    <label for="radio-mayor">Soy mayor de edad</label>
+                </div>
+            </div>
+
+            <div class="form-check form-switch mt-4">
+                <input type="checkbox" name="" id="switch" class="form-check-input" checked>
+                <label for="switch" class="form-check-label">Estoy de acuerdo con las condiciones</label>
+            </div>
+
+            <divv class="row mt-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </divv>
+
+            <div class="mt-4">
+                <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off"
+                    checked>
+                <label class="btn btn-outline-success" for="success-outlined">Exito</label>
+
+                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+                <label class="btn btn-outline-danger" for="danger-outlined">Danger radio</label>
+            </div>
+
+        </form>
+
+        <br>
+        <!--FORMULARIOS 3-->
+        <form action="">
+            <div>
+                <label for="rango" class="form-label">Selecciona el rango</label>
+                <input type="range" class="form-range" id="rango" value="5" min="0" max="10" step="0.1">
+            </div>
+            <div class="input-group mb-4">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control">
+            </div>
+            <label for="email">Introduce tu Email</label>
+            <div class="input-group w-50">
+                <input type="text" class="form-control" placeholder="username" id="email">
+                <span class="input-group-text">@gmail.com</span>
+            </div>
+
+            <label for="email-2">Introduce tu Email</label>
+            <div class="input-group input-group-lg w-50 flex-nowrap">
+                <input type="text" class="form-control" placeholder="username" id="email+2">
+                <span class="input-group-text">@gmail.com</span>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" value=""
+                        aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-text">
+                    <input type="checkbox" class="form-check-input mt-0" value=""
+                        aria-label="Checkbox for following text input">
+                </div>
+                <input type="text" class="form-control" name="Nombre" placeholder="Tu nombre">
+                <input type="text" class="form-control" name="Apellido" placeholder="Tu apellido">
+            </div>
+
+            <div class="input-group">
+                <input type="text" placeholder="Haz tu busqueda" class="form-control">
+                <button class="btn btn-secondary">Buscar</button>
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Haz tu busqueda" class="form-control">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Elige tu
+                    buscador</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Google</a></li>
+                    <li><a class="dropdown-item" href="#">Bing</a></li>
+                    <li><a class="dropdown-item" href="#">Yahoo</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Otros</a></li>
+                </ul>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="text-nombre" placeholder="">
+                <label for="text-nombre">Nombre label</label>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+<script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
