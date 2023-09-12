@@ -470,18 +470,569 @@
 
             <h4>Toggle between modals - Alternar entre modales</h4>
             <div>
+                <p>Alterna entre varios modales con una colocación inteligente de los atributos data-bs-target y
+                    data-bs-toggle. Por ejemplo, puedes alternar un modal de restablecimiento de contraseña desde un
+                    modal de inicio de sesión ya abierto. Ten en cuenta que no se pueden abrir varios modales al mismo
+                    tiempo: este método simplemente alterna entre dos modales distintos.</p>
+
+                <div>
+                    <div class="modal fade" id="exampleModalToggle" aria-hidden="true"
+                        aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Muestra un segundo modal y oculta este con el botón de abajo.
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                                        data-bs-toggle="modal">Abrir segundo modal</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                        aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Oculta este modal y muestra el primero con el botón de abajo.
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle"
+                                        data-bs-toggle="modal">Volver al principio</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mb-3" data-bs-target="#exampleModalToggle"
+                        data-bs-toggle="modal">Abrir
+                        primer modal</button>
+                </div>
+            </div>
+
+            <h4>Change animation - Cambiar animación</h4>
+            <div>
+                <p>La variable <b>$modal-fade-transform</b> determina el estado de transformación de
+                    <b>.modal-dialog</b> antes de la animación modal fade-in, la variable <b>$modal-show-transform</b>
+                    determina la transformación de <b>.modal-dialog</b> al final de la animación modal fade-in.
+                </p>
+                <p>Si quieres, por ejemplo, una animación con zoom, puedes establecer <b>$modal-fade-transform:
+                        scale(.8)</b>.</p>
+            </div>
+
+            <h4>Remove animation - Eliminar animación</h4>
+            <div>
+                <p>Para los modales que simplemente aparecen en lugar de desvanecerse en la vista, elimine la clase
+                    <b>.fade</b> de su marcado modal.
+                </p>
+                <div class="mb-3">
+                    (div class="modal" tabindex="-1" aria-labelledby="..." aria-hidden="true")
+                    <br>...
+                    <br>(/div)
+                </div>
 
             </div>
 
-            <h4></h4>
-            <h4></h4>
-            <h4></h4>
-            <h4></h4>
-            <h4></h4>
+            <h4>Dynamic heights - Alturas dinámicas</h4>
+            <div>
+                <p>Si la altura de un modal cambia mientras está abierto, debes llamar a <b>myModal.handleUpdate()</b>
+                    para reajustar la posición del modal en caso de que aparezca una barra de desplazamiento.</p>
+            </div>
+
+            <h4>Accessibility - Accesibilidad</h4>
+            <div>
+                <p>Asegúrese de añadir <b>aria-labelledby="..."</b>, haciendo referencia al título del modal, a
+                    <b>.modal</b>. Además, puede dar una descripción de su diálogo modal con <b>aria-describedby</b> en
+                    <b>.modal</b>. Tenga en cuenta que no necesita añadir <b>role="dialog"</b> puesto que ya lo añadimos
+                    mediante JavaScript.
+                </p>
+            </div>
+
+            <h4>Embedding YouTube videos - Inserción de vídeos de YouTube</h4>
+            <div>
+                <p>La incrustación de vídeos de YouTube en modales requiere JavaScript adicional que no está en
+                    Bootstrap para detener automáticamente la reproducción y mucho más. <a
+                        href="https://stackoverflow.com/questions/18622508/bootstrap-3-and-youtube-in-modal">Consulta
+                        este útil post de Stack Overflow</a> para obtener más información.</p>
+            </div>
+
         </div>
 
-        <h3></h3>
-        <h3></h3>
+        <h3>Optional sizes</h3>
+        <div>
+            <p>Los modales tienen tres tamaños opcionales, disponibles a través de clases modificadoras que se colocan
+                en un <b>.modal-dialog</b>. Estos tamaños se activan en determinados puntos de corte para evitar barras
+                de desplazamiento horizontales en ventanas más estrechas.</p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Size - Talla</th>
+                        <th scope="col">Class - Clase</th>
+                        <th scope="col">Modal max-width - Ancho máximo modal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Small</td>
+                        <td><b>.modal-sm</b></td>
+                        <td><b>300px</b></td>
+                    </tr>
+                    <tr>
+                        <td>Default</td>
+                        <td>None</td>
+                        <td><b>500px</b></td>
+                    </tr>
+                    <tr>
+                        <td>Large</td>
+                        <td><b>.modal-lg</b></td>
+                        <td><b>800px</b></td>
+                    </tr>
+                    <tr>
+                        <td>Extra Large</td>
+                        <td><b>.modal-xl</b></td>
+                        <td><b>1140px</b></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Nuestro modal por defecto sin clase de modificador constituye el modal de tamaño "medio".</p>
+
+            <div class="bd-example">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModalXl">Extra large modal</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModalLg">Large modal</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModalSm">Small modal</button>
+            </div>
+
+            <div class="modal" id="exampleModalXl" tabindex="-1" aria-labelledby="exampleModalXlLabel" aria-modal="true"
+                role="dialog">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-4" id="exampleModalXlLabel">Extra large modal</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="exampleModalLg" tabindex="-1" aria-labelledby="exampleModalLgLabel" aria-modal="true"
+                role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-4" id="exampleModalLgLabel">Large modal</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="exampleModalSm" tabindex="-1" aria-labelledby="exampleModalSmLabel" aria-modal="true"
+                role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-4" id="exampleModalSmLabel">Small modal</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Fullscreen Modal - Pantalla completa</h3>
+        <div>
+            <p>Otra opción es la de abrir un modal que cubra la ventana gráfica del usuario, disponible a través de
+                clases modificadoras que se colocan en un <b>.modal-dialog</b>.</p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Class - Clase</th>
+                        <th scope="col">Availability - Disponibilidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>.modal-fullscreen</b></td>
+                        <td>Siempre</td>
+                    </tr>
+                    <tr>
+                        <td><b>.modal-fullscreen-sm-down</b></td>
+                        <td><b>576px</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>.modal-fullscreen-md-down</b></td>
+                        <td><b>768px</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>.modal-fullscreen-lg-down</b></td>
+                        <td><b>992px</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>.modal-fullscreen-xl-down</b></td>
+                        <td><b>1200px</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>.modal-fullscreen-xxl-down</b></td>
+                        <td><b>1400px</b></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="bd-example">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModalFullscreen">Full screen</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModalFullscreenSm">Full screen below sm</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModalFullscreenMd">Full screen below md</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModalFullscreenLg">Full screen below lg</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModalFullscreenXl">Full screen below xl</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModalFullscreenXxl">Full screen below xxl</button>
+            </div>
+
+            <div class="modal fade" id="exampleModalFullscreen" tabindex="-1"
+                aria-labelledby="exampleModalFullscreenLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-4" id="exampleModalFullscreenLabel">Full screen modal</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModalFullscreenSm" tabindex="-1"
+                aria-labelledby="exampleModalFullscreenSmLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen-sm-down">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-4" id="exampleModalFullscreenSmLabel">Full screen below sm</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModalFullscreenMd" tabindex="-1"
+                aria-labelledby="exampleModalFullscreenMdLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen-md-down">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-4" id="exampleModalFullscreenMdLabel">Full screen below md</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModalFullscreenLg" tabindex="-1"
+                aria-labelledby="exampleModalFullscreenLgLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen-lg-down">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-4" id="exampleModalFullscreenLgLabel">Full screen below lg</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModalFullscreenXl" tabindex="-1"
+                aria-labelledby="exampleModalFullscreenXlLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen-xl-down">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-4" id="exampleModalFullscreenXlLabel">Full screen below xl</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModalFullscreenXxl" tabindex="-1"
+                aria-labelledby="exampleModalFullscreenXxlLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen-xxl-down">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-4" id="exampleModalFullscreenXxlLabel">Full screen below xxl</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CSS -->
+
+        <!-- Variables -->
+        <!-- Como parte del enfoque evolutivo de las variables CSS de Bootstrap, los modales utilizan ahora variables CSS
+        locales en .modal y .modal-backdrop para mejorar la personalización en tiempo real. Los valores de las variables
+        CSS se establecen mediante Sass, por lo que también se admite la personalización con Sass. -->
+        <!--
+            --#{$prefix}modal-zindex: #{$zindex-modal};
+            --#{$prefix}modal-width: #{$modal-md};
+            --#{$prefix}modal-padding: #{$modal-inner-padding};
+            --#{$prefix}modal-margin: #{$modal-dialog-margin};
+            --#{$prefix}modal-color: #{$modal-content-color};
+            --#{$prefix}modal-bg: #{$modal-content-bg};
+            --#{$prefix}modal-border-color: #{$modal-content-border-color};
+            --#{$prefix}modal-border-width: #{$modal-content-border-width};
+            --#{$prefix}modal-border-radius: #{$modal-content-border-radius};
+            --#{$prefix}modal-box-shadow: #{$modal-content-box-shadow-xs};
+            --#{$prefix}modal-inner-border-radius: #{$modal-content-inner-border-radius};
+            --#{$prefix}modal-header-padding-x: #{$modal-header-padding-x};
+            --#{$prefix}modal-header-padding-y: #{$modal-header-padding-y};
+            --#{$prefix}modal-header-padding: #{$modal-header-padding}; // Todo in v6: Split this padding into x and y
+            --#{$prefix}modal-header-border-color: #{$modal-header-border-color};
+            --#{$prefix}modal-header-border-width: #{$modal-header-border-width};
+            --#{$prefix}modal-title-line-height: #{$modal-title-line-height};
+            --#{$prefix}modal-footer-gap: #{$modal-footer-margin-between};
+            --#{$prefix}modal-footer-bg: #{$modal-footer-bg};
+            --#{$prefix}modal-footer-border-color: #{$modal-footer-border-color};
+            --#{$prefix}modal-footer-border-width: #{$modal-footer-border-width};
+        -->
+        <!--
+            --#{$prefix}backdrop-zindex: #{$zindex-modal-backdrop};
+            --#{$prefix}backdrop-bg: #{$modal-backdrop-bg};
+            --#{$prefix}backdrop-opacity: #{$modal-backdrop-opacity};
+        -->
+
+        <!-- Sass variables -->
+        <!--
+            $modal-inner-padding:               $spacer;
+
+            $modal-footer-margin-between:       .5rem;
+
+            $modal-dialog-margin:               .5rem;
+            $modal-dialog-margin-y-sm-up:       1.75rem;
+
+            $modal-title-line-height:           $line-height-base;
+
+            $modal-content-color:               null;
+            $modal-content-bg:                  var(--#{$prefix}body-bg);
+            $modal-content-border-color:        var(--#{$prefix}border-color-translucent);
+            $modal-content-border-width:        var(--#{$prefix}border-width);
+            $modal-content-border-radius:       var(--#{$prefix}border-radius-lg);
+            $modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width);
+            $modal-content-box-shadow-xs:       $box-shadow-sm;
+            $modal-content-box-shadow-sm-up:    $box-shadow;
+
+            $modal-backdrop-bg:                 $black;
+            $modal-backdrop-opacity:            .5;
+
+            $modal-header-border-color:         var(--#{$prefix}border-color);
+            $modal-header-border-width:         $modal-content-border-width;
+            $modal-header-padding-y:            $modal-inner-padding;
+            $modal-header-padding-x:            $modal-inner-padding;
+            $modal-header-padding:              $modal-header-padding-y $modal-header-padding-x; // Keep this for backwards compatibility
+
+            $modal-footer-bg:                   null;
+            $modal-footer-border-color:         $modal-header-border-color;
+            $modal-footer-border-width:         $modal-header-border-width;
+
+            $modal-sm:                          300px;
+            $modal-md:                          500px;
+            $modal-lg:                          800px;
+            $modal-xl:                          1140px;
+
+            $modal-fade-transform:              translate(0, -50px);
+            $modal-show-transform:              none;
+            $modal-transition:                  transform .3s ease-out;
+            $modal-scale-transform:             scale(1.02);
+        -->
+
+        <!-- Sass loops -->
+        <!-- Los modales responsivos a pantalla completa se generan mediante el mapa $breakpoints y un bucle en
+        scss/_modal.scss. -->
+        <!--
+            @each $breakpoint in map-keys($grid-breakpoints) {
+                $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+                $postfix: if($infix != "", $infix + "-down", "");
+
+                @include media-breakpoint-down($breakpoint) {
+                    .modal-fullscreen#{$postfix} {
+                        width: 100vw;
+                        max-width: none;
+                        height: 100%;
+                        margin: 0;
+
+                        .modal-content {
+                            height: 100%;
+                            border: 0;
+                            @include border-radius(0);
+                        }
+
+                        .modal-header,
+                        .modal-footer {
+                            @include border-radius(0);
+                        }
+
+                        .modal-body {
+                            overflow-y: auto;
+                        }
+                    }
+                }
+            }
+        -->
+
+        <!-- Utilización -->
+        <!-- El plugin modal activa el contenido oculto bajo demanda, a través de atributos de datos o JavaScript. También
+        anula el comportamiento de desplazamiento predeterminado y genera un .modal-backdrop para proporcionar un área
+        de clic para descartar los modales mostrados al hacer clic fuera del modal. -->
+
+        <!-- Via data attributes - Mediante atributos de datos -->
+
+        <!-- Toggle  -->
+        <!-- Active un modal sin escribir JavaScript. Establezca data-bs-toggle="modal" en un elemento controlador, como un
+        botón, junto con data-bs-target="#foo" o href="#foo" para activar un modal específico. -->
+        <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#myModal">Launch modal</button> -->
+
+        <!-- Dismiss  -->
+        <!-- La salida se puede lograr con el atributo data-bs-dismiss en un botón dentro del modal como se demuestra a
+        continuación: -->
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+
+        <!-- o en un botón fuera del modal usando el data-bs-target adicional como se demuestra a continuación: -->
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#my-modal" aria-label="Close"></button> -->
+
+        <!-- Aunque se admiten ambas formas de cerrar un modal, tenga en cuenta que cerrarlo desde fuera no se ajusta al
+        patrón de diálogo (modal) de la Guía de Prácticas de Autoría ARIA. Hágalo bajo su propia responsabilidad. -->
+
+        <!-- Via JavaScript -->
+        <!-- Cree un modal con una sola línea de JavaScript: -->
+        <!--
+            const myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
+            // or
+            const myModalAlternative = new bootstrap.Modal('#myModal', options)
+        -->
+
+        <!-- Opciones -->
+        <!-- Como las opciones pueden pasarse mediante atributos de datos o JavaScript, puede añadir un nombre de opción a
+        data-bs-, como en data-bs-animation="{value}". Asegúrese de cambiar el tipo de mayúscula/minúscula del nombre de
+        la opción de "camelCase" a "kebab-case" al pasar las opciones a través de atributos de datos. Por ejemplo,
+        utilice data-bs-custom-class="embellecedor" en lugar de data-bs-customClass="embellecedor".
+
+        A partir de Bootstrap 5.2.0, todos los componentes admiten un atributo de datos reservado experimental
+        data-bs-config que puede alojar una configuración sencilla del componente como cadena JSON. Cuando un elemento
+        tiene atributos data-bs-config='{"delay":0, "title":123}' y data-bs-title="456", el valor final del título será
+        456 y los atributos de datos separados anularán los valores dados en data-bs-config. Además, los atributos de
+        datos existentes pueden albergar valores JSON como data-bs-delay='{"show":0, "hide":150}'.
+
+        El objeto de configuración final es el resultado de la fusión de data-bs-config, data-bs- y el objeto js, en el
+        que el último valor clave dado anula a los demás. -->
+        <!--
+            Nombre      Tipo                Por defecto         Descripción
+            backdrop    boolean, 'static'   true                Incluye un elemento modal-backdrop. Alternativamente, especifica static para un telón de fondo que no cierra el modal al hacer clic.
+            focus       boolean             true                Pone el foco en el modal cuando se inicializa.
+            keyboard    boolean             true                Cierra el modal cuando se pulsa la tecla escape.
+        -->
+
+        <!-- Métodos -->
+        <!-- Todos los métodos de la API son asíncronos e inician una transición. Devuelven la llamada en cuanto se inicia la
+        transición, pero antes de que termine. Además, una llamada a un método en un componente en transición será
+        ignorada. Más información en la documentación de JavaScript.
+        https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions -->
+
+        <!-- Opciones de paso -->
+        <!-- Activa su contenido como un modal. Acepta un objeto opcional de opciones. -->
+        <!--
+            const myModal = new bootstrap.Modal('#myModal', {
+                keyboard: false
+            })
+        -->
+        <!--
+            Método                  Descripción
+            dispose                 Destruye el modal de un elemento. (Elimina los datos almacenados en el elemento DOM)
+            getInstance             Método estático que permite obtener la instancia modal asociada a un elemento DOM.
+            getOrCreateInstance     Método estático que permite obtener la instancia modal asociada a un elemento DOM, o crear una nueva en caso de que no se haya inicializado.
+            handleUpdate            Reajusta manualmente la posición del modal si la altura de un modal cambia mientras está abierto (por ejemplo, en caso de que aparezca una barra de desplazamiento).
+            hide                    Oculta manualmente un modal. Devuelve la llamada al usuario antes de que el modal se haya ocultado realmente (es decir, antes de que se produzca el evento hidden.bs.modal).
+            show                    Abre manualmente un modal. Devuelve la llamada al usuario antes de que el modal se haya mostrado (es decir, antes de que se produzca el evento shown.bs.modal). Además, puedes pasar un elemento DOM como argumento que puede ser recibido en los eventos modales (como la propiedad relatedTarget). (por ejemplo, const modalToggle = document.getElementById('toggleMyModal'); myModal.show(modalToggle).
+            toggle                  Activa manualmente un modal. Devuelve la llamada antes de que el modal se haya mostrado u ocultado (es decir, antes de que se produzca el evento shown.bs.modal u hidden.bs.modal).
+        -->
+
+        <!-- Eventos -->
+        <!-- La clase modal de Bootstrap expone algunos eventos para conectarse a la funcionalidad modal. Todos los eventos
+        modales se disparan en el propio modal (es decir, en el <div class="modal">). -->
+        <!--
+            Evento                      Descripción 
+            hide.bs.modal               Este evento se dispara inmediatamente cuando el método de instancia hide ha sido llamado.
+            hidden.bs.modal             Este evento se dispara cuando el modal ha terminado de ocultarse al usuario (esperará a que se completen las transiciones CSS).
+            hidePrevented.bs.modal      Este evento se dispara cuando el modal se muestra, su fondo es estático y se hace click fuera del modal. El evento también se dispara cuando se pulsa la tecla escape y la opción del teclado está en false.
+            show.bs.modal               Este evento se dispara inmediatamente cuando se llama al método de instancia show. Si es causado por un clic, el elemento clicado está disponible como propiedad relatedTarget del evento.
+            shown.bs.modal              Este evento se dispara cuando el modal se ha hecho visible al usuario (esperará a que se completen las transiciones CSS). Si es causado por un clic, el elemento clicado está disponible como la propiedad relatedTarget del evento.
+        -->
+        <!--
+            const myModalEl = document.getElementById('myModal')
+            myModalEl.addEventListener('hidden.bs.modal', event => {
+                // do something...
+            })
+        -->
 
     </div>
 
