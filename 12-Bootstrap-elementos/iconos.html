@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iconos</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        class="img-fluid">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Documentacion de Bootstrap</h1>
+
+        <h2>Bootstrap Icons - Iconos de Bootstrap</h2>
+        <p>Biblioteca de iconos gratuita, de alta calidad y de código abierto con más de 2.000 iconos. Inclúyelos como
+            quieras-SVGs, SVG sprite, o fuentes web. Úsalos con o sin Bootstrap en cualquier proyecto.</p>
+        <a class="btn btn-primary mb-4" href="https://icons.getbootstrap.com/">ICONOS</a>
+
+        <h3>Install - Instalación</h3>
+        <div>
+            <p>Los iconos de Bootstrap se publican en npm, pero también pueden descargarse manualmente si es necesario.
+            </p>
+
+            <h4>Package manager - Gestor de paquetes</h4>
+            <div>
+                <p>Instala los <a href="https://www.npmjs.com/package/bootstrap-icons">iconos de Bootstrap</a>
+                    -incluidos los SVG, el sprite de iconos y las fuentes de iconos- con npm o Composer. A continuación,
+                    elige cómo quieres incluir los iconos con las instrucciones de uso.</p>
+
+                <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                    <p>npm i bootstrap-icons</p>
+                </div>
+
+                <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                    <p>composer require twbs/bootstrap-icons</p>
+                </div>
+            </div>
+
+            <h4>Download - Descargar</h4>
+            <div>
+                <p><a href="https://github.com/twbs/icons/releases/">Las versiones se publican en GitHub</a> e incluyen
+                    iconos SVG, fuentes, licencia y léame. También se incluye nuestro package.json, aunque nuestros
+                    scripts npm están disponibles principalmente para nuestros flujos de trabajo de desarrollo.</p>
+
+                <a class="btn btn-outline-primary mb-4"
+                    href="https://github.com/twbs/icons/releases/tag/v1.11.0">Descargar el último ZIP</a>
+            </div>
+
+            <h4>CDN</h4>
+            <div>
+                <p>Incluya la hoja de estilo de las fuentes de iconos -en el <b>(head)</b> de su sitio web o mediante
+                    <b>@import</b> en CSS- desde jsDelivr y empiece en cuestión de segundos. <a
+                        href="https://icons.getbootstrap.com/#icon-font">Consulta la documentación sobre fuentes de
+                        iconos</a> para ver ejemplos.
+                </p>
+
+                <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                    <p>(link rel="stylesheet"
+                        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css")</p>
+                </div>
+
+                <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                    <p>@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Usage - Utilización</h3>
+        <div>
+            <p>Los iconos de Bootstrap son SVG, por lo que puedes incluirlos en tu HTML de varias maneras dependiendo de
+                cómo esté configurado tu proyecto. Recomendamos utilizar una <b>width: 1em</b> (y opcionalmente una
+                <b>height: 1em</b>) para facilitar el cambio de tamaño mediante <b>font-size</b>.
+            </p>
+        </div>
+
+        <h3>Embedded</h3>
+        <div>
+            <p>Incrusta tus iconos dentro del HTML de tu página (en lugar de un archivo de imagen externo). Aquí hemos
+                utilizado una <b>width</b>(anchura) y <b>height</b>(altura) personalizadas.</p>
+
+            <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-emoji-heart-eyes" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544 1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z" />
+                </svg>
+                <p>(svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi
+                    bi-emoji-heart-eyes" viewBox="0 0 16 16")(path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0
+                    8 0a8 8 0 0 0 0 16z"/)(path d="M11.315 10.014a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498
+                    4.498 0 0 1-3.898-2.25.5.5 0 0 1
+                    .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0
+                    1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zM4.756
+                    4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.488 0c1.398-.864 3.544
+                    1.838-.952 3.434-3.067-3.554.19-4.858.952-3.434z"/)(/svg)</p>
+            </div>
+        </div>
+
+        <h3>Sprite</h3>
+        <div>
+            <p>Utiliza el sprite SVG para insertar cualquier icono a través del elemento <b>(use)</b>. Utilice el nombre
+                de archivo del icono como identificador del fragmento (por ejemplo, <b>toggles</b> es <b>#toggles</b>).
+                Los sprites SVG permiten hacer referencia a un archivo externo de forma similar a un elemento
+                <b>(img)</b>, pero con la potencia de <b>currentColor</b> para facilitar la tematización.
+            </p>
+
+            <p>Atención. Hay un problema con Chrome donde <a
+                    href="https://bugs.chromium.org/p/chromium/issues/detail?id=470601"><b>(use)</b> no funciona en
+                    todos los dominios</a>.</p>
+
+            <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                <svg class="bi" width="32" height="32" fill="currentColor">
+                    <use xlink:href="bootstrap-icons.svg#heart-fill" />
+                </svg>
+                <svg class="bi" width="32" height="32" fill="currentColor">
+                    <use xlink:href="bootstrap-icons.svg#toggles" />
+                </svg>
+                <svg class="bi" width="32" height="32" fill="currentColor">
+                    <use xlink:href="bootstrap-icons.svg#shop" />
+                </svg>
+
+                <p>
+                <div class="mb-2">
+                    (svg class="bi" width="32" height="32" fill="currentColor")
+                    <div>
+                        (use xlink:href="bootstrap-icons.svg#heart-fill" /)
+                    </div>
+                    (/svg)
+                </div>
+
+                <div class="mb-2">
+                    (svg class="bi" width="32" height="32" fill="currentColor")
+                    <div>(use xlink:href="bootstrap-icons.svg#toggles" /)</div>
+                    (/svg)
+                </div>
+
+                <div class="mb-2">
+                    (svg class="bi" width="32" height="32" fill="currentColor")
+                    <div>(use xlink:href="bootstrap-icons.svg#shop" /)</div>
+                    (/svg)
+                </div>
+                </p>
+            </div>
+        </div>
+
+        <h3>External image - Imagen externa</h3>
+        <div>
+            <p>Copia los SVG de los iconos de Bootstrap en el directorio que prefieras y haz referencia a ellos como si
+                fueran imágenes normales con el elemento <b>(img)</b>.</p>
+            <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                <img src="/assets/icons/bootstrap.svg" alt="Bootstrap" width="32" height="32">
+
+                <p>(img src="/assets/icons/bootstrap.svg" alt="Bootstrap" width="32" height="32")</p>
+            </div>
+        </div>
+
+        <h3>Icon font - Fuente del icono</h3>
+        <div>
+            <p>Las fuentes de iconos con clases para cada icono también se incluyen para los iconos de Bootstrap.
+                Incluya las fuentes web de iconos en su página mediante CSS y, a continuación, haga referencia a los
+                nombres de las clases según sea necesario en su HTML (por ejemplo, <b>(i
+                    class="bi-alarm-clock")(/i)</b>).</p>
+
+            <p>Utilice el <b>font-size</b> y el <b>color</b> para cambiar el aspecto del icono.</p>
+
+            <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                <i class="bi-alarm"></i>
+
+                <p>(i class="bi-alarm")(/i)</p>
+            </div>
+
+            <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                <i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i>
+
+                <p>(i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;")(/i)</p>
+            </div>
+        </div>
+
+        <h3>CSS</h3>
+        <div>
+            <p>También puede utilizar el SVG dentro de su CSS (asegúrese de escapar cualquier carácter, como <b>#</b> a
+                <b>%23</b> al especificar valores de color hexadecimales). Si no se especifican dimensiones mediante
+                <b>width</b> y <b>height</b> en el <b>(svg)</b>, el icono ocupará todo el espacio disponible.
+            </p>
+
+            <p>El atributo <b>viewBox</b> es necesario si desea cambiar el tamaño de los iconos con
+                <b>background-size</b>. Tenga en cuenta que el atributo <b>xmlns</b> es obligatorio.
+            </p>
+
+            <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                <p>
+                    .bi::before {
+                    display: inline-block;
+                    content: "";
+                    vertical-align: -.125em;
+                    background-image: url("data:image/svg+xml,(svg viewBox='0 0 16 16' fill='%23333'
+                    xmlns='http://www.w3.org/2000/svg')(path fill-rule='evenodd' d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0
+                    0 0 3z' clip-rule='evenodd'/)(/svg)");
+                    background-repeat: no-repeat;
+                    background-size: 1rem 1rem;
+                    }
+                </p>
+            </div>
+        </div>
+
+        <h3>Styling - Estilismo</h3>
+        <div>
+            <p>El color puede cambiarse estableciendo una clase <b>.text-*</b> o CSS personalizado:</p>
+
+            <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                <svg class="bi bi-exclamation-triangle text-success" width="32" height="32" fill="currentColor"
+                    viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    ...
+                </svg>
+
+                <p>
+                    (svg class="bi bi-exclamation-triangle text-success" width="32" height="32" fill="currentColor"
+                    viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg")
+                    ...
+                    (/svg)
+                </p>
+            </div>
+        </div>
+
+        <h3>Accessibility - Accesibilidad</h3>
+        <div>
+            <p>Para iconos puramente decorativos, añada <b>aria-hidden="true"</b>. En caso contrario, proporcione una
+                alternativa de texto adecuada. Dependiendo del método que utilice para añadir los iconos y de dónde los
+                utilice (por ejemplo, como imágenes independientes o como único contenido de un botón o control
+                similar), existen varios enfoques posibles. He aquí algunos ejemplos:</p>
+
+            <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                <!-- alt="..." on <img> element -->
+                <img src="/assets/icons/bootstrap.svg" alt="Bootstrap" ...>
+
+                <p>
+                    (!-- alt="..." on <img> element --)
+                <div>(img src="/assets/icons/bootstrap.svg" alt="Bootstrap" ...)</div>
+                </p>
+            </div>
+
+            <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                <svg class="bi" ... role="img" aria-label="Tools">
+                    <use xlink:href="bootstrap-icons.svg#tools" />
+                </svg>
+
+                <p>(svg class="bi" ... role="img" aria-label="Tools")
+                    (use xlink:href="bootstrap-icons.svg#tools"/)
+                    (/svg)</p>
+            </div>
+
+            <div style="border: 1px solid black; padding: 1rem; margin: 15px;">
+                <!-- aria-label="..." on the control -->
+                <button ... aria-label="Mute">
+                    <svg class="bi bi-volume-mute-fill" aria-hidden="true" ...>
+                        ...
+                    </svg>
+                </button>
+
+                <p>
+                    (!-- aria-label="..." on the control --)
+                <div>
+                    (button ... aria-label="Mute")
+                    (svg class="bi bi-volume-mute-fill" aria-hidden="true" ...)
+                    ...
+                    (/svg>)
+                    (/button)
+                </div>
+                </p>
+            </div>
+        </div>
+
+        <h3>Working with SVGs - Trabajar con SVG</h3>
+        <div>
+            <p>Es muy fácil trabajar con SVG, pero tienen algunas peculiaridades conocidas. Dadas las numerosas formas
+                en que se pueden utilizar los SVG, no hemos incluido estos atributos y soluciones en nuestro código.</p>
+
+            <p>Los problemas conocidos incluyen:</p>
+
+            <ul>
+                <li><b>Los SVG reciben el foco por defecto en Internet Explorer y Edge Legacy.</b> Cuando incruste sus
+                    SVG, añada <b>focusable="false"</b> al elemento <b>(svg)</b>. <a
+                        href="https://stackoverflow.com/questions/18646111/disable-onfocus-event-for-svg-element">Más
+                        información en Stack Overflow</a>.</li>
+                <li><b>Al utilizar SVG con elementos (img), es posible que los lectores de pantalla no los anuncien como
+                        imágenes o que omitan la imagen por completo.</b> Incluya un <b>role="img"</b> adicional en el
+                    elemento <b>(img)</b> para evitar problemas.</li>
+                <li><b>Es posible que los sprites SVG externos no funcionen correctamente en Internet Explorer.</b>
+                    Utilice el polyfill <a href="https://github.com/jonathantneal/svg4everybody">svg4everybody</a> según
+                    sea necesario</li>
+            </ul>
+        </div>
+    </div>
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!-- Clase de OpenBootcamp -->
+    <hr>
+
+    <div class=" container py-4">
+        <h1>Curso OpenBootCamp</h1>
+
+        <h4>Iconos en Bootstrap (Bootstrap Icons)</h4>
+
+        <i class="bi bi-terminal-fill" style="font-size: 2rem; color: blue;"></i>
+        <i class="bi bi-wrench text-info fs-1"></i>
+        <button class="btn btn-secondary"><i class="bi bi-wrench mx-1"></i>Ajustes</button>
+
+    </div>
+
+
+</body>
+<script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
