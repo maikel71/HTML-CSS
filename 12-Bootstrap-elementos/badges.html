@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badges</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        class="img-fluid">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Documentacion de Bootstrap</h1>
+
+        <h2>Badges -Insignias</h2>
+        <p>Documentación y ejemplos para badges, nuestro pequeño componente de recuento y etiquetado.</p>
+
+        <h3>Examples - Ejemplos</h3>
+        <div>
+            <p>Las badges se adaptan al tamaño del elemento padre inmediato utilizando el tamaño relativo de la fuente y
+                las unidades <b>em</b>. A partir de la v5, las badges ya no tienen estilos focus o hover para los
+                enlaces.</p>
+
+            <h4>Headings - Rúbricas</h4>
+            <div class="mb-3">
+                <h1>Encabezado de ejemplo <span class="badge bg-secondary">Nuevo</span></h1>
+                <h2>Encabezado de ejemplo <span class="badge bg-secondary">Nuevo</span></h2>
+                <h3>Encabezado de ejemplo <span class="badge bg-secondary">Nuevo</span></h3>
+                <h4>Encabezado de ejemplo <span class="badge bg-secondary">Nuevo</span></h4>
+                <h5>Encabezado de ejemplo <span class="badge bg-secondary">Nuevo</span></h5>
+                <h6>Encabezado de ejemplo <span class="badge bg-secondary">Nuevo</span></h6>
+            </div>
+
+            <h4>Buttons - Botones</h4>
+            <div>
+                <p>Las badges pueden utilizarse como parte de enlaces o botones para proporcionar un contador.</p>
+
+                <button type="button" class="btn btn-primary mb-3">
+                    Notificaciones <span class="badge text-bg-secondary">4</span>
+                </button>
+
+                <p>Tenga en cuenta que, dependiendo de cómo se utilicen, las badges pueden resultar confusas para los
+                    usuarios de lectores de pantalla y tecnologías de asistencia similares. Aunque el estilo de las
+                    badges proporciona una indicación visual de su propósito, a estos usuarios se les presentará
+                    simplemente el contenido de la insignia. Dependiendo de la situación concreta, estas badges pueden
+                    parecer palabras o números adicionales aleatorios al final de una frase, un enlace o un botón.</p>
+
+                <p>A menos que el contexto sea claro (como en el ejemplo de "Notificaciones", en el que se entiende que
+                    el "4" es el número de notificaciones), considere la posibilidad de incluir contexto adicional con
+                    un fragmento de texto adicional oculto visualmente.</p>
+            </div>
+
+            <h4>Positioned - Posicionado</h4>
+            <div>
+                <p>Utilice las utilidades para modificar un <b>.badge</b> y colocarlo en la esquina de un enlace o
+                    botón.</p>
+
+                <button type="button" class="btn btn-primary position-relative mb-3">
+                    Bandeja de entrada
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        99+
+                        <span class="visually-hidden">mensajes no leídos</span>
+                    </span>
+                </button>
+
+                <p>También puede sustituir la clase <b>.badge</b> por algunas utilidades más sin cuenta para obtener un
+                    indicador más genérico.</p>
+
+                <button type="button" class="btn btn-primary position-relative mb-3">
+                    Perfil
+                    <span
+                        class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                        <span class="visually-hidden">Nuevas alertas</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <h3>Background colors - Colores de fondo</h3>
+        <div>
+            <p>Establezca un <b>background-color</b> con un color de primer plano que contraste con <a
+                    href="https://getbootstrap.com/docs/5.3/helpers/color-background/">nuestros ayudantes
+                    .text-bg-{color}</a>. Antes era necesario emparejar manualmente las utilidades <a
+                    href="https://getbootstrap.com/docs/5.3/utilities/colors/">.text-{color}</a> y <a
+                    href="https://getbootstrap.com/docs/5.3/utilities/background/">.bg-{color}</a> para aplicar estilos,
+                algo que aún puede hacer si lo prefiere.</p>
+
+            <div class="mb-3">
+                <span class="badge text-bg-primary">Primary</span>
+                <span class="badge text-bg-secondary">Secondary</span>
+                <span class="badge text-bg-success">Success</span>
+                <span class="badge text-bg-danger">Danger</span>
+                <span class="badge text-bg-warning">Warning</span>
+                <span class="badge text-bg-info">Info</span>
+                <span class="badge text-bg-light">Light</span>
+                <span class="badge text-bg-dark">Dark</span>
+            </div>
+
+            <div class="mb-3"
+                style="border: 1px solid blue; padding: 1em; background-color: lightblue; margin-bottom: 10px;">
+                <p><b>Consejo de accesibilidad:</b> el uso del color para añadir significado sólo proporciona una
+                    indicación visual, que no será transmitida a los usuarios de tecnologías de asistencia como los
+                    lectores de pantalla. Asegúrese de que el significado es obvio a partir del propio contenido (por
+                    ejemplo, el texto visible con un <a
+                        href="https://getbootstrap.com/docs/5.3/getting-started/accessibility/#color-contrast">contraste
+                        de color suficiente</a> ) o se incluye a través de medios alternativos, como texto adicional
+                    oculto con la clase <b>.visually-hidden</b>.</p>
+            </div>
+        </div>
+
+        <h3>Pill badges - Insignias de pastillas</h3>
+        <div>
+            <p>Utilice la clase de utilidad <b>.rounded-pill</b> para hacer insignias más redondeadas con un
+                <b>border-radius</b> mayor.
+            </p>
+
+            <div>
+                <span class="badge rounded-pill text-bg-primary">Primary</span>
+                <span class="badge rounded-pill text-bg-secondary">Secondary</span>
+                <span class="badge rounded-pill text-bg-success">Success</span>
+                <span class="badge rounded-pill text-bg-danger">Danger</span>
+                <span class="badge rounded-pill text-bg-warning">Warning</span>
+                <span class="badge rounded-pill text-bg-info">Info</span>
+                <span class="badge rounded-pill text-bg-light">Light</span>
+                <span class="badge rounded-pill text-bg-dark">Dark</span>
+            </div>
+        </div>
+
+        <!-- CSS -->
+
+        <!-- Variables -->
+        <!-- Como parte del enfoque evolutivo de las variables CSS de Bootstrap, las insignias utilizan ahora variables CSS
+        locales en .badge para mejorar la personalización en tiempo real. Los valores de las variables CSS se establecen
+        mediante Sass, por lo que también se admite la personalización con Sass. -->
+        <!--
+            --#{$prefix}badge-padding-x: #{$badge-padding-x};
+            --#{$prefix}badge-padding-y: #{$badge-padding-y};
+            @include rfs($badge-font-size, --#{$prefix}badge-font-size);
+            --#{$prefix}badge-font-weight: #{$badge-font-weight};
+            --#{$prefix}badge-color: #{$badge-color};
+            --#{$prefix}badge-border-radius: #{$badge-border-radius};
+        -->
+
+        <!-- Sass variables -->
+        <!--
+            $badge-font-size:                   .75em;
+            $badge-font-weight:                 $font-weight-bold;
+            $badge-color:                       $white;
+            $badge-padding-y:                   .35em;
+            $badge-padding-x:                   .65em;
+            $badge-border-radius:               var(--#{$prefix}border-radius);
+        -->
+    </div>
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!-- Clase de OpenBootcamp -->
+    <hr>
+
+    <div class=" container py-4">
+        <h1>Curso OpenBootCamp</h1>
+
+        <h2>Este es el título <span class="badge bg-secondary">Nuevo!</span></h2>
+
+        <div class="row d-block px-4">
+            <button class="btn btn-primary w-auto">Notificaciones <span class="badge bg-secondary">5</span></button>
+        </div>
+
+        <button class="mt-4 btn btn-primary position-relative">Emails <span
+                class=" badge position-absolute bg-danger top-0 start-100 translate-middle rounded-pill">99+</span></button>
+
+        <button class="mt-4 btn btn-primary position-relative">Notificaciones <span
+                class=" badge position-absolute bg-danger top-0 start-100 translate-middle rounded-pill p-2"><span
+                    class="visually-hidden"></span></span></button>
+
+        <span class="badge bg-success">Éxito</span>
+        <span class="badge bg-danger">Error</span>
+
+        <span class="badge bg-success rounded-pill">Éxito</span>
+        <span class="badge bg-danger rounded-pill">Error</span>
+    </div>
+
+
+</body>
+<script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
