@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipografia</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        class="img-fluid">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Documentacion de Bootstrap</h1>
+
+        <h2>Typography - Tipografía</h2>
+
+        <p>Documentación y ejemplos de la tipografía de Bootstrap, incluidos ajustes globales, encabezados, cuerpo de
+            texto, listas y mucho más.</p>
+
+        <h3>Global settings - Configuración global</h3>
+        <div>
+            <p>Bootstrap establece estilos básicos globales de visualización, tipografía y enlaces. Cuando se necesita
+                más control, echa un vistazo a las <a href="https://getbootstrap.com/docs/5.3/utilities/text/">clases de
+                    utilidad textual</a>.</p>
+
+            <ul>
+                <li>Utilice una <a href="https://getbootstrap.com/docs/5.3/content/reboot/#native-font-stack">pila de
+                        fuentes nativas</a> que seleccione la mejor <b>font-family</b> para cada sistema operativo y
+                    dispositivo.</li>
+                <li>Para una escala tipográfica más inclusiva y accesible, utilizamos el <b>font-size</b> raíz
+                    predeterminado del navegador (normalmente 16px) para que los visitantes puedan personalizar los
+                    valores predeterminados de su navegador según sea necesario.</li>
+                <li>Utiliza los atributos <b>$font-family-base</b>, <b>$font-size-base</b> y <b>$line-height-base</b>
+                    como nuestra base tipográfica aplicada al <b>(body)</b>.</li>
+                <li>Establecer el color global del enlace mediante <b>$link-color</b>.</li>
+                <li>Utilice <b>$body-bg</b> para establecer un <b>background-color</b> en el <b>(body)</b> (<b>#fff</b>
+                    por defecto).</li>
+            </ul>
+
+            <p>Estos estilos se encuentran en <b>_reboot.scss</b>, y las variables globales se definen en
+                <b>_variables.scss</b>. Asegúrese de establecer <b>$font-size-base</b> en <b>rem</b>.
+            </p>
+        </div>
+
+        <h3>Headings - Encabezamientos</h3>
+        <div>
+            <p>Están disponibles todos los encabezados HTML, de <b>(h1)</b> a <b>(h6)</b>.</p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Heading</th>
+                        <th scope="col">Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>(h1)(/h1)</b></td>
+                        <td>
+                            <h1>h1. Bootstrap heading</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>(h2)(/h2)</b></td>
+                        <td>
+                            <h2>h2. Bootstrap heading</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>(h3)(/h3)</b></td>
+                        <td>
+                            <h3>h3. Bootstrap heading</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>(h4)(/h4)</b></td>
+                        <td>
+                            <h4>h4. Bootstrap heading</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>(h5)(/h5)</b></td>
+                        <td>
+                            <h5>h5. Bootstrap heading</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>(h6)(/h6)</b></td>
+                        <td>
+                            <h6>h6. Bootstrap heading</h6>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>También están disponibles las clases <b>.h1</b> a <b>.h6</b>, para cuando desee igualar el estilo de
+                fuente de un encabezado pero no pueda utilizar el elemento HTML asociado.</p>
+
+            <div>
+                <p class="h1">h1. Bootstrap heading</p>
+                <p class="h2">h2. Bootstrap heading</p>
+                <p class="h3">h3. Bootstrap heading</p>
+                <p class="h4">h4. Bootstrap heading</p>
+                <p class="h5">h5. Bootstrap heading</p>
+                <p class="h6">h6. Bootstrap heading</p>
+            </div>
+
+            <h4>Customizing headings - Personalización de los títulos</h4>
+            <div>
+                <p>Utilice las clases de utilidad incluidas para recrear el pequeño texto de encabezado secundario de
+                    Bootstrap 3.</p>
+
+                <h3>
+                    Encabezamiento de la pantalla <small class="text-body-secondary">Con texto secundario
+                        difuminado</small>
+                </h3>
+            </div>
+        </div>
+
+        <h3>Display headings - Mostrar títulos</h3>
+        <div>
+            <p>Los elementos de encabezado tradicionales están diseñados para funcionar mejor en la parte central del
+                contenido de la página. Cuando necesite que un encabezado destaque, considere la posibilidad de utilizar
+                un <b>encabezado de visualización</b>, un estilo de encabezado más grande y con un poco más de opinión.
+            </p>
+
+            <div>
+                <h1 class="display-1">Display 1</h1>
+                <h1 class="display-2">Display 2</h1>
+                <h1 class="display-3">Display 3</h1>
+                <h1 class="display-4">Display 4</h1>
+                <h1 class="display-5">Display 5</h1>
+                <h1 class="display-6">Display 6</h1>
+            </div>
+
+            <p>Los encabezados de pantalla se configuran mediante el mapa Sass <b>$display-font-sizes</b> y dos
+                variables, <b>$display-font-weight</b> y <b>$display-line-height</b>.</p>
+
+            <p>Los encabezados se pueden personalizar mediante dos variables, <b>$display-font-family</b> y
+                <b>$display-font-style</b>.
+            </p>
+
+            <textarea name="" id="" cols="90" rows="14" readonly style="resize: none;">
+                $display-font-sizes: (
+                    1: 5rem,
+                    2: 4.5rem,
+                    3: 4rem,
+                    4: 3.5rem,
+                    5: 3rem,
+                    6: 2.5rem
+                );
+
+                $display-font-family: null;
+                $display-font-style:  null;
+                $display-font-weight: 300;
+                $display-line-height: $headings-line-height;
+            </textarea>
+        </div>
+
+        <h3>Lead - Dirigir</h3>
+        <div>
+            <p>Destaque un párrafo añadiendo <b>.lead</b>.</p>
+
+            <p class="lead">
+                Se trata de un párrafo principal. Destaca entre los párrafos normales.
+            </p>
+
+            <textarea name="" id="" cols="90" rows="4" readonly style="resize: none;">
+                <p class="lead">
+                    Se trata de un párrafo principal. Destaca entre los párrafos normales.
+                </p>
+            </textarea>
+        </div>
+
+        <h3>Inline text elements - Elementos de texto en línea</h3>
+        <div>
+            <p>Estilización de elementos HTML5 comunes en línea.</p>
+
+            <div>
+                <p>Puede utilizar la etiqueta de marca para <mark>resaltar</mark> texto.</p>
+                <p><del>Esta línea de texto debe tratarse como texto eliminado.</del></p>
+                <p><s>Ésta línea de texto se debe de considerar no correcta.</s></p>
+                <p><ins>Esta línea de texto debe tratarse como una adición al documento.</ins></p>
+                <p><u>Esta línea de texto se mostrará subrayada.</u></p>
+                <p><small>Esta línea de texto debe tratarse como letra pequeña.</small></p>
+                <p><strong>Esta línea se representa como texto en negrita.</strong></p>
+                <p><em>Esta línea se muestra como texto en cursiva.</em></p>
+            </div>
+
+            <textarea name="" id="" cols="100" rows="9" readonly style="resize: none;">
+                <p>Puede utilizar la etiqueta de marca para <mark>resaltar</mark> texto.</p>
+                <p><del>Esta línea de texto debe tratarse como texto eliminado.</del></p>
+                <p><s>Ésta línea de texto se debe de considerar no correcta.</s></p>
+                <p><ins>Esta línea de texto debe tratarse como una adición al documento.</ins></p>
+                <p><u>Esta línea de texto se mostrará subrayada.</u></p>
+                <p><small>Esta línea de texto debe tratarse como letra pequeña.</small></p>
+                <p><strong>Esta línea se representa como texto en negrita.</strong></p>
+                <p><em>Esta línea se muestra como texto en cursiva.</em></p>
+            </textarea>
+
+            <p>Tenga en cuenta que estas etiquetas deben utilizarse con fines semánticos:</p>
+
+            <ul>
+                <li><b>(mark)</b> representa texto marcado o resaltado con fines de referencia o anotación.</li>
+                <li><b>(small)</b> representa comentarios laterales y letra pequeña, como copyright y texto legal.</li>
+                <li><b>(s)</b> representa elementos que ya no son relevantes o precisos.</li>
+                <li><b>(u)</b> representa un lapso de texto en línea que debe ser renderizado de manera que indique que
+                    tiene una anotación no textual.</li>
+            </ul>
+
+            <p>Si desea dar estilo a su texto, debe utilizar las siguientes clases en su lugar:</p>
+
+            <ul>
+                <li><b>.mark</b> aplicará los mismos estilos que <b>(mark)</b>.</li>
+                <li><b>.small</b> aplicará los mismos estilos que <b>(small)</b>.</li>
+                <li><b>.text-decoration-underline</b> aplicará los mismos estilos que <b>(u)</b>.</li>
+                <li><b>.text-decoration-line-through</b> aplicará los mismos estilos que <b>(s)</b>.</li>
+            </ul>
+
+            <p>Aunque no se muestran arriba, no dude en utilizar <b>(b)</b> y <b>(i)</b> en HTML5. <b>(b)</b> está
+                pensado para resaltar palabras o frases sin transmitir importancia adicional, mientras que <b>(i)</b> es
+                sobre todo para voz, términos técnicos, etc.</p>
+        </div>
+
+        <h3>Text utilities - Utilidades de texto</h3>
+        <div>
+            <p>Cambie la alineación, transformación, estilo, peso, altura de línea, decoración y color del texto con
+                nuestras <a href="https://getbootstrap.com/docs/5.3/utilities/text/">utilidades de texto</a> y <a
+                    href="https://getbootstrap.com/docs/5.3/utilities/colors/">utilidades de color</a>.</p>
+        </div>
+
+        <h3>Abbreviations - Abreviaturas</h3>
+        <div>
+            <p>Implementación estilizada del elemento <b>(abbr)</b> de HTML para abreviaturas y acrónimos con el fin de
+                mostrar la versión ampliada al pasar el ratón por encima. Las abreviaturas se subrayan por defecto y se
+                les añade un cursor de ayuda para proporcionar contexto adicional al pasar el ratón por encima y a los
+                usuarios de tecnologías de asistencia.</p>
+
+            <p>Añada <b>.initialism</b> a una abreviatura para obtener un tamaño de fuente ligeramente menor.</p>
+
+            <div>
+                <p><abbr title="attribute">attr</abbr></p>
+                <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+            </div>
+
+            <textarea name="" id="" cols="100" rows="3" readonly style="resize: none;">
+                <p><abbr title="attribute">attr</abbr></p>
+                <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+            </textarea>
+        </div>
+
+        <h3>Blockquotes - Citas en bloque</h3>
+        <div>
+            <p>Para citar bloques de contenido de otra fuente dentro de su documento. Envuelva <b>(blockquote
+                    class="blockquote")</b> alrededor de cualquier HTML como la cita.</p>
+
+            <blockquote class="blockquote">
+                <p>Una cita conocida, contenida en un elemento blockquote.</p>
+            </blockquote>
+
+            <textarea name="" id="" cols="100" rows="4" readonly style="resize: none;">
+                <blockquote class="blockquote">
+                    <p>Una cita conocida, contenida en un elemento blockquote.</p>
+                </blockquote>
+            </textarea>
+
+            <h4>Naming a source - Nombrar una fuente</h4>
+            <div>
+                <p>La especificación HTML exige que la atribución de la cita de bloque se coloque fuera de
+                    <b>(blockquote)</b>. Cuando proporcione la atribución, envuelva su <b>(blockquote)</b> en un
+                    <b>(figure)</b> y utilice un <b>(figcaption)</b> o un elemento de nivel de bloque (por ejemplo,
+                    <b>(p)</b>) con la clase <b>.blockquote-footer</b>. Asegúrese también de incluir el nombre de la
+                    fuente en <b>cite</b>.
+                </p>
+
+                <figure>
+                    <blockquote class="blockquote">
+                        <p>Una cita conocida, contenida en un elemento blockquote.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Alguien famoso en el <cite title="Source Title">Título Fuente</cite>
+                    </figcaption>
+                </figure>
+
+                <textarea name="" id="" cols="100" rows="9" readonly style="resize: none;">
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p>Una cita conocida, contenida en un elemento blockquote.</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Alguien famoso en el <cite title="Source Title">Título Fuente</cite>
+                        </figcaption>
+                    </figure>
+                </textarea>
+            </div>
+
+            <h4>Alignment - Alineación</h4>
+            <div>
+                <p>Utilice las utilidades de texto necesarias para cambiar la alineación de la cita.</p>
+
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <p>Una cita conocida, contenida en un elemento blockquote.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Alguien famoso en el <cite title="Source Title">Título Fuente</cite>
+                    </figcaption>
+                </figure>
+
+                <textarea name="" id="" cols="100" rows="9" readonly style="resize: none;">
+                    <figure class="text-center">
+                        <blockquote class="blockquote">
+                            <p>Una cita conocida, contenida en un elemento blockquote.</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Alguien famoso en el <cite title="Source Title">Título Fuente</cite>
+                        </figcaption>
+                    </figure>
+                </textarea>
+
+                <figure class="text-end">
+                    <blockquote class="blockquote">
+                        <p>Una cita conocida, contenida en un elemento blockquote.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Alguien famoso en el <cite title="Source Title">Título Fuente</cite>
+                    </figcaption>
+                </figure>
+
+                <textarea name="" id="" cols="100" rows="9" readonly style="resize: none;">
+                    <figure class="text-end">
+                        <blockquote class="blockquote">
+                            <p>Una cita conocida, contenida en un elemento blockquote.</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Alguien famoso en el <cite title="Source Title">Título Fuente</cite>
+                        </figcaption>
+                    </figure>
+                </textarea>
+            </div>
+        </div>
+
+        <h3>Lists - Listas</h3>
+        <div>
+            <h4>Unstyled - Sin estilo</h4>
+            <div>
+                <p>Elimina el <b>list-style</b> y el margen izquierdo por defecto de los elementos de lista (sólo hijos
+                    inmediatos). <b>Esto sólo se aplica a los elementos de lista hijos inmediatos</b>, lo que significa
+                    que tendrá que añadir la clase para cualquier lista anidada también.</p>
+
+                <ul class="list-unstyled">
+                    <li>Esta es una lista.</li>
+                    <li>Parece completamente sin estilo.</li>
+                    <li>Estructuralmente, sigue siendo una lista.</li>
+                    <li>Sin embargo, este estilo sólo se aplica a los elementos hijos inmediatos.</li>
+                    <li>Listas anidadas:
+                        <ul>
+                            <li>no se ven afectados por este estilo</li>
+                            <li>seguirá mostrando una bala</li>
+                            <li>y tener un margen izquierdo adecuado</li>
+                        </ul>
+                    </li>
+                    <li>Esto todavía puede ser útil en algunas situaciones.</li>
+                </ul>
+
+                <textarea name="" id="" cols="100" rows="15" readonly style="resize: none;">
+                    <ul class="list-unstyled">
+                        <li>Esta es una lista.</li>
+                        <li>Parece completamente sin estilo.</li>
+                        <li>Estructuralmente, sigue siendo una lista.</li>
+                        <li>Sin embargo, este estilo sólo se aplica a los elementos hijos inmediatos.</li>
+                        <li>Listas anidadas:
+                            <ul>
+                                <li>no se ven afectados por este estilo</li>
+                                <li>seguirá mostrando una bala</li>
+                                <li>y tener un margen izquierdo adecuado</li>
+                            </ul>
+                        </li>
+                        <li>Esto todavía puede ser útil en algunas situaciones.</li>
+                    </ul>
+                </textarea>
+            </div>
+
+            <h4>Inline - En línea</h4>
+            <div>
+                <p>Elimina las viñetas de una lista y aplica un ligero <b>margin</b> con una combinación de dos clases,
+                    <b>.list-inline</b> y <b>.list-inline-item</b>.
+                </p>
+
+                <ul class="list-inline">
+                    <li class="list-inline-item">Se trata de un elemento de lista.</li>
+                    <li class="list-inline-item">Y otra más.</li>
+                    <li class="list-inline-item">Pero se muestran en línea.</li>
+                </ul>
+
+                <textarea name="" id="" cols="100" rows="6" readonly style="resize: none;">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Se trata de un elemento de lista.</li>
+                        <li class="list-inline-item">Y otra más.</li>
+                        <li class="list-inline-item">Pero se muestran en línea.</li>
+                    </ul>
+                </textarea>
+            </div>
+
+            <h4>Description list alignment - Alineación de la lista de descripción</h4>
+            <div>
+                <p>Alinee los términos y las descripciones horizontalmente utilizando las clases predefinidas de nuestro
+                    sistema de cuadrícula (o mixins semánticos). Para términos más largos, puede añadir opcionalmente
+                    una clase <b>.text-truncate</b> para truncar el texto con una elipsis.</p>
+
+                <dl class="row">
+                    <dt class="col-sm-3">Listas de descripción</dt>
+                    <dd class="col-sm-9">Una lista descriptiva es perfecta para definir términos.</dd>
+
+                    <dt class="col-sm-3">Término</dt>
+                    <dd class="col-sm-9">
+                        <p>Definición del término.</p>
+                        <p>Y algo más de texto de definición de marcador de posición.</p>
+                    </dd>
+
+                    <dt class="col-sm-3">Otro término</dt>
+                    <dd class="col-sm-9">Esta definición es corta, así que no hay párrafos extra ni nada.</dd>
+
+                    <dt class="col-sm-3 text-truncate">El término truncado se trunca</dt>
+                    <dd class="col-sm-9">Esto puede ser útil cuando hay poco espacio. Añade una elipsis al final.</dd>
+
+                    <dt class="col-sm-3">Anidación</dt>
+                    <dd class="col-sm-9">
+                        <dl class="row">
+                            <dt class="col-sm-4">Lista de definiciones anidadas</dt>
+                            <dd class="col-sm-8">He oído que te gustan las listas de definiciones. Déjame poner una
+                                lista de definiciones dentro de tu lista de definiciones.</dd>
+                        </dl>
+                    </dd>
+                </dl>
+
+                <textarea name="" id="" cols="100" rows="29" readonly style="resize: none;">
+                    <dl class="row">
+                        <dt class="col-sm-3">Listas de descripción</dt>
+                        <dd class="col-sm-9">Una lista descriptiva es perfecta para definir términos.</dd>
+    
+                        <dt class="col-sm-3">Término</dt>
+                        <dd class="col-sm-9">
+                            <p>Definición del término.</p>
+                            <p>Y algo más de texto de definición de marcador de posición.</p>
+                        </dd>
+    
+                        <dt class="col-sm-3">Otro término</dt>
+                        <dd class="col-sm-9">Esta definición es corta, así que no hay párrafos extra ni nada.</dd>
+    
+                        <dt class="col-sm-3 text-truncate">El término truncado se trunca</dt>
+                        <dd class="col-sm-9">Esto puede ser útil cuando hay poco espacio. Añade una elipsis al final.</dd>
+    
+                        <dt class="col-sm-3">Anidación</dt>
+                        <dd class="col-sm-9">
+                            <dl class="row">
+                                <dt class="col-sm-4">Lista de definiciones anidadas</dt>
+                                <dd class="col-sm-8">He oído que te gustan las listas de definiciones. Déjame poner una
+                                    lista de definiciones dentro de tu lista de definiciones.</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                </textarea>
+            </div>
+        </div>
+
+        <h3>Responsive font sizes - Tamaño de letra adaptable</h3>
+        <div>
+            <p>En Bootstrap 5, hemos habilitado los tamaños de fuente adaptativos por defecto, lo que permite que el
+                texto se adapte de forma más natural a los distintos tamaños de dispositivos y ventanas gráficas. Echa
+                un vistazo a la <a href="https://getbootstrap.com/docs/5.3/getting-started/rfs/">página de RFS</a> para
+                saber cómo funciona.</p>
+        </div>
+
+        <h3>CSS</h3>
+        <div>
+            <h4>Variables Sass</h4>
+            <div>
+                <p>Los encabezados tienen algunas variables dedicadas para el tamaño y el espaciado.</p>
+
+                <textarea name="" id="" cols="100" rows="7" readonly style="resize: none;">
+                    $headings-margin-bottom:      $spacer * .5;
+                    $headings-font-family:        null;
+                    $headings-font-style:         null;
+                    $headings-font-weight:        500;
+                    $headings-line-height:        1.2;
+                    $headings-color:              inherit;
+                </textarea>
+
+                <p>Los diversos elementos tipográficos tratados aquí y en <a
+                        href="https://getbootstrap.com/docs/5.3/content/reboot/">Reboot</a> también tienen variables
+                    dedicadas.</p>
+
+                <textarea name="" id="" cols="100" rows="44" readonly style="resize: none;">
+                    $lead-font-size:              $font-size-base * 1.25;
+                    $lead-font-weight:            300;
+
+                    $small-font-size:             .875em;
+
+                    $sub-sup-font-size:           .75em;
+
+                    // fusv-disable
+                    $text-muted:                  var(--#{$prefix}secondary-color); // Deprecated in 5.3.0
+                    // fusv-enable
+
+                    $initialism-font-size:        $small-font-size;
+
+                    $blockquote-margin-y:         $spacer;
+                    $blockquote-font-size:        $font-size-base * 1.25;
+                    $blockquote-footer-color:     $gray-600;
+                    $blockquote-footer-font-size: $small-font-size;
+
+                    $hr-margin-y:                 $spacer;
+                    $hr-color:                    inherit;
+
+                    // fusv-disable
+                    $hr-bg-color:                 null; // Deprecated in v5.2.0
+                    $hr-height:                   null; // Deprecated in v5.2.0
+                    // fusv-enable
+
+                    $hr-border-color:             null; // Allows for inherited colors
+                    $hr-border-width:             var(--#{$prefix}border-width);
+                    $hr-opacity:                  .25;
+
+                    $vr-border-width:             var(--#{$prefix}border-width);
+
+                    $legend-margin-bottom:        .5rem;
+                    $legend-font-size:            1.5rem;
+                    $legend-font-weight:          null;
+
+                    $dt-font-weight:              $font-weight-bold;
+
+                    $list-inline-padding:         .5rem;
+
+                    $mark-padding:                .1875em;
+                    $mark-color:                  $body-color;
+                    $mark-bg:                     $yellow-100;
+                </textarea>
+            </div>
+
+            <h4>Sass mixins - Mezclas Sass</h4>
+            <div>
+                <p>No hay mixins dedicados a la tipografía, pero Bootstrap utiliza <a
+                        href="https://getbootstrap.com/docs/5.3/getting-started/rfs/">Responsive Font Sizing (RFS)</a>.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!-- Clase de OpenBootcamp -->
+    <hr>
+
+    <div class=" container py-4">
+        <h1>Curso OpenBootCamp</h1>
+
+        <h1>Este es un h1</h1>
+        <h2>Este es un h2</h2>
+        <h3>Este es un h3</h3>
+        <h4>Este es un h4</h4>
+        <h5>Este es un h5</h5>
+        <h6>Este es un h6</h6>
+
+        <p class="h1">Esta es una <small class="text-muted">clase h1</small></p>
+        <p class="h2">Esta es una clase h2</p>
+        <p class="h3">Esta es una clase h3</p>
+        <p class="h4">Esta es una clase h4</p>
+        <p class="h5">Esta es una clase h5</p>
+        <p class="h6">Esta es una clase h6</p>
+
+        <h1 class="display-1">Display 1</h1>
+        <h1 class="display-2">Display 2</h1>
+        <h1 class="display-3">Display 3</h1>
+        <h1 class="display-4">Display 4</h1>
+        <h1 class="display-5">Display 5</h1>
+        <h1 class="display-6">Display 6</h1>
+
+        <p class="lead">There are many <mark>variations</mark> of passages of Lorem Ipsum available, but the majority
+            have suffered alteration in some form, by injected humour, or randomised words which don't look even
+            slightly believable.</p>
+        <p class="lh-base"><del>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                anything embarrassing hidden in the middle of text.</del> All the <small>Lorem Ipsum</small> generators
+            on the Internet tend to repeat predefined chunks as necessary, <strong>making this the first true
+                generator</strong> on the Internet. <em>It uses a dictionary of over 200 Latin words, combined with a
+                handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</em> The generated
+            Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+
+        <p><abbr title="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.">Lorem
+                Ipsum.</abbr> <abbr
+                title="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto."
+                class="initialism">Lorem Ipsum.</abbr>Lorem Ipsum ha sido el texto de relleno estándar de las industrias
+            desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una
+            galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.
+        <blockquote class="blockquote">No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en
+            documentos electrónicos, quedando esencialmente igual al original.</blockquote>
+        <figcaption class="blockquote-footer">Cervantes <cite title="Don Quijote de la Mancha">de Saavedra</cite>
+        </figcaption> Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes
+        de Lorem Ipsum, y más recientemente con software de autoedición, <span class="font-monospace">como por ejemplo
+            Aldus PageMaker</span>, el cual incluye versiones de Lorem Ipsum.</p>
+
+        <p class="text-end text-sm-center text-md-start">Este es un texto responsive</p>
+
+        <p>
+            Este es un parrafo donde vamos a tener una lista.
+        <ul class="list-inline">
+            <li class="list-inline-item">Elemento 1</li>
+            <li class="list-inline-item">Elemento 2</li>
+            <li class="list-inline-item">Elemento 3</li>
+        </ul>
+        </p>
+
+        <p class="w-25 text-nowrap bg-light">Este es un texto largo etc etc</p>
+
+        <p class="text-break">
+            mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+        </p>
+
+        <p class="text-lowercase">Texto en MINUSCULAS</p>
+        <p class="text-uppercase">texto en mayusculas</p>
+        <p class="text-capitalize">texto capitalizado</p>
+
+        <p class="fs-1 fw-bold">fs-1</p>
+        <p class="fs-2 fw-light">fs-2</p>
+        <p class="fs-3">fs-3</p>
+        <p class="fs-4">fs-4</p>
+        <p class="fs-5">fs-5</p>
+        <p class="fs-6">fs-6</p>
+
+        <a href="#">Este es un enlace normal</a>
+        <a href="#" class="text-reset">Este es un enlace sin color</a>
+        <a href="#" class="text-reset text-decoration-none">Este es un enlace sin subrayado</a>
+
+    </div>
+
+
+</body>
+<script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
