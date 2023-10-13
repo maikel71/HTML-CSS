@@ -1,54 +1,14 @@
-// h1 {
-//     color: red;
-//     background-color: green;
-// }
 
-@mixin formato-texto($bg-color: #f1f1f1) {
-    color: $text-color;
-    width: 50rem;
-    text-transform: uppercase;
-    background-color: $bg-color;
-}
+// Componentes
+@import "sass/componentes";
 
-$text-color: #2b2b2b;
+// Mixins
+@import "sass/mixins";
 
-body {
-    padding: 0;
-    margin: 0;
-}
+// Estilos
+@import "sass/estilos";
 
-.container {
-    width: 100%;
-    background-color: azure;
-    min-height: 100vh;
-    padding: 0.5rem;
-}
-
-h1 {
-    margin: 0;
-    @include formato-texto();
-}
-
-p {
-    @include formato-texto(#666666);
-}
-
-.listado {
-    width: 10rem;
-    background-color: aquamarine;
-    padding: 0.5rem;
-
-    ul {
-        margin: 0 0.5rem;
-
-        li{
-            list-style: none;
-
-            &:hover {
-                color: white;
-            }
-        }
-    }
-}
-
-
+// Paginas
+// Pagina principal
+// Pagina de contacto
+// Pagina de aviso legal
